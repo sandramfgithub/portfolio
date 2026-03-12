@@ -6,7 +6,11 @@ import {
   Text,
   View,
 } from '@react-pdf/renderer';
-import type { CvProfile, Experience, Language } from '@/data/cv';
+import type {
+  CvExperienceViewModel,
+  CvLanguageViewModel,
+  CvProfileViewModel,
+} from '@/application/cv/dto';
 
 // ---------- Fonts ----------
 
@@ -185,11 +189,15 @@ const s = StyleSheet.create({
 // ---------- Props ----------
 
 type CvPdfProps = {
-  profile: CvProfile;
-  experience: Experience[];
-  languages: Language[];
+  profile: CvProfileViewModel;
+  experience: readonly CvExperienceViewModel[];
+  languages: readonly CvLanguageViewModel[];
   stack: readonly string[];
-  contact: { github?: string; linkedin?: string; email?: string };
+  contact: {
+    github: string | null;
+    linkedin: string | null;
+    email: string | null;
+  };
   sectionLabels?: {
     profile: string;
     experience: string;

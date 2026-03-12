@@ -1,33 +1,21 @@
 import { Check, Download, Loader2 } from 'lucide-react';
 import { type ReactNode, useState } from 'react';
+import type { CvViewModel } from '@/application/cv/dto';
 import { Button } from '@/components/ui/button';
-import { cvData } from '@/data/cv';
-import { socialLinks } from '@/data/site';
 import type { Lang } from '@/i18n/translations';
 import { getTranslations } from '@/i18n/utils';
 
-function getContact() {
-  const contact: { github?: string; linkedin?: string; email?: string } = {};
-  for (const link of socialLinks) {
-    if (link.label === 'GitHub') {
-      contact.github = link.href;
-    }
-    if (link.label === 'LinkedIn') {
-      contact.linkedin = link.href;
-    }
-    if (link.label === 'Email') {
-      contact.email = link.href.replace('mailto:', '');
-    }
-  }
-  return contact;
-}
-
-export function CvDownload({ lang = 'es' }: { lang?: Lang }) {
+export function CvDownload({
+  cv,
+  lang = 'es',
+}: {
+  cv: CvViewModel;
+  lang?: Lang;
+}) {
   const [status, setStatus] = useState<
     'idle' | 'loading' | 'success' | 'error'
   >('idle');
   const t = getTranslations(lang);
-  const data = cvData[lang];
 
   let statusIcon: ReactNode = <Download data-icon="inline-start" />;
   let statusLabel: string = t.about.downloadCv;
@@ -82,12 +70,12 @@ export function CvDownload({ lang = 'es' }: { lang?: Lang }) {
 
       const blob = await pdf(
         <CvPdfDocument
-          contact={getContact()}
-          experience={data.experience}
-          languages={data.languages}
-          profile={data.profile}
+          contact={cv.contacts}
+          experience={cv.experience}
+          languages={cv.languages}
+          profile={cv.profile}
           sectionLabels={sectionLabels}
-          stack={data.skills}
+          stack={cv.skillNames}
         />
       ).toBlob();
 

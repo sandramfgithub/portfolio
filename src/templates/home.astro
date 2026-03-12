@@ -1,21 +1,23 @@
 ---
+import { getHomePageViewModel } from '@/application/portfolio/queries';
 import { Terminal } from '@/components/terminal/terminal';
 import type { Lang } from '@/i18n/translations';
-import { getTranslations } from '@/i18n/utils';
 import Layout from '@/layouts/main.astro';
 
 type Props = { lang: Lang };
 const { lang } = Astro.props;
-const t = getTranslations(lang);
+const page = await getHomePageViewModel(lang);
 ---
 
-<Layout lang={lang}>
+<Layout description={page.description} lang={lang} title={page.title}>
   <section class="py-2 sm:py-4">
-    <p
-      class="mx-auto max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
-    >
-      {t.hero.intro}
-    </p>
+    {page.introParagraphs.map((paragraph) => (
+      <p
+        class="mx-auto max-w-2xl text-center text-muted-foreground text-sm leading-6 sm:text-base sm:leading-7"
+      >
+        {paragraph}
+      </p>
+    ))}
     <Terminal lang={lang} client:visible className="mt-6" />
   </section>
 </Layout>

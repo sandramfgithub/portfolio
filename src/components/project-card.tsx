@@ -1,19 +1,17 @@
+import type { CSSProperties } from 'react';
+import type { ProjectCardViewModel } from '@/application/portfolio/dto';
 import { StackList } from '@/components/stack-list';
 import type { Lang } from '@/i18n/translations';
 
-type Props = {
-  title: string;
-  summary: string;
-  stack: string[];
-  github: string;
+type Props = ProjectCardViewModel & {
   lang: Lang;
-  style?: React.CSSProperties;
+  style?: CSSProperties;
 };
 
 export function ProjectCard({
   title,
   summary,
-  stack,
+  skills,
   github,
   lang,
   style,
@@ -36,7 +34,7 @@ export function ProjectCard({
       </div>
       <p className="text-muted-foreground text-sm leading-6">{summary}</p>
       <div className="mt-auto">
-        <StackList lang={lang} stack={stack} />
+        <StackList lang={lang} skills={skills} />
       </div>
     </div>
   );

@@ -1,6 +1,7 @@
 ---
 import '@/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
+import { getLayoutViewModel } from '@/application/portfolio/queries';
 import { MorphNav } from '@/components/morph-nav';
 import SiteFooter from '@/components/site-footer.astro';
 import type { Lang } from '@/i18n/translations';
@@ -26,6 +27,7 @@ const defaultDescriptions: Record<Lang, string> = {
 
 const { title = defaultTitles[lang], description = defaultDescriptions[lang] } =
   Astro.props;
+const layout = await getLayoutViewModel(lang);
 
 const altLang = getAlternateLang(lang);
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -68,7 +70,14 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
     >
       {lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}
     </a>
-    <MorphNav lang={lang} pathname={pathname} client:load transition:persist />
+    <MorphNav
+      lang={lang}
+      navigation={layout.navigation}
+      pathname={pathname}
+      socialLinks={layout.socialLinks}
+      client:load
+      transition:persist
+    />
     <div class="page-shell flex flex-1 flex-col pt-10">
       <main id="main" class="flex-1 space-y-8 pb-10"><slot /></main>
       <SiteFooter lang={lang} />

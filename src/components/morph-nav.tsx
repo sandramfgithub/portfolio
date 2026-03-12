@@ -7,13 +7,16 @@ import {
 } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import type {
+  NavigationItemViewModel,
+  SocialLinkViewModel,
+} from '@/application/portfolio/dto';
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from '@/components/ui/tooltip';
-import { navigation, socialLinks } from '@/data/site';
 import type { Lang } from '@/i18n/translations';
 import {
   getAlternateLang,
@@ -25,6 +28,8 @@ import { cn } from '@/lib/utils';
 type Props = {
   lang: Lang;
   pathname: string;
+  navigation: readonly NavigationItemViewModel[];
+  socialLinks: readonly SocialLinkViewModel[];
 };
 
 const iconPaths: Record<string, string> = {
@@ -130,10 +135,16 @@ function ThemeToggle({ lang }: { lang: Lang }) {
   );
 }
 
-function SocialLinks({ className }: { className?: string }) {
+function SocialLinks({
+  className,
+  links,
+}: {
+  className?: string;
+  links: readonly SocialLinkViewModel[];
+}) {
   return (
     <div className={cn('flex items-center gap-1', className)}>
-      {socialLinks.map((link) => (
+      {links.map((link) => (
         <Tooltip key={link.label}>
           <TooltipTrigger
             aria-label={link.label}
@@ -232,12 +243,17 @@ const morphTransition = {
   layout: { duration: 0.4, ease: [0.25, 1, 0.5, 1] as const },
 };
 
-export function MorphNav({ lang, pathname: initialPathname }: Props) {
+export function MorphNav({
+  lang,
+  pathname: initialPathname,
+  navigation,
+  socialLinks,
+}: Props) {
   const prefersReduced = useReducedMotion();
   const isMobile = useIsMobile();
   const [currentPath, setCurrentPath] = useState(initialPathname);
 
-  const navItems = navigation[lang];
+  const navItems = navigation;
   const altLang = getAlternateLang(lang);
   const altLabel = altLang.toUpperCase();
   const altPath = getLocalizedPath(currentPath, altLang);
@@ -332,7 +348,7 @@ export function MorphNav({ lang, pathname: initialPathname }: Props) {
     return () => clearTimeout(timer);
   }, [scrolled]);
 
-  const renderNavLink = (item: { href: string; label: string }) => {
+  const renderNavLink = (item: NavigationItemViewModel) => {
     const itemPath = item.href.replace(/\/$/, '') || '/';
     const isActive = currentPath === itemPath;
     return (
@@ -373,7 +389,7 @@ export function MorphNav({ lang, pathname: initialPathname }: Props) {
               </nav>
             </div>
             <div className="flex items-center gap-1">
-              <SocialLinks />
+              <SocialLinks links={socialLinks} />
               <Toggles altLabel={altLabel} altPath={altPath} lang={lang} />
             </div>
           </div>
@@ -464,6 +480,7 @@ export function MorphNav({ lang, pathname: initialPathname }: Props) {
               >
                 <SocialLinks
                   className={scrolled ? undefined : 'justify-center'}
+                  links={socialLinks}
                 />
               </motion.div>
 
