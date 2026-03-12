@@ -36,6 +36,7 @@ export type HomePageViewModel = {
 
 export type ProjectCardViewModel = {
   slug: string;
+  href: string;
   title: string;
   summary: string;
   skills: readonly SkillBadgeViewModel[];
@@ -44,6 +45,7 @@ export type ProjectCardViewModel = {
 
 export type CaseStudyViewModel = {
   slug: string;
+  href: string;
   title: string;
   summary: string;
   skills: readonly SkillBadgeViewModel[];
@@ -73,4 +75,29 @@ export type AboutPageViewModel = {
   introParagraphs: readonly string[];
   experience: readonly AboutExperienceViewModel[];
   skills: readonly SkillBadgeViewModel[];
+};
+
+export type EntryDetailLinkViewModel = {
+  label: string;
+  href: string;
+  kind: string;
+};
+
+export type EntryDetailPageViewModel = {
+  title: string;
+  seoTitle: string;
+  description: string;
+  slug: string;
+  href: string;
+  listingHref: string;
+  kind: 'public-project' | 'case-study';
+  summary: string;
+  paragraphs: readonly string[];
+  bullets: readonly string[];
+  skills: readonly SkillBadgeViewModel[];
+  links: readonly EntryDetailLinkViewModel[];
+  featured: boolean;
+  organization: string | null;
+  period: string | null;
+  hasCaseStudy: boolean;
 };

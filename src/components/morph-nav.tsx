@@ -257,7 +257,7 @@ export function MorphNav({
   const altLang = getAlternateLang(lang);
   const altLabel = altLang.toUpperCase();
   const altPath = getLocalizedPath(currentPath, altLang);
-  const homeHref = lang === 'en' ? '/en' : '/';
+  const homeHref = navItems[0]?.href ?? getLocalizedPath('/', lang);
 
   // Lock: prevents scroll handler from unsetting scrolled during Astro transitions
   const scrollLockRef = useRef(0);

@@ -6,6 +6,10 @@ import { defineConfig } from 'astro/config';
 
 // https://astro.build/config
 export default defineConfig({
+  redirects: {
+    '/about': '/es/about',
+    '/projects': '/es/projects',
+  },
   vite: {
     // @ts-expect-error Astro 6 and @tailwindcss/vite currently disagree at
     // type level because Astro ships Vite from a vendored path.
@@ -19,7 +23,8 @@ export default defineConfig({
     defaultLocale: 'es',
     locales: ['es', 'en'],
     routing: {
-      prefixDefaultLocale: false,
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false,
     },
   },
 });

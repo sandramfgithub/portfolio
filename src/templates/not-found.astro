@@ -1,12 +1,12 @@
 ---
 import type { Lang } from '@/i18n/translations';
-import { getTranslations } from '@/i18n/utils';
+import { getLocalizedPath, getTranslations } from '@/i18n/utils';
 import Layout from '@/layouts/main.astro';
 
 type Props = { lang: Lang };
 const { lang } = Astro.props;
 const t = getTranslations(lang);
-const homeHref = lang === 'en' ? '/en' : '/';
+const homeHref = getLocalizedPath('/', lang);
 ---
 
 <Layout lang={lang}>

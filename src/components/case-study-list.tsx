@@ -23,7 +23,14 @@ export function CaseStudyList({
         >
           <div className="min-w-0 flex-1">
             <div className="flex items-center gap-2">
-              <h3 className="font-semibold text-base">{project.title}</h3>
+              <h3 className="font-semibold text-base">
+                <a
+                  className="transition-colors hover:text-muted-foreground"
+                  href={project.href}
+                >
+                  {project.title}
+                </a>
+              </h3>
               {project.hasCaseStudy && (
                 <Badge className="text-[11px]" variant="outline">
                   {t.projects.caseStudy}

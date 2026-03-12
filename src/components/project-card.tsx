@@ -9,6 +9,7 @@ type Props = ProjectCardViewModel & {
 };
 
 export function ProjectCard({
+  href,
   title,
   summary,
   skills,
@@ -22,7 +23,14 @@ export function ProjectCard({
       style={style}
     >
       <div className="flex items-center justify-between">
-        <h3 className="font-semibold text-base">{title}</h3>
+        <h3 className="font-semibold text-base">
+          <a
+            className="transition-colors hover:text-muted-foreground"
+            href={href}
+          >
+            {title}
+          </a>
+        </h3>
         <a
           className="text-muted-foreground text-sm underline transition-colors hover:text-foreground group-hover:text-foreground"
           href={github}

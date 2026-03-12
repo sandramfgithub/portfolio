@@ -1,0 +1,25 @@
+---
+import {
+  getEntryDetailPageViewModel,
+  listEntryRouteParams,
+} from '@/application/portfolio/queries';
+import type { Lang } from '@/i18n/translations';
+import EntryDetailTemplate from '@/templates/entry-detail.astro';
+
+export async function getStaticPaths() {
+  const routes = await listEntryRouteParams('case-study');
+
+  return routes.map((route) => ({
+    params: {
+      lang: route.lang,
+      slug: route.slug,
+    },
+    props: route,
+  }));
+}
+
+const { lang, slug } = Astro.props as { lang: Lang; slug: string };
+const page = await getEntryDetailPageViewModel(lang, 'case-study', slug);
+---
+
+<EntryDetailTemplate lang={lang} page={page} />

@@ -35,6 +35,16 @@ export const translations = {
       switchToDark: 'Cambiar a modo oscuro',
       switchLang: 'Cambiar a inglés',
     },
+    entry: {
+      summary: 'Resumen',
+      highlights: 'Puntos clave',
+      stack: 'Stack',
+      links: 'Enlaces',
+      publicProject: 'Proyecto público',
+      caseStudy: 'Trabajo privado',
+      backToProjects: 'Volver a proyectos',
+      backToCaseStudies: 'Volver a trabajos privados',
+    },
     footer: {
       madeWith: 'Hecho con',
       tools: 'en Astro, con Claude y Codex',
@@ -89,6 +99,16 @@ export const translations = {
       switchToLight: 'Switch to light mode',
       switchToDark: 'Switch to dark mode',
       switchLang: 'Switch to Spanish',
+    },
+    entry: {
+      summary: 'Summary',
+      highlights: 'Highlights',
+      stack: 'Stack',
+      links: 'Links',
+      publicProject: 'Public project',
+      caseStudy: 'Private work',
+      backToProjects: 'Back to projects',
+      backToCaseStudies: 'Back to private work',
     },
     footer: {
       madeWith: 'Made with',

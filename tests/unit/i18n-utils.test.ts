@@ -15,11 +15,11 @@ describe('i18n utils', () => {
     );
   });
 
-  it('builds localized paths without duplicating the english prefix', () => {
-    expect(getLocalizedPath('/', 'es')).toBe('/');
+  it('builds localized paths with explicit locale prefixes', () => {
+    expect(getLocalizedPath('/', 'es')).toBe('/es');
     expect(getLocalizedPath('/', 'en')).toBe('/en');
     expect(getLocalizedPath('/projects', 'en')).toBe('/en/projects');
-    expect(getLocalizedPath('/en/about/', 'es')).toBe('/about');
+    expect(getLocalizedPath('/en/about/', 'es')).toBe('/es/about');
   });
 
   it('returns the alternate locale', () => {

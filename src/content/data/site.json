@@ -4,15 +4,15 @@
     "locale": "es",
     "navigation": [
       {
-        "href": "/",
+        "href": "/es",
         "label": "Inicio"
       },
       {
-        "href": "/projects",
+        "href": "/es/projects",
         "label": "Proyectos"
       },
       {
-        "href": "/about",
+        "href": "/es/about",
         "label": "Sobre mí"
       }
     ],

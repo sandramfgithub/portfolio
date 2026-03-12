@@ -13,11 +13,9 @@ export function getTranslations(lang: Lang) {
 }
 
 export function getLocalizedPath(path: string, lang: Lang): string {
-  const clean = path.replace(/^\/en/, '').replace(/\/$/, '') || '/';
-  if (lang === 'es') {
-    return clean;
-  }
-  return clean === '/' ? '/en' : `/en${clean}`;
+  const clean =
+    path.replace(/^\/(es|en)(?=\/|$)/, '').replace(/\/$/, '') || '/';
+  return clean === '/' ? `/${lang}` : `/${lang}${clean}`;
 }
 
 export function getAlternateLang(lang: Lang): Lang {

@@ -1,6 +1,7 @@
 import type {
   AboutPageViewModel,
   CaseStudyViewModel,
+  EntryDetailPageViewModel,
   HomePageViewModel,
   LayoutViewModel,
   ProjectCardViewModel,
@@ -9,7 +10,12 @@ import type {
 } from '@/application/portfolio/dto';
 import type { PortfolioEntry, Skill } from '@/domain/portfolio/entities';
 import type { ContentRepository } from '@/domain/portfolio/repository';
-import type { Locale, PageSlug } from '@/domain/portfolio/value-objects';
+import {
+  type EntryKind,
+  type Locale,
+  locales,
+  type PageSlug,
+} from '@/domain/portfolio/value-objects';
 
 const requireValue = <T>(value: T | null | undefined, message: string): T => {
   if (!value) {
@@ -67,6 +73,30 @@ const getSkillsAndLookup = async (
   };
 };
 
+const getLocaleBasePath = (locale: Locale) => {
+  return `/${locale}`;
+};
+
+const getProjectsIndexPath = (locale: Locale) => {
+  return `${getLocaleBasePath(locale)}/projects`;
+};
+
+const getCaseStudiesDetailBasePath = (locale: Locale) => {
+  return `${getLocaleBasePath(locale)}/case-studies`;
+};
+
+const getListingPath = (locale: Locale, kind: EntryKind) => {
+  return kind === 'public-project'
+    ? `${getProjectsIndexPath(locale)}#public-heading`
+    : `${getProjectsIndexPath(locale)}#cases-heading`;
+};
+
+const getEntryPath = (locale: Locale, kind: EntryKind, slug: string) => {
+  return kind === 'public-project'
+    ? `${getProjectsIndexPath(locale)}/${slug}`
+    : `${getCaseStudiesDetailBasePath(locale)}/${slug}`;
+};
+
 const getRepository = async (
   repository?: ContentRepository
 ): Promise<ContentRepository> => {
@@ -119,6 +149,7 @@ const toProjectCardViewModel = (
 ): ProjectCardViewModel => {
   return {
     slug: entry.slug,
+    href: getEntryPath(entry.locale, entry.kind, entry.slug),
     title: entry.title,
     summary: entry.summary,
     skills: resolveSkills(entry.stack, skillLookup),
@@ -132,6 +163,7 @@ const toCaseStudyViewModel = (
 ): CaseStudyViewModel => {
   return {
     slug: entry.slug,
+    href: getEntryPath(entry.locale, entry.kind, entry.slug),
     title: entry.title,
     summary: entry.summary,
     skills: resolveSkills(entry.stack, skillLookup),
@@ -192,5 +224,69 @@ export const getAboutPageViewModel = async (
       skills: resolveSkills(experience.stack, skillLookup),
     })),
     skills: resolveSkills(document.skillSlugs, skillLookup),
+  };
+};
+
+export const listEntryRouteParams = async (
+  kind: EntryKind,
+  repository?: ContentRepository
+) => {
+  const contentRepository = await getRepository(repository);
+  const routeParams: Array<{ lang: Locale; slug: string }> = [];
+
+  for (const locale of locales) {
+    const entries = await contentRepository.listEntries(locale);
+
+    routeParams.push(
+      ...entries
+        .filter((entry) => entry.kind === kind)
+        .map((entry) => ({
+          lang: locale,
+          slug: entry.slug,
+        }))
+    );
+  }
+
+  return routeParams;
+};
+
+export const getEntryDetailPageViewModel = async (
+  locale: Locale,
+  kind: EntryKind,
+  slug: string,
+  repository?: ContentRepository
+): Promise<EntryDetailPageViewModel> => {
+  const contentRepository = await getRepository(repository);
+  const [entry, { skillLookup }] = await Promise.all([
+    contentRepository.getEntry(locale, slug),
+    getSkillsAndLookup(contentRepository, locale),
+  ]);
+
+  const document = requireValue(
+    entry,
+    `Missing entry content for ${kind}:${slug}:${locale}`
+  );
+
+  if (document.kind !== kind) {
+    throw new Error(`Unexpected entry kind for ${kind}:${slug}:${locale}`);
+  }
+
+  return {
+    title: document.title,
+    seoTitle: document.seo.title,
+    description: document.seo.description,
+    slug: document.slug,
+    href: getEntryPath(locale, document.kind, document.slug),
+    listingHref: getListingPath(locale, document.kind),
+    kind: document.kind,
+    summary: document.summary,
+    paragraphs: document.paragraphs,
+    bullets: document.bullets,
+    skills: resolveSkills(document.stack, skillLookup),
+    links: document.links,
+    featured: document.featured,
+    organization: document.organization,
+    period: document.period,
+    hasCaseStudy: document.hasCaseStudy,
   };
 };

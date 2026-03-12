@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
   getAboutPageViewModel,
+  getEntryDetailPageViewModel,
   getHomePageViewModel,
   getLayoutViewModel,
   getProjectsPageViewModel,
+  listEntryRouteParams,
 } from '@/application/portfolio/queries';
 import type {
   CvDocument,
@@ -203,10 +205,12 @@ describe('portfolio queries', () => {
     expect(page.publicProjects[0]?.github).toBe(
       'https://github.com/example/portfolio'
     );
+    expect(page.publicProjects[0]?.href).toBe('/en/projects/portfolio');
     expect(page.publicProjects[0]?.skills.map((skill) => skill.name)).toEqual([
       'React',
       'TypeScript',
     ]);
+    expect(page.caseStudies[0]?.href).toBe('/en/case-studies/private-work');
     expect(page.caseStudies[0]?.hasCaseStudy).toBe(true);
   });
 
@@ -232,5 +236,34 @@ describe('portfolio queries', () => {
         })
       )
     ).rejects.toThrow('Missing page content for home:en');
+  });
+
+  it('builds entry detail view models with canonical listing links', async () => {
+    const page = await getEntryDetailPageViewModel(
+      'en',
+      'case-study',
+      'private-work',
+      createRepository()
+    );
+
+    expect(page.href).toBe('/en/case-studies/private-work');
+    expect(page.listingHref).toBe('/en/projects#cases-heading');
+    expect(page.skills.map((skill) => skill.name)).toEqual(['TypeScript']);
+  });
+
+  it('lists route params for a given entry kind across locales', async () => {
+    const routes = await listEntryRouteParams('public-project', {
+      ...createRepository(),
+      listEntries: async (locale) =>
+        entries.map((entry) => ({
+          ...entry,
+          locale,
+        })),
+    });
+
+    expect(routes).toEqual([
+      { lang: 'es', slug: 'portfolio' },
+      { lang: 'en', slug: 'portfolio' },
+    ]);
   });
 });

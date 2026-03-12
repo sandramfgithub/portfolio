@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import type { KeyboardEvent, ReactNode } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Lang } from '@/i18n/translations';
-import { getTranslations } from '@/i18n/utils';
+import { getLocalizedPath, getTranslations } from '@/i18n/utils';
 import { TypingAnimation } from '../animated/typing-animation';
 import { TerminalChrome } from './terminal-chrome';
 import { TerminalMenu } from './terminal-menu';
@@ -26,8 +26,8 @@ export function Terminal({ lang, className }: Props) {
     setStep((s) => s + 1);
   }, []);
 
-  const projectsHref = lang === 'en' ? '/en/projects' : '/projects';
-  const aboutHref = lang === 'en' ? '/en/about' : '/about';
+  const projectsHref = getLocalizedPath('/projects', lang);
+  const aboutHref = getLocalizedPath('/about', lang);
 
   const menuItems = [
     { label: t.nav.projects, href: projectsHref },
