@@ -1,0 +1,82 @@
+[
+  {
+    "id": "home-es",
+    "slug": "home",
+    "locale": "es",
+    "title": "Sandra Martínez Fernández | Desarrolladora de Software",
+    "introParagraphs": [
+      "Desarrolladora fullstack. Producto, tooling interno y servicios con TypeScript."
+    ],
+    "seo": {
+      "title": "Sandra Martínez Fernández | Desarrolladora de Software",
+      "description": "Portfolio de proyectos, librerías y documentación técnica."
+    }
+  },
+  {
+    "id": "projects-es",
+    "slug": "projects",
+    "locale": "es",
+    "title": "Proyectos | Sandra Martínez Fernández",
+    "introParagraphs": [
+      "Aqui estan los proyectos publicos y, debajo, trabajos privados de contexto tecnico. Si tienes curiosidad, pulsa en una skill para mas detalle."
+    ],
+    "seo": {
+      "title": "Proyectos | Sandra Martínez Fernández",
+      "description": "Proyectos públicos y trabajos privados de contexto técnico."
+    }
+  },
+  {
+    "id": "about-es",
+    "slug": "about",
+    "locale": "es",
+    "title": "Sobre mí | Sandra Martínez Fernández",
+    "introParagraphs": [
+      "Trabajo sobre todo en frontends de producto, tooling interno y servicios donde la estructura del repositorio, los contratos y la operacion importan tanto como la funcionalidad.",
+      "Aqui agrupo proyectos en curso, librerias que quiero extraer y algunos trabajos anteriores que sirven de contexto tecnico."
+    ],
+    "seo": {
+      "title": "Sobre mí | Sandra Martínez Fernández",
+      "description": "Perfil, experiencia técnica y stack de Sandra Martínez Fernández."
+    }
+  },
+  {
+    "id": "home-en",
+    "slug": "home",
+    "locale": "en",
+    "title": "Sandra Martínez Fernández | Software Developer",
+    "introParagraphs": [
+      "Fullstack developer. Product, internal tooling, and services with TypeScript."
+    ],
+    "seo": {
+      "title": "Sandra Martínez Fernández | Software Developer",
+      "description": "Portfolio of projects, libraries, and technical documentation."
+    }
+  },
+  {
+    "id": "projects-en",
+    "slug": "projects",
+    "locale": "en",
+    "title": "Projects | Sandra Martínez Fernández",
+    "introParagraphs": [
+      "Here are the public projects and, below, private work for technical context. If you're curious, click a skill for more detail."
+    ],
+    "seo": {
+      "title": "Projects | Sandra Martínez Fernández",
+      "description": "Public projects and private work that provide technical context."
+    }
+  },
+  {
+    "id": "about-en",
+    "slug": "about",
+    "locale": "en",
+    "title": "About | Sandra Martínez Fernández",
+    "introParagraphs": [
+      "I mostly work on product frontends, internal tooling, and services where repository structure, contracts, and operations matter as much as functionality.",
+      "Here I group ongoing projects, libraries I want to extract, and some previous work that provides technical context."
+    ],
+    "seo": {
+      "title": "About | Sandra Martínez Fernández",
+      "description": "Profile, technical experience, and stack of Sandra Martínez Fernández."
+    }
+  }
+]

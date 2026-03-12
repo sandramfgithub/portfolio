@@ -1,0 +1,87 @@
+import type { CollectionEntry } from 'astro:content';
+import type {
+  CvDocument,
+  PageContent,
+  PortfolioEntry,
+  SiteContent,
+  Skill,
+} from '@/domain/portfolio/entities';
+
+export const mapSiteEntry = (entry: CollectionEntry<'site'>): SiteContent => {
+  return {
+    id: entry.id,
+    locale: entry.data.locale,
+    navigation: entry.data.navigation,
+    socialLinks: entry.data.socialLinks,
+  };
+};
+
+export const mapPageEntry = (entry: CollectionEntry<'pages'>): PageContent => {
+  return {
+    id: entry.id,
+    slug: entry.data.slug,
+    locale: entry.data.locale,
+    title: entry.data.title,
+    introParagraphs: entry.data.introParagraphs,
+    seo: entry.data.seo,
+  };
+};
+
+export const mapPortfolioEntry = (
+  entry: CollectionEntry<'entries'>
+): PortfolioEntry => {
+  return {
+    id: entry.id,
+    slug: entry.data.slug,
+    locale: entry.data.locale,
+    kind: entry.data.kind,
+    visibility: entry.data.visibility,
+    status: entry.data.status,
+    title: entry.data.title,
+    summary: entry.data.summary,
+    paragraphs: entry.data.paragraphs,
+    bullets: entry.data.bullets,
+    stack: entry.data.stack,
+    links: entry.data.links,
+    featured: entry.data.featured,
+    organization: entry.data.organization,
+    period: entry.data.period,
+    hasCaseStudy: entry.data.hasCaseStudy,
+    seo: entry.data.seo,
+  };
+};
+
+export const mapSkillEntry = (
+  entry: CollectionEntry<'skills'>,
+  relatedEntrySlugs: readonly string[]
+): Skill => {
+  return {
+    id: entry.id,
+    slug: entry.data.slug,
+    locale: entry.data.locale,
+    name: entry.data.name,
+    status: entry.data.status,
+    active: entry.data.active,
+    lastUsedAt: entry.data.lastUsedAt,
+    lastVersion: entry.data.lastVersion,
+    url: entry.data.url,
+    summary: entry.data.summary,
+    details: entry.data.details,
+    relatedEntrySlugs,
+    seo: entry.data.seo,
+  };
+};
+
+export const mapCvEntry = (entry: CollectionEntry<'cv'>): CvDocument => {
+  return {
+    id: entry.id,
+    locale: entry.data.locale,
+    profile: entry.data.profile,
+    contacts: entry.data.contacts,
+    experience: entry.data.experience,
+    education: entry.data.education,
+    languages: entry.data.languages,
+    certifications: entry.data.certifications,
+    skillSlugs: entry.data.skillSlugs,
+  };
+};

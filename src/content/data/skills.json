@@ -1,0 +1,1014 @@
+[
+  {
+    "id": "react-es",
+    "slug": "react",
+    "locale": "es",
+    "name": "React",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "19",
+    "url": "https://react.dev",
+    "summary": "Componentes de producto, sistemas de tablas server-side, formularios con validacion y UI interactiva.",
+    "details": [
+      "Componentes de producto, sistemas de tablas server-side, formularios con validacion y UI interactiva."
+    ],
+    "seo": {
+      "title": "React | Sandra Martínez Fernández",
+      "description": "Componentes de producto, sistemas de tablas server-side, formularios con validacion y UI interactiva."
+    }
+  },
+  {
+    "id": "typescript-es",
+    "slug": "typescript",
+    "locale": "es",
+    "name": "TypeScript",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "5.7",
+    "url": "https://www.typescriptlang.org",
+    "summary": "Lenguaje principal en todos los proyectos. Contratos estrictos, inferencia y tipos utilitarios.",
+    "details": [
+      "Lenguaje principal en todos los proyectos. Contratos estrictos, inferencia y tipos utilitarios."
+    ],
+    "seo": {
+      "title": "TypeScript | Sandra Martínez Fernández",
+      "description": "Lenguaje principal en todos los proyectos. Contratos estrictos, inferencia y tipos utilitarios."
+    }
+  },
+  {
+    "id": "astro-es",
+    "slug": "astro",
+    "locale": "es",
+    "name": "Astro",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "5",
+    "url": "https://astro.build",
+    "summary": "Framework del portfolio. Islas de hidratacion, transiciones de vista y contenido estatico.",
+    "details": [
+      "Framework del portfolio. Islas de hidratacion, transiciones de vista y contenido estatico."
+    ],
+    "seo": {
+      "title": "Astro | Sandra Martínez Fernández",
+      "description": "Framework del portfolio. Islas de hidratacion, transiciones de vista y contenido estatico."
+    }
+  },
+  {
+    "id": "tailwind-css-es",
+    "slug": "tailwind-css",
+    "locale": "es",
+    "name": "Tailwind CSS",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "4",
+    "url": "https://tailwindcss.com",
+    "summary": "Estilos de utilidad en todos los frontends. Temas custom, dark mode y responsive.",
+    "details": [
+      "Estilos de utilidad en todos los frontends. Temas custom, dark mode y responsive."
+    ],
+    "seo": {
+      "title": "Tailwind CSS | Sandra Martínez Fernández",
+      "description": "Estilos de utilidad en todos los frontends. Temas custom, dark mode y responsive."
+    }
+  },
+  {
+    "id": "shadcnui-es",
+    "slug": "shadcnui",
+    "locale": "es",
+    "name": "shadcn/ui",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://ui.shadcn.com",
+    "summary": "Componentes accesibles basados en Base UI, adaptados al sistema de diseno propio.",
+    "details": [
+      "Componentes accesibles basados en Base UI, adaptados al sistema de diseno propio."
+    ],
+    "seo": {
+      "title": "shadcn/ui | Sandra Martínez Fernández",
+      "description": "Componentes accesibles basados en Base UI, adaptados al sistema de diseno propio."
+    }
+  },
+  {
+    "id": "tanstack-table-es",
+    "slug": "tanstack-table",
+    "locale": "es",
+    "name": "TanStack Table",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "8",
+    "url": "https://tanstack.com/table",
+    "summary": "Tablas server-side con filtros, paginacion, ordenacion y vistas persistentes.",
+    "details": [
+      "Tablas server-side con filtros, paginacion, ordenacion y vistas persistentes."
+    ],
+    "seo": {
+      "title": "TanStack Table | Sandra Martínez Fernández",
+      "description": "Tablas server-side con filtros, paginacion, ordenacion y vistas persistentes."
+    }
+  },
+  {
+    "id": "zustand-es",
+    "slug": "zustand",
+    "locale": "es",
+    "name": "Zustand",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "5",
+    "url": "https://zustand.docs.pmnd.rs",
+    "summary": "Estado global ligero para filtros, vistas y configuracion de tablas.",
+    "details": [
+      "Estado global ligero para filtros, vistas y configuracion de tablas."
+    ],
+    "seo": {
+      "title": "Zustand | Sandra Martínez Fernández",
+      "description": "Estado global ligero para filtros, vistas y configuracion de tablas."
+    }
+  },
+  {
+    "id": "vitest-es",
+    "slug": "vitest",
+    "locale": "es",
+    "name": "Vitest",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "3",
+    "url": "https://vitest.dev",
+    "summary": "Tests unitarios y de integracion. Runner rapido compatible con el ecosistema Vite.",
+    "details": [
+      "Tests unitarios y de integracion. Runner rapido compatible con el ecosistema Vite."
+    ],
+    "seo": {
+      "title": "Vitest | Sandra Martínez Fernández",
+      "description": "Tests unitarios y de integracion. Runner rapido compatible con el ecosistema Vite."
+    }
+  },
+  {
+    "id": "bun-es",
+    "slug": "bun",
+    "locale": "es",
+    "name": "Bun",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://bun.sh",
+    "summary": "Runtime y package manager. Monorepo, scripts, workers y tooling interno.",
+    "details": [
+      "Runtime y package manager. Monorepo, scripts, workers y tooling interno."
+    ],
+    "seo": {
+      "title": "Bun | Sandra Martínez Fernández",
+      "description": "Runtime y package manager. Monorepo, scripts, workers y tooling interno."
+    }
+  },
+  {
+    "id": "postgresql-es",
+    "slug": "postgresql",
+    "locale": "es",
+    "name": "PostgreSQL",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "16",
+    "url": "https://www.postgresql.org",
+    "summary": "Base de datos principal. Leasing, advisory locks, migraciones y busqueda.",
+    "details": [
+      "Base de datos principal. Leasing, advisory locks, migraciones y busqueda."
+    ],
+    "seo": {
+      "title": "PostgreSQL | Sandra Martínez Fernández",
+      "description": "Base de datos principal. Leasing, advisory locks, migraciones y busqueda."
+    }
+  },
+  {
+    "id": "drizzle-orm-es",
+    "slug": "drizzle-orm",
+    "locale": "es",
+    "name": "Drizzle ORM",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://orm.drizzle.team",
+    "summary": "ORM type-safe para PostgreSQL. Esquemas declarativos y migraciones.",
+    "details": [
+      "ORM type-safe para PostgreSQL. Esquemas declarativos y migraciones."
+    ],
+    "seo": {
+      "title": "Drizzle ORM | Sandra Martínez Fernández",
+      "description": "ORM type-safe para PostgreSQL. Esquemas declarativos y migraciones."
+    }
+  },
+  {
+    "id": "opentelemetry-es",
+    "slug": "opentelemetry",
+    "locale": "es",
+    "name": "OpenTelemetry",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://opentelemetry.io",
+    "summary": "Trazas y metricas para observabilidad de workers y servicios.",
+    "details": [
+      "Trazas y metricas para observabilidad de workers y servicios."
+    ],
+    "seo": {
+      "title": "OpenTelemetry | Sandra Martínez Fernández",
+      "description": "Trazas y metricas para observabilidad de workers y servicios."
+    }
+  },
+  {
+    "id": "trpc-es",
+    "slug": "trpc",
+    "locale": "es",
+    "name": "tRPC",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "11",
+    "url": "https://trpc.io",
+    "summary": "Contratos API end-to-end type-safe entre cliente y servidor.",
+    "details": ["Contratos API end-to-end type-safe entre cliente y servidor."],
+    "seo": {
+      "title": "tRPC | Sandra Martínez Fernández",
+      "description": "Contratos API end-to-end type-safe entre cliente y servidor."
+    }
+  },
+  {
+    "id": "elasticsearch-es",
+    "slug": "elasticsearch",
+    "locale": "es",
+    "name": "Elasticsearch",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.elastic.co/elasticsearch",
+    "summary": "Motor de busqueda para indexacion y queries complejas sobre datos de producto.",
+    "details": [
+      "Motor de busqueda para indexacion y queries complejas sobre datos de producto."
+    ],
+    "seo": {
+      "title": "Elasticsearch | Sandra Martínez Fernández",
+      "description": "Motor de busqueda para indexacion y queries complejas sobre datos de producto."
+    }
+  },
+  {
+    "id": "capacitor-es",
+    "slug": "capacitor",
+    "locale": "es",
+    "name": "Capacitor",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://capacitorjs.com",
+    "summary": "Apps hibridas moviles con acceso a APIs nativas y sync offline.",
+    "details": [
+      "Apps hibridas moviles con acceso a APIs nativas y sync offline."
+    ],
+    "seo": {
+      "title": "Capacitor | Sandra Martínez Fernández",
+      "description": "Apps hibridas moviles con acceso a APIs nativas y sync offline."
+    }
+  },
+  {
+    "id": "nest-es",
+    "slug": "nest",
+    "locale": "es",
+    "name": "Nest",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://nestjs.com",
+    "summary": "Framework backend con inyeccion de dependencias, modulos y guards.",
+    "details": [
+      "Framework backend con inyeccion de dependencias, modulos y guards."
+    ],
+    "seo": {
+      "title": "Nest | Sandra Martínez Fernández",
+      "description": "Framework backend con inyeccion de dependencias, modulos y guards."
+    }
+  },
+  {
+    "id": "graphql-es",
+    "slug": "graphql",
+    "locale": "es",
+    "name": "GraphQL",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://graphql.org",
+    "summary": "APIs con schema tipado, resolvers y subscriptions en tiempo real.",
+    "details": [
+      "APIs con schema tipado, resolvers y subscriptions en tiempo real."
+    ],
+    "seo": {
+      "title": "GraphQL | Sandra Martínez Fernández",
+      "description": "APIs con schema tipado, resolvers y subscriptions en tiempo real."
+    }
+  },
+  {
+    "id": "rest-es",
+    "slug": "rest",
+    "locale": "es",
+    "name": "REST",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://restfulapi.net",
+    "summary": "APIs HTTP convencionales con contratos OpenAPI.",
+    "details": ["APIs HTTP convencionales con contratos OpenAPI."],
+    "seo": {
+      "title": "REST | Sandra Martínez Fernández",
+      "description": "APIs HTTP convencionales con contratos OpenAPI."
+    }
+  },
+  {
+    "id": "vue-es",
+    "slug": "vue",
+    "locale": "es",
+    "name": "Vue",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2023",
+    "lastVersion": "3",
+    "url": "https://vuejs.org",
+    "summary": "Frontends de gestion con Composition API y formularios reactivos.",
+    "details": [
+      "Frontends de gestion con Composition API y formularios reactivos."
+    ],
+    "seo": {
+      "title": "Vue | Sandra Martínez Fernández",
+      "description": "Frontends de gestion con Composition API y formularios reactivos."
+    }
+  },
+  {
+    "id": "c-es",
+    "slug": "c",
+    "locale": "es",
+    "name": "C",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2022",
+    "lastVersion": null,
+    "url": "https://en.cppreference.com/w/c",
+    "summary": "Compilador propio con analisis lexico, sintactico y optimizacion de codigo.",
+    "details": [
+      "Compilador propio con analisis lexico, sintactico y optimizacion de codigo."
+    ],
+    "seo": {
+      "title": "C | Sandra Martínez Fernández",
+      "description": "Compilador propio con analisis lexico, sintactico y optimizacion de codigo."
+    }
+  },
+  {
+    "id": "java-es",
+    "slug": "java",
+    "locale": "es",
+    "name": "Java",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2022",
+    "lastVersion": null,
+    "url": "https://dev.java",
+    "summary": "Apps modulares con sistema de plugins, gRPC y disciplina de release.",
+    "details": [
+      "Apps modulares con sistema de plugins, gRPC y disciplina de release."
+    ],
+    "seo": {
+      "title": "Java | Sandra Martínez Fernández",
+      "description": "Apps modulares con sistema de plugins, gRPC y disciplina de release."
+    }
+  },
+  {
+    "id": "grpc-es",
+    "slug": "grpc",
+    "locale": "es",
+    "name": "gRPC",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2022",
+    "lastVersion": null,
+    "url": "https://grpc.io",
+    "summary": "Comunicacion entre servicios con protobuf y streaming bidireccional.",
+    "details": [
+      "Comunicacion entre servicios con protobuf y streaming bidireccional."
+    ],
+    "seo": {
+      "title": "gRPC | Sandra Martínez Fernández",
+      "description": "Comunicacion entre servicios con protobuf y streaming bidireccional."
+    }
+  },
+  {
+    "id": "vite-es",
+    "slug": "vite",
+    "locale": "es",
+    "name": "Vite",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "6",
+    "url": "https://vite.dev",
+    "summary": "Bundler para desarrollo rapido con HMR y builds optimizados.",
+    "details": ["Bundler para desarrollo rapido con HMR y builds optimizados."],
+    "seo": {
+      "title": "Vite | Sandra Martínez Fernández",
+      "description": "Bundler para desarrollo rapido con HMR y builds optimizados."
+    }
+  },
+  {
+    "id": "docker-es",
+    "slug": "docker",
+    "locale": "es",
+    "name": "Docker",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.docker.com",
+    "summary": "Contenedores para desarrollo local, CI y despliegue de servicios.",
+    "details": [
+      "Contenedores para desarrollo local, CI y despliegue de servicios."
+    ],
+    "seo": {
+      "title": "Docker | Sandra Martínez Fernández",
+      "description": "Contenedores para desarrollo local, CI y despliegue de servicios."
+    }
+  },
+  {
+    "id": "github-es",
+    "slug": "github",
+    "locale": "es",
+    "name": "GitHub",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://github.com",
+    "summary": "Repositorios, CI/CD con Actions, revisiones de codigo y gestion de releases.",
+    "details": [
+      "Repositorios, CI/CD con Actions, revisiones de codigo y gestion de releases."
+    ],
+    "seo": {
+      "title": "GitHub | Sandra Martínez Fernández",
+      "description": "Repositorios, CI/CD con Actions, revisiones de codigo y gestion de releases."
+    }
+  },
+  {
+    "id": "codex-es",
+    "slug": "codex",
+    "locale": "es",
+    "name": "Codex",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://openai.com/index/codex",
+    "summary": "Asistente de codigo para generacion, refactor y exploracion de APIs.",
+    "details": [
+      "Asistente de codigo para generacion, refactor y exploracion de APIs."
+    ],
+    "seo": {
+      "title": "Codex | Sandra Martínez Fernández",
+      "description": "Asistente de codigo para generacion, refactor y exploracion de APIs."
+    }
+  },
+  {
+    "id": "claude-es",
+    "slug": "claude",
+    "locale": "es",
+    "name": "Claude",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://claude.ai",
+    "summary": "Asistente AI para desarrollo, arquitectura y documentacion tecnica.",
+    "details": [
+      "Asistente AI para desarrollo, arquitectura y documentacion tecnica."
+    ],
+    "seo": {
+      "title": "Claude | Sandra Martínez Fernández",
+      "description": "Asistente AI para desarrollo, arquitectura y documentacion tecnica."
+    }
+  },
+  {
+    "id": "react-en",
+    "slug": "react",
+    "locale": "en",
+    "name": "React",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "19",
+    "url": "https://react.dev",
+    "summary": "Product components, server-side table systems, validated forms, and interactive UI.",
+    "details": [
+      "Product components, server-side table systems, validated forms, and interactive UI."
+    ],
+    "seo": {
+      "title": "React | Sandra Martínez Fernández",
+      "description": "Product components, server-side table systems, validated forms, and interactive UI."
+    }
+  },
+  {
+    "id": "typescript-en",
+    "slug": "typescript",
+    "locale": "en",
+    "name": "TypeScript",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "5.7",
+    "url": "https://www.typescriptlang.org",
+    "summary": "Primary language across all projects. Strict contracts, inference, and utility types.",
+    "details": [
+      "Primary language across all projects. Strict contracts, inference, and utility types."
+    ],
+    "seo": {
+      "title": "TypeScript | Sandra Martínez Fernández",
+      "description": "Primary language across all projects. Strict contracts, inference, and utility types."
+    }
+  },
+  {
+    "id": "astro-en",
+    "slug": "astro",
+    "locale": "en",
+    "name": "Astro",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "5",
+    "url": "https://astro.build",
+    "summary": "Portfolio framework. Hydration islands, view transitions, and static content.",
+    "details": [
+      "Portfolio framework. Hydration islands, view transitions, and static content."
+    ],
+    "seo": {
+      "title": "Astro | Sandra Martínez Fernández",
+      "description": "Portfolio framework. Hydration islands, view transitions, and static content."
+    }
+  },
+  {
+    "id": "tailwind-css-en",
+    "slug": "tailwind-css",
+    "locale": "en",
+    "name": "Tailwind CSS",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "4",
+    "url": "https://tailwindcss.com",
+    "summary": "Utility styles across all frontends. Custom themes, dark mode, and responsive.",
+    "details": [
+      "Utility styles across all frontends. Custom themes, dark mode, and responsive."
+    ],
+    "seo": {
+      "title": "Tailwind CSS | Sandra Martínez Fernández",
+      "description": "Utility styles across all frontends. Custom themes, dark mode, and responsive."
+    }
+  },
+  {
+    "id": "shadcnui-en",
+    "slug": "shadcnui",
+    "locale": "en",
+    "name": "shadcn/ui",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://ui.shadcn.com",
+    "summary": "Accessible components built on Base UI, adapted to the project's design system.",
+    "details": [
+      "Accessible components built on Base UI, adapted to the project's design system."
+    ],
+    "seo": {
+      "title": "shadcn/ui | Sandra Martínez Fernández",
+      "description": "Accessible components built on Base UI, adapted to the project's design system."
+    }
+  },
+  {
+    "id": "tanstack-table-en",
+    "slug": "tanstack-table",
+    "locale": "en",
+    "name": "TanStack Table",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "8",
+    "url": "https://tanstack.com/table",
+    "summary": "Server-side tables with filters, pagination, sorting, and persistent views.",
+    "details": [
+      "Server-side tables with filters, pagination, sorting, and persistent views."
+    ],
+    "seo": {
+      "title": "TanStack Table | Sandra Martínez Fernández",
+      "description": "Server-side tables with filters, pagination, sorting, and persistent views."
+    }
+  },
+  {
+    "id": "zustand-en",
+    "slug": "zustand",
+    "locale": "en",
+    "name": "Zustand",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "5",
+    "url": "https://zustand.docs.pmnd.rs",
+    "summary": "Lightweight global state for filters, views, and table configuration.",
+    "details": [
+      "Lightweight global state for filters, views, and table configuration."
+    ],
+    "seo": {
+      "title": "Zustand | Sandra Martínez Fernández",
+      "description": "Lightweight global state for filters, views, and table configuration."
+    }
+  },
+  {
+    "id": "vitest-en",
+    "slug": "vitest",
+    "locale": "en",
+    "name": "Vitest",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "3",
+    "url": "https://vitest.dev",
+    "summary": "Unit and integration tests. Fast runner compatible with the Vite ecosystem.",
+    "details": [
+      "Unit and integration tests. Fast runner compatible with the Vite ecosystem."
+    ],
+    "seo": {
+      "title": "Vitest | Sandra Martínez Fernández",
+      "description": "Unit and integration tests. Fast runner compatible with the Vite ecosystem."
+    }
+  },
+  {
+    "id": "bun-en",
+    "slug": "bun",
+    "locale": "en",
+    "name": "Bun",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://bun.sh",
+    "summary": "Runtime and package manager. Monorepo, scripts, workers, and internal tooling.",
+    "details": [
+      "Runtime and package manager. Monorepo, scripts, workers, and internal tooling."
+    ],
+    "seo": {
+      "title": "Bun | Sandra Martínez Fernández",
+      "description": "Runtime and package manager. Monorepo, scripts, workers, and internal tooling."
+    }
+  },
+  {
+    "id": "postgresql-en",
+    "slug": "postgresql",
+    "locale": "en",
+    "name": "PostgreSQL",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "16",
+    "url": "https://www.postgresql.org",
+    "summary": "Primary database. Leasing, advisory locks, migrations, and search.",
+    "details": [
+      "Primary database. Leasing, advisory locks, migrations, and search."
+    ],
+    "seo": {
+      "title": "PostgreSQL | Sandra Martínez Fernández",
+      "description": "Primary database. Leasing, advisory locks, migrations, and search."
+    }
+  },
+  {
+    "id": "drizzle-orm-en",
+    "slug": "drizzle-orm",
+    "locale": "en",
+    "name": "Drizzle ORM",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://orm.drizzle.team",
+    "summary": "Type-safe ORM for PostgreSQL. Declarative schemas and migrations.",
+    "details": [
+      "Type-safe ORM for PostgreSQL. Declarative schemas and migrations."
+    ],
+    "seo": {
+      "title": "Drizzle ORM | Sandra Martínez Fernández",
+      "description": "Type-safe ORM for PostgreSQL. Declarative schemas and migrations."
+    }
+  },
+  {
+    "id": "opentelemetry-en",
+    "slug": "opentelemetry",
+    "locale": "en",
+    "name": "OpenTelemetry",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://opentelemetry.io",
+    "summary": "Traces and metrics for worker and service observability.",
+    "details": ["Traces and metrics for worker and service observability."],
+    "seo": {
+      "title": "OpenTelemetry | Sandra Martínez Fernández",
+      "description": "Traces and metrics for worker and service observability."
+    }
+  },
+  {
+    "id": "trpc-en",
+    "slug": "trpc",
+    "locale": "en",
+    "name": "tRPC",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "11",
+    "url": "https://trpc.io",
+    "summary": "End-to-end type-safe API contracts between client and server.",
+    "details": [
+      "End-to-end type-safe API contracts between client and server."
+    ],
+    "seo": {
+      "title": "tRPC | Sandra Martínez Fernández",
+      "description": "End-to-end type-safe API contracts between client and server."
+    }
+  },
+  {
+    "id": "elasticsearch-en",
+    "slug": "elasticsearch",
+    "locale": "en",
+    "name": "Elasticsearch",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.elastic.co/elasticsearch",
+    "summary": "Search engine for indexing and complex queries on product data.",
+    "details": [
+      "Search engine for indexing and complex queries on product data."
+    ],
+    "seo": {
+      "title": "Elasticsearch | Sandra Martínez Fernández",
+      "description": "Search engine for indexing and complex queries on product data."
+    }
+  },
+  {
+    "id": "capacitor-en",
+    "slug": "capacitor",
+    "locale": "en",
+    "name": "Capacitor",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://capacitorjs.com",
+    "summary": "Hybrid mobile apps with native API access and offline sync.",
+    "details": ["Hybrid mobile apps with native API access and offline sync."],
+    "seo": {
+      "title": "Capacitor | Sandra Martínez Fernández",
+      "description": "Hybrid mobile apps with native API access and offline sync."
+    }
+  },
+  {
+    "id": "nest-en",
+    "slug": "nest",
+    "locale": "en",
+    "name": "Nest",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://nestjs.com",
+    "summary": "Backend framework with dependency injection, modules, and guards.",
+    "details": [
+      "Backend framework with dependency injection, modules, and guards."
+    ],
+    "seo": {
+      "title": "Nest | Sandra Martínez Fernández",
+      "description": "Backend framework with dependency injection, modules, and guards."
+    }
+  },
+  {
+    "id": "graphql-en",
+    "slug": "graphql",
+    "locale": "en",
+    "name": "GraphQL",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://graphql.org",
+    "summary": "APIs with typed schema, resolvers, and real-time subscriptions.",
+    "details": [
+      "APIs with typed schema, resolvers, and real-time subscriptions."
+    ],
+    "seo": {
+      "title": "GraphQL | Sandra Martínez Fernández",
+      "description": "APIs with typed schema, resolvers, and real-time subscriptions."
+    }
+  },
+  {
+    "id": "rest-en",
+    "slug": "rest",
+    "locale": "en",
+    "name": "REST",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2024",
+    "lastVersion": null,
+    "url": "https://restfulapi.net",
+    "summary": "Conventional HTTP APIs with OpenAPI contracts.",
+    "details": ["Conventional HTTP APIs with OpenAPI contracts."],
+    "seo": {
+      "title": "REST | Sandra Martínez Fernández",
+      "description": "Conventional HTTP APIs with OpenAPI contracts."
+    }
+  },
+  {
+    "id": "vue-en",
+    "slug": "vue",
+    "locale": "en",
+    "name": "Vue",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2023",
+    "lastVersion": "3",
+    "url": "https://vuejs.org",
+    "summary": "Management frontends with Composition API and reactive forms.",
+    "details": [
+      "Management frontends with Composition API and reactive forms."
+    ],
+    "seo": {
+      "title": "Vue | Sandra Martínez Fernández",
+      "description": "Management frontends with Composition API and reactive forms."
+    }
+  },
+  {
+    "id": "c-en",
+    "slug": "c",
+    "locale": "en",
+    "name": "C",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2022",
+    "lastVersion": null,
+    "url": "https://en.cppreference.com/w/c",
+    "summary": "Custom compiler with lexical analysis, parsing, and code optimization.",
+    "details": [
+      "Custom compiler with lexical analysis, parsing, and code optimization."
+    ],
+    "seo": {
+      "title": "C | Sandra Martínez Fernández",
+      "description": "Custom compiler with lexical analysis, parsing, and code optimization."
+    }
+  },
+  {
+    "id": "java-en",
+    "slug": "java",
+    "locale": "en",
+    "name": "Java",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2022",
+    "lastVersion": null,
+    "url": "https://dev.java",
+    "summary": "Modular apps with plugin system, gRPC, and release discipline.",
+    "details": [
+      "Modular apps with plugin system, gRPC, and release discipline."
+    ],
+    "seo": {
+      "title": "Java | Sandra Martínez Fernández",
+      "description": "Modular apps with plugin system, gRPC, and release discipline."
+    }
+  },
+  {
+    "id": "grpc-en",
+    "slug": "grpc",
+    "locale": "en",
+    "name": "gRPC",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2022",
+    "lastVersion": null,
+    "url": "https://grpc.io",
+    "summary": "Service communication with protobuf and bidirectional streaming.",
+    "details": [
+      "Service communication with protobuf and bidirectional streaming."
+    ],
+    "seo": {
+      "title": "gRPC | Sandra Martínez Fernández",
+      "description": "Service communication with protobuf and bidirectional streaming."
+    }
+  },
+  {
+    "id": "vite-en",
+    "slug": "vite",
+    "locale": "en",
+    "name": "Vite",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": "6",
+    "url": "https://vite.dev",
+    "summary": "Bundler for fast development with HMR and optimized builds.",
+    "details": ["Bundler for fast development with HMR and optimized builds."],
+    "seo": {
+      "title": "Vite | Sandra Martínez Fernández",
+      "description": "Bundler for fast development with HMR and optimized builds."
+    }
+  },
+  {
+    "id": "docker-en",
+    "slug": "docker",
+    "locale": "en",
+    "name": "Docker",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.docker.com",
+    "summary": "Containers for local development, CI, and service deployment.",
+    "details": [
+      "Containers for local development, CI, and service deployment."
+    ],
+    "seo": {
+      "title": "Docker | Sandra Martínez Fernández",
+      "description": "Containers for local development, CI, and service deployment."
+    }
+  },
+  {
+    "id": "github-en",
+    "slug": "github",
+    "locale": "en",
+    "name": "GitHub",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://github.com",
+    "summary": "Repositories, CI/CD with Actions, code reviews, and release management.",
+    "details": [
+      "Repositories, CI/CD with Actions, code reviews, and release management."
+    ],
+    "seo": {
+      "title": "GitHub | Sandra Martínez Fernández",
+      "description": "Repositories, CI/CD with Actions, code reviews, and release management."
+    }
+  },
+  {
+    "id": "codex-en",
+    "slug": "codex",
+    "locale": "en",
+    "name": "Codex",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://openai.com/index/codex",
+    "summary": "Code assistant for generation, refactoring, and API exploration.",
+    "details": [
+      "Code assistant for generation, refactoring, and API exploration."
+    ],
+    "seo": {
+      "title": "Codex | Sandra Martínez Fernández",
+      "description": "Code assistant for generation, refactoring, and API exploration."
+    }
+  },
+  {
+    "id": "claude-en",
+    "slug": "claude",
+    "locale": "en",
+    "name": "Claude",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://claude.ai",
+    "summary": "AI assistant for development, architecture, and technical documentation.",
+    "details": [
+      "AI assistant for development, architecture, and technical documentation."
+    ],
+    "seo": {
+      "title": "Claude | Sandra Martínez Fernández",
+      "description": "AI assistant for development, architecture, and technical documentation."
+    }
+  }
+]

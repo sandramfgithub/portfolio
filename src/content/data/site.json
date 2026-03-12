@@ -1,0 +1,82 @@
+[
+  {
+    "id": "site-es",
+    "locale": "es",
+    "navigation": [
+      {
+        "href": "/",
+        "label": "Inicio"
+      },
+      {
+        "href": "/projects",
+        "label": "Proyectos"
+      },
+      {
+        "href": "/about",
+        "label": "Sobre mí"
+      }
+    ],
+    "socialLinks": [
+      {
+        "href": "https://x.com/sandramfgithub",
+        "label": "X",
+        "icon": "twitter"
+      },
+      {
+        "href": "https://github.com/sandramfgithub",
+        "label": "GitHub",
+        "icon": "github"
+      },
+      {
+        "href": "https://www.linkedin.com/in/sandramfdeveloper",
+        "label": "LinkedIn",
+        "icon": "linkedin"
+      },
+      {
+        "href": "mailto:sandramfgithub@gmail.com",
+        "label": "Email",
+        "icon": "mail"
+      }
+    ]
+  },
+  {
+    "id": "site-en",
+    "locale": "en",
+    "navigation": [
+      {
+        "href": "/en",
+        "label": "Home"
+      },
+      {
+        "href": "/en/projects",
+        "label": "Projects"
+      },
+      {
+        "href": "/en/about",
+        "label": "About"
+      }
+    ],
+    "socialLinks": [
+      {
+        "href": "https://x.com/sandramfgithub",
+        "label": "X",
+        "icon": "twitter"
+      },
+      {
+        "href": "https://github.com/sandramfgithub",
+        "label": "GitHub",
+        "icon": "github"
+      },
+      {
+        "href": "https://www.linkedin.com/in/sandramfdeveloper",
+        "label": "LinkedIn",
+        "icon": "linkedin"
+      },
+      {
+        "href": "mailto:sandramfgithub@gmail.com",
+        "label": "Email",
+        "icon": "mail"
+      }
+    ]
+  }
+]

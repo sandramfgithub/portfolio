@@ -1,0 +1,18 @@
+import type {
+  CvDocument,
+  PageContent,
+  PortfolioEntry,
+  SiteContent,
+  Skill,
+} from '@/domain/portfolio/entities';
+import type { Locale, PageSlug } from '@/domain/portfolio/value-objects';
+
+export interface ContentRepository {
+  getCv(locale: Locale): Promise<CvDocument | null>;
+  getEntry(locale: Locale, slug: string): Promise<PortfolioEntry | null>;
+  getPage(locale: Locale, slug: PageSlug): Promise<PageContent | null>;
+  getSite(locale: Locale): Promise<SiteContent | null>;
+  getSkill(locale: Locale, slug: string): Promise<Skill | null>;
+  listEntries(locale: Locale): Promise<readonly PortfolioEntry[]>;
+  listSkills(locale: Locale): Promise<readonly Skill[]>;
+}
