@@ -1,0 +1,64 @@
+import type { CvViewModel } from '@/application/cv/dto';
+import type { Skill } from '@/domain/portfolio/entities';
+import type { ContentRepository } from '@/domain/portfolio/repository';
+import type { Locale } from '@/domain/portfolio/value-objects';
+
+const requireValue = <T>(value: T | null | undefined, message: string): T => {
+  if (!value) {
+    throw new Error(message);
+  }
+
+  return value;
+};
+
+const createSkillNameLookup = (skills: readonly Skill[]) => {
+  return new Map(skills.map((skill) => [skill.slug, skill.name]));
+};
+
+const resolveSkillNames = (
+  skillSlugs: readonly string[],
+  skillNameLookup: Map<string, string>
+) => {
+  return skillSlugs.flatMap((skillSlug) => {
+    const skillName = skillNameLookup.get(skillSlug);
+    return skillName ? [skillName] : [];
+  });
+};
+
+const getRepository = async (repository?: ContentRepository) => {
+  if (repository) {
+    return repository;
+  }
+
+  const module = await import('@/infrastructure/content-local/repository');
+  return module.localContentRepository;
+};
+
+export const getCvViewModel = async (
+  locale: Locale,
+  repository?: ContentRepository
+): Promise<CvViewModel> => {
+  const contentRepository = await getRepository(repository);
+  const [cv, skills] = await Promise.all([
+    contentRepository.getCv(locale),
+    contentRepository.listSkills(locale),
+  ]);
+
+  const document = requireValue(cv, `Missing CV content for ${locale}`);
+  const skillNameLookup = createSkillNameLookup(skills);
+
+  return {
+    profile: document.profile,
+    contacts: document.contacts,
+    experience: document.experience.map((experience) => ({
+      role: experience.role,
+      company: experience.company,
+      period: experience.period,
+      summary: experience.summary,
+      achievements: experience.achievements,
+      stack: resolveSkillNames(experience.stack, skillNameLookup),
+    })),
+    languages: document.languages,
+    skillNames: resolveSkillNames(document.skillSlugs, skillNameLookup),
+  };
+};
