@@ -1,0 +1,25 @@
+---
+export interface Props {
+  as?: 'h1' | 'h2' | 'h3';
+  eyebrow?: string;
+  id?: string;
+  intro?: string;
+  title: string;
+}
+
+const { eyebrow, title, intro, as: Tag = 'h2', id } = Astro.props as Props;
+---
+
+<div class="space-y-3">
+  {eyebrow && <p class="eyebrow">{eyebrow}</p>}
+  <Tag
+    id={id}
+    class="font-serif text-3xl font-semibold leading-tight tracking-tight text-balance sm:text-4xl"
+    >{title}</Tag
+  >
+  {intro && (
+    <p class="max-w-2xl text-muted-foreground text-sm leading-7 sm:text-base">
+      {intro}
+    </p>
+  )}
+</div>

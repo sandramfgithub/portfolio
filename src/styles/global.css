@@ -1,0 +1,281 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/outfit";
+@import "@fontsource-variable/source-serif-4";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.13 0 0);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.13 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.13 0 0);
+  --primary: oklch(0.13 0 0);
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.96 0 0);
+  --secondary-foreground: oklch(0.2 0 0);
+  --muted: oklch(0.96 0 0);
+  --muted-foreground: oklch(0.45 0 0);
+  --accent: oklch(0.96 0 0);
+  --accent-foreground: oklch(0.13 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.91 0 0);
+  --input: oklch(0.91 0 0);
+  --ring: oklch(0.7 0 0);
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.15 0 0);
+  --foreground: oklch(0.95 0 0);
+  --card: oklch(0.1 0 0);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.1 0 0);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.95 0 0);
+  --primary-foreground: oklch(0.1 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.95 0 0);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.18 0 0);
+  --accent-foreground: oklch(0.95 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.5 0 0);
+}
+
+@theme inline {
+  --font-sans: "Outfit Variable", sans-serif;
+  --font-serif: "Source Serif 4 Variable", serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    @apply font-sans antialiased;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh;
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .page-shell {
+    @apply mx-auto w-full max-w-4xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .eyebrow {
+    @apply font-serif text-xs font-medium tracking-[0.14em] text-foreground/60 uppercase;
+  }
+
+  .font-serif {
+    font-family: var(--font-serif);
+  }
+}
+
+/* --- Motion tokens --- */
+
+@keyframes blink-caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* --- Entrance choreography --- */
+
+main > * {
+  animation: fade-up 0.45s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+main > :nth-child(2) {
+  animation-delay: 60ms;
+}
+main > :nth-child(3) {
+  animation-delay: 120ms;
+}
+main > :nth-child(4) {
+  animation-delay: 180ms;
+}
+main > :nth-child(n + 5) {
+  animation-delay: 240ms;
+}
+
+footer {
+  animation: fade-in 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.3s both;
+}
+
+/* --- Nav link underline animation --- */
+
+.nav-link::after {
+  position: absolute;
+  inset-inline: 0.75rem;
+  bottom: 0;
+  height: 1px;
+  content: "";
+  background: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.nav-link:hover::after,
+.nav-link[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.nav-link[aria-current="page"]::after {
+  background: var(--foreground);
+}
+
+/* --- Icon button hover (glow + fill) --- */
+
+.icon-btn {
+  transition: color 0.2s;
+  @apply text-muted-foreground;
+}
+.icon-btn:hover {
+  @apply text-foreground;
+}
+.icon-btn:hover svg {
+  fill: currentColor;
+}
+
+/* --- Item stagger --- */
+
+.fade-up-item {
+  animation: fade-up 0.45s cubic-bezier(0.25, 1, 0.5, 1) both;
+}
+
+/* --- Hover feedback --- */
+
+.card-lift {
+  /* Exit: snappy settle — shadow follows transform closely */
+  transition:
+    transform 0.25s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) {
+  .card-lift:hover {
+    /* Enter: shadow lags behind the lift — feels physical */
+    box-shadow:
+      0 4px 12px -2px oklch(0 0 0 / 0.06),
+      0 14px 28px -8px oklch(0 0 0 / 0.04);
+    transform: translateY(-3px) scale(1.005);
+    /* Enter: shadow lags behind the lift — feels physical */
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  :is(.dark) .card-lift:hover {
+    box-shadow:
+      0 4px 12px -2px oklch(0 0 0 / 0.2),
+      0 14px 28px -8px oklch(0 0 0 / 0.15);
+  }
+}
+
+/* --- Terminal cursor --- */
+
+@utility animate-blink-caret {
+  animation: blink-caret 0.8s step-end infinite;
+}
+
+/* --- Theme fade --- */
+
+html.theme-transition,
+html.theme-transition body,
+html.theme-transition .bg-card,
+html.theme-transition .bg-background,
+html.theme-transition .bg-muted,
+html.theme-transition .bg-secondary {
+  transition:
+    background-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* --- Reduced motion --- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  main > *,
+  footer,
+  .fade-up-item {
+    animation: none;
+  }
+
+  .card-lift {
+    transition: none;
+  }
+
+  .icon-btn {
+    transition: none;
+  }
+
+  html.theme-transition,
+  html.theme-transition body,
+  html.theme-transition .bg-card,
+  html.theme-transition .bg-background,
+  html.theme-transition .bg-muted,
+  html.theme-transition .bg-secondary {
+    transition: none;
+  }
+
+  .animate-blink-caret {
+    animation: none;
+  }
+}

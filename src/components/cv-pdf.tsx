@@ -1,0 +1,297 @@
+import {
+  Document,
+  Font,
+  Page,
+  StyleSheet,
+  Text,
+  View,
+} from '@react-pdf/renderer';
+import type { CvProfile, Experience, Language } from '@/data/cv';
+
+// ---------- Fonts ----------
+
+Font.register({
+  family: 'Outfit',
+  fonts: [
+    { src: '/fonts/Outfit-Regular.ttf', fontWeight: 400 },
+    { src: '/fonts/Outfit-Medium.ttf', fontWeight: 500 },
+    { src: '/fonts/Outfit-SemiBold.ttf', fontWeight: 600 },
+  ],
+});
+
+Font.registerHyphenationCallback((word) => [word]);
+
+// ---------- Colors (hex — react-pdf doesn't support oklch) ----------
+
+const c = {
+  primary: '#1A1A1A',
+  foreground: '#1A1A1A',
+  muted: '#6B6B6B',
+  bgMuted: '#F0F0F0',
+  border: '#E0E0E0',
+  white: '#FFFFFF',
+};
+
+// ---------- Styles ----------
+
+const s = StyleSheet.create({
+  page: {
+    fontFamily: 'Outfit',
+    fontSize: 9,
+    color: c.foreground,
+    backgroundColor: c.white,
+    paddingTop: 0,
+    paddingBottom: 32,
+    paddingHorizontal: 36,
+  },
+  accentBar: {
+    height: 4,
+    backgroundColor: c.primary,
+    marginHorizontal: -36,
+    marginBottom: 24,
+  },
+
+  // Header
+  headerName: {
+    fontSize: 22,
+    fontWeight: 600,
+    letterSpacing: -0.5,
+  },
+  headerRole: {
+    fontSize: 11,
+    fontWeight: 500,
+    color: c.muted,
+    marginTop: 2,
+  },
+  headerContact: {
+    fontSize: 8,
+    color: c.muted,
+    marginTop: 6,
+    flexDirection: 'row',
+    gap: 10,
+  },
+
+  // Sections
+  sectionTitle: {
+    fontSize: 7.5,
+    fontWeight: 600,
+    letterSpacing: 1.5,
+    textTransform: 'uppercase',
+    color: c.primary,
+    marginBottom: 8,
+    marginTop: 18,
+  },
+  separator: {
+    height: 1,
+    backgroundColor: c.border,
+    marginBottom: 2,
+  },
+
+  // Profile
+  summary: {
+    fontSize: 9,
+    lineHeight: 1.6,
+    color: c.muted,
+  },
+
+  // Experience
+  expHeader: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-start',
+    marginBottom: 3,
+  },
+  expRole: {
+    fontSize: 11,
+    fontWeight: 600,
+  },
+  expCompany: {
+    fontSize: 9,
+    fontWeight: 500,
+    color: c.muted,
+  },
+  expPeriod: {
+    fontSize: 8,
+    color: c.muted,
+    fontWeight: 500,
+  },
+  expSummary: {
+    fontSize: 9,
+    lineHeight: 1.5,
+    color: c.muted,
+    marginBottom: 4,
+  },
+  achievement: {
+    fontSize: 8.5,
+    lineHeight: 1.5,
+    color: c.foreground,
+    paddingLeft: 10,
+    marginBottom: 2,
+  },
+  achievementBullet: {
+    position: 'absolute',
+    left: 0,
+    top: 0,
+    color: c.primary,
+    fontSize: 8.5,
+  },
+
+  // Tags
+  tagsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 4,
+    marginTop: 6,
+  },
+  tag: {
+    fontSize: 7,
+    fontWeight: 500,
+    color: c.foreground,
+    backgroundColor: c.bgMuted,
+    paddingHorizontal: 6,
+    paddingVertical: 2.5,
+    borderRadius: 4,
+  },
+
+  // Two columns bottom
+  twoCol: {
+    flexDirection: 'row',
+    gap: 24,
+    marginTop: 18,
+  },
+  colLeft: {
+    flex: 1,
+  },
+  colRight: {
+    width: 180,
+  },
+
+  // Languages
+  langRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 4,
+  },
+  langName: {
+    fontSize: 9,
+    fontWeight: 500,
+  },
+  langLevel: {
+    fontSize: 9,
+    color: c.muted,
+  },
+});
+
+// ---------- Props ----------
+
+type CvPdfProps = {
+  profile: CvProfile;
+  experience: Experience[];
+  languages: Language[];
+  stack: readonly string[];
+  contact: { github?: string; linkedin?: string; email?: string };
+  sectionLabels?: {
+    profile: string;
+    experience: string;
+    stack: string;
+    languages: string;
+  };
+};
+
+// ---------- Document ----------
+
+export function CvPdfDocument({
+  profile,
+  experience,
+  languages,
+  stack,
+  contact,
+  sectionLabels = {
+    profile: 'Perfil profesional',
+    experience: 'Experiencia',
+    stack: 'Stack técnico',
+    languages: 'Idiomas',
+  },
+}: CvPdfProps) {
+  return (
+    <Document author={profile.name} title={`CV — ${profile.name}`}>
+      <Page size="A4" style={s.page}>
+        {/* Accent bar */}
+        <View style={s.accentBar} />
+
+        {/* Header */}
+        <View>
+          <Text style={s.headerName}>{profile.name}</Text>
+          <Text style={s.headerRole}>{profile.role}</Text>
+          <View style={s.headerContact}>
+            <Text>{profile.location}</Text>
+            <Text>{profile.web}</Text>
+            {contact.email && <Text>{contact.email}</Text>}
+            {contact.github && <Text>{contact.github}</Text>}
+            {contact.linkedin && <Text>{contact.linkedin}</Text>}
+          </View>
+        </View>
+
+        {/* Professional profile */}
+        <Text style={s.sectionTitle}>{sectionLabels.profile}</Text>
+        <View style={s.separator} />
+        <Text style={s.summary}>{profile.summary}</Text>
+
+        {/* Experience */}
+        <Text style={s.sectionTitle}>{sectionLabels.experience}</Text>
+        <View style={s.separator} />
+        {experience.map((exp, i) => (
+          <View key={i} style={{ marginBottom: 12 }} wrap={false}>
+            <View style={s.expHeader}>
+              <View>
+                <Text style={s.expRole}>{exp.role}</Text>
+                <Text style={s.expCompany}>{exp.company}</Text>
+              </View>
+              <Text style={s.expPeriod}>{exp.period}</Text>
+            </View>
+            <Text style={s.expSummary}>{exp.summary}</Text>
+            {exp.achievements.map((ach, j) => (
+              <View key={j} style={{ position: 'relative' }}>
+                <Text style={s.achievementBullet}>•</Text>
+                <Text style={s.achievement}>{ach}</Text>
+              </View>
+            ))}
+            <View style={s.tagsRow}>
+              {exp.stack.map((t, k) => (
+                <Text key={k} style={s.tag}>
+                  {t}
+                </Text>
+              ))}
+            </View>
+          </View>
+        ))}
+
+        {/* Two columns: Skills + Languages */}
+        <View style={s.twoCol}>
+          <View style={s.colLeft}>
+            <Text style={s.sectionTitle}>{sectionLabels.stack}</Text>
+            <View style={s.separator} />
+            <View style={s.tagsRow}>
+              {stack.map((item, i) => (
+                <Text key={i} style={s.tag}>
+                  {item}
+                </Text>
+              ))}
+            </View>
+          </View>
+
+          <View style={s.colRight}>
+            <Text style={s.sectionTitle}>{sectionLabels.languages}</Text>
+            <View style={s.separator} />
+            {languages.map((lang, i) => (
+              <View key={i} style={s.langRow}>
+                <Text style={s.langName}>{lang.name}</Text>
+                <Text style={s.langLevel}>{lang.level}</Text>
+              </View>
+            ))}
+          </View>
+        </View>
+      </Page>
+    </Document>
+  );
+}

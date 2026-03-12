@@ -1,0 +1,21 @@
+---
+import { Terminal } from '@/components/terminal/terminal';
+import type { Lang } from '@/i18n/translations';
+import { getTranslations } from '@/i18n/utils';
+import Layout from '@/layouts/main.astro';
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+---
+
+<Layout lang={lang}>
+  <section class="py-2 sm:py-4">
+    <p
+      class="mx-auto max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
+    >
+      {t.hero.intro}
+    </p>
+    <Terminal lang={lang} client:visible className="mt-6" />
+  </section>
+</Layout>

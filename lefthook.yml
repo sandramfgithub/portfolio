@@ -1,0 +1,17 @@
+pre-commit:
+  jobs:
+    - name: ultracite
+      run: bun run format
+      stage_fixed: true
+
+commit-msg:
+  jobs:
+    - name: commitlint
+      run: bunx commitlint --edit {1}
+
+pre-push:
+  jobs:
+    - name: typecheck
+      run: bun run typecheck
+    - name: test:unit
+      run: bun run test:unit

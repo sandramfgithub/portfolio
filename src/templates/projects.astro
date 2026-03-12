@@ -1,0 +1,49 @@
+---
+import { CaseStudyList } from '@/components/case-study-list';
+import { ProjectGrid } from '@/components/project-grid';
+import { caseStudies, publicProjects } from '@/data/site';
+import type { Lang } from '@/i18n/translations';
+import { getTranslations } from '@/i18n/utils';
+import Layout from '@/layouts/main.astro';
+
+type Props = { lang: Lang };
+const { lang } = Astro.props;
+const t = getTranslations(lang);
+const projects = publicProjects[lang];
+const cases = caseStudies[lang];
+
+const title =
+  lang === 'en'
+    ? 'Projects | Sandra Martínez Fernández'
+    : 'Proyectos | Sandra Martínez Fernández';
+---
+
+<Layout lang={lang} title={title}>
+  <section class="py-2 sm:py-4">
+    <p
+      class="mx-auto max-w-2xl text-center text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
+    >
+      {t.projects.intro}
+    </p>
+  </section>
+
+  <section aria-labelledby="public-heading" class="space-y-5">
+    <h2
+      id="public-heading"
+      class="font-serif text-xl font-semibold tracking-tight"
+    >
+      {t.projects.publicHeading}
+    </h2>
+    <ProjectGrid projects={projects} lang={lang} client:visible />
+  </section>
+
+  <section aria-labelledby="cases-heading" class="space-y-5">
+    <h2
+      id="cases-heading"
+      class="font-serif text-xl font-semibold tracking-tight"
+    >
+      {t.projects.caseStudiesHeading}
+    </h2>
+    <CaseStudyList cases={cases} lang={lang} client:visible />
+  </section>
+</Layout>

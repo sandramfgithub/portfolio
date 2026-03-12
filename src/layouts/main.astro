@@ -1,0 +1,86 @@
+---
+import '@/styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import { MorphNav } from '@/components/morph-nav';
+import SiteFooter from '@/components/site-footer.astro';
+import type { Lang } from '@/i18n/translations';
+import { getAlternateLang, getLocalizedPath } from '@/i18n/utils';
+
+type Props = {
+  title?: string;
+  description?: string;
+  lang?: Lang;
+};
+
+const { lang = 'es' } = Astro.props;
+
+const defaultTitles: Record<Lang, string> = {
+  es: 'Sandra Martínez Fernández | Desarrolladora de Software',
+  en: 'Sandra Martínez Fernández | Software Developer',
+};
+
+const defaultDescriptions: Record<Lang, string> = {
+  es: 'Portfolio de proyectos, librerías y documentación técnica.',
+  en: 'Portfolio of projects, libraries, and technical documentation.',
+};
+
+const { title = defaultTitles[lang], description = defaultDescriptions[lang] } =
+  Astro.props;
+
+const altLang = getAlternateLang(lang);
+const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
+const altPath = getLocalizedPath(pathname, altLang);
+const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
+---
+
+<html lang={lang}>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <meta name="description" content={description}>
+    <meta property="og:title" content={title}>
+    <meta property="og:description" content={description}>
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content={ogLocale}>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={title}>
+    <meta name="twitter:description" content={description}>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="alternate" hreflang={altLang} href={altPath}>
+    <link rel="alternate" hreflang={lang} href={pathname}>
+    <title>{title}</title>
+    <ClientRouter />
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        if (stored === 'light') {
+          return;
+        }
+        document.documentElement.classList.add('dark');
+      })();
+    </script>
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-primary-foreground"
+    >
+      {lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}
+    </a>
+    <MorphNav lang={lang} pathname={pathname} client:load transition:persist />
+    <div class="page-shell flex flex-1 flex-col pt-10">
+      <main id="main" class="flex-1 space-y-8 pb-10"><slot /></main>
+      <SiteFooter lang={lang} />
+    </div>
+    <script>
+      document.addEventListener('astro:after-swap', () => {
+        const stored = localStorage.getItem('theme');
+        document.documentElement.classList.toggle('dark', stored !== 'light');
+        document
+          .querySelector('footer')
+          ?.style.setProperty('animation', 'none');
+      });
+    </script>
+  </body>
+</html>
