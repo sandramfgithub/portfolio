@@ -190,6 +190,10 @@ footer {
   animation: fade-in 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.3s both;
 }
 
+.footer-cat {
+  animation: fade-in 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+
 /* --- Nav link underline animation --- */
 
 .nav-link::after {
@@ -289,6 +293,7 @@ html.theme-transition .bg-secondary {
 
   main > *,
   footer,
+  .footer-cat,
   .fade-up-item {
     animation: none;
   }
