@@ -21,14 +21,36 @@ export type CvLanguageViewModel = {
   level: string;
 };
 
+export type CvEducationViewModel = {
+  institution: string;
+  period: string;
+  summary?: string;
+  title: string;
+};
+
+export type CvCertificationViewModel = {
+  issuedAt?: string;
+  issuer: string;
+  name: string;
+  url?: string;
+};
+
 export type CvViewModel = {
-  profile: CvProfileViewModel;
   contacts: {
+    email: string | null;
     github: string | null;
     linkedin: string | null;
-    email: string | null;
   };
+  certifications: readonly CvCertificationViewModel[];
+  education: readonly CvEducationViewModel[];
   experience: readonly CvExperienceViewModel[];
   languages: readonly CvLanguageViewModel[];
+  profile: CvProfileViewModel;
   skillNames: readonly string[];
+};
+
+export type CvPageViewModel = {
+  cv: CvViewModel;
+  description: string;
+  title: string;
 };

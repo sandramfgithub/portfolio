@@ -7,6 +7,8 @@ import {
   View,
 } from '@react-pdf/renderer';
 import type {
+  CvCertificationViewModel,
+  CvEducationViewModel,
   CvExperienceViewModel,
   CvLanguageViewModel,
   CvProfileViewModel,
@@ -157,6 +159,26 @@ const s = StyleSheet.create({
     borderRadius: 4,
   },
 
+  // Education and certifications
+  metaRow: {
+    marginBottom: 10,
+  },
+  metaTitle: {
+    fontSize: 10,
+    fontWeight: 600,
+  },
+  metaSubtitle: {
+    fontSize: 8.5,
+    color: c.muted,
+    marginTop: 2,
+  },
+  metaSummary: {
+    fontSize: 8.5,
+    lineHeight: 1.5,
+    color: c.muted,
+    marginTop: 4,
+  },
+
   // Two columns bottom
   twoCol: {
     flexDirection: 'row',
@@ -191,6 +213,8 @@ const s = StyleSheet.create({
 type CvPdfProps = {
   profile: CvProfileViewModel;
   experience: readonly CvExperienceViewModel[];
+  education: readonly CvEducationViewModel[];
+  certifications: readonly CvCertificationViewModel[];
   languages: readonly CvLanguageViewModel[];
   stack: readonly string[];
   contact: {
@@ -199,6 +223,8 @@ type CvPdfProps = {
     email: string | null;
   };
   sectionLabels?: {
+    certifications: string;
+    education: string;
     profile: string;
     experience: string;
     stack: string;
@@ -211,10 +237,14 @@ type CvPdfProps = {
 export function CvPdfDocument({
   profile,
   experience,
+  education,
+  certifications,
   languages,
   stack,
   contact,
   sectionLabels = {
+    certifications: 'Certificaciones',
+    education: 'Formación',
     profile: 'Perfil profesional',
     experience: 'Experiencia',
     stack: 'Stack técnico',
@@ -299,6 +329,40 @@ export function CvPdfDocument({
             ))}
           </View>
         </View>
+
+        {education.length > 0 && (
+          <>
+            <Text style={s.sectionTitle}>{sectionLabels.education}</Text>
+            <View style={s.separator} />
+            {education.map((item, i) => (
+              <View key={i} style={s.metaRow}>
+                <Text style={s.metaTitle}>{item.title}</Text>
+                <Text style={s.metaSubtitle}>
+                  {item.institution} · {item.period}
+                </Text>
+                {item.summary && (
+                  <Text style={s.metaSummary}>{item.summary}</Text>
+                )}
+              </View>
+            ))}
+          </>
+        )}
+
+        {certifications.length > 0 && (
+          <>
+            <Text style={s.sectionTitle}>{sectionLabels.certifications}</Text>
+            <View style={s.separator} />
+            {certifications.map((item, i) => (
+              <View key={i} style={s.metaRow}>
+                <Text style={s.metaTitle}>{item.name}</Text>
+                <Text style={s.metaSubtitle}>
+                  {item.issuer}
+                  {item.issuedAt ? ` · ${item.issuedAt}` : ''}
+                </Text>
+              </View>
+            ))}
+          </>
+        )}
       </Page>
     </Document>
   );

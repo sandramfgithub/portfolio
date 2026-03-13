@@ -1,0 +1,185 @@
+---
+import type { CvPageViewModel } from '@/application/cv/dto';
+import { Badge } from '@/components/ui/badge';
+import type { Lang } from '@/i18n/translations';
+import { getLocalizedPath, getTranslations } from '@/i18n/utils';
+import Layout from '@/layouts/main.astro';
+
+type Props = {
+  lang: Lang;
+  page: CvPageViewModel;
+};
+
+const { lang, page } = Astro.props as Props;
+const t = getTranslations(lang);
+const aboutHref = getLocalizedPath('/about', lang);
+---
+
+<Layout
+  description={page.description}
+  lang={lang}
+  noindex={true}
+  title={page.title}
+>
+  <article class="space-y-8 py-2 sm:py-4">
+    <div class="space-y-4">
+      <a
+        class="text-muted-foreground text-sm underline transition-colors hover:text-foreground"
+        href={aboutHref}
+      >
+        {t.cv.backToAbout}
+      </a>
+      <div class="space-y-3">
+        <p class="eyebrow">CV</p>
+        <h1
+          class="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"
+        >
+          {page.cv.profile.name}
+        </h1>
+        <p class="text-muted-foreground text-sm sm:text-base">
+          {page.cv.profile.role}
+          {' · '}
+          {page.cv.profile.location}
+        </p>
+        <p
+          class="max-w-2xl text-muted-foreground text-sm leading-7 sm:text-base"
+        >
+          {page.cv.profile.summary}
+        </p>
+        <div class="flex flex-wrap gap-3 text-sm text-muted-foreground">
+          <a
+            class="underline hover:text-foreground"
+            href={`https://${page.cv.profile.web}`}
+          >
+            {page.cv.profile.web}
+          </a>
+          {page.cv.contacts.email && (
+            <a
+              class="underline hover:text-foreground"
+              href={`mailto:${page.cv.contacts.email}`}
+            >
+              {page.cv.contacts.email}
+            </a>
+          )}
+          {page.cv.contacts.github && (
+            <a
+              class="underline hover:text-foreground"
+              href={page.cv.contacts.github}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              GitHub
+            </a>
+          )}
+          {page.cv.contacts.linkedin && (
+            <a
+              class="underline hover:text-foreground"
+              href={page.cv.contacts.linkedin}
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              LinkedIn
+            </a>
+          )}
+        </div>
+      </div>
+    </div>
+
+    <section class="space-y-3">
+      <h2 class="font-serif text-xl font-semibold tracking-tight">
+        {t.cv.experience}
+      </h2>
+      {page.cv.experience.map((exp) => (
+        <div class="space-y-3">
+          <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
+            <div>
+              <h3 class="font-semibold text-sm">{exp.role}</h3>
+              <p class="text-muted-foreground text-sm">{exp.company}</p>
+            </div>
+            <span class="text-muted-foreground text-sm">{exp.period}</span>
+          </div>
+          <p class="text-muted-foreground text-sm leading-7">{exp.summary}</p>
+          <ul class="grid gap-1.5 text-muted-foreground text-sm leading-7">
+            {exp.achievements.map((achievement) => (
+              <li class="flex gap-3">
+                <span class="mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/30" />
+                <span>{achievement}</span>
+              </li>
+            ))}
+          </ul>
+          <div class="flex flex-wrap gap-1.5">
+            {exp.stack.map((item) => (
+              <Badge className="text-[11px]" variant="secondary">
+                {item}
+              </Badge>
+            ))}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    {page.cv.education.length > 0 && (
+      <section class="space-y-3">
+        <h2 class="font-semibold font-serif text-xl tracking-tight">
+          {t.cv.education}
+        </h2>
+        {page.cv.education.map((item) => (
+          <div class="space-y-1">
+            <h3 class="font-semibold text-sm">{item.title}</h3>
+            <p class="text-muted-foreground text-sm">
+              {item.institution} · {item.period}
+            </p>
+            {item.summary && (
+              <p class="text-muted-foreground text-sm leading-7">
+                {item.summary}
+              </p>
+            )}
+          </div>
+        ))}
+      </section>
+    )}
+
+    {page.cv.certifications.length > 0 && (
+      <section class="space-y-3">
+        <h2 class="font-semibold font-serif text-xl tracking-tight">
+          {t.cv.certifications}
+        </h2>
+        {page.cv.certifications.map((item) => (
+          <div class="space-y-1">
+            <h3 class="font-semibold text-sm">{item.name}</h3>
+            <p class="text-muted-foreground text-sm">
+              {item.issuer}{item.issuedAt ? ` · ${item.issuedAt}` : ''}
+            </p>
+          </div>
+        ))}
+      </section>
+    )}
+
+    <section class="space-y-3">
+      <h2 class="font-serif text-xl font-semibold tracking-tight">
+        {t.cv.languages}
+      </h2>
+      <div class="grid gap-2 sm:grid-cols-2">
+        {page.cv.languages.map((item) => (
+          <div class="flex items-center justify-between rounded-lg border border-border/60 bg-card px-4 py-3">
+            <span class="font-medium text-sm">{item.name}</span>
+            <span class="text-muted-foreground text-sm">{item.level}</span>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="space-y-3">
+      <h2 class="font-serif text-xl font-semibold tracking-tight">
+        {t.cv.stack}
+      </h2>
+      <div class="flex flex-wrap gap-1.5">
+        {page.cv.skillNames.map((item) => (
+          <Badge className="text-[11px]" variant="secondary">
+            {item}
+          </Badge>
+        ))}
+      </div>
+    </section>
+  </article>
+</Layout>

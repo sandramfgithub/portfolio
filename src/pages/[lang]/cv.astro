@@ -1,0 +1,18 @@
+---
+import { getCvPageViewModel } from '@/application/cv/queries';
+import { locales } from '@/domain/portfolio/value-objects';
+import type { Lang } from '@/i18n/translations';
+import CvTemplate from '@/templates/cv.astro';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Lang };
+const page = await getCvPageViewModel(lang);
+---
+
+<CvTemplate lang={lang} page={page} />

@@ -53,24 +53,20 @@ export function CvDownload({
       };
       const [{ pdf }, { CvPdfDocument }] = await load();
 
-      const sectionLabels =
-        lang === 'en'
-          ? {
-              profile: 'Professional Profile',
-              experience: 'Experience',
-              stack: 'Technical Stack',
-              languages: 'Languages',
-            }
-          : {
-              profile: 'Perfil profesional',
-              experience: 'Experiencia',
-              stack: 'Stack técnico',
-              languages: 'Idiomas',
-            };
+      const sectionLabels = {
+        certifications: t.cv.certifications,
+        education: t.cv.education,
+        experience: t.cv.experience,
+        languages: t.cv.languages,
+        profile: t.cv.profile,
+        stack: t.cv.stack,
+      };
 
       const blob = await pdf(
         <CvPdfDocument
+          certifications={cv.certifications}
           contact={cv.contacts}
+          education={cv.education}
           experience={cv.experience}
           languages={cv.languages}
           profile={cv.profile}

@@ -7,6 +7,7 @@ const routes = [
   { path: '/es', lang: 'es', finalPath: '/es' },
   { path: '/es/projects', lang: 'es', finalPath: '/es/projects' },
   { path: '/es/about', lang: 'es', finalPath: '/es/about' },
+  { path: '/es/cv', lang: 'es', finalPath: '/es/cv' },
   {
     path: '/es/projects/portfolio',
     lang: 'es',
@@ -20,6 +21,7 @@ const routes = [
   { path: '/en', lang: 'en' },
   { path: '/en/projects', lang: 'en', finalPath: '/en/projects' },
   { path: '/en/about', lang: 'en', finalPath: '/en/about' },
+  { path: '/en/cv', lang: 'en', finalPath: '/en/cv' },
   {
     path: '/en/projects/portfolio',
     lang: 'en',

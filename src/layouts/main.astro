@@ -8,9 +8,10 @@ import type { Lang } from '@/i18n/translations';
 import { getAlternateLang, getLocalizedPath } from '@/i18n/utils';
 
 type Props = {
-  title?: string;
   description?: string;
   lang?: Lang;
+  noindex?: boolean;
+  title?: string;
 };
 
 const { lang = 'es' } = Astro.props;
@@ -25,8 +26,11 @@ const defaultDescriptions: Record<Lang, string> = {
   en: 'Portfolio of projects, libraries, and technical documentation.',
 };
 
-const { title = defaultTitles[lang], description = defaultDescriptions[lang] } =
-  Astro.props;
+const {
+  title = defaultTitles[lang],
+  description = defaultDescriptions[lang],
+  noindex = false,
+} = Astro.props;
 const layout = await getLayoutViewModel(lang);
 
 const altLang = getAlternateLang(lang);
@@ -48,6 +52,7 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content={title}>
     <meta name="twitter:description" content={description}>
+    {noindex && <meta content="noindex, nofollow" name="robots" />}
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="alternate" hreflang={altLang} href={altPath}>
     <link rel="alternate" hreflang={lang} href={pathname}>

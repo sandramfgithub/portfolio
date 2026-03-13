@@ -30,6 +30,15 @@ export const translations = {
       experience: 'Experiencia',
       skills: 'Habilidades',
     },
+    cv: {
+      backToAbout: 'Volver a sobre mí',
+      certifications: 'Certificaciones',
+      education: 'Formación',
+      experience: 'Experiencia',
+      languages: 'Idiomas',
+      profile: 'Perfil profesional',
+      stack: 'Stack técnico',
+    },
     common: {
       skipToContent: 'Saltar al contenido',
       backToHome: 'Volver al inicio',
@@ -96,6 +105,15 @@ export const translations = {
       downloadError: 'Could not generate PDF. Please try again.',
       experience: 'Experience',
       skills: 'Skills',
+    },
+    cv: {
+      backToAbout: 'Back to about',
+      certifications: 'Certifications',
+      education: 'Education',
+      experience: 'Experience',
+      languages: 'Languages',
+      profile: 'Professional profile',
+      stack: 'Technical stack',
     },
     common: {
       skipToContent: 'Skip to content',

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { getCvViewModel } from '@/application/cv/queries';
+import { getCvPageViewModel, getCvViewModel } from '@/application/cv/queries';
 import type {
   CvDocument,
   PageContent,
@@ -106,6 +106,16 @@ describe('cv queries', () => {
     expect(viewModel.skillNames).toEqual(['React', 'TypeScript']);
     expect(viewModel.experience[0]?.stack).toEqual(['React', 'TypeScript']);
     expect(viewModel.contacts.email).toBe('mail@example.com');
+    expect(viewModel.education).toEqual([]);
+    expect(viewModel.certifications).toEqual([]);
+  });
+
+  it('builds the CV page view model from the document', async () => {
+    const page = await getCvPageViewModel('en', createRepository());
+
+    expect(page.title).toBe('CV | Sandra');
+    expect(page.description).toBe('Profile summary');
+    expect(page.cv.profile.name).toBe('Sandra');
   });
 
   it('throws when the CV document is missing', async () => {

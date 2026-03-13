@@ -1,4 +1,4 @@
-import type { CvViewModel } from '@/application/cv/dto';
+import type { CvPageViewModel, CvViewModel } from '@/application/cv/dto';
 import type { Skill } from '@/domain/portfolio/entities';
 import type { ContentRepository } from '@/domain/portfolio/repository';
 import type { Locale } from '@/domain/portfolio/value-objects';
@@ -50,6 +50,8 @@ export const getCvViewModel = async (
   return {
     profile: document.profile,
     contacts: document.contacts,
+    education: document.education,
+    certifications: document.certifications,
     experience: document.experience.map((experience) => ({
       role: experience.role,
       company: experience.company,
@@ -60,5 +62,18 @@ export const getCvViewModel = async (
     })),
     languages: document.languages,
     skillNames: resolveSkillNames(document.skillSlugs, skillNameLookup),
+  };
+};
+
+export const getCvPageViewModel = async (
+  locale: Locale,
+  repository?: ContentRepository
+): Promise<CvPageViewModel> => {
+  const cv = await getCvViewModel(locale, repository);
+
+  return {
+    cv,
+    description: cv.profile.summary,
+    title: `CV | ${cv.profile.name}`,
   };
 };
