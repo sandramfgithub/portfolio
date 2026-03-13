@@ -59,11 +59,6 @@ const aboutHref = getLocalizedPath('/about', lang);
         </p>
         <div class="flex flex-wrap gap-3 text-sm text-muted-foreground">
           <a
-            {...createAnalyticsAttributes('contact_link_clicked', {
-              channel: 'website',
-              lang,
-              location: 'cv-preview',
-            })}
             class="underline hover:text-foreground"
             href={`https://${page.cv.profile.web}`}
           >
@@ -71,11 +66,6 @@ const aboutHref = getLocalizedPath('/about', lang);
           </a>
           {page.cv.contacts.email && (
             <a
-              {...createAnalyticsAttributes('contact_link_clicked', {
-                channel: 'email',
-                lang,
-                location: 'cv-preview',
-              })}
               class="underline hover:text-foreground"
               href={`mailto:${page.cv.contacts.email}`}
             >
@@ -84,7 +74,7 @@ const aboutHref = getLocalizedPath('/about', lang);
           )}
           {page.cv.contacts.github && (
             <a
-              {...createAnalyticsAttributes('contact_link_clicked', {
+              {...createAnalyticsAttributes('social_link_clicked', {
                 channel: 'github',
                 lang,
                 location: 'cv-preview',
@@ -99,7 +89,7 @@ const aboutHref = getLocalizedPath('/about', lang);
           )}
           {page.cv.contacts.linkedin && (
             <a
-              {...createAnalyticsAttributes('contact_link_clicked', {
+              {...createAnalyticsAttributes('social_link_clicked', {
                 channel: 'linkedin',
                 lang,
                 location: 'cv-preview',

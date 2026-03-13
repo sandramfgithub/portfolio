@@ -6,11 +6,6 @@ import type {
 } from '@/domain/portfolio/value-objects';
 
 export type AnalyticsEventMap = {
-  contact_link_clicked: {
-    channel: 'email' | 'github' | 'linkedin' | 'website' | 'x';
-    lang: Locale;
-    location: 'cv-preview' | 'nav';
-  };
   cv_download_failed: {
     lang: Locale;
     location: 'about' | 'cv-preview';
@@ -37,11 +32,6 @@ export type AnalyticsEventMap = {
     lang: Locale;
     linkKind: string;
     slug: string;
-  };
-  language_switch_clicked: {
-    fromLang: Locale;
-    location: 'nav';
-    toLang: Locale;
   };
   not_found_viewed: {
     lang: Locale;
@@ -70,28 +60,26 @@ export type AnalyticsEventMap = {
     location: 'about' | 'entry-detail' | 'projects';
     skillSlug: string;
   };
-  theme_toggle_clicked: {
+  social_link_clicked: {
+    channel: 'github' | 'linkedin' | 'x';
     lang: Locale;
-    location: 'nav';
-    nextTheme: 'dark' | 'light';
+    location: 'cv-preview' | 'nav';
   };
 };
 
 export const analyticsEventNames = [
-  'contact_link_clicked',
   'cv_download_failed',
   'cv_download_started',
   'cv_download_succeeded',
   'cv_preview_viewed',
   'entry_detail_viewed',
   'entry_link_clicked',
-  'language_switch_clicked',
   'not_found_viewed',
   'private_entry_clicked',
   'project_detail_clicked',
   'project_repository_clicked',
   'skill_detail_opened',
-  'theme_toggle_clicked',
+  'social_link_clicked',
 ] as const;
 
 export type AnalyticsEventName = keyof AnalyticsEventMap;

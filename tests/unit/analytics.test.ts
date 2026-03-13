@@ -39,18 +39,18 @@ describe('analytics helpers', () => {
   it('dispatches typed events through the analytics gateway', () => {
     const track = vi.fn();
 
-    trackAnalyticsEvent({ track }, 'theme_toggle_clicked', {
+    trackAnalyticsEvent({ track }, 'social_link_clicked', {
+      channel: 'github',
       lang: 'es',
       location: 'nav',
-      nextTheme: 'light',
     });
 
     expect(track).toHaveBeenCalledWith({
-      name: 'theme_toggle_clicked',
+      name: 'social_link_clicked',
       payload: {
+        channel: 'github',
         lang: 'es',
         location: 'nav',
-        nextTheme: 'light',
       },
     });
   });

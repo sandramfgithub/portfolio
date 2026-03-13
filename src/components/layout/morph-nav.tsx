@@ -24,7 +24,6 @@ import {
   getLocalizedPath,
   getTranslations,
 } from '@/i18n/utils';
-import { trackBrowserAnalyticsEvent } from '@/infrastructure/analytics/browser';
 import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 import { cn } from '@/lib/utils';
 
@@ -76,16 +75,16 @@ const noop = () => undefined;
 
 const toContactChannel = (
   icon: SocialLinkViewModel['icon']
-): 'email' | 'github' | 'linkedin' | 'x' => {
+): 'github' | 'linkedin' | 'x' | null => {
   if (icon === 'twitter') {
     return 'x';
   }
 
-  if (icon === 'mail') {
-    return 'email';
+  if (icon === 'github' || icon === 'linkedin') {
+    return icon;
   }
 
-  return icon;
+  return null;
 };
 
 const getThemeSnapshot = (): 'light' | 'dark' => {
@@ -120,12 +119,6 @@ function ThemeToggle({ lang }: { lang: Lang }) {
   const toggle = () => {
     document.documentElement.classList.add('theme-transition');
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
-
-    trackBrowserAnalyticsEvent('theme_toggle_clicked', {
-      lang,
-      location: 'nav',
-      nextTheme,
-    });
 
     document.documentElement.classList.toggle('dark', nextTheme === 'dark');
     if (nextTheme === 'light') {
@@ -169,33 +162,45 @@ function SocialLinks({
 }) {
   return (
     <div className={cn('flex items-center gap-1', className)}>
-      {links.map((link) => (
-        <Tooltip key={link.label}>
-          <TooltipTrigger
-            aria-label={link.label}
-            render={
-              <a
-                {...createAnalyticsAttributes('contact_link_clicked', {
-                  channel: toContactChannel(link.icon),
-                  lang,
-                  location: 'nav',
-                })}
-                className="icon-btn inline-flex h-8 w-8 items-center justify-center rounded-lg"
-                href={link.href}
-                rel={
-                  link.href.startsWith('mailto:')
-                    ? undefined
-                    : 'noopener noreferrer'
-                }
-                target={link.href.startsWith('mailto:') ? undefined : '_blank'}
-              />
-            }
-          >
-            <SocialIcon icon={link.icon} />
-          </TooltipTrigger>
-          <TooltipContent>{link.label}</TooltipContent>
-        </Tooltip>
-      ))}
+      {links.map((link) => {
+        const channel = toContactChannel(link.icon);
+
+        return (
+          <Tooltip key={link.label}>
+            {/*
+              The mail icon stays intentionally untracked; the user only wants
+              social outbound clicks here.
+            */}
+            <TooltipTrigger
+              aria-label={link.label}
+              render={
+                <a
+                  {...(channel
+                    ? createAnalyticsAttributes('social_link_clicked', {
+                        channel,
+                        lang,
+                        location: 'nav',
+                      })
+                    : {})}
+                  className="icon-btn inline-flex h-8 w-8 items-center justify-center rounded-lg"
+                  href={link.href}
+                  rel={
+                    link.href.startsWith('mailto:')
+                      ? undefined
+                      : 'noopener noreferrer'
+                  }
+                  target={
+                    link.href.startsWith('mailto:') ? undefined : '_blank'
+                  }
+                />
+              }
+            >
+              <SocialIcon icon={link.icon} />
+            </TooltipTrigger>
+            <TooltipContent>{link.label}</TooltipContent>
+          </Tooltip>
+        );
+      })}
     </div>
   );
 }
@@ -237,11 +242,6 @@ function Toggles({
           aria-label={t.common.switchLang}
           render={
             <a
-              {...createAnalyticsAttributes('language_switch_clicked', {
-                fromLang: lang,
-                location: 'nav',
-                toLang: getAlternateLang(lang),
-              })}
               className="icon-btn inline-flex h-8 items-center justify-center rounded-lg px-2 font-semibold text-xs"
               href={altPath}
             />
