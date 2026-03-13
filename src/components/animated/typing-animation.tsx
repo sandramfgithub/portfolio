@@ -1,5 +1,5 @@
-import { useReducedMotion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 type Props = {
   text: string;
@@ -18,7 +18,7 @@ export function TypingAnimation({
   showCursor = true,
   onComplete,
 }: Props) {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
   const [charIndex, setCharIndex] = useState(0);
   const [started, setStarted] = useState(false);
 

@@ -1,10 +1,6 @@
-import {
-  motion,
-  useMotionValue,
-  useReducedMotion,
-  useTransform,
-} from 'framer-motion';
+import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { type ReactNode, useRef } from 'react';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 type Props = {
   children: ReactNode;
@@ -13,7 +9,7 @@ type Props = {
 };
 
 export function MagneticButton({ children, className, strength = 3 }: Props) {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
   const ref = useRef<HTMLDivElement>(null);
   const x = useMotionValue(0);
   const y = useMotionValue(0);

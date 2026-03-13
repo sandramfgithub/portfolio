@@ -11,8 +11,7 @@ export default defineConfig({
     '/projects': '/es/projects',
   },
   vite: {
-    // @ts-expect-error Astro 6 and @tailwindcss/vite currently disagree at
-    // type level because Astro ships Vite from a vendored path.
+    // Astro 6 previously needed a type escape here because it vendored Vite.
     plugins: [tailwindcss()],
     optimizeDeps: {
       include: ['@react-pdf/renderer'],

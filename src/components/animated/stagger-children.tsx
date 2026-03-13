@@ -1,6 +1,7 @@
 import type { Variants } from 'framer-motion';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { ReactNode } from 'react';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 type Props = {
   children: ReactNode;
@@ -34,7 +35,7 @@ export function StaggerChildren({
   className,
   stagger = 0.08,
 }: Props) {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
 
   if (prefersReduced) {
     return <div className={className}>{children}</div>;

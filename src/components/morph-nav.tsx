@@ -1,7 +1,7 @@
 import {
   LayoutGroup,
+  type MotionValue,
   motion,
-  useReducedMotion,
   useScroll,
   useTransform,
 } from 'framer-motion';
@@ -23,6 +23,7 @@ import {
   getLocalizedPath,
   getTranslations,
 } from '@/i18n/utils';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 import { cn } from '@/lib/utils';
 
 type Props = {
@@ -243,13 +244,82 @@ const morphTransition = {
   layout: { duration: 0.4, ease: [0.25, 1, 0.5, 1] as const },
 };
 
+const reducedMorphTransition = {
+  layout: { duration: 0, ease: [0.25, 1, 0.5, 1] as const },
+};
+
+const widthTransition = {
+  duration: 0.4,
+  ease: [0.25, 1, 0.5, 1] as const,
+};
+
+const reducedWidthTransition = {
+  duration: 0,
+  ease: [0.25, 1, 0.5, 1] as const,
+};
+
+const getBorderDelay = (prefersReduced: boolean, scrolled: boolean) => {
+  if (prefersReduced) {
+    return 0;
+  }
+
+  return scrolled ? 200 : 0;
+};
+
+const getBorderTransition = (
+  prefersReduced: boolean,
+  borderVisible: boolean
+) => {
+  if (prefersReduced) {
+    return 'clip-path 0s linear';
+  }
+
+  if (borderVisible) {
+    return 'clip-path 1s cubic-bezier(0.25, 1, 0.5, 1)';
+  }
+
+  return 'clip-path 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+};
+
+function HeaderBackground({
+  prefersReduced,
+  scrolled,
+  opacity,
+}: {
+  prefersReduced: boolean;
+  scrolled: boolean;
+  opacity: MotionValue<number>;
+}) {
+  if (prefersReduced) {
+    return (
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundColor: 'var(--background)',
+          opacity: scrolled ? 1 : 0,
+        }}
+      />
+    );
+  }
+
+  return (
+    <motion.div
+      className="absolute inset-0"
+      style={{
+        backgroundColor: 'var(--background)',
+        opacity,
+      }}
+    />
+  );
+}
+
 export function MorphNav({
   lang,
   pathname: initialPathname,
   navigation,
   socialLinks,
 }: Props) {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
   const isMobile = useIsMobile();
   const [currentPath, setCurrentPath] = useState(initialPathname);
 
@@ -278,6 +348,12 @@ export function MorphNav({
 
   // Discrete scroll state with hysteresis — triggers after scrolling past "sandra"
   const [scrolled, setScrolled] = useState(false);
+  const activeMorphTransition = prefersReduced
+    ? reducedMorphTransition
+    : morphTransition;
+  const activeWidthTransition = prefersReduced
+    ? reducedWidthTransition
+    : widthTransition;
 
   useEffect(() => {
     spacerHeightRef.current = spacerHeight;
@@ -343,10 +419,10 @@ export function MorphNav({
   useEffect(() => {
     const timer = setTimeout(
       () => setBorderVisible(scrolled),
-      scrolled ? 200 : 0
+      getBorderDelay(prefersReduced, scrolled)
     );
     return () => clearTimeout(timer);
-  }, [scrolled]);
+  }, [prefersReduced, scrolled]);
 
   const renderNavLink = (item: NavigationItemViewModel) => {
     const itemPath = item.href.replace(/\/$/, '') || '/';
@@ -368,54 +444,20 @@ export function MorphNav({
     );
   };
 
-  // Reduced motion: show State B directly (no spacer needed)
-  if (prefersReduced) {
-    return (
-      <TooltipProvider>
-        <header
-          className="fixed top-0 right-0 left-0 z-50 border-border/50 border-b backdrop-blur-md"
-          style={{ backgroundColor: 'var(--background)' }}
-        >
-          <div className="page-shell flex items-center justify-between py-3">
-            <div className="flex items-center gap-4">
-              <a className="font-medium font-serif text-[15px]" href={homeHref}>
-                sandra
-              </a>
-              <nav
-                aria-label="Principal"
-                className="flex items-center gap-1 text-sm"
-              >
-                {navItems.map(renderNavLink)}
-              </nav>
-            </div>
-            <div className="flex items-center gap-1">
-              <SocialLinks links={socialLinks} />
-              <Toggles altLabel={altLabel} altPath={altPath} lang={lang} />
-            </div>
-          </div>
-        </header>
-        <div style={{ height: 44 }} />
-      </TooltipProvider>
-    );
-  }
-
   return (
     <TooltipProvider>
       {/* Fixed header — does NOT affect document flow */}
       <motion.header className="fixed top-0 right-0 left-0 z-50">
-        {/* Background overlay */}
-        <motion.div
-          className="absolute inset-0"
-          style={{
-            backgroundColor: 'var(--background)',
-            opacity: bgAlpha,
-          }}
+        <HeaderBackground
+          opacity={bgAlpha}
+          prefersReduced={prefersReduced}
+          scrolled={scrolled}
         />
 
         <motion.div
           animate={{ maxWidth: scrolled ? 768 : 896 }}
           className="page-shell relative"
-          transition={{ duration: 0.4, ease: [0.25, 1, 0.5, 1] }}
+          transition={activeWidthTransition}
         >
           <LayoutGroup>
             <motion.div
@@ -428,13 +470,13 @@ export function MorphNav({
                 paddingBottom: 12,
                 position: 'relative',
               }}
-              transition={morphTransition}
+              transition={activeMorphTransition}
             >
               {/* Sandra */}
               <motion.div
                 layout="position"
                 style={scrolled ? undefined : { marginBottom: GAP }}
-                transition={morphTransition}
+                transition={activeMorphTransition}
               >
                 <a
                   className={cn(
@@ -462,7 +504,7 @@ export function MorphNav({
                     ? { marginLeft: 16 }
                     : { height: 32, marginBottom: GAP }
                 }
-                transition={morphTransition}
+                transition={activeMorphTransition}
               >
                 <nav
                   aria-label="Principal"
@@ -476,7 +518,7 @@ export function MorphNav({
               <motion.div
                 layout="position"
                 style={scrolled ? { marginLeft: 'auto' } : undefined}
-                transition={morphTransition}
+                transition={activeMorphTransition}
               >
                 <SocialLinks
                   className={scrolled ? undefined : 'justify-center'}
@@ -498,7 +540,7 @@ export function MorphNav({
                         zIndex: 10,
                       }
                 }
-                transition={morphTransition}
+                transition={activeMorphTransition}
               >
                 <Toggles altLabel={altLabel} altPath={altPath} lang={lang} />
               </motion.div>
@@ -513,9 +555,7 @@ export function MorphNav({
             backgroundColor: 'var(--border)',
             opacity: 0.65,
             clipPath: borderVisible ? 'inset(0 0 0 0)' : 'inset(0 50% 0 50%)',
-            transition: borderVisible
-              ? 'clip-path 1s cubic-bezier(0.25, 1, 0.5, 1)'
-              : 'clip-path 0.4s cubic-bezier(0.25, 1, 0.5, 1)',
+            transition: getBorderTransition(prefersReduced, borderVisible),
           }}
         />
       </motion.header>

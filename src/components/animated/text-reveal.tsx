@@ -1,4 +1,5 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 type Props = {
   text: string;
@@ -7,7 +8,7 @@ type Props = {
 };
 
 export function TextReveal({ text, className = '', as: Tag = 'h1' }: Props) {
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
   const words = text.split(' ');
 
   if (prefersReduced) {

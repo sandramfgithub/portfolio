@@ -1,8 +1,9 @@
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import type { KeyboardEvent, ReactNode } from 'react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Lang } from '@/i18n/translations';
 import { getLocalizedPath, getTranslations } from '@/i18n/utils';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 import { TypingAnimation } from '../animated/typing-animation';
 import { TerminalChrome } from './terminal-chrome';
 import { TerminalMenu } from './terminal-menu';
@@ -16,7 +17,7 @@ const violet = 'text-[oklch(0.65_0.25_295)]';
 
 export function Terminal({ lang, className }: Props) {
   const t = getTranslations(lang);
-  const prefersReduced = useReducedMotion();
+  const prefersReduced = usePrefersReducedMotion();
   const [step, setStep] = useState(0);
   const [activeIndex, setActiveIndex] = useState(0);
   const menuListRef = useRef<HTMLUListElement>(null);

@@ -1,6 +1,7 @@
 import type { Variants } from 'framer-motion';
-import { motion, useReducedMotion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { forwardRef } from 'react';
+import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 
 type MenuItem = {
   label: string;
@@ -34,7 +35,7 @@ const violet = 'text-[oklch(0.65_0.25_295)]';
 
 export const TerminalMenu = forwardRef<HTMLUListElement, Props>(
   ({ hint, items, activeIndex, onActiveIndexChange }, ref) => {
-    const prefersReduced = useReducedMotion();
+    const prefersReduced = usePrefersReducedMotion();
 
     if (prefersReduced) {
       return (
