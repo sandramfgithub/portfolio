@@ -1,5 +1,5 @@
 import type { SkillBadgeViewModel } from '@/application/portfolio/dto';
-import { SkillBadge } from '@/components/skill-badge';
+import { SkillBadge } from '@/components/portfolio/skills/skill-badge';
 import type { Lang } from '@/i18n/translations';
 
 export function StackList({

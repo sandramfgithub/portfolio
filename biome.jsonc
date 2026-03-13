@@ -71,7 +71,7 @@
       }
     },
     {
-      "includes": ["src/components/morph-nav.tsx"],
+      "includes": ["src/components/layout/morph-nav.tsx"],
       "linter": {
         "rules": {
           "a11y": {

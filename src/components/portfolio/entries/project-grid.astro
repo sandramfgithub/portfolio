@@ -1,0 +1,22 @@
+---
+import type { ProjectCardViewModel } from '@/application/portfolio/dto';
+import ProjectCard from '@/components/portfolio/entries/project-card.astro';
+import type { Lang } from '@/i18n/translations';
+
+type Props = {
+  lang: Lang;
+  projects: readonly ProjectCardViewModel[];
+};
+
+const { projects, lang } = Astro.props as Props;
+---
+
+<div class="grid gap-4 sm:grid-cols-2">
+  {projects.map((project, i) => (
+    <ProjectCard
+      {...project}
+      animationDelay={i * 40}
+      lang={lang}
+    />
+  ))}
+</div>

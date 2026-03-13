@@ -4,7 +4,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import type { Lang } from '@/i18n/translations';
 import { getLocalizedPath, getTranslations } from '@/i18n/utils';
 import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
-import { TypingAnimation } from '../animated/typing-animation';
+import { TypingAnimation } from '../motion/typing-animation';
 import { TerminalChrome } from './terminal-chrome';
 import { TerminalMenu } from './terminal-menu';
 

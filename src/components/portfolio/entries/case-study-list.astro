@@ -1,0 +1,50 @@
+---
+import type { CaseStudyViewModel } from '@/application/portfolio/dto';
+import { StackList } from '@/components/portfolio/skills/stack-list';
+import { Badge } from '@/components/ui/badge';
+import type { Lang } from '@/i18n/translations';
+import { getTranslations } from '@/i18n/utils';
+
+type Props = {
+  cases: readonly CaseStudyViewModel[];
+  lang: Lang;
+};
+
+const { cases, lang } = Astro.props as Props;
+const t = getTranslations(lang);
+---
+
+<ul
+  class="grid gap-px overflow-hidden rounded-lg border border-border/60 bg-border/60"
+>
+  {cases.map((project, i) => (
+    <li
+      class="fade-up-item flex flex-col gap-2 bg-card px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+      style={`animation-delay: ${i * 40}ms`}
+    >
+      <div class="min-w-0 flex-1">
+        <div class="flex items-center gap-2">
+          <h3 class="font-semibold text-base">
+            <a
+              class="transition-colors hover:text-muted-foreground"
+              href={project.href}
+            >
+              {project.title}
+            </a>
+          </h3>
+          {project.hasCaseStudy && (
+            <Badge className="text-[11px]" variant="outline">
+              {t.projects.caseStudy}
+            </Badge>
+          )}
+        </div>
+        <p class="mt-1 text-muted-foreground text-sm leading-6">
+          {project.summary}
+        </p>
+      </div>
+      <div class="shrink-0">
+        <StackList lang={lang} skills={project.skills} client:visible />
+      </div>
+    </li>
+  ))}
+</ul>
