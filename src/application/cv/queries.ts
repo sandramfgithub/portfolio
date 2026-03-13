@@ -58,9 +58,11 @@ export const getCvViewModel = async (
       period: experience.period,
       summary: experience.summary,
       achievements: experience.achievements,
+      skillSlugs: experience.stack,
       stack: resolveSkillNames(experience.stack, skillNameLookup),
     })),
     languages: document.languages,
+    skillSlugs: document.skillSlugs,
     skillNames: resolveSkillNames(document.skillSlugs, skillNameLookup),
   };
 };

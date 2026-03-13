@@ -1,3 +1,4 @@
+import { getCvViewModel } from '@/application/cv/queries';
 import type {
   AboutPageViewModel,
   EntryDetailPageViewModel,
@@ -255,25 +256,23 @@ export const getAboutPageViewModel = async (
   const contentRepository = await getRepository(repository);
   const [page, cv, { skillLookup }] = await Promise.all([
     getPageOrThrow(contentRepository, locale, 'about'),
-    contentRepository.getCv(locale),
+    getCvViewModel(locale, contentRepository),
     getSkillsAndLookup(contentRepository, locale),
   ]);
-
-  const document = requireValue(cv, `Missing CV content for ${locale}`);
 
   return {
     title: page.seo.title,
     description: page.seo.description,
     introParagraphs: page.introParagraphs,
-    experience: document.experience.map((experience) => ({
+    experience: cv.experience.map((experience) => ({
       role: experience.role,
       company: experience.company,
       period: experience.period,
       summary: experience.summary,
       achievements: experience.achievements,
-      skills: resolveSkills(experience.stack, skillLookup),
+      skills: resolveSkills(experience.skillSlugs, skillLookup),
     })),
-    skills: resolveSkills(document.skillSlugs, skillLookup),
+    skills: resolveSkills(cv.skillSlugs, skillLookup),
   };
 };
 

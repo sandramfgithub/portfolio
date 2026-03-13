@@ -13,6 +13,7 @@ export type CvExperienceViewModel = {
   period: string;
   summary: string;
   achievements: readonly string[];
+  skillSlugs: readonly string[];
   stack: readonly string[];
 };
 
@@ -46,6 +47,7 @@ export type CvViewModel = {
   experience: readonly CvExperienceViewModel[];
   languages: readonly CvLanguageViewModel[];
   profile: CvProfileViewModel;
+  skillSlugs: readonly string[];
   skillNames: readonly string[];
 };
 
