@@ -1,0 +1,16 @@
+---
+import { locales } from '@/domain/portfolio/value-objects';
+import type { Lang } from '@/i18n/translations';
+import NotFoundTemplate from '@/templates/not-found.astro';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Lang };
+---
+
+<NotFoundTemplate lang={lang} />

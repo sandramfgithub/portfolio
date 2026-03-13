@@ -1,5 +1,27 @@
 ---
-import NotFoundTemplate from '@/templates/not-found.astro';
 ---
 
-<NotFoundTemplate lang="es" />
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="noindex, nofollow" name="robots">
+    <title>Redirecting…</title>
+    <script is:inline>
+      (() => {
+        const path = window.location.pathname;
+        const lang = path === '/en' || path.startsWith('/en/') ? 'en' : 'es';
+        const target = `/${lang}/404`;
+
+        if (path !== target) {
+          window.location.replace(target);
+        }
+      })();
+    </script>
+    <noscript>
+      <meta content="0;url=/es/404" http-equiv="refresh">
+    </noscript>
+  </head>
+  <body></body>
+</html>
