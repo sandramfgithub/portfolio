@@ -229,6 +229,32 @@ footer {
   fill: currentColor;
 }
 
+.theme-toggle {
+  position: relative;
+}
+
+.theme-toggle-icon {
+  position: absolute;
+  inset: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: opacity 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.theme-toggle-icon-sun {
+  opacity: 0;
+}
+
+.dark .theme-toggle-icon-sun {
+  opacity: 1;
+}
+
+.dark .theme-toggle-icon-moon {
+  opacity: 0;
+}
+
 /* --- Item stagger --- */
 
 .fade-up-item {

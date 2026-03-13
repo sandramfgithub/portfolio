@@ -139,7 +139,6 @@ function ThemeToggle({ lang }: { lang: Lang }) {
     }, 450);
   };
 
-  const Icon = theme === 'dark' ? Sun : Moon;
   const label =
     theme === 'dark' ? t.common.switchToLight : t.common.switchToDark;
 
@@ -147,10 +146,21 @@ function ThemeToggle({ lang }: { lang: Lang }) {
     <Tooltip>
       <TooltipTrigger
         aria-label={label}
-        className="icon-btn inline-flex h-8 w-8 items-center justify-center rounded-lg"
+        className="theme-toggle icon-btn inline-flex h-8 w-8 items-center justify-center rounded-lg"
         onClick={toggle}
       >
-        <Icon className="size-4" />
+        <span
+          aria-hidden="true"
+          className="theme-toggle-icon theme-toggle-icon-moon"
+        >
+          <Moon className="size-4" />
+        </span>
+        <span
+          aria-hidden="true"
+          className="theme-toggle-icon theme-toggle-icon-sun"
+        >
+          <Sun className="size-4" />
+        </span>
       </TooltipTrigger>
       <TooltipContent>{label}</TooltipContent>
     </Tooltip>
@@ -299,6 +309,9 @@ const reducedWidthTransition = {
   ease: [0.25, 1, 0.5, 1] as const,
 };
 
+const EXPANDED_BRAND_BLOCK_HEIGHT = 62;
+const INLINE_BRAND_BLOCK_HEIGHT = 21;
+
 const getActiveMorphTransition = (prefersReduced: boolean) =>
   prefersReduced ? reducedMorphTransition : morphTransition;
 
@@ -309,6 +322,12 @@ const getActiveBrandTransition = (prefersReduced: boolean) =>
   prefersReduced
     ? { duration: 0 }
     : { duration: 0.32, ease: [0.25, 1, 0.5, 1] as const };
+
+const getActiveTransitions = (motionEnabled: boolean) => ({
+  brand: getActiveBrandTransition(!motionEnabled),
+  layout: getActiveMorphTransition(!motionEnabled),
+  width: getActiveWidthTransition(!motionEnabled),
+});
 
 const getBorderDelay = (prefersReduced: boolean, scrolled: boolean) => {
   if (prefersReduced) {
@@ -426,11 +445,52 @@ const getToggleSectionStyle = (togglesInline: boolean) => {
 
 const getHeaderMaxWidth = (scrolled: boolean) => (scrolled ? 768 : 896);
 
-const getHeaderPaddingTop = (expandedPadding: number, scrolled: boolean) =>
-  scrolled ? 12 : expandedPadding;
-
 const getNavLayoutMode = (isCompactMobile: boolean) =>
   isCompactMobile ? true : 'position';
+
+const getBrandWrapperHeight = ({
+  brandHidden,
+  scrolled,
+}: {
+  brandHidden: boolean;
+  scrolled: boolean;
+}) => {
+  if (brandHidden) {
+    return 0;
+  }
+
+  return scrolled ? INLINE_BRAND_BLOCK_HEIGHT : EXPANDED_BRAND_BLOCK_HEIGHT;
+};
+
+const getHeaderContentClassName = ({
+  layoutState,
+  scrolled,
+}: {
+  layoutState: ReturnType<typeof getMorphNavLayoutState>;
+  scrolled: boolean;
+}) =>
+  cn(
+    'relative flex pb-3',
+    layoutState.containerDirection === 'column' ? 'flex-col' : 'flex-row',
+    layoutState.containerAlignItems === 'center'
+      ? 'items-center'
+      : 'items-stretch',
+    scrolled ? 'pt-3' : 'pt-8 sm:pt-[60px]'
+  );
+
+function useMotionReady() {
+  const [motionReady, setMotionReady] = useState(false);
+
+  useEffect(() => {
+    const frameId = window.requestAnimationFrame(() => {
+      setMotionReady(true);
+    });
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, []);
+
+  return motionReady;
+}
 
 function useMorphNavState({
   expandedPadding,
@@ -540,6 +600,7 @@ export function MorphNav({
   const prefersReduced = usePrefersReducedMotion();
   const isMobile = useIsMobile(MOBILE_BREAKPOINT);
   const isCompactMobile = useIsMobile(COMPACT_MOBILE_BREAKPOINT);
+  const motionReady = useMotionReady();
 
   const navItems = navigation;
   const { scrollY } = useScroll();
@@ -564,15 +625,18 @@ export function MorphNav({
     [0, 1]
   );
 
-  const activeMorphTransition = getActiveMorphTransition(prefersReduced);
-  const activeWidthTransition = getActiveWidthTransition(prefersReduced);
-  const activeBrandTransition = getActiveBrandTransition(prefersReduced);
+  const motionEnabled = motionReady && !prefersReduced;
+  const activeTransitions = getActiveTransitions(motionEnabled);
   const layoutState = getMorphNavLayoutState({
     isCompactMobile,
     scrolled,
   });
   const borderVisible = useBorderVisible(prefersReduced, scrolled);
   const navLayoutMode = getNavLayoutMode(isCompactMobile);
+  const brandWrapperHeight = getBrandWrapperHeight({
+    brandHidden: layoutState.brandHidden,
+    scrolled,
+  });
 
   const renderNavLink = (item: NavigationItemViewModel) => {
     const itemPath = item.href.replace(/\/$/, '') || '/';
@@ -607,52 +671,54 @@ export function MorphNav({
         <motion.div
           animate={{ maxWidth: getHeaderMaxWidth(scrolled) }}
           className="page-shell relative"
-          transition={activeWidthTransition}
+          transition={activeTransitions.width}
         >
           <LayoutGroup>
             <motion.div
+              className={getHeaderContentClassName({
+                layoutState,
+                scrolled,
+              })}
+              initial={false}
               layout
-              style={{
-                display: 'flex',
-                flexDirection: layoutState.containerDirection,
-                alignItems: layoutState.containerAlignItems,
-                paddingTop: getHeaderPaddingTop(expandedPadding, scrolled),
-                paddingBottom: 12,
-                position: 'relative',
-              }}
-              transition={activeMorphTransition}
+              transition={activeTransitions.layout}
             >
               {/* Sandra */}
               <motion.div
                 animate={{
-                  height: layoutState.brandHidden ? 0 : 'auto',
-                  marginBottom: layoutState.brandMarginBottom,
+                  height: brandWrapperHeight,
                   opacity: layoutState.brandHidden ? 0 : 1,
-                  y: layoutState.brandHidden ? -12 : 0,
                 }}
                 aria-hidden={layoutState.brandHidden || undefined}
                 className={cn(layoutState.brandHidden && 'pointer-events-none')}
+                initial={false}
                 layout
                 style={{ overflow: 'hidden' }}
-                transition={activeBrandTransition}
+                transition={activeTransitions.brand}
               >
-                <a
-                  className={cn(
-                    'font-serif',
-                    scrolled && !layoutState.brandHidden
-                      ? 'whitespace-nowrap font-medium text-[15px]'
-                      : 'text-[28px]'
-                  )}
-                  href={homeHref}
-                  style={
-                    scrolled && !layoutState.brandHidden
-                      ? undefined
-                      : { fontWeight: 500 }
-                  }
-                  tabIndex={layoutState.brandHidden ? -1 : undefined}
+                <motion.div
+                  animate={{ y: layoutState.brandHidden ? -12 : 0 }}
+                  initial={false}
+                  transition={activeTransitions.brand}
                 >
-                  sandra
-                </a>
+                  <a
+                    className={cn(
+                      'font-serif',
+                      scrolled && !layoutState.brandHidden
+                        ? 'whitespace-nowrap font-medium text-[15px]'
+                        : 'text-[28px]'
+                    )}
+                    href={homeHref}
+                    style={
+                      scrolled && !layoutState.brandHidden
+                        ? undefined
+                        : { fontWeight: 500 }
+                    }
+                    tabIndex={layoutState.brandHidden ? -1 : undefined}
+                  >
+                    sandra
+                  </a>
+                </motion.div>
               </motion.div>
 
               {/* Nav */}
@@ -665,7 +731,7 @@ export function MorphNav({
                 )}
                 layout={navLayoutMode}
                 style={getNavSectionStyle({ layoutState, scrolled })}
-                transition={activeMorphTransition}
+                transition={activeTransitions.layout}
               >
                 <nav
                   aria-label="Principal"
@@ -684,7 +750,7 @@ export function MorphNav({
                     : undefined,
                   width: layoutState.socialsFullWidth ? '100%' : undefined,
                 }}
-                transition={activeMorphTransition}
+                transition={activeTransitions.layout}
               >
                 <SocialLinks
                   className={
@@ -702,7 +768,7 @@ export function MorphNav({
                 className="flex items-center gap-1"
                 layout="position"
                 style={getToggleSectionStyle(layoutState.togglesInline)}
-                transition={activeMorphTransition}
+                transition={activeTransitions.layout}
               >
                 <Toggles altLabel={altLabel} altPath={altPath} lang={lang} />
               </motion.div>
@@ -723,7 +789,7 @@ export function MorphNav({
       </motion.header>
 
       {/* Spacer — reserves space in document flow matching expanded header */}
-      <div style={{ height: spacerHeight }} />
+      <div className="h-[184px] sm:h-[212px]" />
     </TooltipProvider>
   );
 }
