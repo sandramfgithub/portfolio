@@ -5,7 +5,7 @@
     "locale": "es",
     "kind": "public-project",
     "publicationState": "published",
-    "title": "portfolio",
+    "title": "Portfolio",
     "summary": "Sitio en Astro para ordenar repos, librerías y documentación pública.",
     "paragraphs": [],
     "bullets": [],
@@ -21,7 +21,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "portfolio | Sandra Martínez Fernández",
+      "title": "Portfolio | Sandra Martínez Fernández",
       "description": "Sitio en Astro para ordenar repos, librerías y documentación pública."
     },
     "privateEntryType": null,
@@ -33,7 +33,7 @@
     "locale": "es",
     "kind": "public-project",
     "publicationState": "published",
-    "title": "react-table-system",
+    "title": "React Table System",
     "summary": "Extracción de un sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables.",
     "paragraphs": [],
     "bullets": [],
@@ -49,7 +49,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "react-table-system | Sandra Martínez Fernández",
+      "title": "React Table System | Sandra Martínez Fernández",
       "description": "Extracción de un sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables."
     },
     "privateEntryType": null,
@@ -61,7 +61,7 @@
     "locale": "es",
     "kind": "public-project",
     "publicationState": "coming-soon",
-    "title": "pg-lease-runtime",
+    "title": "PG Lease Runtime",
     "summary": "Librería pequeña para workers con leasing sobre PostgreSQL, pensada para polling, heartbeats y cierre limpio.",
     "paragraphs": [],
     "bullets": [],
@@ -77,7 +77,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "pg-lease-runtime | Sandra Martínez Fernández",
+      "title": "PG Lease Runtime | Sandra Martínez Fernández",
       "description": "Librería pequeña para workers con leasing sobre PostgreSQL, pensada para polling, heartbeats y cierre limpio."
     },
     "privateEntryType": null,
@@ -89,7 +89,7 @@
     "locale": "es",
     "kind": "public-project",
     "publicationState": "coming-soon",
-    "title": "project-radar",
+    "title": "Project Radar",
     "summary": "POC para relacionar señales externas con proyectos propios y convertir novedades en backlog revisable.",
     "paragraphs": [],
     "bullets": [],
@@ -105,7 +105,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "project-radar | Sandra Martínez Fernández",
+      "title": "Project Radar | Sandra Martínez Fernández",
       "description": "POC para relacionar señales externas con proyectos propios y convertir novedades en backlog revisable."
     },
     "privateEntryType": null,
@@ -117,7 +117,7 @@
     "locale": "es",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "pim",
+    "title": "PIM",
     "summary": "Monorepo real con Bun, workers con leasing, contratos API, búsqueda y una base fuerte de tooling interno.",
     "paragraphs": [],
     "bullets": [],
@@ -127,7 +127,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "pim | Sandra Martínez Fernández",
+      "title": "PIM | Sandra Martínez Fernández",
       "description": "Monorepo real con Bun, workers con leasing, contratos API, búsqueda y una base fuerte de tooling interno."
     },
     "privateEntryType": "work",
@@ -205,7 +205,7 @@
     "locale": "es",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "mini-c",
+    "title": "Mini C",
     "summary": "Compilador en C con análisis léxico y sintáctico, tabla hash, warnings y optimización de código.",
     "paragraphs": [],
     "bullets": [],
@@ -215,7 +215,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "mini-c | Sandra Martínez Fernández",
+      "title": "Mini C | Sandra Martínez Fernández",
       "description": "Compilador en C con análisis léxico y sintáctico, tabla hash, warnings y optimización de código."
     },
     "privateEntryType": "case-study",
@@ -227,7 +227,7 @@
     "locale": "es",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "chat-app",
+    "title": "Chat App",
     "summary": "Aplicación desktop con gRPC, persistencia propia y componentes custom, útil como antecedente de producto end-to-end.",
     "paragraphs": [],
     "bullets": [],
@@ -237,7 +237,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "chat-app | Sandra Martínez Fernández",
+      "title": "Chat App | Sandra Martínez Fernández",
       "description": "Aplicación desktop con gRPC, persistencia propia y componentes custom, útil como antecedente de producto end-to-end."
     },
     "privateEntryType": "case-study",
@@ -249,7 +249,7 @@
     "locale": "es",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "courses-app",
+    "title": "Courses App",
     "summary": "Aplicación modular en Java con sistema de plugins, CI y una disciplina de release mejor de lo habitual en un proyecto académico.",
     "paragraphs": [],
     "bullets": [],
@@ -259,7 +259,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "courses-app | Sandra Martínez Fernández",
+      "title": "Courses App | Sandra Martínez Fernández",
       "description": "Aplicación modular en Java con sistema de plugins, CI y una disciplina de release mejor de lo habitual en un proyecto académico."
     },
     "privateEntryType": "case-study",
@@ -271,7 +271,7 @@
     "locale": "en",
     "kind": "public-project",
     "publicationState": "published",
-    "title": "portfolio",
+    "title": "Portfolio",
     "summary": "Astro site to organize repos, libraries, and public documentation.",
     "paragraphs": [],
     "bullets": [],
@@ -287,7 +287,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "portfolio | Sandra Martínez Fernández",
+      "title": "Portfolio | Sandra Martínez Fernández",
       "description": "Astro site to organize repos, libraries, and public documentation."
     },
     "privateEntryType": null,
@@ -299,7 +299,7 @@
     "locale": "en",
     "kind": "public-project",
     "publicationState": "published",
-    "title": "react-table-system",
+    "title": "React Table System",
     "summary": "Extraction of a server-side table system with filters, persistence, views, and reusable contracts.",
     "paragraphs": [],
     "bullets": [],
@@ -315,7 +315,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "react-table-system | Sandra Martínez Fernández",
+      "title": "React Table System | Sandra Martínez Fernández",
       "description": "Extraction of a server-side table system with filters, persistence, views, and reusable contracts."
     },
     "privateEntryType": null,
@@ -327,7 +327,7 @@
     "locale": "en",
     "kind": "public-project",
     "publicationState": "coming-soon",
-    "title": "pg-lease-runtime",
+    "title": "PG Lease Runtime",
     "summary": "Small library for PostgreSQL-based worker leasing, designed for polling, heartbeats, and clean shutdown.",
     "paragraphs": [],
     "bullets": [],
@@ -343,7 +343,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "pg-lease-runtime | Sandra Martínez Fernández",
+      "title": "PG Lease Runtime | Sandra Martínez Fernández",
       "description": "Small library for PostgreSQL-based worker leasing, designed for polling, heartbeats, and clean shutdown."
     },
     "privateEntryType": null,
@@ -355,7 +355,7 @@
     "locale": "en",
     "kind": "public-project",
     "publicationState": "coming-soon",
-    "title": "project-radar",
+    "title": "Project Radar",
     "summary": "POC to match external signals with own projects and turn news into a reviewable backlog.",
     "paragraphs": [],
     "bullets": [],
@@ -371,7 +371,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "project-radar | Sandra Martínez Fernández",
+      "title": "Project Radar | Sandra Martínez Fernández",
       "description": "POC to match external signals with own projects and turn news into a reviewable backlog."
     },
     "privateEntryType": null,
@@ -383,7 +383,7 @@
     "locale": "en",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "pim",
+    "title": "PIM",
     "summary": "Real-world monorepo with Bun, lease-based workers, API contracts, search, and strong internal tooling.",
     "paragraphs": [],
     "bullets": [],
@@ -393,7 +393,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "pim | Sandra Martínez Fernández",
+      "title": "PIM | Sandra Martínez Fernández",
       "description": "Real-world monorepo with Bun, lease-based workers, API contracts, search, and strong internal tooling."
     },
     "privateEntryType": "work",
@@ -471,7 +471,7 @@
     "locale": "en",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "mini-c",
+    "title": "Mini C",
     "summary": "C compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization.",
     "paragraphs": [],
     "bullets": [],
@@ -481,7 +481,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "mini-c | Sandra Martínez Fernández",
+      "title": "Mini C | Sandra Martínez Fernández",
       "description": "C compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization."
     },
     "privateEntryType": "case-study",
@@ -493,7 +493,7 @@
     "locale": "en",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "chat-app",
+    "title": "Chat App",
     "summary": "Desktop app with gRPC, custom persistence, and UI components -- an end-to-end product antecedent.",
     "paragraphs": [],
     "bullets": [],
@@ -503,7 +503,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "chat-app | Sandra Martínez Fernández",
+      "title": "Chat App | Sandra Martínez Fernández",
       "description": "Desktop app with gRPC, custom persistence, and UI components -- an end-to-end product antecedent."
     },
     "privateEntryType": "case-study",
@@ -515,7 +515,7 @@
     "locale": "en",
     "kind": "case-study",
     "publicationState": "published",
-    "title": "courses-app",
+    "title": "Courses App",
     "summary": "Modular Java app with plugin system, CI, and unusually disciplined release process for an academic project.",
     "paragraphs": [],
     "bullets": [],
@@ -525,7 +525,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "courses-app | Sandra Martínez Fernández",
+      "title": "Courses App | Sandra Martínez Fernández",
       "description": "Modular Java app with plugin system, CI, and unusually disciplined release process for an academic project."
     },
     "privateEntryType": "case-study",
@@ -539,7 +539,7 @@
     "privateEntryType": null,
     "publicationState": "published",
     "sortDate": "2026-02-10",
-    "title": "scaffold-bun-monorepo",
+    "title": "Scaffold Bun Monorepo",
     "summary": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling comun y contratos listos para crecer.",
     "paragraphs": [],
     "bullets": [],
@@ -555,7 +555,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "scaffold-bun-monorepo | Sandra Martínez Fernández",
+      "title": "Scaffold Bun Monorepo | Sandra Martínez Fernández",
       "description": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling comun y contratos listos para crecer."
     }
   },
@@ -589,7 +589,7 @@
     "privateEntryType": "work",
     "publicationState": "published",
     "sortDate": "2024-09-01",
-    "title": "mini-crm",
+    "title": "Mini CRM",
     "summary": "CRM pequeño para seguimiento comercial, pipeline, actividad y visibilidad operativa sobre clientes.",
     "paragraphs": [],
     "bullets": [],
@@ -599,7 +599,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "mini-crm | Sandra Martínez Fernández",
+      "title": "Mini CRM | Sandra Martínez Fernández",
       "description": "CRM pequeño para seguimiento comercial, pipeline, actividad y visibilidad operativa sobre clientes."
     }
   },
@@ -611,7 +611,7 @@
     "privateEntryType": null,
     "publicationState": "published",
     "sortDate": "2026-02-10",
-    "title": "scaffold-bun-monorepo",
+    "title": "Scaffold Bun Monorepo",
     "summary": "Starter for Bun monorepos with shared packages, common tooling, and contracts ready to scale.",
     "paragraphs": [],
     "bullets": [],
@@ -627,7 +627,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "scaffold-bun-monorepo | Sandra Martínez Fernández",
+      "title": "Scaffold Bun Monorepo | Sandra Martínez Fernández",
       "description": "Starter for Bun monorepos with shared packages, common tooling, and contracts ready to scale."
     }
   },
@@ -661,7 +661,7 @@
     "privateEntryType": "work",
     "publicationState": "published",
     "sortDate": "2024-09-01",
-    "title": "mini-crm",
+    "title": "Mini CRM",
     "summary": "Small CRM for commercial follow-up, pipeline visibility, activity tracking, and customer context.",
     "paragraphs": [],
     "bullets": [],
@@ -671,7 +671,7 @@
     "organization": null,
     "period": null,
     "seo": {
-      "title": "mini-crm | Sandra Martínez Fernández",
+      "title": "Mini CRM | Sandra Martínez Fernández",
       "description": "Small CRM for commercial follow-up, pipeline visibility, activity tracking, and customer context."
     }
   }
