@@ -8,6 +8,18 @@ const t = getTranslations(lang);
 const year = new Date().getFullYear();
 ---
 
+<div
+  aria-hidden="true"
+  class="pointer-events-none relative mt-6 h-[clamp(6rem,15.5vw,10.75rem)] select-none"
+>
+  <img
+    alt=""
+    class="absolute bottom-1 left-0 h-auto w-[clamp(5rem,13vw,9rem)] opacity-[0.82] dark:opacity-[0.72]"
+    decoding="async"
+    loading="lazy"
+    src="/cat.svg"
+  >
+</div>
 <footer class="border-t border-border/50 py-8" transition:animate="none">
   <div
     class="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"
