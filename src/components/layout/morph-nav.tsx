@@ -13,6 +13,12 @@ import type {
   SocialLinkViewModel,
 } from '@/application/portfolio/dto';
 import {
+  COMPACT_MOBILE_BREAKPOINT,
+  getMorphNavLayoutState,
+  MOBILE_BREAKPOINT,
+  NAV_STACK_GAP,
+} from '@/components/layout/morph-nav-layout';
+import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
@@ -267,12 +273,13 @@ function useIsMobile(breakpoint = 640) {
 // Expanded padding values
 const PADDING_DESKTOP = 60;
 const PADDING_MOBILE = 32;
-const GAP = 20;
 
 // Heights for the spacer (must match the expanded header)
 // paddingTop + heroName(36) + gap + navRow(32) + gap + heroSocials(32) + paddingBottom(12)
-const SPACER_DESKTOP = PADDING_DESKTOP + 36 + GAP + 32 + GAP + 32 + 12; // 212
-const SPACER_MOBILE = PADDING_MOBILE + 36 + GAP + 32 + GAP + 32 + 12; // 184
+const SPACER_DESKTOP =
+  PADDING_DESKTOP + 36 + NAV_STACK_GAP + 32 + NAV_STACK_GAP + 32 + 12; // 212
+const SPACER_MOBILE =
+  PADDING_MOBILE + 36 + NAV_STACK_GAP + 32 + NAV_STACK_GAP + 32 + 12; // 184
 
 const morphTransition = {
   layout: { duration: 0.4, ease: [0.25, 1, 0.5, 1] as const },
@@ -291,6 +298,17 @@ const reducedWidthTransition = {
   duration: 0,
   ease: [0.25, 1, 0.5, 1] as const,
 };
+
+const getActiveMorphTransition = (prefersReduced: boolean) =>
+  prefersReduced ? reducedMorphTransition : morphTransition;
+
+const getActiveWidthTransition = (prefersReduced: boolean) =>
+  prefersReduced ? reducedWidthTransition : widthTransition;
+
+const getActiveBrandTransition = (prefersReduced: boolean) =>
+  prefersReduced
+    ? { duration: 0 }
+    : { duration: 0.32, ease: [0.25, 1, 0.5, 1] as const };
 
 const getBorderDelay = (prefersReduced: boolean, scrolled: boolean) => {
   if (prefersReduced) {
@@ -347,47 +365,89 @@ function HeaderBackground({
   );
 }
 
-export function MorphNav({
-  lang,
-  pathname: initialPathname,
-  navigation,
-  socialLinks,
-}: Props) {
-  const prefersReduced = usePrefersReducedMotion();
-  const isMobile = useIsMobile();
+const getNextScrolledState = ({
+  expandedPadding,
+  previous,
+  scrollTop,
+}: {
+  expandedPadding: number;
+  previous: boolean;
+  scrollTop: number;
+}) => {
+  if (previous && scrollTop < expandedPadding - 10) {
+    return false;
+  }
+
+  if (!previous && scrollTop > expandedPadding) {
+    return true;
+  }
+
+  return previous;
+};
+
+const getNavSectionStyle = ({
+  layoutState,
+  scrolled,
+}: {
+  layoutState: ReturnType<typeof getMorphNavLayoutState>;
+  scrolled: boolean;
+}) => {
+  if (layoutState.navFullWidth) {
+    return {
+      height: 32,
+      marginBottom: layoutState.navMarginBottom,
+      paddingRight: layoutState.navPaddingRight,
+      width: '100%',
+    };
+  }
+
+  if (scrolled) {
+    return { marginLeft: layoutState.navMarginLeft };
+  }
+
+  return {
+    height: 32,
+    marginBottom: layoutState.navMarginBottom,
+  };
+};
+
+const getToggleSectionStyle = (togglesInline: boolean) => {
+  if (togglesInline) {
+    return { marginLeft: 4 };
+  }
+
+  return {
+    position: 'absolute' as const,
+    right: 0,
+    top: 12,
+    zIndex: 10,
+  };
+};
+
+const getHeaderMaxWidth = (scrolled: boolean) => (scrolled ? 768 : 896);
+
+const getHeaderPaddingTop = (expandedPadding: number, scrolled: boolean) =>
+  scrolled ? 12 : expandedPadding;
+
+const getNavLayoutMode = (isCompactMobile: boolean) =>
+  isCompactMobile ? true : 'position';
+
+function useMorphNavState({
+  expandedPadding,
+  initialPathname,
+  scrollY,
+  spacerHeight,
+}: {
+  expandedPadding: number;
+  initialPathname: string;
+  scrollY: MotionValue<number>;
+  spacerHeight: number;
+}) {
   const [currentPath, setCurrentPath] = useState(initialPathname);
-
-  const navItems = navigation;
-  const altLang = getAlternateLang(lang);
-  const altLabel = altLang.toUpperCase();
-  const altPath = getLocalizedPath(currentPath, altLang);
-  const homeHref = navItems[0]?.href ?? getLocalizedPath('/', lang);
-
-  // Lock: prevents scroll handler from unsetting scrolled during Astro transitions
+  const [scrolled, setScrolled] = useState(false);
   const scrollLockRef = useRef(0);
   const scrolledRef = useRef(false);
-
-  const { scrollY } = useScroll();
-
-  const expandedPadding = isMobile ? PADDING_MOBILE : PADDING_DESKTOP;
-  const spacerHeight = isMobile ? SPACER_MOBILE : SPACER_DESKTOP;
   const spacerHeightRef = useRef(spacerHeight);
-
-  // Scroll-driven header chrome (continuous) — starts near the morph threshold
-  const bgAlpha = useTransform(
-    scrollY,
-    [expandedPadding * 0.6, expandedPadding + 60],
-    [0, 1]
-  );
-
-  // Discrete scroll state with hysteresis — triggers after scrolling past "sandra"
-  const [scrolled, setScrolled] = useState(false);
-  const activeMorphTransition = prefersReduced
-    ? reducedMorphTransition
-    : morphTransition;
-  const activeWidthTransition = prefersReduced
-    ? reducedWidthTransition
-    : widthTransition;
 
   useEffect(() => {
     spacerHeightRef.current = spacerHeight;
@@ -398,24 +458,23 @@ export function MorphNav({
   }, [scrolled]);
 
   useEffect(() => {
-    const unsubscribe = scrollY.on('change', (v) => {
+    const unsubscribe = scrollY.on('change', (scrollTop) => {
       if (Date.now() < scrollLockRef.current) {
         return;
       }
-      setScrolled((prev) => {
-        if (prev && v < expandedPadding - 10) {
-          return false;
-        }
-        if (!prev && v > expandedPadding) {
-          return true;
-        }
-        return prev;
-      });
-    });
-    return unsubscribe;
-  }, [scrollY, expandedPadding]);
 
-  // Update path on Astro navigation; keep sticky if was scrolled
+      setScrolled((previous) =>
+        getNextScrolledState({
+          expandedPadding,
+          previous,
+          scrollTop,
+        })
+      );
+    });
+
+    return unsubscribe;
+  }, [expandedPadding, scrollY]);
+
   useEffect(() => {
     const onSwap = () => {
       setCurrentPath(window.location.pathname.replace(/\/$/, '') || '/');
@@ -423,31 +482,42 @@ export function MorphNav({
         scrollLockRef.current = Date.now() + 600;
       }
     };
-    // After Astro finishes (including its scroll-to-top), restore scroll
+
     const onLoad = () => {
-      if (Date.now() < scrollLockRef.current) {
-        const maxScroll =
-          document.documentElement.scrollHeight - window.innerHeight;
-        if (maxScroll < 40) {
-          scrollLockRef.current = 0;
-          setScrolled(false);
-          return;
-        }
-        window.scrollTo({
-          top: spacerHeightRef.current - 56,
-          behavior: 'instant',
-        });
+      if (Date.now() >= scrollLockRef.current) {
+        return;
       }
+
+      const maxScroll =
+        document.documentElement.scrollHeight - window.innerHeight;
+      if (maxScroll < 40) {
+        scrollLockRef.current = 0;
+        setScrolled(false);
+        return;
+      }
+
+      window.scrollTo({
+        top: spacerHeightRef.current - 56,
+        behavior: 'instant',
+      });
     };
+
     document.addEventListener('astro:after-swap', onSwap);
     document.addEventListener('astro:page-load', onLoad);
+
     return () => {
       document.removeEventListener('astro:after-swap', onSwap);
       document.removeEventListener('astro:page-load', onLoad);
     };
   }, []);
 
-  // Border appears with scaleX after morph completes
+  return {
+    currentPath,
+    scrolled,
+  };
+}
+
+function useBorderVisible(prefersReduced: boolean, scrolled: boolean) {
   const [borderVisible, setBorderVisible] = useState(false);
 
   useEffect(() => {
@@ -457,6 +527,52 @@ export function MorphNav({
     );
     return () => clearTimeout(timer);
   }, [prefersReduced, scrolled]);
+
+  return borderVisible;
+}
+
+export function MorphNav({
+  lang,
+  pathname: initialPathname,
+  navigation,
+  socialLinks,
+}: Props) {
+  const prefersReduced = usePrefersReducedMotion();
+  const isMobile = useIsMobile(MOBILE_BREAKPOINT);
+  const isCompactMobile = useIsMobile(COMPACT_MOBILE_BREAKPOINT);
+
+  const navItems = navigation;
+  const { scrollY } = useScroll();
+
+  const expandedPadding = isMobile ? PADDING_MOBILE : PADDING_DESKTOP;
+  const spacerHeight = isMobile ? SPACER_MOBILE : SPACER_DESKTOP;
+  const { currentPath, scrolled } = useMorphNavState({
+    expandedPadding,
+    initialPathname,
+    scrollY,
+    spacerHeight,
+  });
+  const altLang = getAlternateLang(lang);
+  const altLabel = altLang.toUpperCase();
+  const altPath = getLocalizedPath(currentPath, altLang);
+  const homeHref = navItems[0]?.href ?? getLocalizedPath('/', lang);
+
+  // Scroll-driven header chrome (continuous) — starts near the morph threshold
+  const bgAlpha = useTransform(
+    scrollY,
+    [expandedPadding * 0.6, expandedPadding + 60],
+    [0, 1]
+  );
+
+  const activeMorphTransition = getActiveMorphTransition(prefersReduced);
+  const activeWidthTransition = getActiveWidthTransition(prefersReduced);
+  const activeBrandTransition = getActiveBrandTransition(prefersReduced);
+  const layoutState = getMorphNavLayoutState({
+    isCompactMobile,
+    scrolled,
+  });
+  const borderVisible = useBorderVisible(prefersReduced, scrolled);
+  const navLayoutMode = getNavLayoutMode(isCompactMobile);
 
   const renderNavLink = (item: NavigationItemViewModel) => {
     const itemPath = item.href.replace(/\/$/, '') || '/';
@@ -489,7 +605,7 @@ export function MorphNav({
         />
 
         <motion.div
-          animate={{ maxWidth: scrolled ? 768 : 896 }}
+          animate={{ maxWidth: getHeaderMaxWidth(scrolled) }}
           className="page-shell relative"
           transition={activeWidthTransition}
         >
@@ -498,9 +614,9 @@ export function MorphNav({
               layout
               style={{
                 display: 'flex',
-                flexDirection: scrolled ? 'row' : 'column',
-                alignItems: 'center',
-                paddingTop: scrolled ? 12 : expandedPadding,
+                flexDirection: layoutState.containerDirection,
+                alignItems: layoutState.containerAlignItems,
+                paddingTop: getHeaderPaddingTop(expandedPadding, scrolled),
                 paddingBottom: 12,
                 position: 'relative',
               }}
@@ -508,19 +624,32 @@ export function MorphNav({
             >
               {/* Sandra */}
               <motion.div
-                layout="position"
-                style={scrolled ? undefined : { marginBottom: GAP }}
-                transition={activeMorphTransition}
+                animate={{
+                  height: layoutState.brandHidden ? 0 : 'auto',
+                  marginBottom: layoutState.brandMarginBottom,
+                  opacity: layoutState.brandHidden ? 0 : 1,
+                  y: layoutState.brandHidden ? -12 : 0,
+                }}
+                aria-hidden={layoutState.brandHidden || undefined}
+                className={cn(layoutState.brandHidden && 'pointer-events-none')}
+                layout
+                style={{ overflow: 'hidden' }}
+                transition={activeBrandTransition}
               >
                 <a
                   className={cn(
                     'font-serif',
-                    scrolled
+                    scrolled && !layoutState.brandHidden
                       ? 'whitespace-nowrap font-medium text-[15px]'
                       : 'text-[28px]'
                   )}
                   href={homeHref}
-                  style={scrolled ? undefined : { fontWeight: 500 }}
+                  style={
+                    scrolled && !layoutState.brandHidden
+                      ? undefined
+                      : { fontWeight: 500 }
+                  }
+                  tabIndex={layoutState.brandHidden ? -1 : undefined}
                 >
                   sandra
                 </a>
@@ -530,14 +659,12 @@ export function MorphNav({
               <motion.div
                 className={cn(
                   'flex items-center',
-                  !scrolled && 'justify-center'
+                  layoutState.navJustify === 'center'
+                    ? 'justify-center'
+                    : 'justify-start'
                 )}
-                layout="position"
-                style={
-                  scrolled
-                    ? { marginLeft: 16 }
-                    : { height: 32, marginBottom: GAP }
-                }
+                layout={navLayoutMode}
+                style={getNavSectionStyle({ layoutState, scrolled })}
                 transition={activeMorphTransition}
               >
                 <nav
@@ -551,11 +678,20 @@ export function MorphNav({
               {/* Socials */}
               <motion.div
                 layout="position"
-                style={scrolled ? { marginLeft: 'auto' } : undefined}
+                style={{
+                  marginLeft: layoutState.socialsMarginLeftAuto
+                    ? 'auto'
+                    : undefined,
+                  width: layoutState.socialsFullWidth ? '100%' : undefined,
+                }}
                 transition={activeMorphTransition}
               >
                 <SocialLinks
-                  className={scrolled ? undefined : 'justify-center'}
+                  className={
+                    layoutState.socialsJustify === 'center'
+                      ? 'justify-center'
+                      : undefined
+                  }
                   lang={lang}
                   links={socialLinks}
                 />
@@ -565,16 +701,7 @@ export function MorphNav({
               <motion.div
                 className="flex items-center gap-1"
                 layout="position"
-                style={
-                  scrolled
-                    ? { marginLeft: 4 }
-                    : {
-                        position: 'absolute',
-                        top: 12,
-                        right: 0,
-                        zIndex: 10,
-                      }
-                }
+                style={getToggleSectionStyle(layoutState.togglesInline)}
                 transition={activeMorphTransition}
               >
                 <Toggles altLabel={altLabel} altPath={altPath} lang={lang} />
