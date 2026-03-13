@@ -1,4 +1,5 @@
 ---
+import { createAnalyticsAttributes } from '@/application/analytics/attributes';
 import type { EntryDetailPageViewModel } from '@/application/portfolio/dto';
 import { StackList } from '@/components/portfolio/skills/stack-list';
 import type { Lang } from '@/i18n/translations';
@@ -23,7 +24,18 @@ const bodyParagraphs =
 ---
 
 <Layout description={page.description} lang={lang} title={page.seoTitle}>
-  <article class="space-y-8 py-2 sm:py-4">
+  <article
+    {...createAnalyticsAttributes(
+      'entry_detail_viewed',
+      {
+        entryKind: page.kind,
+        lang,
+        slug: page.slug,
+      },
+      { trigger: 'view' }
+    )}
+    class="space-y-8 py-2 sm:py-4"
+  >
     <div class="space-y-4">
       <a
         class="text-muted-foreground text-sm underline transition-colors hover:text-foreground"
@@ -77,7 +89,12 @@ const bodyParagraphs =
       <h2 class="font-serif text-xl font-semibold tracking-tight">
         {t.entry.stack}
       </h2>
-      <StackList lang={lang} skills={page.skills} client:visible />
+      <StackList
+        client:visible
+        lang={lang}
+        location="entry-detail"
+        skills={page.skills}
+      />
     </section>
 
     {page.links.length > 0 && (
@@ -88,6 +105,12 @@ const bodyParagraphs =
         <div class="flex flex-wrap gap-4 text-sm">
           {page.links.map((link) => (
             <a
+              {...createAnalyticsAttributes('entry_link_clicked', {
+                entryKind: page.kind,
+                lang,
+                linkKind: link.kind,
+                slug: page.slug,
+              })}
               class="text-muted-foreground underline transition-colors hover:text-foreground"
               href={link.href}
               rel="noopener noreferrer"

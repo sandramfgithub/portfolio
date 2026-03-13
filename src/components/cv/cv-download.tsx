@@ -4,13 +4,16 @@ import type { CvViewModel } from '@/application/cv/dto';
 import { Button } from '@/components/ui/button';
 import type { Lang } from '@/i18n/translations';
 import { getTranslations } from '@/i18n/utils';
+import { trackBrowserAnalyticsEvent } from '@/infrastructure/analytics/browser';
 
 export function CvDownload({
   cv,
   lang = 'es',
+  location = 'about',
 }: {
   cv: CvViewModel;
   lang?: Lang;
+  location?: 'about' | 'cv-preview';
 }) {
   const [status, setStatus] = useState<
     'idle' | 'loading' | 'success' | 'error'
@@ -33,6 +36,10 @@ export function CvDownload({
       return;
     }
     setStatus('loading');
+    trackBrowserAnalyticsEvent('cv_download_started', {
+      lang,
+      location,
+    });
     try {
       const load = async (
         attempt = 0
@@ -84,10 +91,18 @@ export function CvDownload({
       a.remove();
       URL.revokeObjectURL(url);
 
+      trackBrowserAnalyticsEvent('cv_download_succeeded', {
+        lang,
+        location,
+      });
       setStatus('success');
       setTimeout(() => setStatus('idle'), 2000);
     } catch (err) {
       console.error('Error generating PDF:', err);
+      trackBrowserAnalyticsEvent('cv_download_failed', {
+        lang,
+        location,
+      });
       setStatus('error');
       setTimeout(() => setStatus('idle'), 4000);
     }

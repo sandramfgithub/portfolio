@@ -47,6 +47,16 @@ src/
 - `infrastructure/`: adapters for local content and analytics ingestion.
 - `components/`, `layouts/`, `templates/`: presentation only.
 
+## Analytics
+
+- Provider baseline: Umami Cloud.
+- Keep event names and payloads typed in `domain/analytics/`.
+- Presentation code should emit semantic events only; provider calls belong in
+  `infrastructure/analytics/`.
+- Use delegated DOM tracking for server-rendered links and buttons where
+  possible, and direct tracking only for stateful islands such as CV download
+  and skill popovers.
+
 ## Near-Term Work
 
 1. Baseline: Ultracite, Vitest, CI, commitlint, docs, hooks.

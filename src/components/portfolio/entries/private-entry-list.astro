@@ -1,4 +1,5 @@
 ---
+import { createAnalyticsAttributes } from '@/application/analytics/attributes';
 import type { PrivateEntryViewModel } from '@/application/portfolio/dto';
 import { StackList } from '@/components/portfolio/skills/stack-list';
 import { Badge } from '@/components/ui/badge';
@@ -26,6 +27,12 @@ const t = getTranslations(lang);
         <div class="flex items-center gap-2">
           <h3 class="font-semibold text-base">
             <a
+              {...createAnalyticsAttributes('private_entry_clicked', {
+                lang,
+                location: 'projects',
+                privateEntryType: project.privateEntryType,
+                slug: project.slug,
+              })}
               class="transition-colors hover:text-muted-foreground"
               href={project.href}
             >
@@ -48,7 +55,12 @@ const t = getTranslations(lang);
         </p>
       </div>
       <div class="shrink-0">
-        <StackList lang={lang} skills={project.skills} client:visible />
+        <StackList
+          lang={lang}
+          location="projects"
+          skills={project.skills}
+          client:visible
+        />
       </div>
     </li>
   ))}

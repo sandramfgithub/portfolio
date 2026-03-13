@@ -2,6 +2,7 @@
 import '@/styles/global.css';
 import { ClientRouter } from 'astro:transitions';
 import { getLayoutViewModel } from '@/application/portfolio/queries';
+import AnalyticsScript from '@/components/layout/analytics-script.astro';
 import { MorphNav } from '@/components/layout/morph-nav';
 import SiteFooter from '@/components/layout/site-footer.astro';
 import type { Lang } from '@/i18n/translations';
@@ -58,6 +59,7 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
     <link rel="alternate" hreflang={lang} href={pathname}>
     <title>{title}</title>
     <ClientRouter />
+    <AnalyticsScript />
     <script is:inline>
       (() => {
         const stored = localStorage.getItem('theme');

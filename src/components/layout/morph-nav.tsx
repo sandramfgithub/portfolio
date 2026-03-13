@@ -7,6 +7,7 @@ import {
 } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
+import { createAnalyticsAttributes } from '@/application/analytics/attributes';
 import type {
   NavigationItemViewModel,
   SocialLinkViewModel,
@@ -23,6 +24,7 @@ import {
   getLocalizedPath,
   getTranslations,
 } from '@/i18n/utils';
+import { trackBrowserAnalyticsEvent } from '@/infrastructure/analytics/browser';
 import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 import { cn } from '@/lib/utils';
 
@@ -72,6 +74,20 @@ function SocialIcon({ icon }: { icon: string }) {
 const THEME_CHANGE_EVENT = 'portfolio-theme-change';
 const noop = () => undefined;
 
+const toContactChannel = (
+  icon: SocialLinkViewModel['icon']
+): 'email' | 'github' | 'linkedin' | 'x' => {
+  if (icon === 'twitter') {
+    return 'x';
+  }
+
+  if (icon === 'mail') {
+    return 'email';
+  }
+
+  return icon;
+};
+
 const getThemeSnapshot = (): 'light' | 'dark' => {
   if (typeof document === 'undefined') {
     return 'dark';
@@ -104,6 +120,12 @@ function ThemeToggle({ lang }: { lang: Lang }) {
   const toggle = () => {
     document.documentElement.classList.add('theme-transition');
     const nextTheme = theme === 'dark' ? 'light' : 'dark';
+
+    trackBrowserAnalyticsEvent('theme_toggle_clicked', {
+      lang,
+      location: 'nav',
+      nextTheme,
+    });
 
     document.documentElement.classList.toggle('dark', nextTheme === 'dark');
     if (nextTheme === 'light') {
@@ -138,9 +160,11 @@ function ThemeToggle({ lang }: { lang: Lang }) {
 
 function SocialLinks({
   className,
+  lang,
   links,
 }: {
   className?: string;
+  lang: Lang;
   links: readonly SocialLinkViewModel[];
 }) {
   return (
@@ -151,6 +175,11 @@ function SocialLinks({
             aria-label={link.label}
             render={
               <a
+                {...createAnalyticsAttributes('contact_link_clicked', {
+                  channel: toContactChannel(link.icon),
+                  lang,
+                  location: 'nav',
+                })}
                 className="icon-btn inline-flex h-8 w-8 items-center justify-center rounded-lg"
                 href={link.href}
                 rel={
@@ -208,6 +237,11 @@ function Toggles({
           aria-label={t.common.switchLang}
           render={
             <a
+              {...createAnalyticsAttributes('language_switch_clicked', {
+                fromLang: lang,
+                location: 'nav',
+                toLang: getAlternateLang(lang),
+              })}
               className="icon-btn inline-flex h-8 items-center justify-center rounded-lg px-2 font-semibold text-xs"
               href={altPath}
             />
@@ -522,6 +556,7 @@ export function MorphNav({
               >
                 <SocialLinks
                   className={scrolled ? undefined : 'justify-center'}
+                  lang={lang}
                   links={socialLinks}
                 />
               </motion.div>

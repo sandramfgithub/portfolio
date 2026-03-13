@@ -1,4 +1,5 @@
 ---
+import { createAnalyticsAttributes } from '@/application/analytics/attributes';
 import type { ProjectCardViewModel } from '@/application/portfolio/dto';
 import { StackList } from '@/components/portfolio/skills/stack-list';
 import { Badge } from '@/components/ui/badge';
@@ -11,6 +12,7 @@ type Props = ProjectCardViewModel & {
 };
 
 const {
+  slug,
   href,
   title,
   summary,
@@ -42,7 +44,16 @@ const isComingSoon = publicationState === 'coming-soon';
       )}
       <h3 class="font-semibold text-base">
         {href ? (
-          <a class="transition-colors hover:text-muted-foreground" href={href}>
+          <a
+            {...createAnalyticsAttributes('project_detail_clicked', {
+              lang,
+              location: 'projects',
+              publicationState,
+              slug,
+            })}
+            class="transition-colors hover:text-muted-foreground"
+            href={href}
+          >
             {title}
           </a>
         ) : (
@@ -52,6 +63,12 @@ const isComingSoon = publicationState === 'coming-soon';
     </div>
     {github && (
       <a
+        {...createAnalyticsAttributes('project_repository_clicked', {
+          lang,
+          location: 'projects',
+          publicationState,
+          slug,
+        })}
         class="text-muted-foreground text-sm underline transition-colors hover:text-foreground group-hover:text-foreground"
         href={github}
         rel="noopener noreferrer"
@@ -75,6 +92,6 @@ const isComingSoon = publicationState === 'coming-soon';
       isComingSoon && 'pointer-events-none select-none blur-[3px]',
     ]}
   >
-    <StackList client:visible lang={lang} skills={skills} />
+    <StackList client:visible lang={lang} location="projects" skills={skills} />
   </div>
 </div>

@@ -6,16 +6,31 @@ import {
   PopoverTrigger,
 } from '@/components/ui/popover';
 import type { Lang } from '@/i18n/translations';
+import { trackBrowserAnalyticsEvent } from '@/infrastructure/analytics/browser';
 
 export function SkillBadge({
+  location,
   skill,
   lang,
 }: {
+  location: 'about' | 'entry-detail' | 'projects';
   skill: SkillBadgeViewModel;
   lang: Lang;
 }) {
   return (
-    <Popover>
+    <Popover
+      onOpenChange={(open) => {
+        if (!open) {
+          return;
+        }
+
+        trackBrowserAnalyticsEvent('skill_detail_opened', {
+          lang,
+          location,
+          skillSlug: skill.slug,
+        });
+      }}
+    >
       <PopoverTrigger
         render={<button className="cursor-pointer" type="button" />}
       >

@@ -39,6 +39,21 @@ bun run check
 bun run update
 ```
 
+## Analytics
+
+Umami Cloud is supported through typed client-side events and the default
+tracker script.
+
+Configure it with:
+
+```bash
+PUBLIC_UMAMI_WEBSITE_ID=
+PUBLIC_UMAMI_SCRIPT_URL=https://cloud.umami.is/script.js
+PUBLIC_UMAMI_DOMAINS=sandramf.dev
+```
+
+If `PUBLIC_UMAMI_WEBSITE_ID` is empty, analytics bootstrap stays disabled.
+
 ## Commit Template
 
 Use a scoped Conventional Commit with a short bullet body:

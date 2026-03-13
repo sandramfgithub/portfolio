@@ -71,6 +71,16 @@
       }
     },
     {
+      "includes": ["src/components/layout/analytics-script.astro"],
+      "linter": {
+        "rules": {
+          "correctness": {
+            "noUndeclaredVariables": "off"
+          }
+        }
+      }
+    },
+    {
       "includes": ["src/components/layout/morph-nav.tsx"],
       "linter": {
         "rules": {

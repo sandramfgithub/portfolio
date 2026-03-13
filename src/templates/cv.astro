@@ -1,4 +1,5 @@
 ---
+import { createAnalyticsAttributes } from '@/application/analytics/attributes';
 import type { CvPageViewModel } from '@/application/cv/dto';
 import { Badge } from '@/components/ui/badge';
 import type { Lang } from '@/i18n/translations';
@@ -21,7 +22,17 @@ const aboutHref = getLocalizedPath('/about', lang);
   noindex={true}
   title={page.title}
 >
-  <article class="space-y-8 py-2 sm:py-4">
+  <article
+    {...createAnalyticsAttributes(
+      'cv_preview_viewed',
+      {
+        lang,
+        location: 'cv-preview',
+      },
+      { trigger: 'view' }
+    )}
+    class="space-y-8 py-2 sm:py-4"
+  >
     <div class="space-y-4">
       <a
         class="text-muted-foreground text-sm underline transition-colors hover:text-foreground"
@@ -48,6 +59,11 @@ const aboutHref = getLocalizedPath('/about', lang);
         </p>
         <div class="flex flex-wrap gap-3 text-sm text-muted-foreground">
           <a
+            {...createAnalyticsAttributes('contact_link_clicked', {
+              channel: 'website',
+              lang,
+              location: 'cv-preview',
+            })}
             class="underline hover:text-foreground"
             href={`https://${page.cv.profile.web}`}
           >
@@ -55,6 +71,11 @@ const aboutHref = getLocalizedPath('/about', lang);
           </a>
           {page.cv.contacts.email && (
             <a
+              {...createAnalyticsAttributes('contact_link_clicked', {
+                channel: 'email',
+                lang,
+                location: 'cv-preview',
+              })}
               class="underline hover:text-foreground"
               href={`mailto:${page.cv.contacts.email}`}
             >
@@ -63,6 +84,11 @@ const aboutHref = getLocalizedPath('/about', lang);
           )}
           {page.cv.contacts.github && (
             <a
+              {...createAnalyticsAttributes('contact_link_clicked', {
+                channel: 'github',
+                lang,
+                location: 'cv-preview',
+              })}
               class="underline hover:text-foreground"
               href={page.cv.contacts.github}
               rel="noopener noreferrer"
@@ -73,6 +99,11 @@ const aboutHref = getLocalizedPath('/about', lang);
           )}
           {page.cv.contacts.linkedin && (
             <a
+              {...createAnalyticsAttributes('contact_link_clicked', {
+                channel: 'linkedin',
+                lang,
+                location: 'cv-preview',
+              })}
               class="underline hover:text-foreground"
               href={page.cv.contacts.linkedin}
               rel="noopener noreferrer"

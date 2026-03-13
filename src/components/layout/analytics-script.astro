@@ -1,0 +1,23 @@
+---
+const websiteId = import.meta.env.PUBLIC_UMAMI_WEBSITE_ID;
+const scriptUrl =
+  import.meta.env.PUBLIC_UMAMI_SCRIPT_URL ?? 'https://cloud.umami.is/script.js';
+const domains = import.meta.env.PUBLIC_UMAMI_DOMAINS;
+---
+
+{websiteId && (
+  <>
+    <script
+      data-domains={domains}
+      data-website-id={websiteId}
+      defer
+      is:inline
+      src={scriptUrl}
+    />
+    <script>
+      import { initializeBrowserAnalytics } from '@/infrastructure/analytics/browser';
+
+      initializeBrowserAnalytics();
+    </script>
+  </>
+)}

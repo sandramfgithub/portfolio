@@ -58,7 +58,12 @@ const [page, cv] = await Promise.all([
           ))}
         </ul>
         <div class="mt-3">
-          <StackList lang={lang} skills={exp.skills} client:visible />
+          <StackList
+            lang={lang}
+            location="about"
+            skills={exp.skills}
+            client:visible
+          />
         </div>
       </div>
     ))}
@@ -69,6 +74,11 @@ const [page, cv] = await Promise.all([
     <h2 class="font-serif text-xl font-semibold tracking-tight">
       {t.about.skills}
     </h2>
-    <StackList skills={page.skills} lang={lang} client:visible />
+    <StackList
+      lang={lang}
+      location="about"
+      skills={page.skills}
+      client:visible
+    />
   </section>
 </Layout>
