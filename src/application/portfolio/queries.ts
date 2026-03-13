@@ -1,9 +1,9 @@
 import type {
   AboutPageViewModel,
-  CaseStudyViewModel,
   EntryDetailPageViewModel,
   HomePageViewModel,
   LayoutViewModel,
+  PrivateEntryViewModel,
   ProjectCardViewModel,
   ProjectsPageViewModel,
   SkillBadgeViewModel,
@@ -146,6 +146,28 @@ const isPublishedEntry = (entry: PortfolioEntry) => {
   return entry.publicationState === 'published';
 };
 
+const getSortTimestamp = (entry: PortfolioEntry) => {
+  const timestamp = Date.parse(entry.sortDate);
+
+  if (Number.isNaN(timestamp)) {
+    throw new Error(`Invalid sort date for ${entry.slug}:${entry.locale}`);
+  }
+
+  return timestamp;
+};
+
+const sortByMostRecentFirst = (left: PortfolioEntry, right: PortfolioEntry) => {
+  return getSortTimestamp(right) - getSortTimestamp(left);
+};
+
+const sortPrivateEntries = (left: PortfolioEntry, right: PortfolioEntry) => {
+  if (left.privateEntryType !== right.privateEntryType) {
+    return left.privateEntryType === 'work' ? -1 : 1;
+  }
+
+  return sortByMostRecentFirst(left, right);
+};
+
 const toProjectCardViewModel = (
   entry: PortfolioEntry,
   skillLookup: Map<string, SkillBadgeViewModel>
@@ -170,17 +192,22 @@ const toProjectCardViewModel = (
   };
 };
 
-const toCaseStudyViewModel = (
+const toPrivateEntryViewModel = (
   entry: PortfolioEntry,
   skillLookup: Map<string, SkillBadgeViewModel>
-): CaseStudyViewModel => {
+): PrivateEntryViewModel => {
+  const privateEntryType = requireValue(
+    entry.privateEntryType,
+    `Missing private entry type for ${entry.slug}`
+  );
+
   return {
     slug: entry.slug,
     href: getEntryPath(entry.locale, entry.kind, entry.slug),
     title: entry.title,
     summary: entry.summary,
     skills: resolveSkills(entry.stack, skillLookup),
-    hasCaseStudy: entry.hasCaseStudy,
+    privateEntryType,
   };
 };
 
@@ -201,19 +228,23 @@ export const getProjectsPageViewModel = async (
         entry.kind === 'public-project' && entry.publicationState !== 'draft'
       );
     })
+    .sort(sortByMostRecentFirst)
     .map((entry: PortfolioEntry) => toProjectCardViewModel(entry, skillLookup));
-  const caseStudies = entries
+  const privateEntries = entries
     .filter((entry: PortfolioEntry) => {
       return entry.kind === 'case-study' && isPublishedEntry(entry);
     })
-    .map((entry: PortfolioEntry) => toCaseStudyViewModel(entry, skillLookup));
+    .sort(sortPrivateEntries)
+    .map((entry: PortfolioEntry) =>
+      toPrivateEntryViewModel(entry, skillLookup)
+    );
 
   return {
     title: page.seo.title,
     description: page.seo.description,
     introParagraphs: page.introParagraphs,
     publicProjects,
-    caseStudies,
+    privateEntries,
   };
 };
 
@@ -310,6 +341,6 @@ export const getEntryDetailPageViewModel = async (
     featured: document.featured,
     organization: document.organization,
     period: document.period,
-    hasCaseStudy: document.hasCaseStudy,
+    privateEntryType: document.privateEntryType,
   };
 };

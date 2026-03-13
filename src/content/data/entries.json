@@ -4,7 +4,6 @@
     "slug": "portfolio",
     "locale": "es",
     "kind": "public-project",
-    "visibility": "public",
     "publicationState": "published",
     "title": "portfolio",
     "summary": "Sitio en Astro para ordenar repos, librerías y documentación pública.",
@@ -21,18 +20,18 @@
     "featured": true,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "portfolio | Sandra Martínez Fernández",
       "description": "Sitio en Astro para ordenar repos, librerías y documentación pública."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2026-03-01"
   },
   {
     "id": "react-table-system-es",
     "slug": "react-table-system",
     "locale": "es",
     "kind": "public-project",
-    "visibility": "public",
     "publicationState": "published",
     "title": "react-table-system",
     "summary": "Extracción de un sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables.",
@@ -49,19 +48,19 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "react-table-system | Sandra Martínez Fernández",
       "description": "Extracción de un sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2025-12-01"
   },
   {
     "id": "pg-lease-runtime-es",
     "slug": "pg-lease-runtime",
     "locale": "es",
     "kind": "public-project",
-    "visibility": "public",
-    "publicationState": "published",
+    "publicationState": "coming-soon",
     "title": "pg-lease-runtime",
     "summary": "Librería pequeña para workers con leasing sobre PostgreSQL, pensada para polling, heartbeats y cierre limpio.",
     "paragraphs": [],
@@ -77,19 +76,19 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "pg-lease-runtime | Sandra Martínez Fernández",
       "description": "Librería pequeña para workers con leasing sobre PostgreSQL, pensada para polling, heartbeats y cierre limpio."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2025-11-01"
   },
   {
     "id": "project-radar-es",
     "slug": "project-radar",
     "locale": "es",
     "kind": "public-project",
-    "visibility": "public",
-    "publicationState": "published",
+    "publicationState": "coming-soon",
     "title": "project-radar",
     "summary": "POC para relacionar señales externas con proyectos propios y convertir novedades en backlog revisable.",
     "paragraphs": [],
@@ -105,18 +104,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "project-radar | Sandra Martínez Fernández",
       "description": "POC para relacionar señales externas con proyectos propios y convertir novedades en backlog revisable."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2025-10-01"
   },
   {
     "id": "pim-es",
     "slug": "pim",
     "locale": "es",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "pim",
     "summary": "Monorepo real con Bun, workers con leasing, contratos API, búsqueda y una base fuerte de tooling interno.",
@@ -127,18 +126,18 @@
     "featured": true,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "pim | Sandra Martínez Fernández",
       "description": "Monorepo real con Bun, workers con leasing, contratos API, búsqueda y una base fuerte de tooling interno."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2026-02-01"
   },
   {
     "id": "picking-app-es",
     "slug": "picking-app",
     "locale": "es",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "Picking App",
     "summary": "Aplicación móvil de picking para almacén con lectura de códigos y sincronización offline.",
@@ -149,18 +148,18 @@
     "featured": true,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "Picking App | Sandra Martínez Fernández",
       "description": "Aplicación móvil de picking para almacén con lectura de códigos y sincronización offline."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2025-06-01"
   },
   {
     "id": "pedidos-comerciales-es",
     "slug": "pedidos-comerciales",
     "locale": "es",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "Pedidos Comerciales",
     "summary": "Sistema de gestión de pedidos comerciales con flujos de aprobación y reporting.",
@@ -171,18 +170,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "Pedidos Comerciales | Sandra Martínez Fernández",
       "description": "Sistema de gestión de pedidos comerciales con flujos de aprobación y reporting."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2025-03-01"
   },
   {
     "id": "gestion-de-aparatologia-es",
     "slug": "gestion-de-aparatologia",
     "locale": "es",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "Gestión de Aparatología",
     "summary": "Plataforma de gestión de equipamiento con inventario, mantenimiento y reservas.",
@@ -193,18 +192,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "Gestión de Aparatología | Sandra Martínez Fernández",
       "description": "Plataforma de gestión de equipamiento con inventario, mantenimiento y reservas."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2025-08-01"
   },
   {
     "id": "mini-c-es",
     "slug": "mini-c",
     "locale": "es",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "mini-c",
     "summary": "Compilador en C con análisis léxico y sintáctico, tabla hash, warnings y optimización de código.",
@@ -215,18 +214,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": true,
     "seo": {
       "title": "mini-c | Sandra Martínez Fernández",
       "description": "Compilador en C con análisis léxico y sintáctico, tabla hash, warnings y optimización de código."
-    }
+    },
+    "privateEntryType": "case-study",
+    "sortDate": "2021-06-01"
   },
   {
     "id": "chat-app-es",
     "slug": "chat-app",
     "locale": "es",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "chat-app",
     "summary": "Aplicación desktop con gRPC, persistencia propia y componentes custom, útil como antecedente de producto end-to-end.",
@@ -237,18 +236,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": true,
     "seo": {
       "title": "chat-app | Sandra Martínez Fernández",
       "description": "Aplicación desktop con gRPC, persistencia propia y componentes custom, útil como antecedente de producto end-to-end."
-    }
+    },
+    "privateEntryType": "case-study",
+    "sortDate": "2019-06-01"
   },
   {
     "id": "courses-app-es",
     "slug": "courses-app",
     "locale": "es",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "courses-app",
     "summary": "Aplicación modular en Java con sistema de plugins, CI y una disciplina de release mejor de lo habitual en un proyecto académico.",
@@ -259,18 +258,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": true,
     "seo": {
       "title": "courses-app | Sandra Martínez Fernández",
       "description": "Aplicación modular en Java con sistema de plugins, CI y una disciplina de release mejor de lo habitual en un proyecto académico."
-    }
+    },
+    "privateEntryType": "case-study",
+    "sortDate": "2020-06-01"
   },
   {
     "id": "portfolio-en",
     "slug": "portfolio",
     "locale": "en",
     "kind": "public-project",
-    "visibility": "public",
     "publicationState": "published",
     "title": "portfolio",
     "summary": "Astro site to organize repos, libraries, and public documentation.",
@@ -287,18 +286,18 @@
     "featured": true,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "portfolio | Sandra Martínez Fernández",
       "description": "Astro site to organize repos, libraries, and public documentation."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2026-03-01"
   },
   {
     "id": "react-table-system-en",
     "slug": "react-table-system",
     "locale": "en",
     "kind": "public-project",
-    "visibility": "public",
     "publicationState": "published",
     "title": "react-table-system",
     "summary": "Extraction of a server-side table system with filters, persistence, views, and reusable contracts.",
@@ -315,19 +314,19 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "react-table-system | Sandra Martínez Fernández",
       "description": "Extraction of a server-side table system with filters, persistence, views, and reusable contracts."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2025-12-01"
   },
   {
     "id": "pg-lease-runtime-en",
     "slug": "pg-lease-runtime",
     "locale": "en",
     "kind": "public-project",
-    "visibility": "public",
-    "publicationState": "published",
+    "publicationState": "coming-soon",
     "title": "pg-lease-runtime",
     "summary": "Small library for PostgreSQL-based worker leasing, designed for polling, heartbeats, and clean shutdown.",
     "paragraphs": [],
@@ -343,19 +342,19 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "pg-lease-runtime | Sandra Martínez Fernández",
       "description": "Small library for PostgreSQL-based worker leasing, designed for polling, heartbeats, and clean shutdown."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2025-11-01"
   },
   {
     "id": "project-radar-en",
     "slug": "project-radar",
     "locale": "en",
     "kind": "public-project",
-    "visibility": "public",
-    "publicationState": "published",
+    "publicationState": "coming-soon",
     "title": "project-radar",
     "summary": "POC to match external signals with own projects and turn news into a reviewable backlog.",
     "paragraphs": [],
@@ -371,18 +370,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "project-radar | Sandra Martínez Fernández",
       "description": "POC to match external signals with own projects and turn news into a reviewable backlog."
-    }
+    },
+    "privateEntryType": null,
+    "sortDate": "2025-10-01"
   },
   {
     "id": "pim-en",
     "slug": "pim",
     "locale": "en",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "pim",
     "summary": "Real-world monorepo with Bun, lease-based workers, API contracts, search, and strong internal tooling.",
@@ -393,18 +392,18 @@
     "featured": true,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "pim | Sandra Martínez Fernández",
       "description": "Real-world monorepo with Bun, lease-based workers, API contracts, search, and strong internal tooling."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2026-02-01"
   },
   {
     "id": "picking-app-en",
     "slug": "picking-app",
     "locale": "en",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "Picking App",
     "summary": "Mobile warehouse picking app with barcode scanning and offline sync.",
@@ -415,18 +414,18 @@
     "featured": true,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "Picking App | Sandra Martínez Fernández",
       "description": "Mobile warehouse picking app with barcode scanning and offline sync."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2025-06-01"
   },
   {
     "id": "pedidos-comerciales-en",
     "slug": "pedidos-comerciales",
     "locale": "en",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "Pedidos Comerciales",
     "summary": "Commercial order management system with approval workflows and reporting.",
@@ -437,18 +436,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "Pedidos Comerciales | Sandra Martínez Fernández",
       "description": "Commercial order management system with approval workflows and reporting."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2025-03-01"
   },
   {
     "id": "gestion-de-aparatologia-en",
     "slug": "gestion-de-aparatologia",
     "locale": "en",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "Gestión de Aparatología",
     "summary": "Equipment management platform with inventory, maintenance, and reservations.",
@@ -459,18 +458,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": false,
     "seo": {
       "title": "Gestión de Aparatología | Sandra Martínez Fernández",
       "description": "Equipment management platform with inventory, maintenance, and reservations."
-    }
+    },
+    "privateEntryType": "work",
+    "sortDate": "2025-08-01"
   },
   {
     "id": "mini-c-en",
     "slug": "mini-c",
     "locale": "en",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "mini-c",
     "summary": "C compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization.",
@@ -481,18 +480,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": true,
     "seo": {
       "title": "mini-c | Sandra Martínez Fernández",
       "description": "C compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization."
-    }
+    },
+    "privateEntryType": "case-study",
+    "sortDate": "2021-06-01"
   },
   {
     "id": "chat-app-en",
     "slug": "chat-app",
     "locale": "en",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "chat-app",
     "summary": "Desktop app with gRPC, custom persistence, and UI components -- an end-to-end product antecedent.",
@@ -503,18 +502,18 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": true,
     "seo": {
       "title": "chat-app | Sandra Martínez Fernández",
       "description": "Desktop app with gRPC, custom persistence, and UI components -- an end-to-end product antecedent."
-    }
+    },
+    "privateEntryType": "case-study",
+    "sortDate": "2019-06-01"
   },
   {
     "id": "courses-app-en",
     "slug": "courses-app",
     "locale": "en",
     "kind": "case-study",
-    "visibility": "private",
     "publicationState": "published",
     "title": "courses-app",
     "summary": "Modular Java app with plugin system, CI, and unusually disciplined release process for an academic project.",
@@ -525,10 +524,155 @@
     "featured": false,
     "organization": null,
     "period": null,
-    "hasCaseStudy": true,
     "seo": {
       "title": "courses-app | Sandra Martínez Fernández",
       "description": "Modular Java app with plugin system, CI, and unusually disciplined release process for an academic project."
+    },
+    "privateEntryType": "case-study",
+    "sortDate": "2020-06-01"
+  },
+  {
+    "id": "scaffold-bun-monorepo-es",
+    "slug": "scaffold-bun-monorepo",
+    "locale": "es",
+    "kind": "public-project",
+    "privateEntryType": null,
+    "publicationState": "published",
+    "sortDate": "2026-02-10",
+    "title": "scaffold-bun-monorepo",
+    "summary": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling comun y contratos listos para crecer.",
+    "paragraphs": [],
+    "bullets": [],
+    "stack": ["bun", "typescript", "vitest"],
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/sandramfgithub/scaffold-bun-monorepo",
+        "kind": "repository"
+      }
+    ],
+    "featured": false,
+    "organization": null,
+    "period": null,
+    "seo": {
+      "title": "scaffold-bun-monorepo | Sandra Martínez Fernández",
+      "description": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling comun y contratos listos para crecer."
+    }
+  },
+  {
+    "id": "control-horario-es",
+    "slug": "control-horario",
+    "locale": "es",
+    "kind": "case-study",
+    "privateEntryType": "work",
+    "publicationState": "published",
+    "sortDate": "2024-11-01",
+    "title": "Control Horario",
+    "summary": "Sistema interno para fichajes, incidencias y trazabilidad operativa con reglas de negocio de recursos humanos.",
+    "paragraphs": [],
+    "bullets": [],
+    "stack": ["react", "nestjs", "postgresql"],
+    "links": [],
+    "featured": false,
+    "organization": null,
+    "period": null,
+    "seo": {
+      "title": "Control Horario | Sandra Martínez Fernández",
+      "description": "Sistema interno para fichajes, incidencias y trazabilidad operativa con reglas de negocio de recursos humanos."
+    }
+  },
+  {
+    "id": "mini-crm-es",
+    "slug": "mini-crm",
+    "locale": "es",
+    "kind": "case-study",
+    "privateEntryType": "work",
+    "publicationState": "published",
+    "sortDate": "2024-09-01",
+    "title": "mini-crm",
+    "summary": "CRM pequeño para seguimiento comercial, pipeline, actividad y visibilidad operativa sobre clientes.",
+    "paragraphs": [],
+    "bullets": [],
+    "stack": ["react", "trpc", "postgresql"],
+    "links": [],
+    "featured": false,
+    "organization": null,
+    "period": null,
+    "seo": {
+      "title": "mini-crm | Sandra Martínez Fernández",
+      "description": "CRM pequeño para seguimiento comercial, pipeline, actividad y visibilidad operativa sobre clientes."
+    }
+  },
+  {
+    "id": "scaffold-bun-monorepo-en",
+    "slug": "scaffold-bun-monorepo",
+    "locale": "en",
+    "kind": "public-project",
+    "privateEntryType": null,
+    "publicationState": "published",
+    "sortDate": "2026-02-10",
+    "title": "scaffold-bun-monorepo",
+    "summary": "Starter for Bun monorepos with shared packages, common tooling, and contracts ready to scale.",
+    "paragraphs": [],
+    "bullets": [],
+    "stack": ["bun", "typescript", "vitest"],
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/sandramfgithub/scaffold-bun-monorepo",
+        "kind": "repository"
+      }
+    ],
+    "featured": false,
+    "organization": null,
+    "period": null,
+    "seo": {
+      "title": "scaffold-bun-monorepo | Sandra Martínez Fernández",
+      "description": "Starter for Bun monorepos with shared packages, common tooling, and contracts ready to scale."
+    }
+  },
+  {
+    "id": "control-horario-en",
+    "slug": "control-horario",
+    "locale": "en",
+    "kind": "case-study",
+    "privateEntryType": "work",
+    "publicationState": "published",
+    "sortDate": "2024-11-01",
+    "title": "Time Tracking",
+    "summary": "Internal system for time logs, incidents, and operational traceability with HR business rules.",
+    "paragraphs": [],
+    "bullets": [],
+    "stack": ["react", "nestjs", "postgresql"],
+    "links": [],
+    "featured": false,
+    "organization": null,
+    "period": null,
+    "seo": {
+      "title": "Time Tracking | Sandra Martínez Fernández",
+      "description": "Internal system for time logs, incidents, and operational traceability with HR business rules."
+    }
+  },
+  {
+    "id": "mini-crm-en",
+    "slug": "mini-crm",
+    "locale": "en",
+    "kind": "case-study",
+    "privateEntryType": "work",
+    "publicationState": "published",
+    "sortDate": "2024-09-01",
+    "title": "mini-crm",
+    "summary": "Small CRM for commercial follow-up, pipeline visibility, activity tracking, and customer context.",
+    "paragraphs": [],
+    "bullets": [],
+    "stack": ["react", "trpc", "postgresql"],
+    "links": [],
+    "featured": false,
+    "organization": null,
+    "period": null,
+    "seo": {
+      "title": "mini-crm | Sandra Martínez Fernández",
+      "description": "Small CRM for commercial follow-up, pipeline visibility, activity tracking, and customer context."
     }
   }
 ]

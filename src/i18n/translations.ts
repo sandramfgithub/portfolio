@@ -20,6 +20,7 @@ export const translations = {
       caseStudiesHeading: 'Trabajos privados',
       caseStudy: 'Caso de estudio',
       comingSoon: 'Próximamente',
+      work: 'Trabajo',
     },
     about: {
       downloadCv: 'Descargar CV',
@@ -86,6 +87,7 @@ export const translations = {
       caseStudiesHeading: 'Private work',
       caseStudy: 'Case study',
       comingSoon: 'Coming soon',
+      work: 'Work',
     },
     about: {
       downloadCv: 'Download CV',

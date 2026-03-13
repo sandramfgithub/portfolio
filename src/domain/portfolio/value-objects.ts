@@ -7,11 +7,11 @@ export type PageSlug = (typeof pageSlugs)[number];
 export const entryKinds = ['public-project', 'case-study'] as const;
 export type EntryKind = (typeof entryKinds)[number];
 
-export const visibilityLevels = ['public', 'private'] as const;
-export type Visibility = (typeof visibilityLevels)[number];
-
 export const publicationStates = ['draft', 'published', 'coming-soon'] as const;
 export type PublicationState = (typeof publicationStates)[number];
+
+export const privateEntryTypes = ['work', 'case-study'] as const;
+export type PrivateEntryType = (typeof privateEntryTypes)[number];
 
 export const skillStatuses = [
   'active',

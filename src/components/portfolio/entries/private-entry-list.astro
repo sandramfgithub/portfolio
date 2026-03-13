@@ -1,23 +1,23 @@
 ---
-import type { CaseStudyViewModel } from '@/application/portfolio/dto';
+import type { PrivateEntryViewModel } from '@/application/portfolio/dto';
 import { StackList } from '@/components/portfolio/skills/stack-list';
 import { Badge } from '@/components/ui/badge';
 import type { Lang } from '@/i18n/translations';
 import { getTranslations } from '@/i18n/utils';
 
 type Props = {
-  cases: readonly CaseStudyViewModel[];
+  entries: readonly PrivateEntryViewModel[];
   lang: Lang;
 };
 
-const { cases, lang } = Astro.props as Props;
+const { entries, lang } = Astro.props as Props;
 const t = getTranslations(lang);
 ---
 
 <ul
   class="grid gap-px overflow-hidden rounded-lg border border-border/60 bg-border/60"
 >
-  {cases.map((project, i) => (
+  {entries.map((project, i) => (
     <li
       class="fade-up-item flex flex-col gap-2 bg-card px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
       style={`animation-delay: ${i * 40}ms`}
@@ -32,7 +32,12 @@ const t = getTranslations(lang);
               {project.title}
             </a>
           </h3>
-          {project.hasCaseStudy && (
+          {project.privateEntryType === 'work' && (
+            <Badge className="text-[11px]" variant="outline">
+              {t.projects.work}
+            </Badge>
+          )}
+          {project.privateEntryType === 'case-study' && (
             <Badge className="text-[11px]" variant="outline">
               {t.projects.caseStudy}
             </Badge>

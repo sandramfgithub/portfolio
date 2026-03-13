@@ -1,6 +1,6 @@
 ---
 import { getProjectsPageViewModel } from '@/application/portfolio/queries';
-import CaseStudyList from '@/components/portfolio/entries/case-study-list.astro';
+import PrivateEntryList from '@/components/portfolio/entries/private-entry-list.astro';
 import ProjectGrid from '@/components/portfolio/entries/project-grid.astro';
 import type { Lang } from '@/i18n/translations';
 import { getTranslations } from '@/i18n/utils';
@@ -40,6 +40,6 @@ const page = await getProjectsPageViewModel(lang);
     >
       {t.projects.caseStudiesHeading}
     </h2>
-    <CaseStudyList cases={page.caseStudies} lang={lang} />
+    <PrivateEntryList entries={page.privateEntries} lang={lang} />
   </section>
 </Layout>

@@ -35,8 +35,9 @@ export const mapPortfolioEntry = (
     slug: entry.data.slug,
     locale: entry.data.locale,
     kind: entry.data.kind,
-    visibility: entry.data.visibility,
+    privateEntryType: entry.data.privateEntryType,
     publicationState: entry.data.publicationState,
+    sortDate: entry.data.sortDate,
     title: entry.data.title,
     summary: entry.data.summary,
     paragraphs: entry.data.paragraphs,
@@ -46,7 +47,6 @@ export const mapPortfolioEntry = (
     featured: entry.data.featured,
     organization: entry.data.organization,
     period: entry.data.period,
-    hasCaseStudy: entry.data.hasCaseStudy,
     seo: entry.data.seo,
   };
 };

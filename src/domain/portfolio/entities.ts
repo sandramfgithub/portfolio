@@ -3,10 +3,10 @@ import type {
   LinkKind,
   Locale,
   PageSlug,
+  PrivateEntryType,
   PublicationState,
   SkillStatus,
   SocialIcon,
-  Visibility,
 } from '@/domain/portfolio/value-objects';
 
 export type SeoMetadata = {
@@ -52,8 +52,9 @@ export type PortfolioEntry = {
   slug: string;
   locale: Locale;
   kind: EntryKind;
-  visibility: Visibility;
+  privateEntryType: PrivateEntryType | null;
   publicationState: PublicationState;
+  sortDate: string;
   title: string;
   summary: string;
   paragraphs: readonly string[];
@@ -63,7 +64,6 @@ export type PortfolioEntry = {
   featured: boolean;
   organization: string | null;
   period: string | null;
-  hasCaseStudy: boolean;
   seo: SeoMetadata;
 };
 

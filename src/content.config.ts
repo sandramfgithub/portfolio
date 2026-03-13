@@ -72,8 +72,9 @@ const entries = defineCollection({
     slug: z.string(),
     locale: localeSchema,
     kind: z.enum(['public-project', 'case-study']),
-    visibility: z.enum(['public', 'private']),
+    privateEntryType: z.enum(['work', 'case-study']).nullable(),
     publicationState: z.enum(['draft', 'published', 'coming-soon']),
+    sortDate: z.string(),
     title: z.string(),
     summary: z.string(),
     paragraphs: z.array(z.string()),
@@ -83,7 +84,6 @@ const entries = defineCollection({
     featured: z.boolean(),
     organization: z.string().nullable(),
     period: z.string().nullable(),
-    hasCaseStudy: z.boolean(),
     seo: seoSchema,
   }),
 });

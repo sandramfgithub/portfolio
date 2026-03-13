@@ -1,4 +1,5 @@
 import type {
+  PrivateEntryType,
   PublicationState,
   SkillStatus,
   SocialIcon,
@@ -48,13 +49,13 @@ export type ProjectCardViewModel = {
   publicationState: PublicationState;
 };
 
-export type CaseStudyViewModel = {
+export type PrivateEntryViewModel = {
   slug: string;
   href: string;
   title: string;
   summary: string;
   skills: readonly SkillBadgeViewModel[];
-  hasCaseStudy: boolean;
+  privateEntryType: PrivateEntryType;
 };
 
 export type ProjectsPageViewModel = {
@@ -62,7 +63,7 @@ export type ProjectsPageViewModel = {
   description: string;
   introParagraphs: readonly string[];
   publicProjects: readonly ProjectCardViewModel[];
-  caseStudies: readonly CaseStudyViewModel[];
+  privateEntries: readonly PrivateEntryViewModel[];
 };
 
 export type AboutExperienceViewModel = {
@@ -104,5 +105,5 @@ export type EntryDetailPageViewModel = {
   featured: boolean;
   organization: string | null;
   period: string | null;
-  hasCaseStudy: boolean;
+  privateEntryType: PrivateEntryType | null;
 };

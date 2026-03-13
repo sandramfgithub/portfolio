@@ -61,8 +61,9 @@ const entries: PortfolioEntry[] = [
     slug: 'portfolio',
     locale: 'en',
     kind: 'public-project',
-    visibility: 'public',
+    privateEntryType: null,
     publicationState: 'published',
+    sortDate: '2026-03-01',
     title: 'portfolio',
     summary: 'Public summary',
     paragraphs: [],
@@ -78,7 +79,6 @@ const entries: PortfolioEntry[] = [
     featured: true,
     organization: null,
     period: null,
-    hasCaseStudy: false,
     seo: { title: 'portfolio', description: 'Public summary' },
   },
   {
@@ -86,18 +86,24 @@ const entries: PortfolioEntry[] = [
     slug: 'upcoming-tool',
     locale: 'en',
     kind: 'public-project',
-    visibility: 'public',
-    publicationState: 'coming-soon',
+    privateEntryType: null,
+    publicationState: 'published',
+    sortDate: '2026-01-01',
     title: 'Upcoming Tool',
     summary: 'Upcoming summary',
     paragraphs: [],
     bullets: [],
     stack: ['react'],
-    links: [],
+    links: [
+      {
+        label: 'GitHub',
+        href: 'https://github.com/example/upcoming-tool',
+        kind: 'repository',
+      },
+    ],
     featured: false,
     organization: null,
     period: null,
-    hasCaseStudy: false,
     seo: { title: 'Upcoming Tool', description: 'Upcoming summary' },
   },
   {
@@ -105,8 +111,9 @@ const entries: PortfolioEntry[] = [
     slug: 'private-work',
     locale: 'en',
     kind: 'case-study',
-    visibility: 'private',
+    privateEntryType: 'work',
     publicationState: 'published',
+    sortDate: '2025-02-01',
     title: 'Private Work',
     summary: 'Private summary',
     paragraphs: [],
@@ -116,16 +123,35 @@ const entries: PortfolioEntry[] = [
     featured: false,
     organization: null,
     period: null,
-    hasCaseStudy: true,
     seo: { title: 'Private Work', description: 'Private summary' },
+  },
+  {
+    id: 'academic-case-en',
+    slug: 'academic-case',
+    locale: 'en',
+    kind: 'case-study',
+    privateEntryType: 'case-study',
+    publicationState: 'published',
+    sortDate: '2024-01-01',
+    title: 'Academic Case',
+    summary: 'Academic summary',
+    paragraphs: [],
+    bullets: [],
+    stack: ['react'],
+    links: [],
+    featured: false,
+    organization: null,
+    period: null,
+    seo: { title: 'Academic Case', description: 'Academic summary' },
   },
   {
     id: 'draft-case-en',
     slug: 'draft-case',
     locale: 'en',
     kind: 'case-study',
-    visibility: 'private',
+    privateEntryType: 'work',
     publicationState: 'draft',
+    sortDate: '2026-04-01',
     title: 'Draft Case',
     summary: 'Draft summary',
     paragraphs: [],
@@ -135,7 +161,6 @@ const entries: PortfolioEntry[] = [
     featured: false,
     organization: null,
     period: null,
-    hasCaseStudy: false,
     seo: { title: 'Draft Case', description: 'Draft summary' },
   },
 ];
@@ -237,7 +262,7 @@ describe('portfolio queries', () => {
     expect(page.introParagraphs).toEqual(['Home intro']);
   });
 
-  it('maps entry stacks into project and case study skill badges', async () => {
+  it('maps entry stacks into public and private listings with logical order', async () => {
     const page = await getProjectsPageViewModel('en', createRepository());
 
     expect(page.publicProjects[0]?.github).toBe(
@@ -250,13 +275,20 @@ describe('portfolio queries', () => {
     ]);
     expect(page.publicProjects[1]).toMatchObject({
       slug: 'upcoming-tool',
-      href: null,
-      github: null,
-      publicationState: 'coming-soon',
+      href: '/en/projects/upcoming-tool',
+      github: 'https://github.com/example/upcoming-tool',
+      publicationState: 'published',
     });
-    expect(page.caseStudies[0]?.href).toBe('/en/case-studies/private-work');
-    expect(page.caseStudies[0]?.hasCaseStudy).toBe(true);
-    expect(page.caseStudies).toHaveLength(1);
+    expect(page.publicProjects.map((entry) => entry.slug)).toEqual([
+      'portfolio',
+      'upcoming-tool',
+    ]);
+    expect(page.privateEntries.map((entry) => entry.slug)).toEqual([
+      'private-work',
+      'academic-case',
+    ]);
+    expect(page.privateEntries[0]?.href).toBe('/en/case-studies/private-work');
+    expect(page.privateEntries[1]?.privateEntryType).toBe('case-study');
   });
 
   it('maps CV experience and top-level skills into the about page', async () => {
@@ -296,17 +328,22 @@ describe('portfolio queries', () => {
     expect(page.skills.map((skill) => skill.name)).toEqual(['TypeScript']);
   });
 
-  it('rejects detail view models for unpublished entries', async () => {
-    await expect(
-      getEntryDetailPageViewModel(
-        'en',
-        'public-project',
-        'upcoming-tool',
-        createRepository()
-      )
-    ).rejects.toThrow(
-      'Entry is not published for public-project:upcoming-tool:en'
+  it('allows published public projects without repository links', async () => {
+    const page = await getEntryDetailPageViewModel(
+      'en',
+      'public-project',
+      'upcoming-tool',
+      createRepository()
     );
+
+    expect(page.href).toBe('/en/projects/upcoming-tool');
+    expect(page.links).toEqual([
+      {
+        label: 'GitHub',
+        href: 'https://github.com/example/upcoming-tool',
+        kind: 'repository',
+      },
+    ]);
   });
 
   it('lists route params for a given entry kind across locales', async () => {
@@ -321,7 +358,9 @@ describe('portfolio queries', () => {
 
     expect(routes).toEqual([
       { lang: 'es', slug: 'portfolio' },
+      { lang: 'es', slug: 'upcoming-tool' },
       { lang: 'en', slug: 'portfolio' },
+      { lang: 'en', slug: 'upcoming-tool' },
     ]);
   });
 });
