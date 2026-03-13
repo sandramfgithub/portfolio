@@ -73,7 +73,7 @@ const entries = defineCollection({
     locale: localeSchema,
     kind: z.enum(['public-project', 'case-study']),
     visibility: z.enum(['public', 'private']),
-    status: z.enum(['draft', 'published']),
+    publicationState: z.enum(['draft', 'published', 'coming-soon']),
     title: z.string(),
     summary: z.string(),
     paragraphs: z.array(z.string()),

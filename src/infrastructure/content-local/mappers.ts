@@ -36,7 +36,7 @@ export const mapPortfolioEntry = (
     locale: entry.data.locale,
     kind: entry.data.kind,
     visibility: entry.data.visibility,
-    status: entry.data.status,
+    publicationState: entry.data.publicationState,
     title: entry.data.title,
     summary: entry.data.summary,
     paragraphs: entry.data.paragraphs,

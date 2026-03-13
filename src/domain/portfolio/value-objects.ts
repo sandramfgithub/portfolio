@@ -10,8 +10,8 @@ export type EntryKind = (typeof entryKinds)[number];
 export const visibilityLevels = ['public', 'private'] as const;
 export type Visibility = (typeof visibilityLevels)[number];
 
-export const publicationStatuses = ['draft', 'published'] as const;
-export type PublicationStatus = (typeof publicationStatuses)[number];
+export const publicationStates = ['draft', 'published', 'coming-soon'] as const;
+export type PublicationState = (typeof publicationStates)[number];
 
 export const skillStatuses = [
   'active',

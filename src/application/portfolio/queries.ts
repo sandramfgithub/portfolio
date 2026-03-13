@@ -139,21 +139,34 @@ export const getHomePageViewModel = async (
 const getRepositoryLink = (
   links: readonly { href: string; kind: string }[]
 ) => {
-  const repositoryLink = links.find((link) => link.kind === 'repository');
-  return requireValue(repositoryLink, 'Missing repository link');
+  return links.find((link) => link.kind === 'repository') ?? null;
+};
+
+const isPublishedEntry = (entry: PortfolioEntry) => {
+  return entry.publicationState === 'published';
 };
 
 const toProjectCardViewModel = (
   entry: PortfolioEntry,
   skillLookup: Map<string, SkillBadgeViewModel>
 ): ProjectCardViewModel => {
+  const repositoryLink = getRepositoryLink(entry.links);
+  const isComingSoon = entry.publicationState === 'coming-soon';
+
+  if (entry.publicationState === 'published') {
+    requireValue(repositoryLink, `Missing repository link for ${entry.slug}`);
+  }
+
   return {
     slug: entry.slug,
-    href: getEntryPath(entry.locale, entry.kind, entry.slug),
+    href: isComingSoon
+      ? null
+      : getEntryPath(entry.locale, entry.kind, entry.slug),
     title: entry.title,
     summary: entry.summary,
     skills: resolveSkills(entry.stack, skillLookup),
-    github: getRepositoryLink(entry.links).href,
+    github: isComingSoon ? null : (repositoryLink?.href ?? null),
+    publicationState: entry.publicationState,
   };
 };
 
@@ -183,10 +196,16 @@ export const getProjectsPageViewModel = async (
   ]);
 
   const publicProjects = entries
-    .filter((entry: PortfolioEntry) => entry.kind === 'public-project')
+    .filter((entry: PortfolioEntry) => {
+      return (
+        entry.kind === 'public-project' && entry.publicationState !== 'draft'
+      );
+    })
     .map((entry: PortfolioEntry) => toProjectCardViewModel(entry, skillLookup));
   const caseStudies = entries
-    .filter((entry: PortfolioEntry) => entry.kind === 'case-study')
+    .filter((entry: PortfolioEntry) => {
+      return entry.kind === 'case-study' && isPublishedEntry(entry);
+    })
     .map((entry: PortfolioEntry) => toCaseStudyViewModel(entry, skillLookup));
 
   return {
@@ -239,7 +258,7 @@ export const listEntryRouteParams = async (
 
     routeParams.push(
       ...entries
-        .filter((entry) => entry.kind === kind)
+        .filter((entry) => entry.kind === kind && isPublishedEntry(entry))
         .map((entry) => ({
           lang: locale,
           slug: entry.slug,
@@ -269,6 +288,10 @@ export const getEntryDetailPageViewModel = async (
 
   if (document.kind !== kind) {
     throw new Error(`Unexpected entry kind for ${kind}:${slug}:${locale}`);
+  }
+
+  if (!isPublishedEntry(document)) {
+    throw new Error(`Entry is not published for ${kind}:${slug}:${locale}`);
   }
 
   return {

@@ -3,7 +3,7 @@ import type {
   LinkKind,
   Locale,
   PageSlug,
-  PublicationStatus,
+  PublicationState,
   SkillStatus,
   SocialIcon,
   Visibility,
@@ -53,7 +53,7 @@ export type PortfolioEntry = {
   locale: Locale;
   kind: EntryKind;
   visibility: Visibility;
-  status: PublicationStatus;
+  publicationState: PublicationState;
   title: string;
   summary: string;
   paragraphs: readonly string[];

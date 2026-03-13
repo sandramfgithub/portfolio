@@ -62,7 +62,7 @@ const entries: PortfolioEntry[] = [
     locale: 'en',
     kind: 'public-project',
     visibility: 'public',
-    status: 'published',
+    publicationState: 'published',
     title: 'portfolio',
     summary: 'Public summary',
     paragraphs: [],
@@ -82,12 +82,31 @@ const entries: PortfolioEntry[] = [
     seo: { title: 'portfolio', description: 'Public summary' },
   },
   {
+    id: 'upcoming-tool-en',
+    slug: 'upcoming-tool',
+    locale: 'en',
+    kind: 'public-project',
+    visibility: 'public',
+    publicationState: 'coming-soon',
+    title: 'Upcoming Tool',
+    summary: 'Upcoming summary',
+    paragraphs: [],
+    bullets: [],
+    stack: ['react'],
+    links: [],
+    featured: false,
+    organization: null,
+    period: null,
+    hasCaseStudy: false,
+    seo: { title: 'Upcoming Tool', description: 'Upcoming summary' },
+  },
+  {
     id: 'private-work-en',
     slug: 'private-work',
     locale: 'en',
     kind: 'case-study',
     visibility: 'private',
-    status: 'published',
+    publicationState: 'published',
     title: 'Private Work',
     summary: 'Private summary',
     paragraphs: [],
@@ -99,6 +118,25 @@ const entries: PortfolioEntry[] = [
     period: null,
     hasCaseStudy: true,
     seo: { title: 'Private Work', description: 'Private summary' },
+  },
+  {
+    id: 'draft-case-en',
+    slug: 'draft-case',
+    locale: 'en',
+    kind: 'case-study',
+    visibility: 'private',
+    publicationState: 'draft',
+    title: 'Draft Case',
+    summary: 'Draft summary',
+    paragraphs: [],
+    bullets: [],
+    stack: ['typescript'],
+    links: [],
+    featured: false,
+    organization: null,
+    period: null,
+    hasCaseStudy: false,
+    seo: { title: 'Draft Case', description: 'Draft summary' },
   },
 ];
 
@@ -210,8 +248,15 @@ describe('portfolio queries', () => {
       'React',
       'TypeScript',
     ]);
+    expect(page.publicProjects[1]).toMatchObject({
+      slug: 'upcoming-tool',
+      href: null,
+      github: null,
+      publicationState: 'coming-soon',
+    });
     expect(page.caseStudies[0]?.href).toBe('/en/case-studies/private-work');
     expect(page.caseStudies[0]?.hasCaseStudy).toBe(true);
+    expect(page.caseStudies).toHaveLength(1);
   });
 
   it('maps CV experience and top-level skills into the about page', async () => {
@@ -249,6 +294,19 @@ describe('portfolio queries', () => {
     expect(page.href).toBe('/en/case-studies/private-work');
     expect(page.listingHref).toBe('/en/projects#cases-heading');
     expect(page.skills.map((skill) => skill.name)).toEqual(['TypeScript']);
+  });
+
+  it('rejects detail view models for unpublished entries', async () => {
+    await expect(
+      getEntryDetailPageViewModel(
+        'en',
+        'public-project',
+        'upcoming-tool',
+        createRepository()
+      )
+    ).rejects.toThrow(
+      'Entry is not published for public-project:upcoming-tool:en'
+    );
   });
 
   it('lists route params for a given entry kind across locales', async () => {

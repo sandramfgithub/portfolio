@@ -19,6 +19,7 @@ export const translations = {
       publicHeading: 'Proyectos públicos',
       caseStudiesHeading: 'Trabajos privados',
       caseStudy: 'Caso de estudio',
+      comingSoon: 'Próximamente',
     },
     about: {
       downloadCv: 'Descargar CV',
@@ -84,6 +85,7 @@ export const translations = {
       publicHeading: 'Public projects',
       caseStudiesHeading: 'Private work',
       caseStudy: 'Case study',
+      comingSoon: 'Coming soon',
     },
     about: {
       downloadCv: 'Download CV',

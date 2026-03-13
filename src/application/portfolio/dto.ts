@@ -1,4 +1,8 @@
-import type { SkillStatus, SocialIcon } from '@/domain/portfolio/value-objects';
+import type {
+  PublicationState,
+  SkillStatus,
+  SocialIcon,
+} from '@/domain/portfolio/value-objects';
 
 export type NavigationItemViewModel = {
   href: string;
@@ -36,11 +40,12 @@ export type HomePageViewModel = {
 
 export type ProjectCardViewModel = {
   slug: string;
-  href: string;
+  href: string | null;
   title: string;
   summary: string;
   skills: readonly SkillBadgeViewModel[];
-  github: string;
+  github: string | null;
+  publicationState: PublicationState;
 };
 
 export type CaseStudyViewModel = {
