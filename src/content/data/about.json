@@ -154,9 +154,16 @@
         "title": "Dibujar",
         "body": [
           "He diseñado algunos logos como hobby.",
-          "El hueco principal está reservado para el del grupo Reylobo en cuanto suba el asset definitivo al portfolio."
+          "Este es el logo de Reylobo, diseñado por mí."
         ],
-        "image": null
+        "image": {
+          "src": "/reylobo-logo.svg",
+          "alt": "Logo de Reylobo diseñado por Sandra Martínez Fernández",
+          "caption": "Reylobo",
+          "width": 4096,
+          "height": 4096,
+          "invertInDarkMode": true
+        }
       }
     },
     "experience": [
@@ -374,9 +381,16 @@
         "title": "Drawing",
         "body": [
           "I've designed a few logos as a hobby.",
-          "The main slot here is reserved for the Reylobo band logo as soon as I upload the final asset to the portfolio."
+          "This is the Reylobo logo, designed by me."
         ],
-        "image": null
+        "image": {
+          "src": "/reylobo-logo.svg",
+          "alt": "Reylobo logo designed by Sandra Martínez Fernández",
+          "caption": "Reylobo",
+          "width": 4096,
+          "height": 4096,
+          "invertInDarkMode": true
+        }
       }
     },
     "experience": [

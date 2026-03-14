@@ -129,6 +129,7 @@ export type AboutMediaPopoverViewModel = {
     alt: string;
     caption?: string;
     height: number;
+    invertInDarkMode?: boolean;
     src: string;
     width: number;
   } | null;

@@ -5,11 +5,7 @@ import {
 } from '@/application/portfolio/about-age';
 import type { AboutAgePopoverViewModel } from '@/application/portfolio/dto';
 import { inlinePopoverTriggerClassName } from '@/components/about/inline-popover';
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
+import { InteractivePopover } from '@/components/ui/interactive-popover';
 
 type Props = {
   content: AboutAgePopoverViewModel;
@@ -21,15 +17,9 @@ export function AgeInlinePopover({ content }: Props) {
   const birthday = isBirthday(content.birthDate, today);
 
   return (
-    <Popover>
-      <PopoverTrigger
-        render={
-          <button className={inlinePopoverTriggerClassName} type="button" />
-        }
-      >
-        {age}
-      </PopoverTrigger>
-      <PopoverContent align="start" side="top">
+    <InteractivePopover
+      align="start"
+      content={
         <div className="space-y-3">
           <p className="font-semibold text-sm">{age}</p>
           <p className="text-muted-foreground text-sm">{content.defaultText}</p>
@@ -40,7 +30,11 @@ export function AgeInlinePopover({ content }: Props) {
             </div>
           )}
         </div>
-      </PopoverContent>
-    </Popover>
+      }
+      side="top"
+      triggerClassName={inlinePopoverTriggerClassName}
+    >
+      {age}
+    </InteractivePopover>
   );
 }

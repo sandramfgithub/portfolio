@@ -90,6 +90,7 @@ const aboutMediaPopoverSchema = z.object({
       alt: z.string(),
       caption: z.string().optional(),
       height: z.number().int().positive(),
+      invertInDarkMode: z.boolean().optional(),
       src: z.string(),
       width: z.number().int().positive(),
     })

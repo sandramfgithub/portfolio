@@ -3,13 +3,12 @@ import type {
   AboutMediaPopoverViewModel,
 } from '@/application/portfolio/dto';
 import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from '@/components/ui/popover';
+  InteractivePopover,
+  interactivePopoverTriggerClassName,
+} from '@/components/ui/interactive-popover';
+import { cn } from '@/lib/utils';
 
-export const inlinePopoverTriggerClassName =
-  'cursor-pointer underline decoration-dotted decoration-muted-foreground/50 underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring/50';
+export const inlinePopoverTriggerClassName = interactivePopoverTriggerClassName;
 
 type Props = {
   content: AboutListPopoverViewModel | AboutMediaPopoverViewModel;
@@ -18,19 +17,9 @@ type Props = {
 
 export function InlinePopover({ content, trigger }: Props) {
   return (
-    <Popover>
-      <PopoverTrigger
-        render={
-          <button className={inlinePopoverTriggerClassName} type="button" />
-        }
-      >
-        {trigger}
-      </PopoverTrigger>
-      <PopoverContent
-        align="start"
-        className={content.kind === 'media' ? 'w-72' : undefined}
-        side="top"
-      >
+    <InteractivePopover
+      align="start"
+      content={
         <div className="space-y-3">
           <div className="space-y-1">
             <p className="font-semibold text-sm">{content.title}</p>
@@ -62,7 +51,10 @@ export function InlinePopover({ content, trigger }: Props) {
             <figure className="space-y-2">
               <img
                 alt={content.image.alt}
-                className="w-full rounded-md border border-border/60"
+                className={cn(
+                  'w-full rounded-md border border-border/60',
+                  content.image.invertInDarkMode && 'dark:invert'
+                )}
                 height={content.image.height}
                 loading="lazy"
                 src={content.image.src}
@@ -76,7 +68,12 @@ export function InlinePopover({ content, trigger }: Props) {
             </figure>
           )}
         </div>
-      </PopoverContent>
-    </Popover>
+      }
+      contentClassName={content.kind === 'media' ? 'w-72' : undefined}
+      side="top"
+      triggerClassName={inlinePopoverTriggerClassName}
+    >
+      {trigger}
+    </InteractivePopover>
   );
 }
