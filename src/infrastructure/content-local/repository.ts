@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import type { ContentRepository } from '@/domain/portfolio/repository';
 import type { Locale, PageSlug } from '@/domain/portfolio/value-objects';
 import {
+  mapAboutEntry,
   mapCvEntry,
   mapPageEntry,
   mapPortfolioEntry,
@@ -32,6 +33,18 @@ const buildRelatedEntryMap = async (locale: Locale) => {
 };
 
 export class LocalContentRepository implements ContentRepository {
+  async getAbout(locale: Locale) {
+    const entries = await getCollection(
+      'about',
+      (entry: CollectionEntry<'about'>) => {
+        return entry.data.locale === locale;
+      }
+    );
+
+    const entry = entries[0];
+    return entry ? mapAboutEntry(entry) : null;
+  }
+
   async getSite(locale: Locale) {
     const entries = await getCollection(
       'site',

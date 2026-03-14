@@ -1,0 +1,31 @@
+---
+import type { AboutHeroViewModel } from '@/application/portfolio/dto';
+import { Badge } from '@/components/ui/badge';
+
+type Props = {
+  hero: AboutHeroViewModel;
+};
+
+const { hero } = Astro.props;
+---
+
+<section class="space-y-6 py-2 sm:py-4">
+  <div class="space-y-3">
+    <Badge
+      className="font-serif text-[11px] tracking-[0.08em] uppercase"
+      variant="outline"
+    >
+      {hero.roleChip}
+    </Badge>
+    <div class="space-y-1">
+      <h1 class="font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+        {hero.name}
+      </h1>
+      <p class="text-muted-foreground text-sm sm:text-base">
+        {hero.roleTitle}
+        · {hero.location}
+      </p>
+    </div>
+  </div>
+  <slot />
+</section>

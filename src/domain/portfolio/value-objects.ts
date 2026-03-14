@@ -1,7 +1,7 @@
 export const locales = ['es', 'en'] as const;
 export type Locale = (typeof locales)[number];
 
-export const pageSlugs = ['home', 'projects', 'about'] as const;
+export const pageSlugs = ['home', 'projects'] as const;
 export type PageSlug = (typeof pageSlugs)[number];
 
 export const entryKinds = ['public-project', 'case-study'] as const;

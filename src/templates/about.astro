@@ -1,9 +1,11 @@
 ---
 import { getCvViewModel } from '@/application/cv/queries';
 import { getAboutPageViewModel } from '@/application/portfolio/queries';
+import AboutExperienceList from '@/components/about/about-experience-list.astro';
+import AboutHero from '@/components/about/about-hero.astro';
+import { AboutRichText } from '@/components/about/about-rich-text';
 import { CvDownload } from '@/components/cv/cv-download';
 import { StackList } from '@/components/portfolio/skills/stack-list';
-import { Separator } from '@/components/ui/separator';
 import type { Lang } from '@/i18n/translations';
 import { getTranslations } from '@/i18n/utils';
 import Layout from '@/layouts/main.astro';
@@ -18,56 +20,30 @@ const [page, cv] = await Promise.all([
 ---
 
 <Layout description={page.description} lang={lang} title={page.title}>
-  <!-- Intro -->
-  <section class="py-2 sm:py-4">
-    <div
-      class="space-y-3 text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
-    >
-      {page.introParagraphs.map((paragraph) => <p>{paragraph}</p>)}
-    </div>
+  <AboutHero hero={page.hero}>
+    <AboutRichText
+      className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
+      client:load
+      paragraphs={page.professional}
+      popovers={page.popovers}
+    />
     <div class="mt-6"><CvDownload cv={cv} lang={lang} client:load /></div>
+  </AboutHero>
+
+  <section class="py-2">
+    <AboutRichText
+      className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
+      client:load
+      paragraphs={page.personal}
+      popovers={page.popovers}
+    />
   </section>
 
-  <!-- Experience -->
-  <section aria-labelledby="exp-heading" class="space-y-5">
-    <h2
-      id="exp-heading"
-      class="font-serif text-xl font-semibold tracking-tight"
-    >
-      {t.about.experience}
-    </h2>
-    {page.experience.map((exp, i) => (
-      <div>
-        {i > 0 && <Separator className="mb-5" />}
-        <div class="flex flex-col gap-1 sm:flex-row sm:items-start sm:justify-between">
-          <div>
-            <h3 class="font-semibold text-sm">{exp.role}</h3>
-            <p class="text-muted-foreground text-sm">{exp.company}</p>
-          </div>
-          <span class="text-muted-foreground text-sm">{exp.period}</span>
-        </div>
-        <p class="mt-3 text-muted-foreground text-sm leading-7">
-          {exp.summary}
-        </p>
-        <ul class="mt-3 grid gap-1.5 text-muted-foreground text-sm leading-7">
-          {exp.achievements.map((ach) => (
-            <li class="flex gap-3">
-              <span class="mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/30" />
-              <span>{ach}</span>
-            </li>
-          ))}
-        </ul>
-        <div class="mt-3">
-          <StackList
-            lang={lang}
-            location="about"
-            skills={exp.skills}
-            client:visible
-          />
-        </div>
-      </div>
-    ))}
-  </section>
+  <AboutExperienceList
+    experience={page.experience}
+    heading={t.about.experience}
+    lang={lang}
+  />
 
   <!-- Skills -->
   <section class="space-y-3">

@@ -86,6 +86,7 @@ const cv: CvDocument = {
 const createRepository = (
   overrides: Partial<ContentRepository> = {}
 ): ContentRepository => ({
+  getAbout: async () => null,
   getSite: async () => site,
   getPage: async (_locale, slug) =>
     pages.find((page) => page.slug === slug) ?? null,

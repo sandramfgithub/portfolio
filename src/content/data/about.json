@@ -1,0 +1,444 @@
+[
+  {
+    "id": "about-es",
+    "locale": "es",
+    "title": "Sobre mí | Sandra Martínez Fernández",
+    "hero": {
+      "name": "Sandra Martínez Fernández",
+      "roleChip": "Desarrolladora Fullstack",
+      "roleTitle": "Senior Fullstack Developer",
+      "location": "Murcia, España"
+    },
+    "professional": [
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "Tengo "
+          },
+          {
+            "type": "popover",
+            "key": "age"
+          },
+          {
+            "type": "text",
+            "value": " años y llevo más de diez trabajando como desarrolladora fullstack. Diseño y construyo productos a medida: herramientas internas, plataformas de gestión y servicios que se adaptan a la empresa y no al contrario. Siempre prefiero apoyarme en soluciones que ya funcionan antes que reinventar la rueda."
+          }
+        ]
+      },
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "Me encargo del proceso completo, desde el análisis hasta el deploy, y busco que lo que entrego sea mantenible a largo plazo. La experiencia me ha enseñado a pensar más allá del problema inmediato: la arquitectura, el contrato entre equipos y la operación del día a día importan tanto como la funcionalidad."
+          }
+        ]
+      },
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "Actualmente trabajo en "
+          },
+          {
+            "type": "strong",
+            "value": "Tahe Productos Cosméticos"
+          },
+          {
+            "type": "text",
+            "value": ", donde desarrollo un PIM pensado específicamente para la vertical cosmética. A lo largo de estos años en Tahe también he construido un sistema de pedidos comerciales, una app de picking para almacén, una plataforma de gestión de aparatología y varias herramientas internas. Antes estuve en "
+          },
+          {
+            "type": "strong",
+            "value": "Next2U"
+          },
+          {
+            "type": "text",
+            "value": ", donde desarrollé un CRM para el equipo comercial y una aplicación de control horario."
+          }
+        ]
+      }
+    ],
+    "personal": [
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "Fuera del código me gusta ver "
+          },
+          {
+            "type": "popover",
+            "key": "films",
+            "trigger": "cine"
+          },
+          {
+            "type": "text",
+            "value": " y series. Últimamente soy bastante fan de los "
+          },
+          {
+            "type": "popover",
+            "key": "realityShows",
+            "trigger": "realities coreanos"
+          },
+          {
+            "type": "text",
+            "value": ", escuchar "
+          },
+          {
+            "type": "popover",
+            "key": "music",
+            "trigger": "música"
+          },
+          {
+            "type": "text",
+            "value": ", jugar a "
+          },
+          {
+            "type": "popover",
+            "key": "games",
+            "trigger": "videojuegos"
+          },
+          {
+            "type": "text",
+            "value": " cooperativos con mi marido y "
+          },
+          {
+            "type": "popover",
+            "key": "drawing",
+            "trigger": "dibujar"
+          },
+          {
+            "type": "text",
+            "value": ". Todo bajo la atenta mirada de nuestros dos gatos. Desarrollar videojuegos es otro de mis hobbies: junta todo lo que me gusta en un mismo sitio."
+          }
+        ]
+      }
+    ],
+    "popovers": {
+      "age": {
+        "kind": "age",
+        "birthDate": "1989-09-15",
+        "defaultText": "Nací el 15 de septiembre de 1989.",
+        "birthdayText": "¡Hoy es mi cumpleaños!"
+      },
+      "films": {
+        "kind": "list",
+        "title": "Cine",
+        "intro": "Todavía estoy cerrando esta selección final.",
+        "items": []
+      },
+      "realityShows": {
+        "kind": "list",
+        "title": "Realities coreanos",
+        "intro": "Lo que más me ha enganchado últimamente:",
+        "items": [
+          "Physical: 100",
+          "The Devil's Plan",
+          "Los que me recomiende el algoritmo"
+        ]
+      },
+      "music": {
+        "kind": "list",
+        "title": "Música",
+        "intro": "Aquí terminaré de fijar bandas y géneros favoritos.",
+        "items": []
+      },
+      "games": {
+        "kind": "list",
+        "title": "Videojuegos",
+        "intro": "Los dos fijos de la lista y uno todavía por decidir.",
+        "items": ["It Takes Two", "Hades"]
+      },
+      "drawing": {
+        "kind": "media",
+        "title": "Dibujar",
+        "body": [
+          "He diseñado algunos logos como hobby.",
+          "El hueco principal está reservado para el del grupo Reylobo en cuanto suba el asset definitivo al portfolio."
+        ],
+        "image": null
+      }
+    },
+    "experience": [
+      {
+        "role": "Senior Fullstack Developer",
+        "company": "Tahe Productos Cosméticos S.L.",
+        "period": "junio 2018 – actualidad",
+        "summary": "Diseño y desarrollo de productos internos para la vertical cosmética: PIM, gestión de pedidos, picking de almacén, aparatología y herramientas de soporte.",
+        "achievements": [
+          "Desarrollo de un PIM personalizado con Bun, contratos API y búsqueda por Elasticsearch",
+          "Extracción de un sistema de tablas server-side reutilizable con React y TanStack Table",
+          "Implementación de workers con leasing sobre PostgreSQL para polling y heartbeats",
+          "App móvil de picking con lectura de códigos y sincronización offline",
+          "Sistema de pedidos comerciales con flujos de aprobación",
+          "Plataforma de gestión de aparatología con inventario y reservas"
+        ],
+        "skillSlugs": [
+          "react",
+          "typescript",
+          "bun",
+          "postgresql",
+          "elasticsearch",
+          "tanstack-table",
+          "trpc",
+          "tailwind-css",
+          "capacitor"
+        ]
+      },
+      {
+        "role": "Fullstack Developer",
+        "company": "Next2U · Distribuidor Oficial Vodafone",
+        "period": "enero 2016 – junio 2018",
+        "summary": "Desarrollo de herramientas internas para el equipo comercial.",
+        "achievements": [
+          "Mini CRM para seguimiento comercial y pipeline operativo",
+          "Control horario con reglas de negocio de recursos humanos"
+        ],
+        "skillSlugs": ["typescript", "rest", "postgresql"]
+      }
+    ],
+    "skillSlugs": [
+      "react",
+      "typescript",
+      "bun",
+      "postgresql",
+      "trpc",
+      "tailwind-css",
+      "drizzle-orm",
+      "vitest",
+      "vite",
+      "opentelemetry",
+      "docker",
+      "github",
+      "codex",
+      "claude",
+      "elasticsearch",
+      "tanstack-table"
+    ],
+    "seo": {
+      "title": "Sobre mí | Sandra Martínez Fernández",
+      "description": "Perfil, experiencia técnica y stack de Sandra Martínez Fernández."
+    }
+  },
+  {
+    "id": "about-en",
+    "locale": "en",
+    "title": "About | Sandra Martínez Fernández",
+    "hero": {
+      "name": "Sandra Martínez Fernández",
+      "roleChip": "Fullstack Developer",
+      "roleTitle": "Senior Fullstack Developer",
+      "location": "Murcia, Spain"
+    },
+    "professional": [
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "I'm "
+          },
+          {
+            "type": "popover",
+            "key": "age"
+          },
+          {
+            "type": "text",
+            "value": " years old and have been working as a fullstack developer for over ten years. I design and build custom products: internal tools, management platforms, and services that adapt to the company rather than the other way around. I always prefer to lean on solutions that already work before reinventing the wheel."
+          }
+        ]
+      },
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "I own the full process, from analysis to deploy, and I aim for everything I deliver to be maintainable in the long run. Experience has taught me to think beyond the immediate problem: architecture, the contract between teams, and day-to-day operations matter as much as the feature itself."
+          }
+        ]
+      },
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "I currently work at "
+          },
+          {
+            "type": "strong",
+            "value": "Tahe Productos Cosméticos"
+          },
+          {
+            "type": "text",
+            "value": ", where I develop a PIM purpose-built for the cosmetics vertical. Over the years at Tahe I have also built a commercial order system, a warehouse picking app, an equipment management platform, and several internal tools. Previously I worked at "
+          },
+          {
+            "type": "strong",
+            "value": "Next2U"
+          },
+          {
+            "type": "text",
+            "value": ", where I built a CRM for the sales team and a time tracking application."
+          }
+        ]
+      }
+    ],
+    "personal": [
+      {
+        "nodes": [
+          {
+            "type": "text",
+            "value": "Away from code I enjoy watching "
+          },
+          {
+            "type": "popover",
+            "key": "films",
+            "trigger": "films"
+          },
+          {
+            "type": "text",
+            "value": " and series. I'm currently a big fan of Korean "
+          },
+          {
+            "type": "popover",
+            "key": "realityShows",
+            "trigger": "reality shows"
+          },
+          {
+            "type": "text",
+            "value": ", listening to "
+          },
+          {
+            "type": "popover",
+            "key": "music",
+            "trigger": "music"
+          },
+          {
+            "type": "text",
+            "value": ", playing "
+          },
+          {
+            "type": "popover",
+            "key": "games",
+            "trigger": "games"
+          },
+          {
+            "type": "text",
+            "value": " co-op with my husband, and "
+          },
+          {
+            "type": "popover",
+            "key": "drawing",
+            "trigger": "drawing"
+          },
+          {
+            "type": "text",
+            "value": ". All under the watchful eye of our two cats. Developing video games is another hobby of mine: it brings together everything I like in one place."
+          }
+        ]
+      }
+    ],
+    "popovers": {
+      "age": {
+        "kind": "age",
+        "birthDate": "1989-09-15",
+        "defaultText": "Born September 15, 1989.",
+        "birthdayText": "It's my birthday!"
+      },
+      "films": {
+        "kind": "list",
+        "title": "Films",
+        "intro": "I'm still narrowing this selection down.",
+        "items": []
+      },
+      "realityShows": {
+        "kind": "list",
+        "title": "Reality shows",
+        "intro": "What I've been most into lately:",
+        "items": [
+          "Physical: 100",
+          "The Devil's Plan",
+          "Whatever the algorithm recommends next"
+        ]
+      },
+      "music": {
+        "kind": "list",
+        "title": "Music",
+        "intro": "This list is waiting for the final bands and genres.",
+        "items": []
+      },
+      "games": {
+        "kind": "list",
+        "title": "Games",
+        "intro": "Two fixed picks so far, with a third one still undecided.",
+        "items": ["It Takes Two", "Hades"]
+      },
+      "drawing": {
+        "kind": "media",
+        "title": "Drawing",
+        "body": [
+          "I've designed a few logos as a hobby.",
+          "The main slot here is reserved for the Reylobo band logo as soon as I upload the final asset to the portfolio."
+        ],
+        "image": null
+      }
+    },
+    "experience": [
+      {
+        "role": "Senior Fullstack Developer",
+        "company": "Tahe Productos Cosméticos S.L.",
+        "period": "June 2018 – present",
+        "summary": "Design and development of internal products for the cosmetics vertical: PIM, order management, warehouse picking, equipment management, and support tools.",
+        "achievements": [
+          "Custom PIM with Bun, API contracts, and Elasticsearch-powered search",
+          "Extraction of a reusable server-side table system with React and TanStack Table",
+          "Lease-based PostgreSQL workers for polling and heartbeats",
+          "Mobile picking app with barcode scanning and offline sync",
+          "Commercial order system with approval workflows",
+          "Equipment management platform with inventory and reservations"
+        ],
+        "skillSlugs": [
+          "react",
+          "typescript",
+          "bun",
+          "postgresql",
+          "elasticsearch",
+          "tanstack-table",
+          "trpc",
+          "tailwind-css",
+          "capacitor"
+        ]
+      },
+      {
+        "role": "Fullstack Developer",
+        "company": "Next2U · Official Vodafone Distributor",
+        "period": "January 2016 – June 2018",
+        "summary": "Internal tooling for the sales team.",
+        "achievements": [
+          "Mini CRM for sales pipeline and operational visibility",
+          "Time tracking with HR business rules"
+        ],
+        "skillSlugs": ["typescript", "rest", "postgresql"]
+      }
+    ],
+    "skillSlugs": [
+      "react",
+      "typescript",
+      "bun",
+      "postgresql",
+      "trpc",
+      "tailwind-css",
+      "drizzle-orm",
+      "vitest",
+      "vite",
+      "opentelemetry",
+      "docker",
+      "github",
+      "codex",
+      "claude",
+      "elasticsearch",
+      "tanstack-table"
+    ],
+    "seo": {
+      "title": "About | Sandra Martínez Fernández",
+      "description": "Profile, technical experience, and stack of Sandra Martínez Fernández."
+    }
+  }
+]

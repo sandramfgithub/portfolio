@@ -8,6 +8,7 @@ import {
   listEntryRouteParams,
 } from '@/application/portfolio/queries';
 import type {
+  AboutDocument,
   CvDocument,
   PageContent,
   PortfolioEntry,
@@ -45,15 +46,85 @@ const pages: PageContent[] = [
     introParagraphs: ['Projects intro'],
     seo: { title: 'Projects title', description: 'Projects description' },
   },
-  {
-    id: 'about-en',
-    locale: 'en',
-    slug: 'about',
-    title: 'About title',
-    introParagraphs: ['About intro'],
-    seo: { title: 'About title', description: 'About description' },
-  },
 ];
+
+const about: AboutDocument = {
+  id: 'about-en',
+  locale: 'en',
+  title: 'About title',
+  hero: {
+    name: 'Sandra',
+    roleChip: 'Fullstack Developer',
+    roleTitle: 'Senior Fullstack Developer',
+    location: 'Murcia, Spain',
+  },
+  professional: [
+    {
+      nodes: [
+        { type: 'text', value: 'I am ' },
+        { type: 'popover', key: 'age' },
+      ],
+    },
+  ],
+  personal: [
+    {
+      nodes: [
+        { type: 'text', value: 'I like ' },
+        { type: 'popover', key: 'games', trigger: 'games' },
+      ],
+    },
+  ],
+  popovers: {
+    age: {
+      kind: 'age',
+      birthDate: '1989-09-15',
+      birthdayText: "It's my birthday!",
+      defaultText: 'Born September 15, 1989.',
+    },
+    drawing: {
+      kind: 'media',
+      title: 'Drawing',
+      body: ['Drawing body'],
+      image: null,
+    },
+    films: {
+      kind: 'list',
+      title: 'Films',
+      items: ['Movie'],
+      intro: 'Films intro',
+    },
+    games: {
+      kind: 'list',
+      title: 'Games',
+      items: ['It Takes Two'],
+      intro: 'Games intro',
+    },
+    music: {
+      kind: 'list',
+      title: 'Music',
+      items: ['Band'],
+      intro: 'Music intro',
+    },
+    realityShows: {
+      kind: 'list',
+      title: 'Reality shows',
+      items: ['Show'],
+      intro: 'Reality intro',
+    },
+  },
+  experience: [
+    {
+      role: 'Developer',
+      company: 'Example Co',
+      period: '2022-Present',
+      summary: 'About experience summary',
+      achievements: ['Achievement'],
+      skillSlugs: ['react', 'typescript'],
+    },
+  ],
+  skillSlugs: ['react', 'typescript'],
+  seo: { title: 'About title', description: 'About description' },
+};
 
 const entries: PortfolioEntry[] = [
   {
@@ -233,6 +304,7 @@ const cv: CvDocument = {
 const createRepository = (
   overrides: Partial<ContentRepository> = {}
 ): ContentRepository => ({
+  getAbout: async () => about,
   getSite: async () => site,
   getPage: async (_locale, slug) =>
     pages.find((page) => page.slug === slug) ?? null,
@@ -291,9 +363,19 @@ describe('portfolio queries', () => {
     expect(page.privateEntries[1]?.privateEntryType).toBe('case-study');
   });
 
-  it('maps CV experience and top-level skills into the about page', async () => {
+  it('maps the dedicated about document into the about page', async () => {
     const page = await getAboutPageViewModel('en', createRepository());
 
+    expect(page.hero.roleChip).toBe('Fullstack Developer');
+    expect(page.professional[0]?.nodes[1]).toEqual({
+      key: 'age',
+      type: 'popover',
+    });
+    expect(page.personal[0]?.nodes[1]).toEqual({
+      key: 'games',
+      trigger: 'games',
+      type: 'popover',
+    });
     expect(page.experience[0]?.skills.map((skill) => skill.name)).toEqual([
       'React',
       'TypeScript',

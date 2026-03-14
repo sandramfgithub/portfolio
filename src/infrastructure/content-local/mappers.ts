@@ -1,5 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 import type {
+  AboutDocument,
   CvDocument,
   PageContent,
   PortfolioEntry,
@@ -23,6 +24,23 @@ export const mapPageEntry = (entry: CollectionEntry<'pages'>): PageContent => {
     locale: entry.data.locale,
     title: entry.data.title,
     introParagraphs: entry.data.introParagraphs,
+    seo: entry.data.seo,
+  };
+};
+
+export const mapAboutEntry = (
+  entry: CollectionEntry<'about'>
+): AboutDocument => {
+  return {
+    id: entry.id,
+    locale: entry.data.locale,
+    title: entry.data.title,
+    hero: entry.data.hero,
+    professional: entry.data.professional,
+    personal: entry.data.personal,
+    popovers: entry.data.popovers,
+    experience: entry.data.experience,
+    skillSlugs: entry.data.skillSlugs,
     seo: entry.data.seo,
   };
 };

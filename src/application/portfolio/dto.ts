@@ -75,10 +75,86 @@ export type AboutExperienceViewModel = {
   skills: readonly SkillBadgeViewModel[];
 };
 
+export type AboutHeroViewModel = {
+  name: string;
+  roleChip: string;
+  roleTitle: string;
+  location: string;
+};
+
+export type AboutInlineTextNodeViewModel = {
+  type: 'text';
+  value: string;
+};
+
+export type AboutInlineStrongNodeViewModel = {
+  type: 'strong';
+  value: string;
+};
+
+export type AboutInlinePopoverNodeViewModel = {
+  type: 'popover';
+  key: 'age' | 'drawing' | 'films' | 'games' | 'music' | 'realityShows';
+  trigger?: string;
+};
+
+export type AboutInlineNodeViewModel =
+  | AboutInlineTextNodeViewModel
+  | AboutInlineStrongNodeViewModel
+  | AboutInlinePopoverNodeViewModel;
+
+export type AboutParagraphViewModel = {
+  nodes: readonly AboutInlineNodeViewModel[];
+};
+
+export type AboutAgePopoverViewModel = {
+  kind: 'age';
+  birthDate: string;
+  birthdayText: string;
+  defaultText: string;
+};
+
+export type AboutListPopoverViewModel = {
+  kind: 'list';
+  title: string;
+  intro?: string;
+  items: readonly string[];
+};
+
+export type AboutMediaPopoverViewModel = {
+  kind: 'media';
+  title: string;
+  body: readonly string[];
+  image: {
+    alt: string;
+    caption?: string;
+    height: number;
+    src: string;
+    width: number;
+  } | null;
+};
+
+export type AboutPopoverViewModel =
+  | AboutAgePopoverViewModel
+  | AboutListPopoverViewModel
+  | AboutMediaPopoverViewModel;
+
+export type AboutPopoverRegistryViewModel = {
+  age: AboutAgePopoverViewModel;
+  drawing: AboutMediaPopoverViewModel;
+  films: AboutListPopoverViewModel;
+  games: AboutListPopoverViewModel;
+  music: AboutListPopoverViewModel;
+  realityShows: AboutListPopoverViewModel;
+};
+
 export type AboutPageViewModel = {
   title: string;
   description: string;
-  introParagraphs: readonly string[];
+  hero: AboutHeroViewModel;
+  professional: readonly AboutParagraphViewModel[];
+  personal: readonly AboutParagraphViewModel[];
+  popovers: AboutPopoverRegistryViewModel;
   experience: readonly AboutExperienceViewModel[];
   skills: readonly SkillBadgeViewModel[];
 };

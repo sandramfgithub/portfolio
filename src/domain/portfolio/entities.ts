@@ -41,6 +41,112 @@ export type PageContent = {
   seo: SeoMetadata;
 };
 
+export const aboutPopoverKeys = [
+  'age',
+  'films',
+  'realityShows',
+  'music',
+  'games',
+  'drawing',
+] as const;
+
+export type AboutPopoverKey = (typeof aboutPopoverKeys)[number];
+
+export type AboutInlineTextNode = {
+  type: 'text';
+  value: string;
+};
+
+export type AboutInlineStrongNode = {
+  type: 'strong';
+  value: string;
+};
+
+export type AboutInlinePopoverNode = {
+  type: 'popover';
+  key: AboutPopoverKey;
+  trigger?: string;
+};
+
+export type AboutInlineNode =
+  | AboutInlineTextNode
+  | AboutInlineStrongNode
+  | AboutInlinePopoverNode;
+
+export type AboutParagraph = {
+  nodes: readonly AboutInlineNode[];
+};
+
+export type AboutHero = {
+  name: string;
+  roleChip: string;
+  roleTitle: string;
+  location: string;
+};
+
+export type AboutAgePopover = {
+  kind: 'age';
+  birthDate: string;
+  defaultText: string;
+  birthdayText: string;
+};
+
+export type AboutListPopover = {
+  kind: 'list';
+  title: string;
+  intro?: string;
+  items: readonly string[];
+};
+
+export type AboutMediaPopover = {
+  kind: 'media';
+  title: string;
+  body: readonly string[];
+  image: {
+    alt: string;
+    caption?: string;
+    height: number;
+    src: string;
+    width: number;
+  } | null;
+};
+
+export type AboutPopover =
+  | AboutAgePopover
+  | AboutListPopover
+  | AboutMediaPopover;
+
+export type AboutPopoverRegistry = {
+  age: AboutAgePopover;
+  drawing: AboutMediaPopover;
+  films: AboutListPopover;
+  games: AboutListPopover;
+  music: AboutListPopover;
+  realityShows: AboutListPopover;
+};
+
+export type AboutExperience = {
+  role: string;
+  company: string;
+  period: string;
+  summary: string;
+  achievements: readonly string[];
+  skillSlugs: readonly string[];
+};
+
+export type AboutDocument = {
+  id: string;
+  locale: Locale;
+  title: string;
+  hero: AboutHero;
+  professional: readonly AboutParagraph[];
+  personal: readonly AboutParagraph[];
+  popovers: AboutPopoverRegistry;
+  experience: readonly AboutExperience[];
+  skillSlugs: readonly string[];
+  seo: SeoMetadata;
+};
+
 export type EntryLink = {
   label: string;
   href: string;

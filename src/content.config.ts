@@ -45,6 +45,64 @@ const certificationSchema = z.object({
   issuedAt: z.string().optional(),
   url: z.url().optional(),
 });
+const aboutInlineTextSchema = z.object({
+  type: z.literal('text'),
+  value: z.string(),
+});
+const aboutInlineStrongSchema = z.object({
+  type: z.literal('strong'),
+  value: z.string(),
+});
+const aboutInlinePopoverSchema = z.object({
+  type: z.literal('popover'),
+  key: z.enum(['age', 'films', 'realityShows', 'music', 'games', 'drawing']),
+  trigger: z.string().optional(),
+});
+const aboutParagraphSchema = z.object({
+  nodes: z.array(
+    z.union([
+      aboutInlineTextSchema,
+      aboutInlineStrongSchema,
+      aboutInlinePopoverSchema,
+    ])
+  ),
+});
+const aboutListPopoverSchema = z.object({
+  kind: z.literal('list'),
+  title: z.string(),
+  intro: z.string().optional(),
+  items: z.array(z.string()),
+});
+const aboutAgePopoverSchema = z.object({
+  kind: z.literal('age'),
+  birthDate: z
+    .string()
+    .regex(/^\d{4}-\d{2}-\d{2}$/, 'Expected YYYY-MM-DD birth date'),
+  birthdayText: z.string(),
+  defaultText: z.string(),
+});
+const aboutMediaPopoverSchema = z.object({
+  kind: z.literal('media'),
+  title: z.string(),
+  body: z.array(z.string()),
+  image: z
+    .object({
+      alt: z.string(),
+      caption: z.string().optional(),
+      height: z.number().int().positive(),
+      src: z.string(),
+      width: z.number().int().positive(),
+    })
+    .nullable(),
+});
+const aboutExperienceSchema = z.object({
+  role: z.string(),
+  company: z.string(),
+  period: z.string(),
+  summary: z.string(),
+  achievements: z.array(z.string()),
+  skillSlugs: z.array(z.string()),
+});
 
 const site = defineCollection({
   loader: file('src/content/data/site.json'),
@@ -58,10 +116,37 @@ const site = defineCollection({
 const pages = defineCollection({
   loader: file('src/content/data/pages.json'),
   schema: z.object({
-    slug: z.enum(['home', 'projects', 'about']),
+    slug: z.enum(['home', 'projects']),
     locale: localeSchema,
     title: z.string(),
     introParagraphs: z.array(z.string()),
+    seo: seoSchema,
+  }),
+});
+
+const about = defineCollection({
+  loader: file('src/content/data/about.json'),
+  schema: z.object({
+    locale: localeSchema,
+    title: z.string(),
+    hero: z.object({
+      location: z.string(),
+      name: z.string(),
+      roleChip: z.string(),
+      roleTitle: z.string(),
+    }),
+    professional: z.array(aboutParagraphSchema),
+    personal: z.array(aboutParagraphSchema),
+    popovers: z.object({
+      age: aboutAgePopoverSchema,
+      drawing: aboutMediaPopoverSchema,
+      films: aboutListPopoverSchema,
+      games: aboutListPopoverSchema,
+      music: aboutListPopoverSchema,
+      realityShows: aboutListPopoverSchema,
+    }),
+    experience: z.array(aboutExperienceSchema),
+    skillSlugs: z.array(z.string()),
     seo: seoSchema,
   }),
 });
@@ -130,4 +215,4 @@ const cv = defineCollection({
   }),
 });
 
-export const collections = { site, pages, entries, skills, cv };
+export const collections = { site, pages, about, entries, skills, cv };

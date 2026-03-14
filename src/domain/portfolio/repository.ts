@@ -1,4 +1,5 @@
 import type {
+  AboutDocument,
   CvDocument,
   PageContent,
   PortfolioEntry,
@@ -8,6 +9,7 @@ import type {
 import type { Locale, PageSlug } from '@/domain/portfolio/value-objects';
 
 export interface ContentRepository {
+  getAbout(locale: Locale): Promise<AboutDocument | null>;
   getCv(locale: Locale): Promise<CvDocument | null>;
   getEntry(locale: Locale, slug: string): Promise<PortfolioEntry | null>;
   getPage(locale: Locale, slug: PageSlug): Promise<PageContent | null>;
