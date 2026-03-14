@@ -53,7 +53,8 @@ export function InlinePopover({ content, trigger }: Props) {
                 alt={content.image.alt}
                 className={cn(
                   'w-full rounded-md border border-border/60',
-                  content.image.invertInDarkMode && 'dark:invert'
+                  content.image.invertInDarkMode &&
+                    'dark:contrast-200 dark:invert'
                 )}
                 height={content.image.height}
                 loading="lazy"

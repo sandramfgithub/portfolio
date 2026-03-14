@@ -52,7 +52,10 @@ export function SkillBadge({
       side="top"
       triggerClassName="cursor-pointer"
     >
-      <Badge className="text-[11px]" variant="secondary">
+      <Badge
+        className="text-[11px] dark:bg-[oklch(0.24_0_0)] dark:text-foreground"
+        variant="secondary"
+      >
         {skill.name}
       </Badge>
     </InteractivePopover>
