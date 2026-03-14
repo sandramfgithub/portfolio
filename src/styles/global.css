@@ -190,8 +190,35 @@ footer {
   animation: fade-in 0.4s cubic-bezier(0.25, 1, 0.5, 1) 0.3s both;
 }
 
+/* Cat colors: Muñeca is the gray palette. Meñique is the white palette. */
 .footer-cat {
+  --footer-cat-eye-color: currentColor;
+  color: oklch(0.44 0 0);
   animation: fade-in 1.1s cubic-bezier(0.4, 0, 0.2, 1) 0.5s both;
+}
+
+.dark .footer-cat {
+  color: oklch(0.9 0 0);
+}
+
+.footer-cat__shape {
+  fill: currentColor;
+  transition: fill 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.footer-cat__eye {
+  fill: var(--footer-cat-eye-color);
+  transition: fill 0.22s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+@media (hover: hover) {
+  .footer-cat:hover {
+    --footer-cat-eye-color: oklch(0.69 0.154 79.4);
+  }
+
+  .dark .footer-cat:hover {
+    --footer-cat-eye-color: oklch(0.9 0.145 225);
+  }
 }
 
 /* --- Nav link underline animation --- */
