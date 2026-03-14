@@ -167,11 +167,10 @@
         "summary": "Diseño y desarrollo de productos internos para la vertical cosmética: PIM, gestión de pedidos, picking de almacén, aparatología y herramientas de soporte.",
         "achievements": [
           "Desarrollo de un PIM personalizado con Bun, contratos API y búsqueda por Elasticsearch",
-          "Extracción de un sistema de tablas server-side reutilizable con React y TanStack Table",
-          "Implementación de workers con leasing sobre PostgreSQL para polling y heartbeats",
           "App móvil de picking con lectura de códigos y sincronización offline",
           "Sistema de pedidos comerciales con flujos de aprobación",
-          "Plataforma de gestión de aparatología con inventario y reservas"
+          "Plataforma de gestión de aparatología con inventario y reservas",
+          "Otras pequeñas utilidades y APIs"
         ],
         "skillSlugs": [
           "react",
@@ -388,11 +387,10 @@
         "summary": "Design and development of internal products for the cosmetics vertical: PIM, order management, warehouse picking, equipment management, and support tools.",
         "achievements": [
           "Custom PIM with Bun, API contracts, and Elasticsearch-powered search",
-          "Extraction of a reusable server-side table system with React and TanStack Table",
-          "Lease-based PostgreSQL workers for polling and heartbeats",
           "Mobile picking app with barcode scanning and offline sync",
           "Commercial order system with approval workflows",
-          "Equipment management platform with inventory and reservations"
+          "Equipment management platform with inventory and reservations",
+          "Other small utilities and APIs"
         ],
         "skillSlugs": [
           "react",
