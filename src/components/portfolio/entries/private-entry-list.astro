@@ -20,7 +20,7 @@ const t = getTranslations(lang);
 >
   {entries.map((project, i) => (
     <li
-      class="fade-up-item flex flex-col gap-2 bg-card px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+      class="fade-up-item flex flex-col gap-2 bg-card px-5 py-4 sm:grid sm:grid-cols-[minmax(0,1fr)_18rem] sm:items-start sm:gap-4"
       style={`animation-delay: ${i * 40}ms`}
     >
       <div class="min-w-0 flex-1">
@@ -54,7 +54,7 @@ const t = getTranslations(lang);
           {project.summary}
         </p>
       </div>
-      <div class="shrink-0">
+      <div class="sm:w-[18rem]">
         <StackList
           lang={lang}
           location="projects"

@@ -12,7 +12,12 @@ export default defineConfig({
     include: ['tests/unit/**/*.test.ts'],
     coverage: {
       provider: 'v8',
-      include: ['src/i18n/**/*.ts'],
+      include: [
+        'src/application/**/*.ts',
+        'src/domain/**/*.ts',
+        'src/i18n/**/*.ts',
+      ],
+      exclude: ['src/**/dto.ts', 'src/**/entities.ts', 'src/**/repository.ts'],
       reporter: ['text', 'html'],
       thresholds: {
         statements: 80,

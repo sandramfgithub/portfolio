@@ -15,8 +15,10 @@ const getRepository = async (repository?: ContentRepository) => {
     return repository;
   }
 
+  /* v8 ignore start -- astro:content is only available in the Astro runtime */
   const module = await import('@/infrastructure/content-local/repository');
   return module.localContentRepository;
+  /* v8 ignore stop */
 };
 
 export const getPrivacyPolicyPageViewModel = async (

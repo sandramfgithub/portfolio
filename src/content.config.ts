@@ -62,6 +62,23 @@ const policyLinkSchema = z.object({
   href: z.url(),
   label: z.string(),
 });
+const isValidIsoDate = (value: string) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return false;
+  }
+
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) {
+    return false;
+  }
+
+  const [year, month, day] = value.split('-').map(Number);
+  return (
+    date.getUTCFullYear() === year &&
+    date.getUTCMonth() + 1 === month &&
+    date.getUTCDate() === day
+  );
+};
 const aboutInlineTextSchema = z.object({
   type: z.literal('text'),
   value: z.string(),
@@ -72,7 +89,15 @@ const aboutInlineStrongSchema = z.object({
 });
 const aboutInlinePopoverSchema = z.object({
   type: z.literal('popover'),
-  key: z.enum(['age', 'films', 'realityShows', 'music', 'games', 'drawing']),
+  key: z.enum([
+    'age',
+    'cats',
+    'films',
+    'realityShows',
+    'music',
+    'games',
+    'drawing',
+  ]),
   trigger: z.string().optional(),
 });
 const aboutParagraphSchema = z.object({
@@ -84,17 +109,21 @@ const aboutParagraphSchema = z.object({
     ])
   ),
 });
+const aboutPopoverItemSchema = z.object({
+  label: z.string(),
+  href: z.url().optional(),
+});
 const aboutListPopoverSchema = z.object({
   kind: z.literal('list'),
   title: z.string(),
   intro: z.string().optional(),
-  items: z.array(z.string()),
+  items: z.array(aboutPopoverItemSchema),
 });
 const aboutAgePopoverSchema = z.object({
   kind: z.literal('age'),
-  birthDate: z
-    .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, 'Expected YYYY-MM-DD birth date'),
+  birthDate: z.string().refine(isValidIsoDate, {
+    message: 'Expected valid YYYY-MM-DD birth date',
+  }),
   birthdayText: z.string(),
   defaultText: z.string(),
 });
@@ -102,6 +131,7 @@ const aboutMediaPopoverSchema = z.object({
   kind: z.literal('media'),
   title: z.string(),
   body: z.array(z.string()),
+  links: z.array(aboutPopoverItemSchema).optional(),
   image: z
     .object({
       alt: z.string(),
@@ -149,6 +179,7 @@ const about = defineCollection({
     personal: z.array(aboutParagraphSchema),
     popovers: z.object({
       age: aboutAgePopoverSchema,
+      cats: aboutMediaPopoverSchema,
       drawing: aboutMediaPopoverSchema,
       films: aboutListPopoverSchema,
       games: aboutListPopoverSchema,
@@ -203,6 +234,9 @@ const cv = defineCollection({
   schema: z.object({
     locale: localeSchema,
     profile: z.object({
+      birthDate: z.string().refine(isValidIsoDate, {
+        message: 'Expected valid YYYY-MM-DD birth date',
+      }),
       name: z.string(),
       role: z.string(),
       location: z.string(),

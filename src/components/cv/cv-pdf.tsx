@@ -13,6 +13,7 @@ import type {
   CvLanguageViewModel,
   CvProfileViewModel,
 } from '@/application/cv/dto';
+import type { Lang } from '@/i18n/translations';
 
 // ---------- Fonts ----------
 
@@ -46,9 +47,9 @@ const s = StyleSheet.create({
     fontSize: 9,
     color: c.foreground,
     backgroundColor: c.white,
-    paddingTop: 24,
-    paddingBottom: 32,
-    paddingHorizontal: 36,
+    paddingTop: 32,
+    paddingBottom: 40,
+    paddingHorizontal: 56,
   },
 
   // Header
@@ -70,6 +71,14 @@ const s = StyleSheet.create({
     flexDirection: 'column',
     gap: 2,
   },
+  disclaimer: {
+    fontSize: 6.8,
+    color: c.muted,
+    position: 'absolute',
+    left: 56,
+    right: 56,
+    bottom: 18,
+  },
 
   // Sections
   sectionTitle: {
@@ -78,7 +87,7 @@ const s = StyleSheet.create({
     letterSpacing: 1.5,
     textTransform: 'uppercase',
     color: c.primary,
-    marginBottom: 8,
+    marginBottom: 6,
     marginTop: 18,
   },
   separator: {
@@ -90,7 +99,7 @@ const s = StyleSheet.create({
   // Profile
   summary: {
     fontSize: 9,
-    lineHeight: 1.6,
+    lineHeight: 1.5,
     color: c.muted,
   },
 
@@ -99,7 +108,7 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 3,
+    marginBottom: 4,
   },
   expRole: {
     fontSize: 11,
@@ -117,16 +126,16 @@ const s = StyleSheet.create({
   },
   expSummary: {
     fontSize: 9,
-    lineHeight: 1.5,
+    lineHeight: 1.4,
     color: c.muted,
-    marginBottom: 4,
+    marginBottom: 5,
   },
   achievement: {
     fontSize: 8.5,
-    lineHeight: 1.5,
+    lineHeight: 1.45,
     color: c.foreground,
     paddingLeft: 10,
-    marginBottom: 2,
+    marginBottom: 3,
   },
   achievementBullet: {
     position: 'absolute',
@@ -136,7 +145,7 @@ const s = StyleSheet.create({
     fontSize: 8.5,
   },
   expDivider: {
-    marginTop: 12,
+    marginTop: 14,
   },
 
   // Tags
@@ -144,7 +153,7 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 4,
-    marginTop: 6,
+    marginTop: 8,
   },
   tag: {
     fontSize: 7,
@@ -158,7 +167,7 @@ const s = StyleSheet.create({
 
   // Education and certifications
   metaRow: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
   metaTitle: {
     fontSize: 10,
@@ -167,20 +176,20 @@ const s = StyleSheet.create({
   metaSubtitle: {
     fontSize: 8.5,
     color: c.muted,
-    marginTop: 2,
+    marginTop: 1,
   },
   metaSummary: {
     fontSize: 8.5,
-    lineHeight: 1.5,
+    lineHeight: 1.4,
     color: c.muted,
-    marginTop: 4,
+    marginTop: 3,
   },
 
   // Two columns bottom
   twoCol: {
     flexDirection: 'row',
     gap: 24,
-    marginTop: 18,
+    marginTop: 4,
   },
   colLeft: {
     flex: 1,
@@ -193,7 +202,7 @@ const s = StyleSheet.create({
   langRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 4,
+    marginBottom: 3,
   },
   langName: {
     fontSize: 9,
@@ -208,12 +217,15 @@ const s = StyleSheet.create({
 // ---------- Props ----------
 
 type CvPdfProps = {
+  birthDateLabel: string;
   profile: CvProfileViewModel;
   experience: readonly CvExperienceViewModel[];
   education: readonly CvEducationViewModel[];
   certifications: readonly CvCertificationViewModel[];
   languages: readonly CvLanguageViewModel[];
   stack: readonly string[];
+  downloadDisclaimer?: string;
+  lang: Lang;
   contact: {
     github: string | null;
     linkedin: string | null;
@@ -232,12 +244,15 @@ type CvPdfProps = {
 // ---------- Document ----------
 
 export function CvPdfDocument({
+  birthDateLabel,
   profile,
   experience,
   education,
   certifications,
   languages,
   stack,
+  downloadDisclaimer,
+  lang,
   contact,
   sectionLabels = {
     certifications: 'Certificaciones',
@@ -248,15 +263,27 @@ export function CvPdfDocument({
     languages: 'Idiomas',
   },
 }: CvPdfProps) {
+  const formatBirthDate = (birthDate: string) => {
+    const date = new Date(`${birthDate}T00:00:00`);
+
+    return new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-US', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(date);
+  };
+
   return (
     <Document author={profile.name} title={`CV — ${profile.name}`}>
       <Page size="A4" style={s.page}>
         {/* Header */}
         <View>
           <Text style={s.headerName}>{profile.name}</Text>
-          <Text style={s.headerRole}>{profile.role}</Text>
+          <Text
+            style={s.headerRole}
+          >{`${profile.role} · ${profile.location}`}</Text>
           <View style={s.headerContact}>
-            <Text>{profile.location}</Text>
+            <Text>{`${birthDateLabel}: ${formatBirthDate(profile.birthDate)}`}</Text>
             <Text>{`Web: ${profile.web}`}</Text>
             {contact.email && <Text>{`Email: ${contact.email}`}</Text>}
             {contact.github && <Text>{`GitHub: ${contact.github}`}</Text>}
@@ -365,6 +392,10 @@ export function CvPdfDocument({
               </View>
             ))}
           </>
+        )}
+
+        {downloadDisclaimer && (
+          <Text style={s.disclaimer}>{downloadDisclaimer}</Text>
         )}
       </Page>
     </Document>

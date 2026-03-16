@@ -9,6 +9,7 @@ import {
 import {
   PopoverPanel,
   PopoverPanelHeader,
+  PopoverPanelLinks,
   PopoverPanelList,
   PopoverPanelMedia,
   popoverMediaContentClassName,
@@ -39,12 +40,19 @@ export function InlinePopover({ content, trigger }: Props) {
 
           {'body' in content &&
             (content.image ? (
-              <PopoverPanelMedia body={content.body} image={content.image} />
+              <PopoverPanelMedia
+                body={content.body}
+                image={content.image}
+                links={content.links}
+              />
             ) : (
               <div className="space-y-2 text-muted-foreground text-sm">
                 {content.body.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
+                {content.links && content.links.length > 0 && (
+                  <PopoverPanelLinks links={content.links} />
+                )}
               </div>
             ))}
         </PopoverPanel>

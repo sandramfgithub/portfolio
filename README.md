@@ -2,6 +2,14 @@
 
 Architecture portfolio built with Astro, React, and Tailwind CSS.
 
+<p align="center">
+  <img
+    src="./docs/assets/home-terminal.png"
+    alt="Homepage terminal screenshot"
+    width="90%"
+  />
+</p>
+
 ## Stack
 
 - Runtime and package manager: Bun
@@ -105,3 +113,8 @@ docs/                 Architecture, workflow, and ADRs
 - [Deployment](./docs/deployment.md)
 - [Workflow](./docs/workflow.md)
 - [ADR 0001](./docs/adr/0001-repository-baseline.md)
+
+## License
+
+- Code: [MIT](./LICENSE)
+- Content, branding, and portfolio assets: [All rights reserved](./LICENSE-CONTENT.md)

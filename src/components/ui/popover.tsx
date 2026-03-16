@@ -1,9 +1,6 @@
 import { Popover as PopoverPrimitive } from '@base-ui/react/popover';
-import { motion } from 'framer-motion';
 
 import { cn } from '@/lib/utils';
-
-const spring = { type: 'spring' as const, stiffness: 300, damping: 25 };
 
 function Popover({ ...props }: PopoverPrimitive.Root.Props) {
   return <PopoverPrimitive.Root data-slot="popover" {...props} />;
@@ -37,18 +34,10 @@ function PopoverContent({
       >
         <PopoverPrimitive.Popup
           className={cn(
-            'w-80 max-w-[calc(100vw-1.5rem)] origin-(--transform-origin) rounded-lg border border-border/60 bg-popover p-4 text-popover-foreground shadow-md',
+            'w-80 max-w-[calc(100vw-1.5rem)] origin-(--transform-origin) rounded-lg border border-border/60 bg-popover p-4 text-popover-foreground shadow-md transition-[opacity,transform] duration-200 ease-[cubic-bezier(0.25,1,0.5,1)] data-[ending-style]:scale-95 data-[starting-style]:scale-95 data-[ending-style]:opacity-0 data-[starting-style]:opacity-0',
             className
           )}
           data-slot="popover-content"
-          render={
-            <motion.div
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.95 }}
-              initial={{ opacity: 0, scale: 0.95 }}
-              transition={spring}
-            />
-          }
           {...props}
         >
           {children}

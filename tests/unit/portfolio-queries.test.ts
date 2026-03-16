@@ -81,6 +81,12 @@ const about: AboutDocument = {
       birthdayText: "It's my birthday!",
       defaultText: 'Born September 15, 1989.',
     },
+    cats: {
+      kind: 'media',
+      title: 'Cats',
+      body: ['Cats body'],
+      image: null,
+    },
     drawing: {
       kind: 'media',
       title: 'Drawing',
@@ -90,25 +96,25 @@ const about: AboutDocument = {
     films: {
       kind: 'list',
       title: 'Films',
-      items: ['Movie'],
+      items: [{ label: 'Movie' }],
       intro: 'Films intro',
     },
     games: {
       kind: 'list',
       title: 'Games',
-      items: ['It Takes Two'],
+      items: [{ label: 'It Takes Two' }],
       intro: 'Games intro',
     },
     music: {
       kind: 'list',
       title: 'Music',
-      items: ['Band'],
+      items: [{ label: 'Band' }],
       intro: 'Music intro',
     },
     realityShows: {
       kind: 'list',
       title: 'Reality shows',
-      items: ['Show'],
+      items: [{ label: 'Show' }],
       intro: 'Reality intro',
     },
   },
@@ -262,6 +268,7 @@ const cv: CvDocument = {
   id: 'cv-en',
   locale: 'en',
   profile: {
+    birthDate: '1989-09-15',
     name: 'Sandra',
     role: 'Developer',
     location: 'Spain',
@@ -420,6 +427,67 @@ describe('portfolio queries', () => {
         kind: 'repository',
       },
     ]);
+  });
+
+  it('throws when a published public project is missing its repository link', async () => {
+    await expect(
+      getProjectsPageViewModel(
+        'en',
+        createRepository({
+          listEntries: async () => [
+            {
+              ...entries[0]!,
+              links: [],
+            },
+          ],
+        })
+      )
+    ).rejects.toThrow('Missing repository link for portfolio');
+  });
+
+  it('throws when a project has an invalid sort date', async () => {
+    await expect(
+      getProjectsPageViewModel(
+        'en',
+        createRepository({
+          listEntries: () => {
+            const [first, second] = entries;
+
+            return Promise.resolve([
+              first!,
+              {
+                ...second!,
+                sortDate: 'not-a-date',
+              },
+            ]);
+          },
+        })
+      )
+    ).rejects.toThrow('Invalid sort date for upcoming-tool:en');
+  });
+
+  it('throws when the requested detail kind does not match the stored entry kind', async () => {
+    await expect(
+      getEntryDetailPageViewModel(
+        'en',
+        'public-project',
+        'private-work',
+        createRepository()
+      )
+    ).rejects.toThrow(
+      'Unexpected entry kind for public-project:private-work:en'
+    );
+  });
+
+  it('throws when the requested entry is not published', async () => {
+    await expect(
+      getEntryDetailPageViewModel(
+        'en',
+        'case-study',
+        'draft-case',
+        createRepository()
+      )
+    ).rejects.toThrow('Entry is not published for case-study:draft-case:en');
   });
 
   it('lists route params for a given entry kind across locales', async () => {

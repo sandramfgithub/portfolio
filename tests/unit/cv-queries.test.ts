@@ -55,6 +55,7 @@ const cv: CvDocument = {
   id: 'cv-en',
   locale: 'en',
   profile: {
+    birthDate: '1989-09-15',
     name: 'Sandra',
     role: 'Developer',
     location: 'Spain',

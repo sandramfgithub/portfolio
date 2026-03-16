@@ -3,11 +3,12 @@
     "id": "cv-es",
     "locale": "es",
     "profile": {
+      "birthDate": "1989-09-15",
       "name": "Sandra Martínez Fernández",
-      "role": "Desarrolladora de Software",
-      "location": "España",
+      "role": "Senior Fullstack Developer",
+      "location": "Murcia, España",
       "web": "sandramf.dev",
-      "summary": "Desarrolladora con experiencia en frontends de producto, tooling interno y servicios backend. Enfoque en contratos explícitos, estructura de repositorio mantenible y operación observable.",
+      "summary": "Trabajo desde hace diez años como desarrolladora fullstack. Diseño y construyo productos a medida: herramientas internas, plataformas de gestión y servicios que se adaptan a la empresa y no al contrario. Siempre prefiero apoyarme en soluciones que ya funcionan antes que reinventar la rueda.",
       "photo": null,
       "bodyParagraphs": [
         "Me encargo del proceso completo, desde el análisis hasta el deploy, y busco que lo que entrego sea mantenible a largo plazo. La experiencia me ha enseñado a pensar más allá del problema inmediato: la arquitectura, el contrato entre equipos y la operación del día a día importan tanto como la funcionalidad.",
@@ -24,21 +25,31 @@
         "role": "Senior Fullstack Developer",
         "company": "Tahe Productos Cosméticos S.L.",
         "period": "junio 2018 – actualidad",
-        "summary": "Diseño y desarrollo de productos internos para la vertical cosmética: PIM, gestión de pedidos, picking de almacén, aparatología y herramientas de soporte.",
+        "summary": "Diseño y desarrollo de productos internos para una vertical exigente: PIM enterprise, gestión de pedidos B2B, picking de almacén y gestión de fabricación y control de calidad de aparatología.",
         "achievements": [
-          "Desarrollo de un PIM personalizado con Bun, contratos API y búsqueda por Elasticsearch",
-          "App móvil de picking con lectura de códigos y sincronización offline",
-          "Sistema de pedidos comerciales con flujos de aprobación",
-          "Plataforma de gestión de aparatología con inventario y reservas",
+          "Desarrollo de un PIM enterprise con variantes complejas, contenido multicanal, automatización, data quality, publicación segura y búsquedas avanzadas",
+          "App móvil de picking con lectura de códigos",
+          "Sistema de gestión de pedidos comerciales B2B con pedidos, catálogo, estadísticas, reportes e informes",
+          "Gestión de fabricación y control de calidad de aparatología, mantenimiento y stock",
           "Otras pequeñas utilidades y APIs"
         ],
         "stack": [
           "react",
+          "react-native",
           "typescript",
           "bun",
           "postgresql",
+          "mssql",
           "elasticsearch",
-          "tanstack-table",
+          "drizzle-orm",
+          "opentelemetry",
+          "hono",
+          "turborepo",
+          "graphql",
+          "rest",
+          "nest",
+          "vue",
+          "soap",
           "trpc",
           "tailwind-css",
           "capacitor"
@@ -48,12 +59,12 @@
         "role": "Fullstack Developer",
         "company": "Next2U · Distribuidor Oficial Vodafone",
         "period": "enero 2016 – junio 2018",
-        "summary": "Desarrollo de herramientas internas para el equipo comercial.",
+        "summary": "Desarrollo de herramientas internas para el equipo comercial: CRM y control horario.",
         "achievements": [
-          "Mini CRM para seguimiento comercial y pipeline operativo",
-          "Control horario con reglas de negocio de recursos humanos"
+          "Mini CRM para seguimiento comercial, pipeline operativo y visibilidad sobre clientes",
+          "Sistema interno para fichajes, incidencias e informes con aplicación móvil"
         ],
-        "stack": ["typescript", "rest", "postgresql"]
+        "stack": ["ruby-on-rails", "postgresql", "angular", "android-sdk"]
       }
     ],
     "education": [],
@@ -70,9 +81,11 @@
     "certifications": [],
     "skillSlugs": [
       "react",
+      "react-native",
       "typescript",
       "bun",
       "postgresql",
+      "mssql",
       "trpc",
       "tailwind-css",
       "drizzle-orm",
@@ -93,11 +106,12 @@
     "id": "cv-en",
     "locale": "en",
     "profile": {
+      "birthDate": "1989-09-15",
       "name": "Sandra Martínez Fernández",
-      "role": "Software Developer",
-      "location": "Spain",
+      "role": "Senior Fullstack Developer",
+      "location": "Murcia, Spain",
       "web": "sandramf.dev",
-      "summary": "Developer with experience in product frontends, internal tooling, and backend services. Focus on explicit contracts, maintainable repository structure, and observable operations.",
+      "summary": "I've been working as a fullstack developer for ten years. I design and build custom products: internal tools, management platforms, and services that adapt to the company rather than the other way around. I always prefer to lean on solutions that already work before reinventing the wheel.",
       "photo": null,
       "bodyParagraphs": [
         "I own the full process, from analysis to deploy, and I aim for everything I deliver to be maintainable in the long run. Experience has taught me to think beyond the immediate problem: architecture, the contract between teams, and day-to-day operations matter as much as the feature itself.",
@@ -114,21 +128,31 @@
         "role": "Senior Fullstack Developer",
         "company": "Tahe Productos Cosméticos S.L.",
         "period": "June 2018 – Present",
-        "summary": "Design and development of internal products for the cosmetics vertical: PIM, commercial ordering, warehouse picking, equipment management, and support tools.",
+        "summary": "Design and development of internal products for a demanding vertical: enterprise PIM, B2B order management, warehouse picking, and manufacturing and quality control for equipment.",
         "achievements": [
-          "Development of a custom PIM with Bun, API contracts, and Elasticsearch search",
-          "Warehouse picking mobile app with barcode scanning and offline sync",
-          "Commercial ordering system with approval flows",
-          "Equipment management platform with inventory and bookings",
+          "Development of an enterprise PIM with complex variants, multichannel content, automation, data quality, safe publication, and advanced search",
+          "Warehouse picking mobile app with barcode scanning",
+          "B2B commercial order management system with orders, catalogue, statistics, reports, and dashboards",
+          "Manufacturing management and quality control for equipment, plus maintenance and stock",
           "Other smaller internal utilities and APIs"
         ],
         "stack": [
           "react",
+          "react-native",
           "typescript",
           "bun",
           "postgresql",
+          "mssql",
           "elasticsearch",
-          "tanstack-table",
+          "drizzle-orm",
+          "opentelemetry",
+          "hono",
+          "turborepo",
+          "graphql",
+          "rest",
+          "nest",
+          "vue",
+          "soap",
           "trpc",
           "tailwind-css",
           "capacitor"
@@ -138,12 +162,12 @@
         "role": "Fullstack Developer",
         "company": "Next2U · Official Vodafone Distributor",
         "period": "January 2016 – June 2018",
-        "summary": "Development of internal tools for the commercial team.",
+        "summary": "Development of internal tools for the commercial team: CRM and time tracking.",
         "achievements": [
-          "Mini CRM for commercial follow-up and pipeline visibility",
-          "Time tracking application with HR business rules"
+          "Mini CRM for commercial follow-up, pipeline visibility, and customer context",
+          "Internal time tracking system for logs, incidents, and reports, with a mobile application"
         ],
-        "stack": ["typescript", "rest", "postgresql"]
+        "stack": ["ruby-on-rails", "postgresql", "angular", "android-sdk"]
       }
     ],
     "education": [],
@@ -160,9 +184,11 @@
     "certifications": [],
     "skillSlugs": [
       "react",
+      "react-native",
       "typescript",
       "bun",
       "postgresql",
+      "mssql",
       "trpc",
       "tailwind-css",
       "drizzle-orm",

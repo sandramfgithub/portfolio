@@ -14,15 +14,7 @@
         "nodes": [
           {
             "type": "text",
-            "value": "Tengo "
-          },
-          {
-            "type": "popover",
-            "key": "age"
-          },
-          {
-            "type": "text",
-            "value": " años y llevo más de diez trabajando como desarrolladora fullstack. Diseño y construyo productos a medida: herramientas internas, plataformas de gestión y servicios que se adaptan a la empresa y no al contrario. Siempre prefiero apoyarme en soluciones que ya funcionan antes que reinventar la rueda."
+            "value": "Trabajo desde hace diez años como desarrolladora fullstack. Diseño y construyo productos a medida: herramientas internas, plataformas de gestión y servicios que se adaptan a la empresa y no al contrario. Siempre prefiero apoyarme en soluciones que ya funcionan antes que reinventar la rueda."
           }
         ]
       }
@@ -77,7 +69,24 @@
           },
           {
             "type": "text",
-            "value": ". Todo bajo la atenta mirada de nuestros dos gatos. Desarrollar videojuegos es otro de mis hobbies: junta todo lo que me gusta en un mismo sitio."
+            "value": ". Todo bajo la atenta mirada de nuestros dos "
+          },
+          {
+            "type": "popover",
+            "key": "cats",
+            "trigger": "gatos"
+          },
+          {
+            "type": "text",
+            "value": ". Desarrollar videojuegos es otro de mis hobbies: junta todo lo que me gusta en un mismo sitio. Tengo "
+          },
+          {
+            "type": "popover",
+            "key": "age"
+          },
+          {
+            "type": "text",
+            "value": " años."
           }
         ]
       }
@@ -89,40 +98,98 @@
         "defaultText": "Nací el 15 de septiembre de 1989.",
         "birthdayText": "¡Hoy es mi cumpleaños!"
       },
+      "cats": {
+        "kind": "media",
+        "title": "Gatos",
+        "body": [
+          "Meñique y Muñeca se encuentran en la página web. Les gusta el cursor del ratón :)"
+        ],
+        "image": null
+      },
       "films": {
         "kind": "list",
         "title": "Cine",
-        "intro": "Todavía estoy cerrando esta selección final.",
-        "items": []
+        "intro": "Tres películas a las que siempre vuelvo.",
+        "items": [
+          {
+            "label": "Eva al desnudo",
+            "href": "https://www.imdb.com/title/tt0042192/"
+          },
+          {
+            "label": "12 hombres sin piedad",
+            "href": "https://www.imdb.com/title/tt0050083/"
+          },
+          {
+            "label": "Las amistades peligrosas",
+            "href": "https://www.imdb.com/title/tt0094947/"
+          }
+        ]
       },
       "realityShows": {
         "kind": "list",
         "title": "Realities coreanos",
         "intro": "Lo que más me ha enganchado últimamente:",
         "items": [
-          "Physical: 100",
-          "The Devil's Plan",
-          "Los que me recomiende el algoritmo"
+          {
+            "label": "Physical: 100"
+          },
+          {
+            "label": "The Devil's Plan"
+          },
+          {
+            "label": "Cucharas blancas contra negras"
+          },
+          {
+            "label": "Los que me recomiende el algoritmo"
+          }
         ]
       },
       "music": {
         "kind": "list",
         "title": "Música",
-        "intro": "Aquí terminaré de fijar bandas y géneros favoritos.",
-        "items": []
+        "intro": "Bandas de las que me gustan casi todas sus canciones.",
+        "items": [
+          {
+            "label": "Arctic Monkeys"
+          },
+          {
+            "label": "One Hope"
+          },
+          {
+            "label": "The Tech Thieves"
+          },
+          {
+            "label": "El Cuarteto de Nos"
+          }
+        ]
       },
       "games": {
         "kind": "list",
         "title": "Videojuegos",
-        "intro": "Los dos fijos de la lista y uno todavía por decidir.",
-        "items": ["It Takes Two", "Hades"]
+        "intro": "Los que más me han marcado últimamente.",
+        "items": [
+          {
+            "label": "It Takes Two"
+          },
+          {
+            "label": "Hades"
+          },
+          {
+            "label": "Clair Obscur: Expedition 33"
+          }
+        ]
       },
       "drawing": {
         "kind": "media",
         "title": "Dibujar",
         "body": [
-          "He diseñado algunos logos como hobby.",
-          "Este es el logo de Reylobo, diseñado por mí."
+          "Toda mi vida me ha gustado dibujar, y considero que se me da bien, pero una de las cosas que más me ha gustado en mi vida, y alejada completamente de mi estilo de dibujo, ha sido diseñar el logo para la banda Reylobo."
+        ],
+        "links": [
+          {
+            "label": "reylobo.band",
+            "href": "https://reylobo.band/"
+          }
         ],
         "image": {
           "src": "/reylobo-logo.svg",
@@ -154,15 +221,7 @@
         "nodes": [
           {
             "type": "text",
-            "value": "I'm "
-          },
-          {
-            "type": "popover",
-            "key": "age"
-          },
-          {
-            "type": "text",
-            "value": " years old and have been working as a fullstack developer for over ten years. I design and build custom products: internal tools, management platforms, and services that adapt to the company rather than the other way around. I always prefer to lean on solutions that already work before reinventing the wheel."
+            "value": "I've been working as a fullstack developer for ten years. I design and build custom products: internal tools, management platforms, and services that adapt to the company rather than the other way around. I always prefer to lean on solutions that already work before reinventing the wheel."
           }
         ]
       }
@@ -217,7 +276,24 @@
           },
           {
             "type": "text",
-            "value": ". All under the watchful eye of our two cats. Developing video games is another hobby of mine: it brings together everything I like in one place."
+            "value": ". All under the watchful eye of our two "
+          },
+          {
+            "type": "popover",
+            "key": "cats",
+            "trigger": "cats"
+          },
+          {
+            "type": "text",
+            "value": ". Developing video games is another hobby of mine: it brings together everything I like in one place. I'm "
+          },
+          {
+            "type": "popover",
+            "key": "age"
+          },
+          {
+            "type": "text",
+            "value": " years old."
           }
         ]
       }
@@ -229,40 +305,98 @@
         "defaultText": "Born September 15, 1989.",
         "birthdayText": "It's my birthday!"
       },
+      "cats": {
+        "kind": "media",
+        "title": "Cats",
+        "body": [
+          "Meñique and Muñeca are on the website. They like the mouse cursor :)"
+        ],
+        "image": null
+      },
       "films": {
         "kind": "list",
         "title": "Films",
-        "intro": "I'm still narrowing this selection down.",
-        "items": []
+        "intro": "Three films I always come back to.",
+        "items": [
+          {
+            "label": "All About Eve",
+            "href": "https://www.imdb.com/title/tt0042192/"
+          },
+          {
+            "label": "12 Angry Men",
+            "href": "https://www.imdb.com/title/tt0050083/"
+          },
+          {
+            "label": "Dangerous Liaisons",
+            "href": "https://www.imdb.com/title/tt0094947/"
+          }
+        ]
       },
       "realityShows": {
         "kind": "list",
         "title": "Reality shows",
         "intro": "What I've been most into lately:",
         "items": [
-          "Physical: 100",
-          "The Devil's Plan",
-          "Whatever the algorithm recommends next"
+          {
+            "label": "Physical: 100"
+          },
+          {
+            "label": "The Devil's Plan"
+          },
+          {
+            "label": "Culinary Class Wars"
+          },
+          {
+            "label": "Whatever the algorithm recommends next"
+          }
         ]
       },
       "music": {
         "kind": "list",
         "title": "Music",
-        "intro": "This list is waiting for the final bands and genres.",
-        "items": []
+        "intro": "Bands whose songs I almost always like.",
+        "items": [
+          {
+            "label": "Arctic Monkeys"
+          },
+          {
+            "label": "One Hope"
+          },
+          {
+            "label": "The Tech Thieves"
+          },
+          {
+            "label": "El Cuarteto de Nos"
+          }
+        ]
       },
       "games": {
         "kind": "list",
         "title": "Games",
-        "intro": "Two fixed picks so far, with a third one still undecided.",
-        "items": ["It Takes Two", "Hades"]
+        "intro": "The ones that have stuck with me most lately.",
+        "items": [
+          {
+            "label": "It Takes Two"
+          },
+          {
+            "label": "Hades"
+          },
+          {
+            "label": "Clair Obscur: Expedition 33"
+          }
+        ]
       },
       "drawing": {
         "kind": "media",
         "title": "Drawing",
         "body": [
-          "I've designed a few logos as a hobby.",
-          "This is the Reylobo logo, designed by me."
+          "I've loved drawing for as long as I can remember, and I think I'm good at it, but one of the things I've enjoyed most in my life, completely outside my usual drawing style, was designing the logo for the band Reylobo."
+        ],
+        "links": [
+          {
+            "label": "reylobo.band",
+            "href": "https://reylobo.band/"
+          }
         ],
         "image": {
           "src": "/reylobo-logo.svg",
