@@ -81,6 +81,12 @@ const about: AboutDocument = {
       birthdayText: "It's my birthday!",
       defaultText: 'Born September 15, 1989.',
     },
+    cats: {
+      kind: 'media',
+      title: 'Cats',
+      body: ['Cats body'],
+      image: null,
+    },
     drawing: {
       kind: 'media',
       title: 'Drawing',
@@ -90,25 +96,25 @@ const about: AboutDocument = {
     films: {
       kind: 'list',
       title: 'Films',
-      items: ['Movie'],
+      items: [{ label: 'Movie' }],
       intro: 'Films intro',
     },
     games: {
       kind: 'list',
       title: 'Games',
-      items: ['It Takes Two'],
+      items: [{ label: 'It Takes Two' }],
       intro: 'Games intro',
     },
     music: {
       kind: 'list',
       title: 'Music',
-      items: ['Band'],
+      items: [{ label: 'Band' }],
       intro: 'Music intro',
     },
     realityShows: {
       kind: 'list',
       title: 'Reality shows',
-      items: ['Show'],
+      items: [{ label: 'Show' }],
       intro: 'Reality intro',
     },
   },
@@ -262,6 +268,7 @@ const cv: CvDocument = {
   id: 'cv-en',
   locale: 'en',
   profile: {
+    birthDate: '1989-09-15',
     name: 'Sandra',
     role: 'Developer',
     location: 'Spain',

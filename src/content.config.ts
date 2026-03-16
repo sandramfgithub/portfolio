@@ -72,7 +72,15 @@ const aboutInlineStrongSchema = z.object({
 });
 const aboutInlinePopoverSchema = z.object({
   type: z.literal('popover'),
-  key: z.enum(['age', 'films', 'realityShows', 'music', 'games', 'drawing']),
+  key: z.enum([
+    'age',
+    'cats',
+    'films',
+    'realityShows',
+    'music',
+    'games',
+    'drawing',
+  ]),
   trigger: z.string().optional(),
 });
 const aboutParagraphSchema = z.object({
@@ -84,11 +92,15 @@ const aboutParagraphSchema = z.object({
     ])
   ),
 });
+const aboutPopoverItemSchema = z.object({
+  label: z.string(),
+  href: z.url().optional(),
+});
 const aboutListPopoverSchema = z.object({
   kind: z.literal('list'),
   title: z.string(),
   intro: z.string().optional(),
-  items: z.array(z.string()),
+  items: z.array(aboutPopoverItemSchema),
 });
 const aboutAgePopoverSchema = z.object({
   kind: z.literal('age'),
@@ -102,6 +114,7 @@ const aboutMediaPopoverSchema = z.object({
   kind: z.literal('media'),
   title: z.string(),
   body: z.array(z.string()),
+  links: z.array(aboutPopoverItemSchema).optional(),
   image: z
     .object({
       alt: z.string(),
@@ -149,6 +162,7 @@ const about = defineCollection({
     personal: z.array(aboutParagraphSchema),
     popovers: z.object({
       age: aboutAgePopoverSchema,
+      cats: aboutMediaPopoverSchema,
       drawing: aboutMediaPopoverSchema,
       films: aboutListPopoverSchema,
       games: aboutListPopoverSchema,
@@ -203,6 +217,9 @@ const cv = defineCollection({
   schema: z.object({
     locale: localeSchema,
     profile: z.object({
+      birthDate: z
+        .string()
+        .regex(/^\d{4}-\d{2}-\d{2}$/, 'Expected YYYY-MM-DD birth date'),
       name: z.string(),
       role: z.string(),
       location: z.string(),

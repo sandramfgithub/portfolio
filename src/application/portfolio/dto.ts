@@ -94,7 +94,14 @@ export type AboutInlineStrongNodeViewModel = {
 
 export type AboutInlinePopoverNodeViewModel = {
   type: 'popover';
-  key: 'age' | 'drawing' | 'films' | 'games' | 'music' | 'realityShows';
+  key:
+    | 'age'
+    | 'cats'
+    | 'drawing'
+    | 'films'
+    | 'games'
+    | 'music'
+    | 'realityShows';
   trigger?: string;
 };
 
@@ -114,17 +121,23 @@ export type AboutAgePopoverViewModel = {
   defaultText: string;
 };
 
+export type AboutPopoverItemViewModel = {
+  label: string;
+  href?: string;
+};
+
 export type AboutListPopoverViewModel = {
   kind: 'list';
   title: string;
   intro?: string;
-  items: readonly string[];
+  items: readonly AboutPopoverItemViewModel[];
 };
 
 export type AboutMediaPopoverViewModel = {
   kind: 'media';
   title: string;
   body: readonly string[];
+  links?: readonly AboutPopoverItemViewModel[];
   image: {
     alt: string;
     caption?: string;
@@ -142,6 +155,7 @@ export type AboutPopoverViewModel =
 
 export type AboutPopoverRegistryViewModel = {
   age: AboutAgePopoverViewModel;
+  cats: AboutMediaPopoverViewModel;
   drawing: AboutMediaPopoverViewModel;
   films: AboutListPopoverViewModel;
   games: AboutListPopoverViewModel;

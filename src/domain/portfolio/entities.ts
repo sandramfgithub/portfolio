@@ -43,6 +43,7 @@ export type PageContent = {
 
 export const aboutPopoverKeys = [
   'age',
+  'cats',
   'films',
   'realityShows',
   'music',
@@ -91,17 +92,23 @@ export type AboutAgePopover = {
   birthdayText: string;
 };
 
+export type AboutPopoverItem = {
+  label: string;
+  href?: string;
+};
+
 export type AboutListPopover = {
   kind: 'list';
   title: string;
   intro?: string;
-  items: readonly string[];
+  items: readonly AboutPopoverItem[];
 };
 
 export type AboutMediaPopover = {
   kind: 'media';
   title: string;
   body: readonly string[];
+  links?: readonly AboutPopoverItem[];
   image: {
     alt: string;
     caption?: string;
@@ -119,6 +126,7 @@ export type AboutPopover =
 
 export type AboutPopoverRegistry = {
   age: AboutAgePopover;
+  cats: AboutMediaPopover;
   drawing: AboutMediaPopover;
   films: AboutListPopover;
   games: AboutListPopover;
@@ -189,6 +197,7 @@ export type Skill = {
 };
 
 export type CvProfile = {
+  birthDate: string;
   name: string;
   role: string;
   location: string;

@@ -71,10 +71,13 @@ export function CvDownload({
 
       const blob = await pdf(
         <CvPdfDocument
+          birthDateLabel={t.cv.dateOfBirth}
           certifications={cv.certifications}
           contact={cv.contacts}
+          downloadDisclaimer={t.cv.webDisclaimer}
           education={cv.education}
           experience={cv.experience}
+          lang={lang}
           languages={cv.languages}
           profile={cv.profile}
           sectionLabels={sectionLabels}

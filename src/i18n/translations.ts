@@ -20,10 +20,10 @@ export const translations = {
     },
     projects: {
       intro:
-        'Aqui estan los proyectos publicos y, debajo, trabajos privados de contexto tecnico. Si tienes curiosidad, pulsa en una skill para mas detalle.',
+        'Aquí están los proyectos públicos y, debajo, trabajos privados de contexto técnico. Si tienes curiosidad, pulsa en una skill para más detalle.',
       publicHeading: 'Proyectos públicos',
       caseStudiesHeading: 'Trabajos privados',
-      caseStudy: 'Caso de estudio',
+      caseStudy: 'Académico',
       comingSoon: 'Próximamente',
       work: 'Trabajo',
     },
@@ -38,11 +38,13 @@ export const translations = {
     cv: {
       backToAbout: 'Volver a sobre mí',
       certifications: 'Certificaciones',
+      dateOfBirth: 'Fecha de nacimiento',
       education: 'Formación',
       experience: 'Experiencia',
       languages: 'Idiomas',
       profile: 'Perfil profesional',
       stack: 'Stack técnico',
+      webDisclaimer: 'Este CV se disfruta mejor en la web.',
     },
     privacy: {
       optInButton: 'Reactivar analítica',
@@ -110,7 +112,7 @@ export const translations = {
         "Here are the public projects and, below, private work for technical context. If you're curious, click a skill for more detail.",
       publicHeading: 'Public projects',
       caseStudiesHeading: 'Private work',
-      caseStudy: 'Case study',
+      caseStudy: 'Academic',
       comingSoon: 'Coming soon',
       work: 'Work',
     },
@@ -125,11 +127,13 @@ export const translations = {
     cv: {
       backToAbout: 'Back to about',
       certifications: 'Certifications',
+      dateOfBirth: 'Date of birth',
       education: 'Education',
       experience: 'Experience',
       languages: 'Languages',
       profile: 'Professional profile',
       stack: 'Technical stack',
+      webDisclaimer: 'This CV is best enjoyed on the web.',
     },
     privacy: {
       optInButton: 'Re-enable analytics',

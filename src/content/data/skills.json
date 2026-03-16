@@ -9,13 +9,13 @@
     "lastUsedAt": "2025",
     "lastVersion": "19",
     "url": "https://react.dev",
-    "summary": "Componentes de producto, sistemas de tablas server-side, formularios con validacion y UI interactiva.",
+    "summary": "Componentes de producto, sistemas de tablas server-side, formularios con validación y UI interactiva.",
     "details": [
-      "Componentes de producto, sistemas de tablas server-side, formularios con validacion y UI interactiva."
+      "Componentes de producto, sistemas de tablas server-side, formularios con validación y UI interactiva."
     ],
     "seo": {
       "title": "React | Sandra Martínez Fernández",
-      "description": "Componentes de producto, sistemas de tablas server-side, formularios con validacion y UI interactiva."
+      "description": "Componentes de producto, sistemas de tablas server-side, formularios con validación y UI interactiva."
     }
   },
   {
@@ -47,13 +47,13 @@
     "lastUsedAt": "2025",
     "lastVersion": "5",
     "url": "https://astro.build",
-    "summary": "Framework del portfolio. Islas de hidratacion, transiciones de vista y contenido estatico.",
+    "summary": "Framework del portfolio. Islas de hidratación, transiciones de vista y contenido estático.",
     "details": [
-      "Framework del portfolio. Islas de hidratacion, transiciones de vista y contenido estatico."
+      "Framework del portfolio. Islas de hidratación, transiciones de vista y contenido estático."
     ],
     "seo": {
       "title": "Astro | Sandra Martínez Fernández",
-      "description": "Framework del portfolio. Islas de hidratacion, transiciones de vista y contenido estatico."
+      "description": "Framework del portfolio. Islas de hidratación, transiciones de vista y contenido estático."
     }
   },
   {
@@ -85,13 +85,13 @@
     "lastUsedAt": "2025",
     "lastVersion": null,
     "url": "https://ui.shadcn.com",
-    "summary": "Componentes accesibles basados en Base UI, adaptados al sistema de diseno propio.",
+    "summary": "Componentes accesibles basados en Base UI, adaptados al sistema de diseño propio.",
     "details": [
-      "Componentes accesibles basados en Base UI, adaptados al sistema de diseno propio."
+      "Componentes accesibles basados en Base UI, adaptados al sistema de diseño propio."
     ],
     "seo": {
       "title": "shadcn/ui | Sandra Martínez Fernández",
-      "description": "Componentes accesibles basados en Base UI, adaptados al sistema de diseno propio."
+      "description": "Componentes accesibles basados en Base UI, adaptados al sistema de diseño propio."
     }
   },
   {
@@ -104,13 +104,13 @@
     "lastUsedAt": "2025",
     "lastVersion": "8",
     "url": "https://tanstack.com/table",
-    "summary": "Tablas server-side con filtros, paginacion, ordenacion y vistas persistentes.",
+    "summary": "Tablas server-side con filtros, paginación, ordenación y vistas persistentes.",
     "details": [
-      "Tablas server-side con filtros, paginacion, ordenacion y vistas persistentes."
+      "Tablas server-side con filtros, paginación, ordenación y vistas persistentes."
     ],
     "seo": {
       "title": "TanStack Table | Sandra Martínez Fernández",
-      "description": "Tablas server-side con filtros, paginacion, ordenacion y vistas persistentes."
+      "description": "Tablas server-side con filtros, paginación, ordenación y vistas persistentes."
     }
   },
   {
@@ -142,13 +142,13 @@
     "lastUsedAt": "2025",
     "lastVersion": "3",
     "url": "https://vitest.dev",
-    "summary": "Tests unitarios y de integracion. Runner rapido compatible con el ecosistema Vite.",
+    "summary": "Tests unitarios y de integración. Runner rápido compatible con el ecosistema Vite.",
     "details": [
-      "Tests unitarios y de integracion. Runner rapido compatible con el ecosistema Vite."
+      "Tests unitarios y de integración. Runner rápido compatible con el ecosistema Vite."
     ],
     "seo": {
       "title": "Vitest | Sandra Martínez Fernández",
-      "description": "Tests unitarios y de integracion. Runner rapido compatible con el ecosistema Vite."
+      "description": "Tests unitarios y de integración. Runner rápido compatible con el ecosistema Vite."
     }
   },
   {
@@ -180,13 +180,13 @@
     "lastUsedAt": "2025",
     "lastVersion": "16",
     "url": "https://www.postgresql.org",
-    "summary": "Base de datos principal. Leasing, advisory locks, migraciones y busqueda.",
+    "summary": "Base de datos principal. Leasing, advisory locks, migraciones y búsqueda.",
     "details": [
-      "Base de datos principal. Leasing, advisory locks, migraciones y busqueda."
+      "Base de datos principal. Leasing, advisory locks, migraciones y búsqueda."
     ],
     "seo": {
       "title": "PostgreSQL | Sandra Martínez Fernández",
-      "description": "Base de datos principal. Leasing, advisory locks, migraciones y busqueda."
+      "description": "Base de datos principal. Leasing, advisory locks, migraciones y búsqueda."
     }
   },
   {
@@ -218,13 +218,13 @@
     "lastUsedAt": "2025",
     "lastVersion": null,
     "url": "https://opentelemetry.io",
-    "summary": "Trazas y metricas para observabilidad de workers y servicios.",
+    "summary": "Trazas y métricas para observabilidad de workers y servicios.",
     "details": [
-      "Trazas y metricas para observabilidad de workers y servicios."
+      "Trazas y métricas para observabilidad de workers y servicios."
     ],
     "seo": {
       "title": "OpenTelemetry | Sandra Martínez Fernández",
-      "description": "Trazas y metricas para observabilidad de workers y servicios."
+      "description": "Trazas y métricas para observabilidad de workers y servicios."
     }
   },
   {
@@ -254,13 +254,13 @@
     "lastUsedAt": "2025",
     "lastVersion": null,
     "url": "https://www.elastic.co/elasticsearch",
-    "summary": "Motor de busqueda para indexacion y queries complejas sobre datos de producto.",
+    "summary": "Motor de búsqueda para indexación y queries complejas sobre datos de producto.",
     "details": [
-      "Motor de busqueda para indexacion y queries complejas sobre datos de producto."
+      "Motor de búsqueda para indexación y queries complejas sobre datos de producto."
     ],
     "seo": {
       "title": "Elasticsearch | Sandra Martínez Fernández",
-      "description": "Motor de busqueda para indexacion y queries complejas sobre datos de producto."
+      "description": "Motor de búsqueda para indexación y queries complejas sobre datos de producto."
     }
   },
   {
@@ -273,13 +273,13 @@
     "lastUsedAt": "2024",
     "lastVersion": null,
     "url": "https://capacitorjs.com",
-    "summary": "Apps hibridas moviles con acceso a APIs nativas y sync offline.",
+    "summary": "Apps híbridas móviles con acceso a APIs nativas y sync offline.",
     "details": [
-      "Apps hibridas moviles con acceso a APIs nativas y sync offline."
+      "Apps híbridas móviles con acceso a APIs nativas y sync offline."
     ],
     "seo": {
       "title": "Capacitor | Sandra Martínez Fernández",
-      "description": "Apps hibridas moviles con acceso a APIs nativas y sync offline."
+      "description": "Apps híbridas móviles con acceso a APIs nativas y sync offline."
     }
   },
   {
@@ -366,13 +366,13 @@
     "lastUsedAt": "2022",
     "lastVersion": null,
     "url": "https://en.cppreference.com/w/c",
-    "summary": "Compilador propio con analisis lexico, sintactico y optimizacion de codigo.",
+    "summary": "Compilador propio con análisis léxico, sintáctico y optimización de código.",
     "details": [
-      "Compilador propio con analisis lexico, sintactico y optimizacion de codigo."
+      "Compilador propio con análisis léxico, sintáctico y optimización de código."
     ],
     "seo": {
       "title": "C | Sandra Martínez Fernández",
-      "description": "Compilador propio con analisis lexico, sintactico y optimizacion de codigo."
+      "description": "Compilador propio con análisis léxico, sintáctico y optimización de código."
     }
   },
   {
@@ -423,11 +423,11 @@
     "lastUsedAt": "2025",
     "lastVersion": "6",
     "url": "https://vite.dev",
-    "summary": "Bundler para desarrollo rapido con HMR y builds optimizados.",
-    "details": ["Bundler para desarrollo rapido con HMR y builds optimizados."],
+    "summary": "Bundler para desarrollo rápido con HMR y builds optimizados.",
+    "details": ["Bundler para desarrollo rápido con HMR y builds optimizados."],
     "seo": {
       "title": "Vite | Sandra Martínez Fernández",
-      "description": "Bundler para desarrollo rapido con HMR y builds optimizados."
+      "description": "Bundler para desarrollo rápido con HMR y builds optimizados."
     }
   },
   {
@@ -459,13 +459,13 @@
     "lastUsedAt": "2025",
     "lastVersion": null,
     "url": "https://github.com",
-    "summary": "Repositorios, CI/CD con Actions, revisiones de codigo y gestion de releases.",
+    "summary": "Repositorios, CI/CD con Actions, revisiones de código y gestión de releases.",
     "details": [
-      "Repositorios, CI/CD con Actions, revisiones de codigo y gestion de releases."
+      "Repositorios, CI/CD con Actions, revisiones de código y gestión de releases."
     ],
     "seo": {
       "title": "GitHub | Sandra Martínez Fernández",
-      "description": "Repositorios, CI/CD con Actions, revisiones de codigo y gestion de releases."
+      "description": "Repositorios, CI/CD con Actions, revisiones de código y gestión de releases."
     }
   },
   {
@@ -478,13 +478,13 @@
     "lastUsedAt": "2025",
     "lastVersion": null,
     "url": "https://openai.com/index/codex",
-    "summary": "Asistente de codigo para generacion, refactor y exploracion de APIs.",
+    "summary": "Asistente de código para generación, refactor y exploración de APIs.",
     "details": [
-      "Asistente de codigo para generacion, refactor y exploracion de APIs."
+      "Asistente de código para generación, refactor y exploración de APIs."
     ],
     "seo": {
       "title": "Codex | Sandra Martínez Fernández",
-      "description": "Asistente de codigo para generacion, refactor y exploracion de APIs."
+      "description": "Asistente de código para generación, refactor y exploración de APIs."
     }
   },
   {
@@ -497,13 +497,13 @@
     "lastUsedAt": "2025",
     "lastVersion": null,
     "url": "https://claude.ai",
-    "summary": "Asistente AI para desarrollo, arquitectura y documentacion tecnica.",
+    "summary": "Asistente AI para desarrollo, arquitectura y documentación técnica.",
     "details": [
-      "Asistente AI para desarrollo, arquitectura y documentacion tecnica."
+      "Asistente AI para desarrollo, arquitectura y documentación técnica."
     ],
     "seo": {
       "title": "Claude | Sandra Martínez Fernández",
-      "description": "Asistente AI para desarrollo, arquitectura y documentacion tecnica."
+      "description": "Asistente AI para desarrollo, arquitectura y documentación técnica."
     }
   },
   {

@@ -3,6 +3,7 @@
     "id": "cv-es",
     "locale": "es",
     "profile": {
+      "birthDate": "1989-09-15",
       "name": "Sandra Martínez Fernández",
       "role": "Desarrolladora de Software",
       "location": "España",
@@ -93,6 +94,7 @@
     "id": "cv-en",
     "locale": "en",
     "profile": {
+      "birthDate": "1989-09-15",
       "name": "Sandra Martínez Fernández",
       "role": "Software Developer",
       "location": "Spain",

@@ -13,6 +13,7 @@ import type {
   CvLanguageViewModel,
   CvProfileViewModel,
 } from '@/application/cv/dto';
+import type { Lang } from '@/i18n/translations';
 
 // ---------- Fonts ----------
 
@@ -46,9 +47,9 @@ const s = StyleSheet.create({
     fontSize: 9,
     color: c.foreground,
     backgroundColor: c.white,
-    paddingTop: 24,
-    paddingBottom: 32,
-    paddingHorizontal: 36,
+    paddingTop: 32,
+    paddingBottom: 40,
+    paddingHorizontal: 56,
   },
 
   // Header
@@ -69,6 +70,11 @@ const s = StyleSheet.create({
     marginTop: 6,
     flexDirection: 'column',
     gap: 2,
+  },
+  disclaimer: {
+    fontSize: 7.5,
+    color: c.muted,
+    marginTop: 18,
   },
 
   // Sections
@@ -208,12 +214,15 @@ const s = StyleSheet.create({
 // ---------- Props ----------
 
 type CvPdfProps = {
+  birthDateLabel: string;
   profile: CvProfileViewModel;
   experience: readonly CvExperienceViewModel[];
   education: readonly CvEducationViewModel[];
   certifications: readonly CvCertificationViewModel[];
   languages: readonly CvLanguageViewModel[];
   stack: readonly string[];
+  downloadDisclaimer?: string;
+  lang: Lang;
   contact: {
     github: string | null;
     linkedin: string | null;
@@ -232,12 +241,15 @@ type CvPdfProps = {
 // ---------- Document ----------
 
 export function CvPdfDocument({
+  birthDateLabel,
   profile,
   experience,
   education,
   certifications,
   languages,
   stack,
+  downloadDisclaimer,
+  lang,
   contact,
   sectionLabels = {
     certifications: 'Certificaciones',
@@ -248,6 +260,16 @@ export function CvPdfDocument({
     languages: 'Idiomas',
   },
 }: CvPdfProps) {
+  const formatBirthDate = (birthDate: string) => {
+    const date = new Date(`${birthDate}T00:00:00`);
+
+    return new Intl.DateTimeFormat(lang === 'es' ? 'es-ES' : 'en-US', {
+      day: 'numeric',
+      month: 'long',
+      year: 'numeric',
+    }).format(date);
+  };
+
   return (
     <Document author={profile.name} title={`CV — ${profile.name}`}>
       <Page size="A4" style={s.page}>
@@ -257,6 +279,7 @@ export function CvPdfDocument({
           <Text style={s.headerRole}>{profile.role}</Text>
           <View style={s.headerContact}>
             <Text>{profile.location}</Text>
+            <Text>{`${birthDateLabel}: ${formatBirthDate(profile.birthDate)}`}</Text>
             <Text>{`Web: ${profile.web}`}</Text>
             {contact.email && <Text>{`Email: ${contact.email}`}</Text>}
             {contact.github && <Text>{`GitHub: ${contact.github}`}</Text>}
@@ -365,6 +388,10 @@ export function CvPdfDocument({
               </View>
             ))}
           </>
+        )}
+
+        {downloadDisclaimer && (
+          <Text style={s.disclaimer}>{downloadDisclaimer}</Text>
         )}
       </Page>
     </Document>

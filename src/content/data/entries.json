@@ -540,7 +540,7 @@
     "publicationState": "published",
     "sortDate": "2026-02-10",
     "title": "Scaffold Bun Monorepo",
-    "summary": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling comun y contratos listos para crecer.",
+    "summary": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling común y contratos listos para crecer.",
     "paragraphs": [],
     "bullets": [],
     "stack": ["bun", "typescript", "vitest"],
@@ -556,7 +556,7 @@
     "period": null,
     "seo": {
       "title": "Scaffold Bun Monorepo | Sandra Martínez Fernández",
-      "description": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling comun y contratos listos para crecer."
+      "description": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling común y contratos listos para crecer."
     }
   },
   {
