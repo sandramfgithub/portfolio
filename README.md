@@ -2,7 +2,13 @@
 
 Architecture portfolio built with Astro, React, and Tailwind CSS.
 
-![Homepage terminal screenshot](./docs/assets/home-terminal.png)
+<p align="center">
+  <img
+    src="./docs/assets/home-terminal.png"
+    alt="Homepage terminal screenshot"
+    width="90%"
+  />
+</p>
 
 ## Stack
 
