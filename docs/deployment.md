@@ -2,34 +2,34 @@
 
 ## Strategy
 
-- Hosting: Cloudflare Pages
+- Hosting: Cloudflare Workers static assets via the Workers & Pages dashboard
 - Deployment mode: Direct Upload from GitHub Actions
 - Production branch: `main`
 - Preview deployments: per pull request branch
 - Release automation: `release-please`
 
-This repository intentionally uses Direct Upload instead of Cloudflare Git
-integration. The GitHub workflow builds the site once, runs smoke tests against
-that built artifact through `astro preview`, and deploys the exact same `dist/`
-directory to Cloudflare Pages.
+Cloudflare currently exposes static asset projects in the Workers & Pages
+dashboard as Workers. This repository still uses Direct Upload, but deployment
+is performed with Wrangler Worker commands instead of the older Pages API.
 
+The GitHub workflow builds the site once, runs smoke tests against that built
+artifact through `astro preview`, and deploys the exact same `dist/` directory.
 Cloudflare-specific redirect behavior is defined through `public/_redirects` so
 production can use real HTTP redirects instead of Astro's static fallback HTML.
 
 ## Cloudflare setup
 
-1. Create a new Pages project with **Direct Upload**.
-2. Set the production branch to `main`.
+1. Create a new static asset Worker with **Direct Upload** in Workers & Pages.
+2. Make sure the Worker name matches `CLOUDFLARE_PAGES_PROJECT_NAME`.
 3. Add `sandramf.dev` as the custom domain.
 4. Optionally add `www.sandramf.dev` and redirect it to `sandramf.dev`.
-5. Redirect the production `*.pages.dev` hostname to the custom domain.
-6. Create an API token that can deploy Pages projects for the target account.
+5. Keep the `workers.dev` route enabled for preview aliases.
+6. Create an API token that can deploy Workers for the target account.
 
 Important:
 
-- Cloudflare Pages projects created with Direct Upload cannot later be switched
-  to Git integration.
-- Preview deployments remain available on `*.pages.dev`.
+- The runtime target is the Worker name shown in Workers & Pages.
+- Preview deployments are exposed through `workers.dev` preview aliases.
 
 ## GitHub repository settings
 
@@ -48,6 +48,7 @@ Add these repository variables:
 
 Recommended values:
 
+- `CLOUDFLARE_PAGES_PROJECT_NAME=portfolio`
 - `PUBLIC_UMAMI_SCRIPT_URL=https://cloud.umami.is/script.js`
 - `PUBLIC_UMAMI_DOMAINS=sandramf.dev`
 
@@ -73,10 +74,10 @@ Notes:
    - runs route smoke tests with Playwright
 3. `deploy-preview`
    - runs only for pull requests from branches in the same repository
-   - uploads the verified `dist/` artifact to Cloudflare Pages as a preview
+   - uploads the verified `dist/` artifact as a Worker preview version
 4. `deploy-production`
    - runs only for pushes to `main`
-   - uploads the verified `dist/` artifact to Cloudflare Pages production
+   - uploads the verified `dist/` artifact to the production Worker
 
 This keeps build, verification, and deployment aligned around the same output.
 

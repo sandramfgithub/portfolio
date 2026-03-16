@@ -79,12 +79,13 @@ type(scope): summary
 
 ## Deployment
 
-- Hosting target: Cloudflare Pages
+- Hosting target: Cloudflare Workers static assets via Workers & Pages
 - Deployment mode: Direct Upload from GitHub Actions
 - Release automation: `release-please`
 
 The repository builds once in CI, smoke-tests the built artifact through
-`astro preview`, and deploys that same artifact to Pages.
+`astro preview`, and deploys that same artifact to the Cloudflare Worker that
+serves the static site.
 
 ## Repository Structure
 
