@@ -13,6 +13,11 @@ export const translations = {
       cta: 'Ver proyectos',
       ctaSecondary: 'Sobre mí',
     },
+    maintenance: {
+      message: 'Ordenando cosas.',
+      redirecting: 'Redirigiendo…',
+      title: 'Mantenimiento | Sandra Martínez Fernández',
+    },
     projects: {
       intro:
         'Aqui estan los proyectos publicos y, debajo, trabajos privados de contexto tecnico. Si tienes curiosidad, pulsa en una skill para mas detalle.',
@@ -94,6 +99,11 @@ export const translations = {
         'Fullstack developer. Product, internal tooling, and services with TypeScript.',
       cta: 'View projects',
       ctaSecondary: 'About me',
+    },
+    maintenance: {
+      message: 'Tidying things up.',
+      redirecting: 'Redirecting…',
+      title: 'Maintenance | Sandra Martínez Fernández',
     },
     projects: {
       intro:
