@@ -31,32 +31,29 @@ export function ProjectGridIsland({ lang, projects }: Props) {
             style={{ animationDelay: `${index * 40}ms` }}
           >
             <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                {isComingSoon && (
-                  <Badge className="text-[11px]" variant="outline">
-                    {t.projects.comingSoon}
-                  </Badge>
+              <h3 className="font-semibold text-base">
+                {project.href ? (
+                  <a
+                    {...createAnalyticsAttributes('project_detail_clicked', {
+                      lang,
+                      location: 'projects',
+                      publicationState: project.publicationState,
+                      slug: project.slug,
+                    })}
+                    className="transition-colors hover:text-muted-foreground"
+                    href={project.href}
+                  >
+                    {project.title}
+                  </a>
+                ) : (
+                  <span>{project.title}</span>
                 )}
-                <h3 className="font-semibold text-base">
-                  {project.href ? (
-                    <a
-                      {...createAnalyticsAttributes('project_detail_clicked', {
-                        lang,
-                        location: 'projects',
-                        publicationState: project.publicationState,
-                        slug: project.slug,
-                      })}
-                      className="transition-colors hover:text-muted-foreground"
-                      href={project.href}
-                    >
-                      {project.title}
-                    </a>
-                  ) : (
-                    <span>{project.title}</span>
-                  )}
-                </h3>
-              </div>
-              {project.github && (
+              </h3>
+              {isComingSoon ? (
+                <Badge className="text-[11px]" variant="outline">
+                  {t.projects.comingSoon}
+                </Badge>
+              ) : (
                 <a
                   {...createAnalyticsAttributes('project_repository_clicked', {
                     lang,
@@ -65,7 +62,7 @@ export function ProjectGridIsland({ lang, projects }: Props) {
                     slug: project.slug,
                   })}
                   className="text-muted-foreground text-sm underline transition-colors hover:text-foreground group-hover:text-foreground"
-                  href={project.github}
+                  href={project.github ?? undefined}
                   rel="noopener noreferrer"
                   target="_blank"
                 >
@@ -73,28 +70,10 @@ export function ProjectGridIsland({ lang, projects }: Props) {
                 </a>
               )}
             </div>
-            <p
-              className={[
-                'text-muted-foreground text-sm leading-6',
-                isComingSoon
-                  ? 'pointer-events-none select-none blur-[3px]'
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(' ')}
-            >
+            <p className="text-muted-foreground text-sm leading-6">
               {project.summary}
             </p>
-            <div
-              className={[
-                'mt-auto flex flex-wrap gap-1.5',
-                isComingSoon
-                  ? 'pointer-events-none select-none blur-[3px]'
-                  : '',
-              ]
-                .filter(Boolean)
-                .join(' ')}
-            >
+            <div className="mt-auto flex flex-wrap gap-1.5">
               {project.skills.map((skill) => (
                 <SkillBadge
                   key={skill.slug}

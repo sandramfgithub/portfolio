@@ -36,32 +36,29 @@ const isComingSoon = publicationState === 'coming-soon';
   style={`animation-delay: ${animationDelay}ms`}
 >
   <div class="flex items-center justify-between">
-    <div class="flex items-center gap-2">
-      {isComingSoon && (
-        <Badge className="text-[11px]" variant="outline">
-          {t.projects.comingSoon}
-        </Badge>
+    <h3 class="font-semibold text-base">
+      {href ? (
+        <a
+          {...createAnalyticsAttributes('project_detail_clicked', {
+            lang,
+            location: 'projects',
+            publicationState,
+            slug,
+          })}
+          class="transition-colors hover:text-muted-foreground"
+          href={href}
+        >
+          {title}
+        </a>
+      ) : (
+        <span>{title}</span>
       )}
-      <h3 class="font-semibold text-base">
-        {href ? (
-          <a
-            {...createAnalyticsAttributes('project_detail_clicked', {
-              lang,
-              location: 'projects',
-              publicationState,
-              slug,
-            })}
-            class="transition-colors hover:text-muted-foreground"
-            href={href}
-          >
-            {title}
-          </a>
-        ) : (
-          <span>{title}</span>
-        )}
-      </h3>
-    </div>
-    {github && (
+    </h3>
+    {isComingSoon ? (
+      <Badge className="text-[11px]" variant="outline">
+        {t.projects.comingSoon}
+      </Badge>
+    ) : (
       <a
         {...createAnalyticsAttributes('project_repository_clicked', {
           lang,
@@ -78,20 +75,8 @@ const isComingSoon = publicationState === 'coming-soon';
       </a>
     )}
   </div>
-  <p
-    class:list={[
-      'text-muted-foreground text-sm leading-6',
-      isComingSoon && 'pointer-events-none select-none blur-[3px]',
-    ]}
-  >
-    {summary}
-  </p>
-  <div
-    class:list={[
-      'mt-auto',
-      isComingSoon && 'pointer-events-none select-none blur-[3px]',
-    ]}
-  >
+  <p class="text-muted-foreground text-sm leading-6">{summary}</p>
+  <div class="mt-auto">
     <StackList client:visible lang={lang} location="projects" skills={skills} />
   </div>
 </div>
