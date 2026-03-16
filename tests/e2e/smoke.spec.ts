@@ -1,7 +1,15 @@
 import { expect, test } from '@playwright/test';
 
+test.use({ locale: 'en-US' });
+
 const routes = [
   { path: '/', lang: 'es', finalPath: '/es' },
+  {
+    path: '/maintenance',
+    lang: 'en',
+    finalPath: '/en/maintenance',
+    expectsFooter: false,
+  },
   { path: '/projects', lang: 'es', finalPath: '/es/projects' },
   { path: '/about', lang: 'es', finalPath: '/es/about' },
   { path: '/es', lang: 'es', finalPath: '/es' },

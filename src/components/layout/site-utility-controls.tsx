@@ -108,16 +108,13 @@ export function SiteUtilityControls({ className, lang, pathname }: Props) {
       <Tooltip>
         <TooltipTrigger
           aria-label={t.common.switchLang}
-          onClick={() => window.location.assign(altPath)}
-          render={
-            <button
-              className="icon-btn inline-flex h-8 items-center justify-center rounded-lg px-2 font-semibold text-xs"
-              type="button"
-            />
-          }
-        >
-          {altLabel}
-        </TooltipTrigger>
+          className="icon-btn inline-flex h-8 items-center justify-center rounded-lg px-2 font-semibold text-xs"
+          render={(props) => (
+            <a {...props} href={altPath}>
+              {altLabel}
+            </a>
+          )}
+        />
         <TooltipContent>{t.common.switchLang}</TooltipContent>
       </Tooltip>
       <ThemeToggle lang={lang} />
