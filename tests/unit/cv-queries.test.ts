@@ -87,6 +87,7 @@ const createRepository = (
   overrides: Partial<ContentRepository> = {}
 ): ContentRepository => ({
   getAbout: async () => null,
+  getPolicy: async () => null,
   getSite: async () => site,
   getPage: async (_locale, slug) =>
     pages.find((page) => page.slug === slug) ?? null,

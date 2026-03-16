@@ -1,11 +1,12 @@
 ---
 import FooterCat from '@/components/layout/footer-cat.astro';
 import type { Lang } from '@/i18n/translations';
-import { getTranslations } from '@/i18n/utils';
+import { getLocalizedPath, getTranslations } from '@/i18n/utils';
 
 type Props = { lang: Lang };
 const { lang } = Astro.props;
 const t = getTranslations(lang);
+const privacyHref = getLocalizedPath('/privacy', lang);
 const year = new Date().getFullYear();
 ---
 
@@ -16,7 +17,16 @@ const year = new Date().getFullYear();
   <div
     class="flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between"
   >
-    <p>{t.footer.madeWith} ♥ {t.footer.tools}</p>
+    <div class="flex items-center gap-3">
+      <p>{t.footer.madeWith} ♥ {t.footer.tools}</p>
+      <span class="text-border">·</span>
+      <a
+        class="underline underline-offset-4 transition-colors hover:text-foreground"
+        href={privacyHref}
+      >
+        {t.footer.privacy}
+      </a>
+    </div>
     <p class="text-xs tracking-[0.14em] uppercase">
       © {year} Sandra Martínez Fernández
     </p>

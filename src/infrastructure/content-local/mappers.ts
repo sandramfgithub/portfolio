@@ -1,4 +1,5 @@
 import type { CollectionEntry } from 'astro:content';
+import type { PolicyDocument } from '@/domain/legal/entities';
 import type {
   AboutDocument,
   CvDocument,
@@ -101,5 +102,24 @@ export const mapCvEntry = (entry: CollectionEntry<'cv'>): CvDocument => {
     languages: entry.data.languages,
     certifications: entry.data.certifications,
     skillSlugs: entry.data.skillSlugs,
+  };
+};
+
+export const mapPolicyEntry = (
+  entry: CollectionEntry<'policies'>
+): PolicyDocument => {
+  return {
+    id: entry.id,
+    slug: entry.data.slug,
+    locale: entry.data.locale,
+    title: entry.data.title,
+    summary: entry.data.summary,
+    controllerName: entry.data.controllerName,
+    contactEmail: entry.data.contactEmail,
+    providerName: entry.data.providerName,
+    providerUrl: entry.data.providerUrl,
+    retention: entry.data.retention,
+    sections: entry.data.sections,
+    seo: entry.data.seo,
   };
 };

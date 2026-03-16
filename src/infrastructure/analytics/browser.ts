@@ -91,6 +91,7 @@ export const initializeBrowserAnalytics = () => {
   if (
     typeof window === 'undefined' ||
     !analyticsEnabled ||
+    window.__analyticsOptOut ||
     window.__portfolioAnalyticsInitialized
   ) {
     return;
@@ -108,6 +109,10 @@ export const trackBrowserAnalyticsEvent = <Name extends AnalyticsEventName>(
   payload: AnalyticsEventMap[Name]
 ) => {
   if (!analyticsEnabled) {
+    return;
+  }
+
+  if (typeof window !== 'undefined' && window.__analyticsOptOut) {
     return;
   }
 

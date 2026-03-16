@@ -47,7 +47,11 @@ export const umamiBrowserGateway: AnalyticsGateway = {
 };
 
 export const getBrowserAnalyticsGateway = (): AnalyticsGateway => {
-  if (typeof window === 'undefined' || !analyticsEnabled) {
+  if (
+    typeof window === 'undefined' ||
+    !analyticsEnabled ||
+    window.__analyticsOptOut
+  ) {
     return noopAnalyticsGateway;
   }
 

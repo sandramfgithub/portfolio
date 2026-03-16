@@ -1,0 +1,53 @@
+---
+import type { PrivacyPolicyPageViewModel } from '@/application/legal/dto';
+import { AnalyticsOptOut } from '@/components/privacy/analytics-opt-out';
+import type { Lang } from '@/i18n/translations';
+import Layout from '@/layouts/main.astro';
+
+type Props = {
+  lang: Lang;
+  page: PrivacyPolicyPageViewModel;
+};
+
+const { lang, page } = Astro.props as Props;
+---
+
+<Layout description={page.description} lang={lang} title={page.title}>
+  <article class="space-y-8 py-2 sm:py-4">
+    <div class="space-y-3">
+      <p class="eyebrow">{page.title}</p>
+      <h1 class="font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
+        {page.title}
+      </h1>
+      <p class="max-w-2xl text-muted-foreground text-sm leading-7 sm:text-base">
+        {page.summary}
+      </p>
+    </div>
+
+    {page.sections.map((section) => (
+      <section class="space-y-3">
+        <h2 class="font-semibold font-serif text-xl tracking-tight">
+          {section.title}
+        </h2>
+        <div class="space-y-3 text-muted-foreground text-sm leading-7 sm:text-base">
+          {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+        {section.bullets.length > 0 && (
+          <ul class="grid gap-2 text-muted-foreground text-sm leading-7 sm:text-base">
+            {section.bullets.map((bullet) => (
+              <li class="flex gap-3">
+                <span class="mt-[0.6rem] h-1.5 w-1.5 shrink-0 rounded-full bg-foreground/30" />
+                <span>{bullet}</span>
+              </li>
+            ))}
+          </ul>
+        )}
+        {section.id === 'opt-out' && (
+          <div class="pt-2">
+            <AnalyticsOptOut lang={lang} client:visible />
+          </div>
+        )}
+      </section>
+    ))}
+  </article>
+</Layout>

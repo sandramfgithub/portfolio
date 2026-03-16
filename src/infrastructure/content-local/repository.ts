@@ -6,6 +6,7 @@ import {
   mapAboutEntry,
   mapCvEntry,
   mapPageEntry,
+  mapPolicyEntry,
   mapPortfolioEntry,
   mapSiteEntry,
   mapSkillEntry,
@@ -67,6 +68,18 @@ export class LocalContentRepository implements ContentRepository {
 
     const entry = entries[0];
     return entry ? mapPageEntry(entry) : null;
+  }
+
+  async getPolicy(locale: Locale, slug: 'privacy') {
+    const entries = await getCollection(
+      'policies',
+      (entry: CollectionEntry<'policies'>) => {
+        return entry.data.locale === locale && entry.data.slug === slug;
+      }
+    );
+
+    const entry = entries[0];
+    return entry ? mapPolicyEntry(entry) : null;
   }
 
   async listEntries(locale: Locale) {

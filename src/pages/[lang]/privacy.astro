@@ -1,0 +1,18 @@
+---
+import { getPrivacyPolicyPageViewModel } from '@/application/legal/queries';
+import { locales } from '@/domain/portfolio/value-objects';
+import type { Lang } from '@/i18n/translations';
+import PrivacyTemplate from '@/templates/privacy.astro';
+
+export function getStaticPaths() {
+  return locales.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }));
+}
+
+const { lang } = Astro.props as { lang: Lang };
+const page = await getPrivacyPolicyPageViewModel(lang);
+---
+
+<PrivacyTemplate lang={lang} page={page} />

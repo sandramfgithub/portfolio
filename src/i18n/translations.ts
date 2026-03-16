@@ -39,6 +39,11 @@ export const translations = {
       profile: 'Perfil profesional',
       stack: 'Stack técnico',
     },
+    privacy: {
+      optInButton: 'Reactivar analítica',
+      optOutButton: 'Desactivar analítica',
+      title: 'Política de privacidad',
+    },
     common: {
       skipToContent: 'Saltar al contenido',
       backToHome: 'Volver al inicio',
@@ -58,6 +63,7 @@ export const translations = {
     },
     footer: {
       madeWith: 'Hecho con',
+      privacy: 'Privacidad',
       tools: 'en Astro, con Claude y Codex',
     },
     terminal: {
@@ -115,6 +121,11 @@ export const translations = {
       profile: 'Professional profile',
       stack: 'Technical stack',
     },
+    privacy: {
+      optInButton: 'Re-enable analytics',
+      optOutButton: 'Disable analytics',
+      title: 'Privacy policy',
+    },
     common: {
       skipToContent: 'Skip to content',
       backToHome: 'Back to home',
@@ -134,6 +145,7 @@ export const translations = {
     },
     footer: {
       madeWith: 'Made with',
+      privacy: 'Privacy',
       tools: 'in Astro, with Claude & Codex',
     },
     terminal: {

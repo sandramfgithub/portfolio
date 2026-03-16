@@ -45,6 +45,19 @@ const certificationSchema = z.object({
   issuedAt: z.string().optional(),
   url: z.url().optional(),
 });
+const policySectionSchema = z.object({
+  id: z.enum([
+    'collected',
+    'contact',
+    'legal-basis',
+    'not-collected',
+    'opt-out',
+    'provider',
+  ]),
+  title: z.string(),
+  paragraphs: z.array(z.string()),
+  bullets: z.array(z.string()).optional(),
+});
 const aboutInlineTextSchema = z.object({
   type: z.literal('text'),
   value: z.string(),
@@ -216,4 +229,29 @@ const cv = defineCollection({
   }),
 });
 
-export const collections = { site, pages, about, entries, skills, cv };
+const policies = defineCollection({
+  loader: file('src/content/data/policies.json'),
+  schema: z.object({
+    slug: z.enum(['privacy']),
+    locale: localeSchema,
+    title: z.string(),
+    summary: z.string(),
+    controllerName: z.string(),
+    contactEmail: z.email(),
+    providerName: z.string(),
+    providerUrl: z.url(),
+    retention: z.string(),
+    sections: z.array(policySectionSchema),
+    seo: seoSchema,
+  }),
+});
+
+export const collections = {
+  site,
+  pages,
+  about,
+  entries,
+  skills,
+  cv,
+  policies,
+};

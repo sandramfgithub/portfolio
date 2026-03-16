@@ -1,0 +1,154 @@
+[
+  {
+    "id": "privacy-es",
+    "slug": "privacy",
+    "locale": "es",
+    "title": "Política de privacidad",
+    "summary": "Este sitio es un portfolio personal operado por Sandra Martínez Fernández. Esta política explica qué información se procesa cuando visitas la web y cómo se utiliza.",
+    "controllerName": "Sandra Martínez Fernández",
+    "contactEmail": "sandramfgithub@gmail.com",
+    "providerName": "Umami Cloud",
+    "providerUrl": "https://cloud.umami.is",
+    "retention": "6 meses",
+    "sections": [
+      {
+        "id": "collected",
+        "title": "Qué se mide",
+        "paragraphs": [
+          "El sitio utiliza Umami Cloud para medir el uso del portfolio de forma agregada y orientada a audiencia. La configuración actual se limita a pageviews, rutas visitadas y eventos de interacción del propio sitio.",
+          "Los eventos custom actuales miden clics en enlaces sociales (GitHub, LinkedIn y X), clics en proyectos y entradas privadas, aperturas de detalles de tecnologías, visualizaciones de páginas de detalle, visualizaciones del preview del CV, descargas del CV y visualizaciones de páginas 404."
+        ],
+        "bullets": [
+          "Páginas visitadas y rutas visitadas.",
+          "País aproximado, navegador, dispositivo y referente según la herramienta.",
+          "Eventos de interacción limitados al uso del sitio.",
+          "Retención configurada: 6 meses."
+        ]
+      },
+      {
+        "id": "not-collected",
+        "title": "Qué no se usa para analítica",
+        "paragraphs": [
+          "La analítica no utiliza cookies ni almacenamiento local con fines de seguimiento. Tampoco se recogen identificadores de usuario ni se realiza seguimiento entre sitios.",
+          "No se envían correos electrónicos, nombres ni otros datos personales en los payloads de eventos. La preferencia de exclusión voluntaria de la analítica se guarda localmente en este navegador mediante localStorage."
+        ]
+      },
+      {
+        "id": "provider",
+        "title": "Proveedor y tratamiento",
+        "paragraphs": [
+          "La analítica se presta mediante Umami Cloud. La región seleccionada para los datos es la Unión Europea.",
+          "Umami publica un acuerdo de tratamiento de datos (DPA) y documentación técnica sobre su tracker y configuración."
+        ],
+        "bullets": [
+          "Proveedor: Umami Cloud",
+          "Sitio del proveedor: https://cloud.umami.is",
+          "Retención configurada: 6 meses"
+        ]
+      },
+      {
+        "id": "legal-basis",
+        "title": "Base jurídica y alcance",
+        "paragraphs": [
+          "La configuración actual está pensada para limitar la analítica a medición de audiencia y uso del propio sitio. La aplicabilidad de cualquier exención de consentimiento depende de que esta configuración siga dentro de ese perímetro y de la normativa aplicable.",
+          "En todo caso, esta política informa expresamente del uso de la herramienta de analítica, del proveedor, de la retención y del mecanismo de oposición disponible en la propia página."
+        ]
+      },
+      {
+        "id": "opt-out",
+        "title": "Desactivar la analítica",
+        "paragraphs": [
+          "Puedes desactivar la analítica en cualquier momento con el botón de más abajo. Si activas la exclusión, el script de Umami no se cargará y los eventos custom no se enviarán desde este navegador.",
+          "También puedes bloquear el dominio cloud.umami.is desde tu navegador o mediante herramientas de bloqueo de contenido."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contacto",
+        "paragraphs": [
+          "Si tienes alguna duda sobre esta política o sobre el tratamiento descrito aquí, puedes escribir a sandramfgithub@gmail.com."
+        ]
+      }
+    ],
+    "seo": {
+      "title": "Privacidad | Sandra Martínez Fernández",
+      "description": "Información sobre analítica, tratamiento de datos y exclusión voluntaria en el portfolio."
+    }
+  },
+  {
+    "id": "privacy-en",
+    "slug": "privacy",
+    "locale": "en",
+    "title": "Privacy policy",
+    "summary": "This site is a personal portfolio operated by Sandra Martínez Fernández. This policy explains what information is processed when you visit the site and how it is used.",
+    "controllerName": "Sandra Martínez Fernández",
+    "contactEmail": "sandramfgithub@gmail.com",
+    "providerName": "Umami Cloud",
+    "providerUrl": "https://cloud.umami.is",
+    "retention": "6 months",
+    "sections": [
+      {
+        "id": "collected",
+        "title": "What is measured",
+        "paragraphs": [
+          "This site uses Umami Cloud to measure portfolio usage in an aggregate, audience-oriented way. The current setup is limited to pageviews, visited routes, and interaction events generated inside the site itself.",
+          "The current custom events measure clicks on social links (GitHub, LinkedIn, and X), clicks on projects and private entries, technology detail openings, detail page views, CV preview views, CV downloads, and 404 page views."
+        ],
+        "bullets": [
+          "Visited pages and visited routes.",
+          "Approximate country, browser, device, and referrer as provided by the tool.",
+          "Interaction events limited to site usage.",
+          "Configured retention: 6 months."
+        ]
+      },
+      {
+        "id": "not-collected",
+        "title": "What is not used for analytics",
+        "paragraphs": [
+          "Analytics does not use cookies or local storage for tracking purposes. No user identifiers are collected and no cross-site tracking takes place.",
+          "No names, email addresses, or other personal data are sent inside analytics payloads. The analytics opt-out preference is stored locally in this browser using localStorage."
+        ]
+      },
+      {
+        "id": "provider",
+        "title": "Provider and processing",
+        "paragraphs": [
+          "Analytics is provided through Umami Cloud. The selected data region is the European Union.",
+          "Umami publishes a Data Processing Agreement (DPA) and technical documentation about its tracker and configuration."
+        ],
+        "bullets": [
+          "Provider: Umami Cloud",
+          "Provider site: https://cloud.umami.is",
+          "Configured retention: 6 months"
+        ]
+      },
+      {
+        "id": "legal-basis",
+        "title": "Legal basis and scope",
+        "paragraphs": [
+          "The current configuration is designed to keep analytics limited to audience measurement and site usage. Whether any consent exemption applies depends on keeping the setup within that perimeter and on the applicable law.",
+          "In any case, this policy expressly informs users about the analytics tool, the provider, the retention period, and the opt-out mechanism available on this page."
+        ]
+      },
+      {
+        "id": "opt-out",
+        "title": "Opting out of analytics",
+        "paragraphs": [
+          "You can disable analytics at any time using the button below. If you opt out, the Umami script will not be loaded and custom events will not be sent from this browser.",
+          "You can also block the domain cloud.umami.is in your browser or by using content blocking tools."
+        ]
+      },
+      {
+        "id": "contact",
+        "title": "Contact",
+        "paragraphs": [
+          "If you have any questions about this policy or the processing described here, you can contact sandramfgithub@gmail.com."
+        ]
+      }
+    ],
+    "seo": {
+      "title": "Privacy | Sandra Martínez Fernández",
+      "description": "Information about analytics, data processing, and analytics opt-out on the portfolio."
+    }
+  }
+]

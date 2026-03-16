@@ -9,6 +9,7 @@ const routes = [
   { path: '/es/projects', lang: 'es', finalPath: '/es/projects' },
   { path: '/es/about', lang: 'es', finalPath: '/es/about' },
   { path: '/es/cv', lang: 'es', finalPath: '/es/cv' },
+  { path: '/es/privacy', lang: 'es', finalPath: '/es/privacy' },
   {
     path: '/es/projects/portfolio',
     lang: 'es',
@@ -24,6 +25,7 @@ const routes = [
   { path: '/en/projects', lang: 'en', finalPath: '/en/projects' },
   { path: '/en/about', lang: 'en', finalPath: '/en/about' },
   { path: '/en/cv', lang: 'en', finalPath: '/en/cv' },
+  { path: '/en/privacy', lang: 'en', finalPath: '/en/privacy' },
   {
     path: '/en/projects/portfolio',
     lang: 'en',
