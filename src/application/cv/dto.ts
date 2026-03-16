@@ -1,5 +1,6 @@
 export type CvProfileViewModel = {
   bodyParagraphs: readonly string[];
+  birthDate: string;
   name: string;
   role: string;
   location: string;
