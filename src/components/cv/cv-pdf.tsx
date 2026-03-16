@@ -72,9 +72,12 @@ const s = StyleSheet.create({
     gap: 2,
   },
   disclaimer: {
-    fontSize: 7.5,
+    fontSize: 6.8,
     color: c.muted,
-    marginTop: 18,
+    position: 'absolute',
+    left: 56,
+    right: 56,
+    bottom: 18,
   },
 
   // Sections
@@ -84,7 +87,7 @@ const s = StyleSheet.create({
     letterSpacing: 1.5,
     textTransform: 'uppercase',
     color: c.primary,
-    marginBottom: 8,
+    marginBottom: 6,
     marginTop: 18,
   },
   separator: {
@@ -96,7 +99,7 @@ const s = StyleSheet.create({
   // Profile
   summary: {
     fontSize: 9,
-    lineHeight: 1.6,
+    lineHeight: 1.5,
     color: c.muted,
   },
 
@@ -105,7 +108,7 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'flex-start',
-    marginBottom: 3,
+    marginBottom: 4,
   },
   expRole: {
     fontSize: 11,
@@ -123,16 +126,16 @@ const s = StyleSheet.create({
   },
   expSummary: {
     fontSize: 9,
-    lineHeight: 1.5,
+    lineHeight: 1.4,
     color: c.muted,
-    marginBottom: 4,
+    marginBottom: 5,
   },
   achievement: {
     fontSize: 8.5,
-    lineHeight: 1.5,
+    lineHeight: 1.45,
     color: c.foreground,
     paddingLeft: 10,
-    marginBottom: 2,
+    marginBottom: 3,
   },
   achievementBullet: {
     position: 'absolute',
@@ -142,7 +145,7 @@ const s = StyleSheet.create({
     fontSize: 8.5,
   },
   expDivider: {
-    marginTop: 12,
+    marginTop: 14,
   },
 
   // Tags
@@ -150,7 +153,7 @@ const s = StyleSheet.create({
     flexDirection: 'row',
     flexWrap: 'wrap',
     gap: 4,
-    marginTop: 6,
+    marginTop: 8,
   },
   tag: {
     fontSize: 7,
@@ -164,7 +167,7 @@ const s = StyleSheet.create({
 
   // Education and certifications
   metaRow: {
-    marginBottom: 10,
+    marginBottom: 8,
   },
   metaTitle: {
     fontSize: 10,
@@ -173,20 +176,20 @@ const s = StyleSheet.create({
   metaSubtitle: {
     fontSize: 8.5,
     color: c.muted,
-    marginTop: 2,
+    marginTop: 1,
   },
   metaSummary: {
     fontSize: 8.5,
-    lineHeight: 1.5,
+    lineHeight: 1.4,
     color: c.muted,
-    marginTop: 4,
+    marginTop: 3,
   },
 
   // Two columns bottom
   twoCol: {
     flexDirection: 'row',
     gap: 24,
-    marginTop: 18,
+    marginTop: 4,
   },
   colLeft: {
     flex: 1,
@@ -199,7 +202,7 @@ const s = StyleSheet.create({
   langRow: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginBottom: 4,
+    marginBottom: 3,
   },
   langName: {
     fontSize: 9,
