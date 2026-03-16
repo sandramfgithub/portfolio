@@ -6,6 +6,10 @@ import {
 import type { AboutAgePopoverViewModel } from '@/application/portfolio/dto';
 import { inlinePopoverTriggerClassName } from '@/components/about/inline-popover';
 import { InteractivePopover } from '@/components/ui/interactive-popover';
+import {
+  PopoverPanel,
+  popoverWideContentClassName,
+} from '@/components/ui/popover-panel';
 
 type Props = {
   content: AboutAgePopoverViewModel;
@@ -20,7 +24,7 @@ export function AgeInlinePopover({ content }: Props) {
     <InteractivePopover
       align="start"
       content={
-        <div className="space-y-3">
+        <PopoverPanel>
           <p className="font-semibold text-sm">{age}</p>
           <p className="text-muted-foreground text-sm">{content.defaultText}</p>
           {birthday && (
@@ -29,8 +33,9 @@ export function AgeInlinePopover({ content }: Props) {
               <span>{content.birthdayText}</span>
             </div>
           )}
-        </div>
+        </PopoverPanel>
       }
+      contentClassName={popoverWideContentClassName}
       side="top"
       triggerClassName={inlinePopoverTriggerClassName}
     >
