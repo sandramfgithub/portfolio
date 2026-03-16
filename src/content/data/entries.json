@@ -137,17 +137,30 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "PIM",
-    "summary": "Monorepo real con Bun, workers con leasing, contratos API, búsqueda y una base fuerte de tooling interno.",
-    "paragraphs": [],
+    "summary": "PIM enterprise para una vertical exigente, con variantes complejas, contenido multicanal, automatización, data quality, publicación segura y una base muy fuerte de tooling interno.",
+    "paragraphs": [
+      "PIM enterprise para una vertical exigente, con variantes complejas, contenido multicanal, automatización, data quality, publicación segura y una base muy fuerte de tooling interno.",
+      "Integra un modelo de producto flexible, workflows, búsquedas avanzadas, gestión documental y procesos de enriquecimiento pensados para operar a escala sin perder control editorial."
+    ],
     "bullets": [],
-    "stack": ["bun", "react", "trpc", "postgresql"],
+    "stack": [
+      "bun",
+      "react",
+      "trpc",
+      "postgresql",
+      "drizzle-orm",
+      "elasticsearch",
+      "opentelemetry",
+      "hono",
+      "turborepo"
+    ],
     "links": [],
     "featured": true,
     "organization": null,
     "period": null,
     "seo": {
       "title": "PIM | Sandra Martínez Fernández",
-      "description": "Monorepo real con Bun, workers con leasing, contratos API, búsqueda y una base fuerte de tooling interno."
+      "description": "PIM enterprise para una vertical exigente, con variantes complejas, contenido multicanal, automatización, data quality, publicación segura y una base muy fuerte de tooling interno."
     },
     "privateEntryType": "work",
     "sortDate": "2026-02-01"
@@ -422,17 +435,30 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "PIM",
-    "summary": "Real-world monorepo with Bun, lease-based workers, API contracts, search, and strong internal tooling.",
-    "paragraphs": [],
+    "summary": "Enterprise PIM for a demanding vertical, with complex variants, multichannel content, automation, data quality, safe publication, and a very strong internal tooling foundation.",
+    "paragraphs": [
+      "Enterprise PIM for a demanding vertical, with complex variants, multichannel content, automation, data quality, safe publication, and a very strong internal tooling foundation.",
+      "It combines a flexible product model, workflows, advanced search, document management, and enrichment flows designed to operate at scale without losing editorial control."
+    ],
     "bullets": [],
-    "stack": ["bun", "react", "trpc", "postgresql"],
+    "stack": [
+      "bun",
+      "react",
+      "trpc",
+      "postgresql",
+      "drizzle-orm",
+      "elasticsearch",
+      "opentelemetry",
+      "hono",
+      "turborepo"
+    ],
     "links": [],
     "featured": true,
     "organization": null,
     "period": null,
     "seo": {
       "title": "PIM | Sandra Martínez Fernández",
-      "description": "Real-world monorepo with Bun, lease-based workers, API contracts, search, and strong internal tooling."
+      "description": "Enterprise PIM for a demanding vertical, with complex variants, multichannel content, automation, data quality, safe publication, and a very strong internal tooling foundation."
     },
     "privateEntryType": "work",
     "sortDate": "2026-02-01"

@@ -17,7 +17,7 @@ export function PrivateEntryListIsland({ entries, lang }: Props) {
     <ul className="grid gap-px overflow-hidden rounded-lg border border-border/60 bg-border/60">
       {entries.map((project, index) => (
         <li
-          className="fade-up-item flex flex-col gap-2 bg-card px-5 py-4 sm:flex-row sm:items-start sm:justify-between sm:gap-4"
+          className="fade-up-item flex flex-col gap-2 bg-card px-5 py-4 sm:grid sm:grid-cols-[minmax(0,1fr)_18rem] sm:items-start sm:gap-4"
           key={project.slug}
           style={{ animationDelay: `${index * 40}ms` }}
         >
@@ -52,7 +52,7 @@ export function PrivateEntryListIsland({ entries, lang }: Props) {
               {project.summary}
             </p>
           </div>
-          <div className="flex shrink-0 flex-wrap gap-1.5">
+          <div className="flex flex-wrap gap-1.5 sm:w-[18rem] sm:justify-end">
             {project.skills.map((skill) => (
               <SkillBadge
                 key={skill.slug}

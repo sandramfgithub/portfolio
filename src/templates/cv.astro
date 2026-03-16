@@ -60,11 +60,11 @@ const formatBirthDate = (birthDate: string) => {
         </h1>
         <p class="text-muted-foreground text-sm sm:text-base">
           {page.cv.profile.role}
+          · {page.cv.profile.location}
         </p>
         <div
           class="flex flex-col gap-2 text-sm text-muted-foreground sm:text-base"
         >
-          <p>{page.cv.profile.location}</p>
           <p>
             {t.cv.dateOfBirth}: {formatBirthDate(page.cv.profile.birthDate)}
           </p>

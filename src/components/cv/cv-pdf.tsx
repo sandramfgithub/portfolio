@@ -276,9 +276,10 @@ export function CvPdfDocument({
         {/* Header */}
         <View>
           <Text style={s.headerName}>{profile.name}</Text>
-          <Text style={s.headerRole}>{profile.role}</Text>
+          <Text
+            style={s.headerRole}
+          >{`${profile.role} · ${profile.location}`}</Text>
           <View style={s.headerContact}>
-            <Text>{profile.location}</Text>
             <Text>{`${birthDateLabel}: ${formatBirthDate(profile.birthDate)}`}</Text>
             <Text>{`Web: ${profile.web}`}</Text>
             {contact.email && <Text>{`Email: ${contact.email}`}</Text>}
