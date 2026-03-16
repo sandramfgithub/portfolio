@@ -208,7 +208,6 @@ jobs:
           --name="$WORKER_NAME"
           --assets=dist
           --compatibility-date=${{ env.CLOUDFLARE_COMPATIBILITY_DATE }}
-          --commit-dirty=true
           --keep-vars
 
       - name: Write deployment summary
