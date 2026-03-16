@@ -1,5 +1,27 @@
 # Changelog
 
+## [0.4.0](https://github.com/sandramfgithub/portfolio/compare/portfolio-v0.3.0...portfolio-v0.4.0) (2026-03-16)
+
+
+### Features
+
+* **about-cv:** refine about details and cv metadata ([239bc3c](https://github.com/sandramfgithub/portfolio/commit/239bc3cbfbc4a64b2338c5cfb0192281414cf9fd))
+* **branding:** refine favicon monogram ([d7c1d8f](https://github.com/sandramfgithub/portfolio/commit/d7c1d8f52ce37da1bb4e458387863547049bffad))
+* **content-case-studies:** align private work copy and stacks ([7093627](https://github.com/sandramfgithub/portfolio/commit/709362706373f77f29476918d7b4972cead05e40))
+* **content-private-work:** align private work copy and cv profile ([008e1f0](https://github.com/sandramfgithub/portfolio/commit/008e1f098cb5a3df119b9688e62241b0b71e0b00))
+* **content-skills:** refresh versions and project availability ([4ef8595](https://github.com/sandramfgithub/portfolio/commit/4ef8595c598d718cc878ebf7c0b0f7349a725bdf))
+* **portfolio:** polish content, cv, projects, and navigation ([e303512](https://github.com/sandramfgithub/portfolio/commit/e303512ea88599698a722dc72ed064c18843a100))
+* **projects:** expose coming soon project details ([026b035](https://github.com/sandramfgithub/portfolio/commit/026b035a17d45e50561b8b8fa30fcd9d5f0c673e))
+* **projects:** refine public project copy and stacks ([dd75e19](https://github.com/sandramfgithub/portfolio/commit/dd75e19c7b19f7e9967df9dbac518d572d9c88c4))
+
+
+### Bug Fixes
+
+* **content:** restore final publication states ([591336c](https://github.com/sandramfgithub/portfolio/commit/591336c05df9d7ce2ee41397b317709dae42d820))
+* **cv:** include birth date in profile dto ([6405668](https://github.com/sandramfgithub/portfolio/commit/640566871428d8aacf672c2cbcaab8056f42c723))
+* **layout:** stabilize morph nav on scrolled reloads ([7c92eba](https://github.com/sandramfgithub/portfolio/commit/7c92ebacca6732b9cb05ec4c875ba57cb51dd57f))
+* **pdf-projects:** rebalance cv spacing and public availability ([c0e1890](https://github.com/sandramfgithub/portfolio/commit/c0e18900e67022ac3d81b2b82076c2b1c32a4eee))
+
 ## [0.3.0](https://github.com/sandramfgithub/portfolio/compare/portfolio-v0.2.0...portfolio-v0.3.0) (2026-03-16)
 
 
