@@ -13,6 +13,12 @@ const policy: PolicyDocument = {
   contactEmail: 'mail@example.com',
   providerName: 'Umami Cloud',
   providerUrl: 'https://cloud.umami.is',
+  providerLinks: [
+    {
+      label: 'Documentation',
+      href: 'https://docs.umami.is/docs',
+    },
+  ],
   retention: '6 months',
   sections: [
     {

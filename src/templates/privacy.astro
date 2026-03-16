@@ -2,6 +2,7 @@
 import type { PrivacyPolicyPageViewModel } from '@/application/legal/dto';
 import { AnalyticsOptOut } from '@/components/privacy/analytics-opt-out';
 import type { Lang } from '@/i18n/translations';
+import { getLocalizedPath, getTranslations } from '@/i18n/utils';
 import Layout from '@/layouts/main.astro';
 
 type Props = {
@@ -10,18 +11,48 @@ type Props = {
 };
 
 const { lang, page } = Astro.props as Props;
+const t = getTranslations(lang);
+const homeHref = getLocalizedPath('/', lang);
 ---
 
 <Layout description={page.description} lang={lang} title={page.title}>
   <article class="space-y-8 py-2 sm:py-4">
-    <div class="space-y-3">
-      <p class="eyebrow">{page.title}</p>
-      <h1 class="font-serif text-3xl font-semibold tracking-tight sm:text-4xl">
-        {page.title}
-      </h1>
-      <p class="max-w-2xl text-muted-foreground text-sm leading-7 sm:text-base">
-        {page.summary}
-      </p>
+    <div class="space-y-4">
+      <a
+        class="text-muted-foreground text-sm underline transition-colors hover:text-foreground"
+        href={homeHref}
+      >
+        {t.common.backToHome}
+      </a>
+      <div class="space-y-3">
+        <p class="eyebrow">{page.title}</p>
+        <h1
+          class="font-serif text-3xl font-semibold tracking-tight sm:text-4xl"
+        >
+          {page.title}
+        </h1>
+        <p
+          class="max-w-2xl text-muted-foreground text-sm leading-7 sm:text-base"
+        >
+          {page.summary}
+        </p>
+      </div>
+      <div class="flex flex-wrap gap-3 text-sm text-muted-foreground">
+        <a
+          class="underline hover:text-foreground"
+          href={page.providerUrl}
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          {page.providerName}
+        </a>
+        <a
+          class="underline hover:text-foreground"
+          href={`mailto:${page.contactEmail}`}
+        >
+          {page.contactEmail}
+        </a>
+      </div>
     </div>
 
     {page.sections.map((section) => (
@@ -29,7 +60,9 @@ const { lang, page } = Astro.props as Props;
         <h2 class="font-semibold font-serif text-xl tracking-tight">
           {section.title}
         </h2>
-        <div class="space-y-3 text-muted-foreground text-sm leading-7 sm:text-base">
+        <div
+          class="space-y-3 text-muted-foreground text-sm leading-7 sm:text-base"
+        >
           {section.paragraphs.map((paragraph) => <p>{paragraph}</p>)}
         </div>
         {section.bullets.length > 0 && (
@@ -41,6 +74,30 @@ const { lang, page } = Astro.props as Props;
               </li>
             ))}
           </ul>
+        )}
+        {section.id === 'provider' && (
+          <div class="flex flex-wrap gap-3 text-sm">
+            {page.providerLinks.map((link) => (
+              <a
+                class="text-muted-foreground underline transition-colors hover:text-foreground"
+                href={link.href}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        )}
+        {section.id === 'contact' && (
+          <div class="flex flex-wrap gap-3 text-sm">
+            <a
+              class="text-muted-foreground underline transition-colors hover:text-foreground"
+              href={`mailto:${page.contactEmail}`}
+            >
+              {page.contactEmail}
+            </a>
+          </div>
         )}
         {section.id === 'opt-out' && (
           <div class="pt-2">

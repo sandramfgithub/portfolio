@@ -116,6 +116,7 @@ export const mapPolicyEntry = (
     summary: entry.data.summary,
     controllerName: entry.data.controllerName,
     contactEmail: entry.data.contactEmail,
+    providerLinks: entry.data.providerLinks,
     providerName: entry.data.providerName,
     providerUrl: entry.data.providerUrl,
     retention: entry.data.retention,

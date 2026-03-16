@@ -33,6 +33,7 @@ export const getPrivacyPolicyPageViewModel = async (
     summary: document.summary,
     controllerName: document.controllerName,
     contactEmail: document.contactEmail,
+    providerLinks: document.providerLinks,
     providerName: document.providerName,
     providerUrl: document.providerUrl,
     retention: document.retention,

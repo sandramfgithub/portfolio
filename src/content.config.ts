@@ -58,6 +58,10 @@ const policySectionSchema = z.object({
   paragraphs: z.array(z.string()),
   bullets: z.array(z.string()).optional(),
 });
+const policyLinkSchema = z.object({
+  href: z.url(),
+  label: z.string(),
+});
 const aboutInlineTextSchema = z.object({
   type: z.literal('text'),
   value: z.string(),
@@ -240,6 +244,7 @@ const policies = defineCollection({
     contactEmail: z.email(),
     providerName: z.string(),
     providerUrl: z.url(),
+    providerLinks: z.array(policyLinkSchema),
     retention: z.string(),
     sections: z.array(policySectionSchema),
     seo: seoSchema,

@@ -1,3 +1,8 @@
+export type PolicyLinkViewModel = {
+  href: string;
+  label: string;
+};
+
 export type PolicySectionViewModel = {
   bullets: readonly string[];
   id:
@@ -15,6 +20,7 @@ export type PrivacyPolicyPageViewModel = {
   contactEmail: string;
   controllerName: string;
   description: string;
+  providerLinks: readonly PolicyLinkViewModel[];
   providerName: string;
   providerUrl: string;
   retention: string;

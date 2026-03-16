@@ -5,6 +5,11 @@ export type PolicySeoMetadata = {
   title: string;
 };
 
+export type PolicyLink = {
+  href: string;
+  label: string;
+};
+
 export type PolicySection = {
   bullets?: readonly string[];
   id:
@@ -23,6 +28,7 @@ export type PolicyDocument = {
   controllerName: string;
   id: string;
   locale: Locale;
+  providerLinks: readonly PolicyLink[];
   providerName: string;
   providerUrl: string;
   retention: string;
