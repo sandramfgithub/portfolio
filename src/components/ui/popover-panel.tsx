@@ -86,7 +86,7 @@ export function PopoverPanelLinks({
 }) {
   return (
     <div className="flex flex-wrap gap-x-3 gap-y-1 text-sm">
-      {links.map((link) =>
+      {links.map((link, index) =>
         link.href ? (
           <a
             className="underline underline-offset-4 transition-colors hover:text-foreground"
@@ -98,7 +98,7 @@ export function PopoverPanelLinks({
             {link.label}
           </a>
         ) : (
-          <span key={link.label}>{link.label}</span>
+          <span key={`${link.label}:${link.href ?? index}`}>{link.label}</span>
         )
       )}
     </div>

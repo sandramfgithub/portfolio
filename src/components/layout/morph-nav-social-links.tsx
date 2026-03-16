@@ -86,7 +86,9 @@ export function MorphNavSocialLinks({
                 <a
                   {...props}
                   href={link.href}
-                  onClick={() => {
+                  onClick={(event) => {
+                    props.onClick?.(event);
+
                     if (!channel) {
                       return;
                     }

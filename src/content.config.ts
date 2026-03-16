@@ -62,6 +62,23 @@ const policyLinkSchema = z.object({
   href: z.url(),
   label: z.string(),
 });
+const isValidIsoDate = (value: string) => {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(value)) {
+    return false;
+  }
+
+  const date = new Date(`${value}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) {
+    return false;
+  }
+
+  const [year, month, day] = value.split('-').map(Number);
+  return (
+    date.getUTCFullYear() === year &&
+    date.getUTCMonth() + 1 === month &&
+    date.getUTCDate() === day
+  );
+};
 const aboutInlineTextSchema = z.object({
   type: z.literal('text'),
   value: z.string(),
@@ -104,9 +121,9 @@ const aboutListPopoverSchema = z.object({
 });
 const aboutAgePopoverSchema = z.object({
   kind: z.literal('age'),
-  birthDate: z
-    .string()
-    .regex(/^\d{4}-\d{2}-\d{2}$/, 'Expected YYYY-MM-DD birth date'),
+  birthDate: z.string().refine(isValidIsoDate, {
+    message: 'Expected valid YYYY-MM-DD birth date',
+  }),
   birthdayText: z.string(),
   defaultText: z.string(),
 });
@@ -217,9 +234,9 @@ const cv = defineCollection({
   schema: z.object({
     locale: localeSchema,
     profile: z.object({
-      birthDate: z
-        .string()
-        .regex(/^\d{4}-\d{2}-\d{2}$/, 'Expected YYYY-MM-DD birth date'),
+      birthDate: z.string().refine(isValidIsoDate, {
+        message: 'Expected valid YYYY-MM-DD birth date',
+      }),
       name: z.string(),
       role: z.string(),
       location: z.string(),
