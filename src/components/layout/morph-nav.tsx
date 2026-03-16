@@ -5,7 +5,6 @@ import {
   useScroll,
   useTransform,
 } from 'framer-motion';
-import { Moon, Sun } from 'lucide-react';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
 import type {
   NavigationItemViewModel,
@@ -17,6 +16,7 @@ import {
   MOBILE_BREAKPOINT,
   NAV_STACK_GAP,
 } from '@/components/layout/morph-nav-layout';
+import { SiteUtilityControls } from '@/components/layout/site-utility-controls';
 import {
   Tooltip,
   TooltipContent,
@@ -24,11 +24,7 @@ import {
   TooltipTrigger,
 } from '@/components/ui/tooltip';
 import type { Lang } from '@/i18n/translations';
-import {
-  getAlternateLang,
-  getLocalizedPath,
-  getTranslations,
-} from '@/i18n/utils';
+import { getLocalizedPath } from '@/i18n/utils';
 import { trackBrowserAnalyticsEvent } from '@/infrastructure/analytics/browser';
 import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 import { cn } from '@/lib/utils';
@@ -76,7 +72,6 @@ function SocialIcon({ icon }: { icon: string }) {
   );
 }
 
-const THEME_CHANGE_EVENT = 'portfolio-theme-change';
 const noop = () => undefined;
 
 const toContactChannel = (
@@ -92,80 +87,6 @@ const toContactChannel = (
 
   return null;
 };
-
-const getThemeSnapshot = (): 'light' | 'dark' => {
-  if (typeof document === 'undefined') {
-    return 'dark';
-  }
-  return document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-};
-
-const subscribeTheme = (onStoreChange: () => void) => {
-  if (typeof window === 'undefined') {
-    return noop;
-  }
-
-  window.addEventListener('storage', onStoreChange);
-  window.addEventListener(THEME_CHANGE_EVENT, onStoreChange);
-
-  return () => {
-    window.removeEventListener('storage', onStoreChange);
-    window.removeEventListener(THEME_CHANGE_EVENT, onStoreChange);
-  };
-};
-
-function ThemeToggle({ lang }: { lang: Lang }) {
-  const t = getTranslations(lang);
-  const theme = useSyncExternalStore(
-    subscribeTheme,
-    getThemeSnapshot,
-    () => 'dark'
-  );
-
-  const toggle = () => {
-    document.documentElement.classList.add('theme-transition');
-    const nextTheme = theme === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.classList.toggle('dark', nextTheme === 'dark');
-    if (nextTheme === 'light') {
-      localStorage.setItem('theme', 'light');
-    } else {
-      localStorage.removeItem('theme');
-    }
-
-    window.dispatchEvent(new Event(THEME_CHANGE_EVENT));
-    setTimeout(() => {
-      document.documentElement.classList.remove('theme-transition');
-    }, 450);
-  };
-
-  const label =
-    theme === 'dark' ? t.common.switchToLight : t.common.switchToDark;
-
-  return (
-    <Tooltip>
-      <TooltipTrigger
-        aria-label={label}
-        className="theme-toggle icon-btn inline-flex h-8 w-8 items-center justify-center rounded-lg"
-        onClick={toggle}
-      >
-        <span
-          aria-hidden="true"
-          className="theme-toggle-icon theme-toggle-icon-moon"
-        >
-          <Moon className="size-4" />
-        </span>
-        <span
-          aria-hidden="true"
-          className="theme-toggle-icon theme-toggle-icon-sun"
-        >
-          <Sun className="size-4" />
-        </span>
-      </TooltipTrigger>
-      <TooltipContent>{label}</TooltipContent>
-    </Tooltip>
-  );
-}
 
 function SocialLinks({
   className,
@@ -243,38 +164,6 @@ const subscribeIsMobile = (breakpoint: number, onStoreChange: () => void) => {
   mql.addEventListener('change', handler);
   return () => mql.removeEventListener('change', handler);
 };
-
-function Toggles({
-  lang,
-  altPath,
-  altLabel,
-}: {
-  lang: Lang;
-  altPath: string;
-  altLabel: string;
-}) {
-  const t = getTranslations(lang);
-
-  return (
-    <>
-      <Tooltip>
-        <TooltipTrigger
-          aria-label={t.common.switchLang}
-          render={
-            <a
-              className="icon-btn inline-flex h-8 items-center justify-center rounded-lg px-2 font-semibold text-xs"
-              href={altPath}
-            />
-          }
-        >
-          {altLabel}
-        </TooltipTrigger>
-        <TooltipContent>{t.common.switchLang}</TooltipContent>
-      </Tooltip>
-      <ThemeToggle lang={lang} />
-    </>
-  );
-}
 
 function useIsMobile(breakpoint = 640) {
   return useSyncExternalStore(
@@ -617,9 +506,6 @@ export function MorphNav({
     scrollY,
     spacerHeight,
   });
-  const altLang = getAlternateLang(lang);
-  const altLabel = altLang.toUpperCase();
-  const altPath = getLocalizedPath(currentPath, altLang);
   const homeHref = navItems[0]?.href ?? getLocalizedPath('/', lang);
 
   // Scroll-driven header chrome (continuous) — starts near the morph threshold
@@ -774,7 +660,7 @@ export function MorphNav({
                 style={getToggleSectionStyle(layoutState.togglesInline)}
                 transition={activeTransitions.layout}
               >
-                <Toggles altLabel={altLabel} altPath={altPath} lang={lang} />
+                <SiteUtilityControls lang={lang} pathname={currentPath} />
               </motion.div>
             </motion.div>
           </LayoutGroup>

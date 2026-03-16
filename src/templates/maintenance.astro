@@ -1,0 +1,52 @@
+---
+import FooterCat from '@/components/layout/footer-cat.astro';
+import { SiteUtilityControls } from '@/components/layout/site-utility-controls';
+import type { Lang } from '@/i18n/translations';
+import { getTranslations } from '@/i18n/utils';
+import Layout from '@/layouts/main.astro';
+
+type Props = { lang: Lang };
+
+const { lang } = Astro.props as Props;
+const t = getTranslations(lang);
+---
+
+<Layout
+  description={t.maintenance.message}
+  hideFooter={true}
+  hideNavigation={true}
+  lang={lang}
+  mainClassName="pb-0"
+  noindex={true}
+  title={t.maintenance.title}
+>
+  <section
+    class="relative flex min-h-[100svh] flex-col px-4 py-3 sm:px-6 sm:py-3"
+  >
+    <div class="absolute top-3 right-0 z-10">
+      <SiteUtilityControls
+        className="pointer-events-auto"
+        lang={lang}
+        pathname="/maintenance"
+        client:load
+      />
+    </div>
+
+    <div class="flex flex-1 items-center justify-center text-center">
+      <div class="space-y-3">
+        <h1 class="font-serif text-2xl font-medium tracking-tight sm:text-3xl">
+          sandra
+        </h1>
+        <p class="text-muted-foreground text-sm sm:text-base">
+          {t.maintenance.message}
+        </p>
+      </div>
+    </div>
+
+    <div
+      class="relative mt-auto h-[clamp(4.5rem,12vw,8rem)] w-full select-none"
+    >
+      <FooterCat />
+    </div>
+  </section>
+</Layout>

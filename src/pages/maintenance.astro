@@ -1,0 +1,32 @@
+---
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="noindex, nofollow" name="robots">
+    <title>Redirecting…</title>
+    <script is:inline>
+      (() => {
+        const preferredLocales = navigator.languages ?? [
+          navigator.language ?? '',
+        ];
+        const targetLang = preferredLocales.some((locale) =>
+          locale.toLowerCase().startsWith('en')
+        )
+          ? 'en'
+          : 'es';
+
+        window.location.replace(`/${targetLang}/maintenance`);
+      })();
+    </script>
+    <noscript>
+      <meta content="0;url=/es/maintenance" http-equiv="refresh">
+    </noscript>
+  </head>
+  <body>
+    Redirecting…
+  </body>
+</html>

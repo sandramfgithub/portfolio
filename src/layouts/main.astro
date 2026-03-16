@@ -10,7 +10,10 @@ import { getAlternateLang, getLocalizedPath } from '@/i18n/utils';
 
 type Props = {
   description?: string;
+  hideFooter?: boolean;
+  hideNavigation?: boolean;
   lang?: Lang;
+  mainClassName?: string;
   noindex?: boolean;
   title?: string;
 };
@@ -30,9 +33,12 @@ const defaultDescriptions: Record<Lang, string> = {
 const {
   title = defaultTitles[lang],
   description = defaultDescriptions[lang],
+  hideFooter = false,
+  hideNavigation = false,
+  mainClassName = 'space-y-8 pb-10',
   noindex = false,
 } = Astro.props;
-const layout = await getLayoutViewModel(lang);
+const layout = hideNavigation ? null : await getLayoutViewModel(lang);
 
 const altLang = getAlternateLang(lang);
 const pathname = Astro.url.pathname.replace(/\/$/, '') || '/';
@@ -77,17 +83,21 @@ const ogLocale = lang === 'es' ? 'es_ES' : 'en_US';
     >
       {lang === 'en' ? 'Skip to content' : 'Saltar al contenido'}
     </a>
-    <MorphNav
-      lang={lang}
-      navigation={layout.navigation}
-      pathname={pathname}
-      socialLinks={layout.socialLinks}
-      client:load
-      transition:persist
-    />
-    <div class="page-shell flex flex-1 flex-col pt-10">
-      <main id="main" class="flex-1 space-y-8 pb-10"><slot /></main>
-      <SiteFooter lang={lang} />
+    {layout && (
+      <MorphNav
+        lang={lang}
+        client:load
+        navigation={layout.navigation}
+        pathname={pathname}
+        transition:persist
+        socialLinks={layout.socialLinks}
+      />
+    )}
+    <div
+      class={`page-shell flex flex-1 flex-col ${hideNavigation ? '' : 'pt-10'}`}
+    >
+      <main class={`flex-1 ${mainClassName}`} id="main"><slot /></main>
+      {!hideFooter && <SiteFooter lang={lang} />}
     </div>
     <script>
       document.addEventListener('astro:after-swap', () => {

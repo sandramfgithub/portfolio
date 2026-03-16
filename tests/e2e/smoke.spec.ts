@@ -6,6 +6,12 @@ const routes = [
   { path: '/about', lang: 'es', finalPath: '/es/about' },
   { path: '/es', lang: 'es', finalPath: '/es' },
   { path: '/es/no-existe', lang: 'es', finalPath: '/es/404' },
+  {
+    path: '/es/maintenance',
+    lang: 'es',
+    finalPath: '/es/maintenance',
+    expectsFooter: false,
+  },
   { path: '/es/projects', lang: 'es', finalPath: '/es/projects' },
   { path: '/es/about', lang: 'es', finalPath: '/es/about' },
   { path: '/es/cv', lang: 'es', finalPath: '/es/cv' },
@@ -22,6 +28,12 @@ const routes = [
   },
   { path: '/en', lang: 'en' },
   { path: '/en/no-existe', lang: 'en', finalPath: '/en/404' },
+  {
+    path: '/en/maintenance',
+    lang: 'en',
+    finalPath: '/en/maintenance',
+    expectsFooter: false,
+  },
   { path: '/en/projects', lang: 'en', finalPath: '/en/projects' },
   { path: '/en/about', lang: 'en', finalPath: '/en/about' },
   { path: '/en/cv', lang: 'en', finalPath: '/en/cv' },
@@ -55,7 +67,11 @@ for (const route of routes) {
     await expect(page.locator('html')).toHaveAttribute('lang', route.lang);
     await expect(page.locator("a[href='#main']")).toBeVisible();
     await expect(page.locator('#main')).toBeVisible();
-    await expect(page.locator('footer')).toBeVisible();
+    if (route.expectsFooter === false) {
+      await expect(page.locator('footer')).toHaveCount(0);
+    } else {
+      await expect(page.locator('footer')).toBeVisible();
+    }
     expect(pageErrors).toEqual([]);
   });
 }
