@@ -46,15 +46,9 @@ const s = StyleSheet.create({
     fontSize: 9,
     color: c.foreground,
     backgroundColor: c.white,
-    paddingTop: 0,
+    paddingTop: 24,
     paddingBottom: 32,
     paddingHorizontal: 36,
-  },
-  accentBar: {
-    height: 4,
-    backgroundColor: c.primary,
-    marginHorizontal: -36,
-    marginBottom: 24,
   },
 
   // Header
@@ -73,8 +67,8 @@ const s = StyleSheet.create({
     fontSize: 8,
     color: c.muted,
     marginTop: 6,
-    flexDirection: 'row',
-    gap: 10,
+    flexDirection: 'column',
+    gap: 2,
   },
 
   // Sections
@@ -140,6 +134,9 @@ const s = StyleSheet.create({
     top: 0,
     color: c.primary,
     fontSize: 8.5,
+  },
+  expDivider: {
+    marginTop: 12,
   },
 
   // Tags
@@ -254,19 +251,16 @@ export function CvPdfDocument({
   return (
     <Document author={profile.name} title={`CV — ${profile.name}`}>
       <Page size="A4" style={s.page}>
-        {/* Accent bar */}
-        <View style={s.accentBar} />
-
         {/* Header */}
         <View>
           <Text style={s.headerName}>{profile.name}</Text>
           <Text style={s.headerRole}>{profile.role}</Text>
           <View style={s.headerContact}>
             <Text>{profile.location}</Text>
-            <Text>{profile.web}</Text>
-            {contact.email && <Text>{contact.email}</Text>}
-            {contact.github && <Text>{contact.github}</Text>}
-            {contact.linkedin && <Text>{contact.linkedin}</Text>}
+            <Text>{`Web: ${profile.web}`}</Text>
+            {contact.email && <Text>{`Email: ${contact.email}`}</Text>}
+            {contact.github && <Text>{`GitHub: ${contact.github}`}</Text>}
+            {contact.linkedin && <Text>{`LinkedIn: ${contact.linkedin}`}</Text>}
           </View>
         </View>
 
@@ -284,7 +278,7 @@ export function CvPdfDocument({
         <Text style={s.sectionTitle}>{sectionLabels.experience}</Text>
         <View style={s.separator} />
         {experience.map((exp, i) => (
-          <View key={i} style={{ marginBottom: 12 }} wrap={false}>
+          <View key={i} wrap={false}>
             <View style={s.expHeader}>
               <View>
                 <Text style={s.expRole}>{exp.role}</Text>
@@ -306,6 +300,11 @@ export function CvPdfDocument({
                 </Text>
               ))}
             </View>
+            {i < experience.length - 1 && (
+              <View style={s.expDivider}>
+                <View style={s.separator} />
+              </View>
+            )}
           </View>
         ))}
 

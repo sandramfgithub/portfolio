@@ -30,7 +30,7 @@ const [page, cv] = await Promise.all([
     <div class="mt-6"><CvDownload cv={cv} lang={lang} client:load /></div>
   </AboutHero>
 
-  <section class="py-2">
+  <section>
     <AboutRichText
       className="text-sm leading-6 text-muted-foreground sm:text-base sm:leading-7"
       client:load
@@ -46,7 +46,7 @@ const [page, cv] = await Promise.all([
   />
 
   <!-- Skills -->
-  <section class="space-y-3">
+  <section class="space-y-5">
     <h2 class="font-serif text-xl font-semibold tracking-tight">
       {t.about.skills}
     </h2>
