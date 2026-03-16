@@ -25,38 +25,6 @@
             "value": " años y llevo más de diez trabajando como desarrolladora fullstack. Diseño y construyo productos a medida: herramientas internas, plataformas de gestión y servicios que se adaptan a la empresa y no al contrario. Siempre prefiero apoyarme en soluciones que ya funcionan antes que reinventar la rueda."
           }
         ]
-      },
-      {
-        "nodes": [
-          {
-            "type": "text",
-            "value": "Me encargo del proceso completo, desde el análisis hasta el deploy, y busco que lo que entrego sea mantenible a largo plazo. La experiencia me ha enseñado a pensar más allá del problema inmediato: la arquitectura, el contrato entre equipos y la operación del día a día importan tanto como la funcionalidad."
-          }
-        ]
-      },
-      {
-        "nodes": [
-          {
-            "type": "text",
-            "value": "Actualmente trabajo en "
-          },
-          {
-            "type": "strong",
-            "value": "Tahe Productos Cosméticos"
-          },
-          {
-            "type": "text",
-            "value": ", donde desarrollo un PIM pensado específicamente para la vertical cosmética. A lo largo de estos años en Tahe también he construido un sistema de pedidos comerciales, una app de picking para almacén, una plataforma de gestión de aparatología y varias herramientas internas. Antes estuve en "
-          },
-          {
-            "type": "strong",
-            "value": "Next2U"
-          },
-          {
-            "type": "text",
-            "value": ", donde desarrollé un CRM para el equipo comercial y una aplicación de control horario."
-          }
-        ]
       }
     ],
     "personal": [
@@ -166,61 +134,6 @@
         }
       }
     },
-    "experience": [
-      {
-        "role": "Senior Fullstack Developer",
-        "company": "Tahe Productos Cosméticos S.L.",
-        "period": "junio 2018 – actualidad",
-        "summary": "Diseño y desarrollo de productos internos para la vertical cosmética: PIM, gestión de pedidos, picking de almacén, aparatología y herramientas de soporte.",
-        "achievements": [
-          "Desarrollo de un PIM personalizado con Bun, contratos API y búsqueda por Elasticsearch",
-          "App móvil de picking con lectura de códigos y sincronización offline",
-          "Sistema de pedidos comerciales con flujos de aprobación",
-          "Plataforma de gestión de aparatología con inventario y reservas",
-          "Otras pequeñas utilidades y APIs"
-        ],
-        "skillSlugs": [
-          "react",
-          "typescript",
-          "bun",
-          "postgresql",
-          "elasticsearch",
-          "tanstack-table",
-          "trpc",
-          "tailwind-css",
-          "capacitor"
-        ]
-      },
-      {
-        "role": "Fullstack Developer",
-        "company": "Next2U · Distribuidor Oficial Vodafone",
-        "period": "enero 2016 – junio 2018",
-        "summary": "Desarrollo de herramientas internas para el equipo comercial.",
-        "achievements": [
-          "Mini CRM para seguimiento comercial y pipeline operativo",
-          "Control horario con reglas de negocio de recursos humanos"
-        ],
-        "skillSlugs": ["typescript", "rest", "postgresql"]
-      }
-    ],
-    "skillSlugs": [
-      "react",
-      "typescript",
-      "bun",
-      "postgresql",
-      "trpc",
-      "tailwind-css",
-      "drizzle-orm",
-      "vitest",
-      "vite",
-      "opentelemetry",
-      "docker",
-      "github",
-      "codex",
-      "claude",
-      "elasticsearch",
-      "tanstack-table"
-    ],
     "seo": {
       "title": "Sobre mí | Sandra Martínez Fernández",
       "description": "Perfil, experiencia técnica y stack de Sandra Martínez Fernández."
@@ -250,38 +163,6 @@
           {
             "type": "text",
             "value": " years old and have been working as a fullstack developer for over ten years. I design and build custom products: internal tools, management platforms, and services that adapt to the company rather than the other way around. I always prefer to lean on solutions that already work before reinventing the wheel."
-          }
-        ]
-      },
-      {
-        "nodes": [
-          {
-            "type": "text",
-            "value": "I own the full process, from analysis to deploy, and I aim for everything I deliver to be maintainable in the long run. Experience has taught me to think beyond the immediate problem: architecture, the contract between teams, and day-to-day operations matter as much as the feature itself."
-          }
-        ]
-      },
-      {
-        "nodes": [
-          {
-            "type": "text",
-            "value": "I currently work at "
-          },
-          {
-            "type": "strong",
-            "value": "Tahe Productos Cosméticos"
-          },
-          {
-            "type": "text",
-            "value": ", where I develop a PIM purpose-built for the cosmetics vertical. Over the years at Tahe I have also built a commercial order system, a warehouse picking app, an equipment management platform, and several internal tools. Previously I worked at "
-          },
-          {
-            "type": "strong",
-            "value": "Next2U"
-          },
-          {
-            "type": "text",
-            "value": ", where I built a CRM for the sales team and a time tracking application."
           }
         ]
       }
@@ -393,61 +274,6 @@
         }
       }
     },
-    "experience": [
-      {
-        "role": "Senior Fullstack Developer",
-        "company": "Tahe Productos Cosméticos S.L.",
-        "period": "June 2018 – present",
-        "summary": "Design and development of internal products for the cosmetics vertical: PIM, order management, warehouse picking, equipment management, and support tools.",
-        "achievements": [
-          "Custom PIM with Bun, API contracts, and Elasticsearch-powered search",
-          "Mobile picking app with barcode scanning and offline sync",
-          "Commercial order system with approval workflows",
-          "Equipment management platform with inventory and reservations",
-          "Other small utilities and APIs"
-        ],
-        "skillSlugs": [
-          "react",
-          "typescript",
-          "bun",
-          "postgresql",
-          "elasticsearch",
-          "tanstack-table",
-          "trpc",
-          "tailwind-css",
-          "capacitor"
-        ]
-      },
-      {
-        "role": "Fullstack Developer",
-        "company": "Next2U · Official Vodafone Distributor",
-        "period": "January 2016 – June 2018",
-        "summary": "Internal tooling for the sales team.",
-        "achievements": [
-          "Mini CRM for sales pipeline and operational visibility",
-          "Time tracking with HR business rules"
-        ],
-        "skillSlugs": ["typescript", "rest", "postgresql"]
-      }
-    ],
-    "skillSlugs": [
-      "react",
-      "typescript",
-      "bun",
-      "postgresql",
-      "trpc",
-      "tailwind-css",
-      "drizzle-orm",
-      "vitest",
-      "vite",
-      "opentelemetry",
-      "docker",
-      "github",
-      "codex",
-      "claude",
-      "elasticsearch",
-      "tanstack-table"
-    ],
     "seo": {
       "title": "About | Sandra Martínez Fernández",
       "description": "Profile, technical experience, and stack of Sandra Martínez Fernández."

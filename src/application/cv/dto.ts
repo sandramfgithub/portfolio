@@ -1,4 +1,5 @@
 export type CvProfileViewModel = {
+  bodyParagraphs: readonly string[];
   name: string;
   role: string;
   location: string;
@@ -19,7 +20,6 @@ export type CvExperienceViewModel = {
 
 export type CvLanguageViewModel = {
   name: string;
-  level: string;
 };
 
 export type CvEducationViewModel = {

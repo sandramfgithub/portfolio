@@ -45,11 +45,17 @@ const trackElementEvent = (element: HTMLElement) => {
 const handleClick = (event: Event) => {
   const target = event.target;
 
-  if (!(target instanceof HTMLElement)) {
+  if (!(target instanceof Node)) {
     return;
   }
 
-  const element = target.closest<HTMLElement>(
+  const start = target instanceof Element ? target : target.parentElement;
+
+  if (!start) {
+    return;
+  }
+
+  const element = start.closest<HTMLElement>(
     `[data-analytics-trigger="${CLICK_TRIGGER}"], [data-analytics-event]:not([data-analytics-trigger])`
   );
 

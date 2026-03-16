@@ -61,7 +61,9 @@ export const getCvViewModel = async (
       skillSlugs: experience.stack,
       stack: resolveSkillNames(experience.stack, skillNameLookup),
     })),
-    languages: document.languages,
+    languages: document.languages.map((language) => ({
+      name: language.name,
+    })),
     skillSlugs: document.skillSlugs,
     skillNames: resolveSkillNames(document.skillSlugs, skillNameLookup),
   };

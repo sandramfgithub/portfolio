@@ -60,6 +60,7 @@ const cv: CvDocument = {
     location: 'Spain',
     web: 'sandramf.dev',
     summary: 'Profile summary',
+    bodyParagraphs: ['Shared professional paragraph'],
     photo: null,
   },
   contacts: {
@@ -110,6 +111,10 @@ describe('cv queries', () => {
     expect(viewModel.contacts.email).toBe('mail@example.com');
     expect(viewModel.education).toEqual([]);
     expect(viewModel.certifications).toEqual([]);
+    expect(viewModel.profile.bodyParagraphs).toEqual([
+      'Shared professional paragraph',
+    ]);
+    expect(viewModel.languages).toEqual([{ name: 'English' }]);
   });
 
   it('builds the CV page view model from the document', async () => {

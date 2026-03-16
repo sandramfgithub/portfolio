@@ -143,8 +143,6 @@ export type AboutDocument = {
   professional: readonly AboutParagraph[];
   personal: readonly AboutParagraph[];
   popovers: AboutPopoverRegistry;
-  experience: readonly AboutExperience[];
-  skillSlugs: readonly string[];
   seo: SeoMetadata;
 };
 
@@ -196,6 +194,7 @@ export type CvProfile = {
   location: string;
   web: string;
   summary: string;
+  bodyParagraphs: readonly string[];
   photo: string | null;
 };
 

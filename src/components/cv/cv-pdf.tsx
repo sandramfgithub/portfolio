@@ -274,6 +274,11 @@ export function CvPdfDocument({
         <Text style={s.sectionTitle}>{sectionLabels.profile}</Text>
         <View style={s.separator} />
         <Text style={s.summary}>{profile.summary}</Text>
+        {profile.bodyParagraphs.map((paragraph, index) => (
+          <Text key={index} style={s.summary}>
+            {paragraph}
+          </Text>
+        ))}
 
         {/* Experience */}
         <Text style={s.sectionTitle}>{sectionLabels.experience}</Text>
@@ -324,7 +329,6 @@ export function CvPdfDocument({
             {languages.map((lang, i) => (
               <View key={i} style={s.langRow}>
                 <Text style={s.langName}>{lang.name}</Text>
-                <Text style={s.langLevel}>{lang.level}</Text>
               </View>
             ))}
           </View>

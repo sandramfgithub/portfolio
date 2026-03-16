@@ -106,6 +106,14 @@ const aboutHref = getLocalizedPath('/about', lang);
       </div>
     </div>
 
+    {page.cv.profile.bodyParagraphs.length > 0 && (
+      <section class="space-y-3">
+        <div class="space-y-3 text-muted-foreground text-sm leading-7 sm:text-base">
+          {page.cv.profile.bodyParagraphs.map((paragraph) => <p>{paragraph}</p>)}
+        </div>
+      </section>
+    )}
+
     <section class="space-y-3">
       <h2 class="font-serif text-xl font-semibold tracking-tight">
         {t.cv.experience}
@@ -182,9 +190,8 @@ const aboutHref = getLocalizedPath('/about', lang);
       </h2>
       <div class="grid gap-2 sm:grid-cols-2">
         {page.cv.languages.map((item) => (
-          <div class="flex items-center justify-between rounded-lg border border-border/60 bg-card px-4 py-3">
+          <div class="rounded-lg border border-border/60 bg-card px-4 py-3">
             <span class="font-medium text-sm">{item.name}</span>
-            <span class="text-muted-foreground text-sm">{item.level}</span>
           </div>
         ))}
       </div>

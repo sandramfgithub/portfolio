@@ -113,14 +113,6 @@ const aboutMediaPopoverSchema = z.object({
     })
     .nullable(),
 });
-const aboutExperienceSchema = z.object({
-  role: z.string(),
-  company: z.string(),
-  period: z.string(),
-  summary: z.string(),
-  achievements: z.array(z.string()),
-  skillSlugs: z.array(z.string()),
-});
 
 const site = defineCollection({
   loader: file('src/content/data/site.json'),
@@ -163,8 +155,6 @@ const about = defineCollection({
       music: aboutListPopoverSchema,
       realityShows: aboutListPopoverSchema,
     }),
-    experience: z.array(aboutExperienceSchema),
-    skillSlugs: z.array(z.string()),
     seo: seoSchema,
   }),
 });
@@ -218,6 +208,7 @@ const cv = defineCollection({
       location: z.string(),
       web: z.string(),
       summary: z.string(),
+      bodyParagraphs: z.array(z.string()),
       photo: z.string().nullable(),
     }),
     contacts: z.object({

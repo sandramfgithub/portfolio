@@ -7,7 +7,6 @@ import {
 } from 'framer-motion';
 import { Moon, Sun } from 'lucide-react';
 import { useEffect, useRef, useState, useSyncExternalStore } from 'react';
-import { createAnalyticsAttributes } from '@/application/analytics/attributes';
 import type {
   NavigationItemViewModel,
   SocialLinkViewModel,
@@ -30,6 +29,7 @@ import {
   getLocalizedPath,
   getTranslations,
 } from '@/i18n/utils';
+import { trackBrowserAnalyticsEvent } from '@/infrastructure/analytics/browser';
 import { usePrefersReducedMotion } from '@/lib/use-prefers-reduced-motion';
 import { cn } from '@/lib/utils';
 
@@ -191,15 +191,19 @@ function SocialLinks({
               aria-label={link.label}
               render={
                 <a
-                  {...(channel
-                    ? createAnalyticsAttributes('social_link_clicked', {
-                        channel,
-                        lang,
-                        location: 'nav',
-                      })
-                    : {})}
                   className="icon-btn inline-flex h-8 w-8 items-center justify-center rounded-lg"
                   href={link.href}
+                  onClick={() => {
+                    if (!channel) {
+                      return;
+                    }
+
+                    trackBrowserAnalyticsEvent('social_link_clicked', {
+                      channel,
+                      lang,
+                      location: 'nav',
+                    });
+                  }}
                   rel={
                     link.href.startsWith('mailto:')
                       ? undefined

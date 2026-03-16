@@ -8,7 +8,11 @@
       "location": "España",
       "web": "sandramf.dev",
       "summary": "Desarrolladora con experiencia en frontends de producto, tooling interno y servicios backend. Enfoque en contratos explícitos, estructura de repositorio mantenible y operación observable.",
-      "photo": null
+      "photo": null,
+      "bodyParagraphs": [
+        "Me encargo del proceso completo, desde el análisis hasta el deploy, y busco que lo que entrego sea mantenible a largo plazo. La experiencia me ha enseñado a pensar más allá del problema inmediato: la arquitectura, el contrato entre equipos y la operación del día a día importan tanto como la funcionalidad.",
+        "Actualmente trabajo en Tahe Productos Cosméticos, donde desarrollo un PIM pensado específicamente para la vertical cosmética. A lo largo de estos años en Tahe también he construido un sistema de pedidos comerciales, una app de picking para almacén, una plataforma de gestión de aparatología y varias herramientas internas. Antes estuve en Next2U, donde desarrollé un CRM para el equipo comercial y una aplicación de control horario."
+      ]
     },
     "contacts": {
       "github": "https://github.com/sandramfgithub",
@@ -17,23 +21,39 @@
     },
     "experience": [
       {
-        "role": "Desarrolladora de Software",
-        "company": "Empresa Actual",
-        "period": "2022 – Presente",
-        "summary": "Desarrollo de frontends de producto, tooling interno y servicios backend con foco en contratos, estructura de repositorio y operación.",
+        "role": "Senior Fullstack Developer",
+        "company": "Tahe Productos Cosméticos S.L.",
+        "period": "junio 2018 – actualidad",
+        "summary": "Diseño y desarrollo de productos internos para la vertical cosmética: PIM, gestión de pedidos, picking de almacén, aparatología y herramientas de soporte.",
         "achievements": [
-          "Desarrollo de monorepo con Bun, workers con leasing, contratos API y búsqueda",
-          "Extracción de sistema de tablas server-side reutilizable con React y TanStack Table",
-          "Implementación de runtime con leasing sobre PostgreSQL para polling y heartbeats"
+          "Desarrollo de un PIM personalizado con Bun, contratos API y búsqueda por Elasticsearch",
+          "App móvil de picking con lectura de códigos y sincronización offline",
+          "Sistema de pedidos comerciales con flujos de aprobación",
+          "Plataforma de gestión de aparatología con inventario y reservas",
+          "Otras pequeñas utilidades y APIs"
         ],
         "stack": [
           "react",
           "typescript",
           "bun",
           "postgresql",
+          "elasticsearch",
+          "tanstack-table",
           "trpc",
-          "tailwind-css"
+          "tailwind-css",
+          "capacitor"
         ]
+      },
+      {
+        "role": "Fullstack Developer",
+        "company": "Next2U · Distribuidor Oficial Vodafone",
+        "period": "enero 2016 – junio 2018",
+        "summary": "Desarrollo de herramientas internas para el equipo comercial.",
+        "achievements": [
+          "Mini CRM para seguimiento comercial y pipeline operativo",
+          "Control horario con reglas de negocio de recursos humanos"
+        ],
+        "stack": ["typescript", "rest", "postgresql"]
       }
     ],
     "education": [],
@@ -62,7 +82,11 @@
       "docker",
       "github",
       "codex",
-      "claude"
+      "claude",
+      "elasticsearch",
+      "tanstack-table",
+      "capacitor",
+      "rest"
     ]
   },
   {
@@ -74,7 +98,11 @@
       "location": "Spain",
       "web": "sandramf.dev",
       "summary": "Developer with experience in product frontends, internal tooling, and backend services. Focus on explicit contracts, maintainable repository structure, and observable operations.",
-      "photo": null
+      "photo": null,
+      "bodyParagraphs": [
+        "I own the full process, from analysis to deploy, and I aim for everything I deliver to be maintainable in the long run. Experience has taught me to think beyond the immediate problem: architecture, the contract between teams, and day-to-day operations matter as much as the feature itself.",
+        "I currently work at Tahe Productos Cosméticos, where I build a PIM designed specifically for the cosmetics vertical. Over the years at Tahe I have also delivered a commercial ordering system, a warehouse picking app, an equipment management platform, and several smaller internal tools. Before that, I worked at Next2U, where I built a CRM for the sales team and a time tracking application."
+      ]
     },
     "contacts": {
       "github": "https://github.com/sandramfgithub",
@@ -83,23 +111,39 @@
     },
     "experience": [
       {
-        "role": "Software Developer",
-        "company": "Current Company",
-        "period": "2022 – Present",
-        "summary": "Product frontend development, internal tooling, and backend services focused on contracts, repository structure, and operations.",
+        "role": "Senior Fullstack Developer",
+        "company": "Tahe Productos Cosméticos S.L.",
+        "period": "June 2018 – Present",
+        "summary": "Design and development of internal products for the cosmetics vertical: PIM, commercial ordering, warehouse picking, equipment management, and support tools.",
         "achievements": [
-          "Monorepo development with Bun, lease-based workers, API contracts, and search",
-          "Extraction of reusable server-side table system with React and TanStack Table",
-          "PostgreSQL-based leasing runtime implementation for polling and heartbeats"
+          "Development of a custom PIM with Bun, API contracts, and Elasticsearch search",
+          "Warehouse picking mobile app with barcode scanning and offline sync",
+          "Commercial ordering system with approval flows",
+          "Equipment management platform with inventory and bookings",
+          "Other smaller internal utilities and APIs"
         ],
         "stack": [
           "react",
           "typescript",
           "bun",
           "postgresql",
+          "elasticsearch",
+          "tanstack-table",
           "trpc",
-          "tailwind-css"
+          "tailwind-css",
+          "capacitor"
         ]
+      },
+      {
+        "role": "Fullstack Developer",
+        "company": "Next2U · Official Vodafone Distributor",
+        "period": "January 2016 – June 2018",
+        "summary": "Development of internal tools for the commercial team.",
+        "achievements": [
+          "Mini CRM for commercial follow-up and pipeline visibility",
+          "Time tracking application with HR business rules"
+        ],
+        "stack": ["typescript", "rest", "postgresql"]
       }
     ],
     "education": [],
@@ -128,7 +172,11 @@
       "docker",
       "github",
       "codex",
-      "claude"
+      "claude",
+      "elasticsearch",
+      "tanstack-table",
+      "capacitor",
+      "rest"
     ]
   }
 ]

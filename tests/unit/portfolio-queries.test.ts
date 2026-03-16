@@ -112,17 +112,6 @@ const about: AboutDocument = {
       intro: 'Reality intro',
     },
   },
-  experience: [
-    {
-      role: 'Developer',
-      company: 'Example Co',
-      period: '2022-Present',
-      summary: 'About experience summary',
-      achievements: ['Achievement'],
-      skillSlugs: ['react', 'typescript'],
-    },
-  ],
-  skillSlugs: ['react', 'typescript'],
   seo: { title: 'About title', description: 'About description' },
 };
 
@@ -278,6 +267,7 @@ const cv: CvDocument = {
     location: 'Spain',
     web: 'sandramf.dev',
     summary: 'Profile summary',
+    bodyParagraphs: ['Shared professional paragraph'],
     photo: null,
   },
   contacts: {
@@ -364,7 +354,7 @@ describe('portfolio queries', () => {
     expect(page.privateEntries[1]?.privateEntryType).toBe('case-study');
   });
 
-  it('maps the dedicated about document into the about page', async () => {
+  it('maps about editorial copy while sharing cv experience and skills', async () => {
     const page = await getAboutPageViewModel('en', createRepository());
 
     expect(page.hero.roleChip).toBe('Fullstack Developer');
@@ -372,6 +362,9 @@ describe('portfolio queries', () => {
       key: 'age',
       type: 'popover',
     });
+    expect(page.professional[1]?.nodes).toEqual([
+      { type: 'text', value: 'Shared professional paragraph' },
+    ]);
     expect(page.personal[0]?.nodes[1]).toEqual({
       key: 'games',
       trigger: 'games',

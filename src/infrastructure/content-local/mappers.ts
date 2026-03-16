@@ -40,8 +40,6 @@ export const mapAboutEntry = (
     professional: entry.data.professional,
     personal: entry.data.personal,
     popovers: entry.data.popovers,
-    experience: entry.data.experience,
-    skillSlugs: entry.data.skillSlugs,
     seo: entry.data.seo,
   };
 };
