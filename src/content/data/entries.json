@@ -6,10 +6,12 @@
     "kind": "public-project",
     "publicationState": "published",
     "title": "Portfolio",
-    "summary": "Sitio en Astro para ordenar repos, librerías y documentación pública.",
-    "paragraphs": [],
+    "summary": "Página web personal en la que iré publicando repos públicos, creada en Astro con shadcn/ui.",
+    "paragraphs": [
+      "Página web personal en la que iré publicando repos públicos, creada en Astro con shadcn/ui."
+    ],
     "bullets": [],
-    "stack": ["astro", "react", "tailwind-css", "shadcnui"],
+    "stack": ["astro", "react", "tailwind-css", "shadcnui", "bun", "vitest"],
     "links": [
       {
         "label": "GitHub",
@@ -22,7 +24,7 @@
     "period": null,
     "seo": {
       "title": "Portfolio | Sandra Martínez Fernández",
-      "description": "Sitio en Astro para ordenar repos, librerías y documentación pública."
+      "description": "Página web personal en la que iré publicando repos públicos, creada en Astro con shadcn/ui."
     },
     "privateEntryType": null,
     "sortDate": "2026-03-01"
@@ -34,15 +36,32 @@
     "kind": "public-project",
     "publicationState": "published",
     "title": "React Table System",
-    "summary": "Extracción de un sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables.",
-    "paragraphs": [],
+    "summary": "Sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables. Muy \"opinionated\".",
+    "paragraphs": [
+      "Sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables. Muy \"opinionated\".",
+      "Basado en DiceUI, pero sin nuqs y adaptado a una SPA en React con Hono."
+    ],
     "bullets": [],
-    "stack": ["react", "tanstack-table", "zustand", "vitest"],
+    "stack": [
+      "react",
+      "diceui",
+      "zustand",
+      "vitest",
+      "drizzle-orm",
+      "hono",
+      "bun",
+      "turborepo"
+    ],
     "links": [
       {
         "label": "GitHub",
         "href": "https://github.com/sandramfgithub/react-table-system",
         "kind": "repository"
+      },
+      {
+        "label": "DiceUI",
+        "href": "https://www.diceui.com",
+        "kind": "external"
       }
     ],
     "featured": false,
@@ -50,7 +69,7 @@
     "period": null,
     "seo": {
       "title": "React Table System | Sandra Martínez Fernández",
-      "description": "Extracción de un sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables."
+      "description": "Sistema de tablas server-side con filtros, persistencia, vistas y contratos reutilizables. Muy \"opinionated\"."
     },
     "privateEntryType": null,
     "sortDate": "2025-12-01"
@@ -272,10 +291,12 @@
     "kind": "public-project",
     "publicationState": "published",
     "title": "Portfolio",
-    "summary": "Astro site to organize repos, libraries, and public documentation.",
-    "paragraphs": [],
+    "summary": "Personal website where I publish public repositories, built with Astro and shadcn/ui.",
+    "paragraphs": [
+      "Personal website where I publish public repositories, built with Astro and shadcn/ui."
+    ],
     "bullets": [],
-    "stack": ["astro", "react", "tailwind-css", "shadcnui"],
+    "stack": ["astro", "react", "tailwind-css", "shadcnui", "bun", "vitest"],
     "links": [
       {
         "label": "GitHub",
@@ -288,7 +309,7 @@
     "period": null,
     "seo": {
       "title": "Portfolio | Sandra Martínez Fernández",
-      "description": "Astro site to organize repos, libraries, and public documentation."
+      "description": "Personal website where I publish public repositories, built with Astro and shadcn/ui."
     },
     "privateEntryType": null,
     "sortDate": "2026-03-01"
@@ -300,15 +321,32 @@
     "kind": "public-project",
     "publicationState": "published",
     "title": "React Table System",
-    "summary": "Extraction of a server-side table system with filters, persistence, views, and reusable contracts.",
-    "paragraphs": [],
+    "summary": "Server-side table system with filters, persistence, views, and reusable contracts. Very opinionated.",
+    "paragraphs": [
+      "Server-side table system with filters, persistence, views, and reusable contracts. Very opinionated.",
+      "Based on DiceUI, but without nuqs and adapted to a React SPA with Hono."
+    ],
     "bullets": [],
-    "stack": ["react", "tanstack-table", "zustand", "vitest"],
+    "stack": [
+      "react",
+      "diceui",
+      "zustand",
+      "vitest",
+      "drizzle-orm",
+      "hono",
+      "bun",
+      "turborepo"
+    ],
     "links": [
       {
         "label": "GitHub",
         "href": "https://github.com/sandramfgithub/react-table-system",
         "kind": "repository"
+      },
+      {
+        "label": "DiceUI",
+        "href": "https://www.diceui.com",
+        "kind": "external"
       }
     ],
     "featured": false,
@@ -316,7 +354,7 @@
     "period": null,
     "seo": {
       "title": "React Table System | Sandra Martínez Fernández",
-      "description": "Extraction of a server-side table system with filters, persistence, views, and reusable contracts."
+      "description": "Server-side table system with filters, persistence, views, and reusable contracts. Very opinionated."
     },
     "privateEntryType": null,
     "sortDate": "2025-12-01"
@@ -543,7 +581,15 @@
     "summary": "Base para arrancar monorepos con Bun, paquetes compartidos, tooling común y contratos listos para crecer.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["bun", "typescript", "vitest"],
+    "stack": [
+      "bun",
+      "typescript",
+      "vitest",
+      "shadcnui",
+      "hono",
+      "react",
+      "turborepo"
+    ],
     "links": [
       {
         "label": "GitHub",
@@ -615,7 +661,15 @@
     "summary": "Starter for Bun monorepos with shared packages, common tooling, and contracts ready to scale.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["bun", "typescript", "vitest"],
+    "stack": [
+      "bun",
+      "typescript",
+      "vitest",
+      "shadcnui",
+      "hono",
+      "react",
+      "turborepo"
+    ],
     "links": [
       {
         "label": "GitHub",

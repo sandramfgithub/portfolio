@@ -95,6 +95,25 @@
     }
   },
   {
+    "id": "diceui-es",
+    "slug": "diceui",
+    "locale": "es",
+    "name": "DiceUI",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": null,
+    "url": "https://www.diceui.com",
+    "summary": "Patrones y componentes opinionated para producto, especialmente útiles en tablas y formularios complejos.",
+    "details": [
+      "Patrones y componentes opinionated para producto, especialmente útiles en tablas y formularios complejos."
+    ],
+    "seo": {
+      "title": "DiceUI | Sandra Martínez Fernández",
+      "description": "Patrones y componentes opinionated para producto, especialmente útiles en tablas y formularios complejos."
+    }
+  },
+  {
     "id": "tanstack-table-es",
     "slug": "tanstack-table",
     "locale": "es",
@@ -168,6 +187,44 @@
     "seo": {
       "title": "Bun | Sandra Martínez Fernández",
       "description": "Runtime y package manager. Monorepo, scripts, workers y tooling interno."
+    }
+  },
+  {
+    "id": "hono-es",
+    "slug": "hono",
+    "locale": "es",
+    "name": "Hono",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": null,
+    "url": "https://hono.dev",
+    "summary": "Framework web ligero para APIs y SPAs con rutas rápidas y tipadas.",
+    "details": [
+      "Framework web ligero para APIs y SPAs con rutas rápidas y tipadas."
+    ],
+    "seo": {
+      "title": "Hono | Sandra Martínez Fernández",
+      "description": "Framework web ligero para APIs y SPAs con rutas rápidas y tipadas."
+    }
+  },
+  {
+    "id": "turborepo-es",
+    "slug": "turborepo",
+    "locale": "es",
+    "name": "Turborepo",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": null,
+    "url": "https://turbo.build/repo",
+    "summary": "Orquestación de monorepos con cache, pipelines y tareas compartidas.",
+    "details": [
+      "Orquestación de monorepos con cache, pipelines y tareas compartidas."
+    ],
+    "seo": {
+      "title": "Turborepo | Sandra Martínez Fernández",
+      "description": "Orquestación de monorepos con cache, pipelines y tareas compartidas."
     }
   },
   {
@@ -602,6 +659,25 @@
     }
   },
   {
+    "id": "diceui-en",
+    "slug": "diceui",
+    "locale": "en",
+    "name": "DiceUI",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": null,
+    "url": "https://www.diceui.com",
+    "summary": "Opinionated product patterns and components, especially useful for complex tables and forms.",
+    "details": [
+      "Opinionated product patterns and components, especially useful for complex tables and forms."
+    ],
+    "seo": {
+      "title": "DiceUI | Sandra Martínez Fernández",
+      "description": "Opinionated product patterns and components, especially useful for complex tables and forms."
+    }
+  },
+  {
     "id": "tanstack-table-en",
     "slug": "tanstack-table",
     "locale": "en",
@@ -675,6 +751,44 @@
     "seo": {
       "title": "Bun | Sandra Martínez Fernández",
       "description": "Runtime and package manager. Monorepo, scripts, workers, and internal tooling."
+    }
+  },
+  {
+    "id": "hono-en",
+    "slug": "hono",
+    "locale": "en",
+    "name": "Hono",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": null,
+    "url": "https://hono.dev",
+    "summary": "Lightweight web framework for APIs and SPAs with fast, typed routes.",
+    "details": [
+      "Lightweight web framework for APIs and SPAs with fast, typed routes."
+    ],
+    "seo": {
+      "title": "Hono | Sandra Martínez Fernández",
+      "description": "Lightweight web framework for APIs and SPAs with fast, typed routes."
+    }
+  },
+  {
+    "id": "turborepo-en",
+    "slug": "turborepo",
+    "locale": "en",
+    "name": "Turborepo",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": null,
+    "url": "https://turbo.build/repo",
+    "summary": "Monorepo orchestration with cache, pipelines, and shared tasks.",
+    "details": [
+      "Monorepo orchestration with cache, pipelines, and shared tasks."
+    ],
+    "seo": {
+      "title": "Turborepo | Sandra Martínez Fernández",
+      "description": "Monorepo orchestration with cache, pipelines, and shared tasks."
     }
   },
   {
