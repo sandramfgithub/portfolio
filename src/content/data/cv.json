@@ -25,12 +25,12 @@
         "role": "Senior Fullstack Developer",
         "company": "Tahe Productos Cosméticos S.L.",
         "period": "junio 2018 – actualidad",
-        "summary": "Diseño y desarrollo de productos internos para la vertical cosmética: PIM, gestión de pedidos, picking de almacén, aparatología y herramientas de soporte.",
+        "summary": "Diseño y desarrollo de productos internos para la vertical cosmética: PIM, gestión de pedidos B2B, picking de almacén y gestión de fabricación y control de calidad de aparatología.",
         "achievements": [
           "Desarrollo de un PIM personalizado con Bun, contratos API y búsqueda por Elasticsearch",
-          "App móvil de picking con lectura de códigos y sincronización offline",
-          "Sistema de pedidos comerciales con flujos de aprobación",
-          "Plataforma de gestión de aparatología con inventario y reservas",
+          "App móvil de picking con lectura de códigos",
+          "Sistema de gestión de pedidos comerciales B2B con pedidos, catálogo, estadísticas, reportes e informes",
+          "Gestión de fabricación y control de calidad de aparatología, mantenimiento y stock",
           "Otras pequeñas utilidades y APIs"
         ],
         "stack": [
@@ -39,7 +39,11 @@
           "bun",
           "postgresql",
           "elasticsearch",
-          "tanstack-table",
+          "graphql",
+          "rest",
+          "nest",
+          "vue",
+          "soap",
           "trpc",
           "tailwind-css",
           "capacitor"
@@ -49,12 +53,12 @@
         "role": "Fullstack Developer",
         "company": "Next2U · Distribuidor Oficial Vodafone",
         "period": "enero 2016 – junio 2018",
-        "summary": "Desarrollo de herramientas internas para el equipo comercial.",
+        "summary": "Desarrollo de herramientas internas para el equipo comercial: CRM y control horario.",
         "achievements": [
-          "Mini CRM para seguimiento comercial y pipeline operativo",
-          "Control horario con reglas de negocio de recursos humanos"
+          "Mini CRM para seguimiento comercial, pipeline operativo y visibilidad sobre clientes",
+          "Sistema interno para fichajes, incidencias e informes con aplicación móvil"
         ],
-        "stack": ["typescript", "rest", "postgresql"]
+        "stack": ["ruby-on-rails", "postgresql", "angular", "android-sdk"]
       }
     ],
     "education": [],
@@ -116,12 +120,12 @@
         "role": "Senior Fullstack Developer",
         "company": "Tahe Productos Cosméticos S.L.",
         "period": "June 2018 – Present",
-        "summary": "Design and development of internal products for the cosmetics vertical: PIM, commercial ordering, warehouse picking, equipment management, and support tools.",
+        "summary": "Design and development of internal products for the cosmetics vertical: PIM, B2B order management, warehouse picking, and manufacturing and quality control for equipment.",
         "achievements": [
           "Development of a custom PIM with Bun, API contracts, and Elasticsearch search",
-          "Warehouse picking mobile app with barcode scanning and offline sync",
-          "Commercial ordering system with approval flows",
-          "Equipment management platform with inventory and bookings",
+          "Warehouse picking mobile app with barcode scanning",
+          "B2B commercial order management system with orders, catalogue, statistics, reports, and dashboards",
+          "Manufacturing management and quality control for equipment, plus maintenance and stock",
           "Other smaller internal utilities and APIs"
         ],
         "stack": [
@@ -130,7 +134,11 @@
           "bun",
           "postgresql",
           "elasticsearch",
-          "tanstack-table",
+          "graphql",
+          "rest",
+          "nest",
+          "vue",
+          "soap",
           "trpc",
           "tailwind-css",
           "capacitor"
@@ -140,12 +148,12 @@
         "role": "Fullstack Developer",
         "company": "Next2U · Official Vodafone Distributor",
         "period": "January 2016 – June 2018",
-        "summary": "Development of internal tools for the commercial team.",
+        "summary": "Development of internal tools for the commercial team: CRM and time tracking.",
         "achievements": [
-          "Mini CRM for commercial follow-up and pipeline visibility",
-          "Time tracking application with HR business rules"
+          "Mini CRM for commercial follow-up, pipeline visibility, and customer context",
+          "Internal time tracking system for logs, incidents, and reports, with a mobile application"
         ],
-        "stack": ["typescript", "rest", "postgresql"]
+        "stack": ["ruby-on-rails", "postgresql", "angular", "android-sdk"]
       }
     ],
     "education": [],

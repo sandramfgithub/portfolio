@@ -343,7 +343,7 @@
     "id": "nest-es",
     "slug": "nest",
     "locale": "es",
-    "name": "Nest",
+    "name": "NestJS",
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
@@ -354,7 +354,7 @@
       "Framework backend con inyeccion de dependencias, modulos y guards."
     ],
     "seo": {
-      "title": "Nest | Sandra Martínez Fernández",
+      "title": "NestJS | Sandra Martínez Fernández",
       "description": "Framework backend con inyeccion de dependencias, modulos y guards."
     }
   },
@@ -414,6 +414,120 @@
     }
   },
   {
+    "id": "soap-es",
+    "slug": "soap",
+    "locale": "es",
+    "name": "SOAP",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.w3.org/TR/soap/",
+    "summary": "Integracion con servicios SOAP y contratos XML en entornos legacy.",
+    "details": [
+      "Integracion con servicios SOAP y contratos XML en entornos legacy."
+    ],
+    "seo": {
+      "title": "SOAP | Sandra Martínez Fernández",
+      "description": "Integracion con servicios SOAP y contratos XML en entornos legacy."
+    }
+  },
+  {
+    "id": "mongodb-es",
+    "slug": "mongodb",
+    "locale": "es",
+    "name": "MongoDB",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.mongodb.com",
+    "summary": "Base de datos documental para catálogos, reporting y estructuras flexibles.",
+    "details": [
+      "Base de datos documental para catálogos, reporting y estructuras flexibles."
+    ],
+    "seo": {
+      "title": "MongoDB | Sandra Martínez Fernández",
+      "description": "Base de datos documental para catálogos, reporting y estructuras flexibles."
+    }
+  },
+  {
+    "id": "ruby-on-rails-es",
+    "slug": "ruby-on-rails",
+    "locale": "es",
+    "name": "Ruby on Rails",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2018",
+    "lastVersion": null,
+    "url": "https://rubyonrails.org",
+    "summary": "Framework fullstack para aplicaciones internas con CRUD, auth y reporting rapido.",
+    "details": [
+      "Framework fullstack para aplicaciones internas con CRUD, auth y reporting rapido."
+    ],
+    "seo": {
+      "title": "Ruby on Rails | Sandra Martínez Fernández",
+      "description": "Framework fullstack para aplicaciones internas con CRUD, auth y reporting rapido."
+    }
+  },
+  {
+    "id": "angular-es",
+    "slug": "angular",
+    "locale": "es",
+    "name": "Angular",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2018",
+    "lastVersion": null,
+    "url": "https://angular.dev",
+    "summary": "Frontends empresariales con componentes, formularios y routing tipado.",
+    "details": [
+      "Frontends empresariales con componentes, formularios y routing tipado."
+    ],
+    "seo": {
+      "title": "Angular | Sandra Martínez Fernández",
+      "description": "Frontends empresariales con componentes, formularios y routing tipado."
+    }
+  },
+  {
+    "id": "android-sdk-es",
+    "slug": "android-sdk",
+    "locale": "es",
+    "name": "Android SDK",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2018",
+    "lastVersion": null,
+    "url": "https://developer.android.com",
+    "summary": "Desarrollo nativo Android para apps internas y flujos operativos móviles.",
+    "details": [
+      "Desarrollo nativo Android para apps internas y flujos operativos móviles."
+    ],
+    "seo": {
+      "title": "Android SDK | Sandra Martínez Fernández",
+      "description": "Desarrollo nativo Android para apps internas y flujos operativos móviles."
+    }
+  },
+  {
+    "id": "c-plus-plus-es",
+    "slug": "c-plus-plus",
+    "locale": "es",
+    "name": "C++",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2021",
+    "lastVersion": null,
+    "url": "https://isocpp.org",
+    "summary": "Lenguaje de sistemas para compiladores, estructuras de datos y bajo nivel.",
+    "details": [
+      "Lenguaje de sistemas para compiladores, estructuras de datos y bajo nivel."
+    ],
+    "seo": {
+      "title": "C++ | Sandra Martínez Fernández",
+      "description": "Lenguaje de sistemas para compiladores, estructuras de datos y bajo nivel."
+    }
+  },
+  {
     "id": "c-es",
     "slug": "c",
     "locale": "es",
@@ -449,6 +563,42 @@
     "seo": {
       "title": "Java | Sandra Martínez Fernández",
       "description": "Apps modulares con sistema de plugins, gRPC y disciplina de release."
+    }
+  },
+  {
+    "id": "javafx-es",
+    "slug": "javafx",
+    "locale": "es",
+    "name": "JavaFX",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2020",
+    "lastVersion": null,
+    "url": "https://openjfx.io",
+    "summary": "Cliente desktop en Java con UI rica y componentes propios.",
+    "details": ["Cliente desktop en Java con UI rica y componentes propios."],
+    "seo": {
+      "title": "JavaFX | Sandra Martínez Fernández",
+      "description": "Cliente desktop en Java con UI rica y componentes propios."
+    }
+  },
+  {
+    "id": "spring-boot-es",
+    "slug": "spring-boot",
+    "locale": "es",
+    "name": "Spring Boot",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2020",
+    "lastVersion": null,
+    "url": "https://spring.io/projects/spring-boot",
+    "summary": "Backend Java para APIs, persistencia y servicios de apoyo en aplicaciones modulares.",
+    "details": [
+      "Backend Java para APIs, persistencia y servicios de apoyo en aplicaciones modulares."
+    ],
+    "seo": {
+      "title": "Spring Boot | Sandra Martínez Fernández",
+      "description": "Backend Java para APIs, persistencia y servicios de apoyo en aplicaciones modulares."
     }
   },
   {
@@ -905,7 +1055,7 @@
     "id": "nest-en",
     "slug": "nest",
     "locale": "en",
-    "name": "Nest",
+    "name": "NestJS",
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
@@ -916,7 +1066,7 @@
       "Backend framework with dependency injection, modules, and guards."
     ],
     "seo": {
-      "title": "Nest | Sandra Martínez Fernández",
+      "title": "NestJS | Sandra Martínez Fernández",
       "description": "Backend framework with dependency injection, modules, and guards."
     }
   },
@@ -976,6 +1126,120 @@
     }
   },
   {
+    "id": "soap-en",
+    "slug": "soap",
+    "locale": "en",
+    "name": "SOAP",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.w3.org/TR/soap/",
+    "summary": "SOAP service integration and XML contracts in legacy environments.",
+    "details": [
+      "SOAP service integration and XML contracts in legacy environments."
+    ],
+    "seo": {
+      "title": "SOAP | Sandra Martínez Fernández",
+      "description": "SOAP service integration and XML contracts in legacy environments."
+    }
+  },
+  {
+    "id": "mongodb-en",
+    "slug": "mongodb",
+    "locale": "en",
+    "name": "MongoDB",
+    "status": "recent",
+    "active": true,
+    "lastUsedAt": "2025",
+    "lastVersion": null,
+    "url": "https://www.mongodb.com",
+    "summary": "Document database for catalogues, reporting, and flexible data structures.",
+    "details": [
+      "Document database for catalogues, reporting, and flexible data structures."
+    ],
+    "seo": {
+      "title": "MongoDB | Sandra Martínez Fernández",
+      "description": "Document database for catalogues, reporting, and flexible data structures."
+    }
+  },
+  {
+    "id": "ruby-on-rails-en",
+    "slug": "ruby-on-rails",
+    "locale": "en",
+    "name": "Ruby on Rails",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2018",
+    "lastVersion": null,
+    "url": "https://rubyonrails.org",
+    "summary": "Fullstack framework for internal apps with CRUD, auth, and fast reporting.",
+    "details": [
+      "Fullstack framework for internal apps with CRUD, auth, and fast reporting."
+    ],
+    "seo": {
+      "title": "Ruby on Rails | Sandra Martínez Fernández",
+      "description": "Fullstack framework for internal apps with CRUD, auth, and fast reporting."
+    }
+  },
+  {
+    "id": "angular-en",
+    "slug": "angular",
+    "locale": "en",
+    "name": "Angular",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2018",
+    "lastVersion": null,
+    "url": "https://angular.dev",
+    "summary": "Enterprise frontends with components, forms, and typed routing.",
+    "details": [
+      "Enterprise frontends with components, forms, and typed routing."
+    ],
+    "seo": {
+      "title": "Angular | Sandra Martínez Fernández",
+      "description": "Enterprise frontends with components, forms, and typed routing."
+    }
+  },
+  {
+    "id": "android-sdk-en",
+    "slug": "android-sdk",
+    "locale": "en",
+    "name": "Android SDK",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2018",
+    "lastVersion": null,
+    "url": "https://developer.android.com",
+    "summary": "Native Android development for internal apps and mobile operational flows.",
+    "details": [
+      "Native Android development for internal apps and mobile operational flows."
+    ],
+    "seo": {
+      "title": "Android SDK | Sandra Martínez Fernández",
+      "description": "Native Android development for internal apps and mobile operational flows."
+    }
+  },
+  {
+    "id": "c-plus-plus-en",
+    "slug": "c-plus-plus",
+    "locale": "en",
+    "name": "C++",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2021",
+    "lastVersion": null,
+    "url": "https://isocpp.org",
+    "summary": "Systems language for compilers, data structures, and lower-level work.",
+    "details": [
+      "Systems language for compilers, data structures, and lower-level work."
+    ],
+    "seo": {
+      "title": "C++ | Sandra Martínez Fernández",
+      "description": "Systems language for compilers, data structures, and lower-level work."
+    }
+  },
+  {
     "id": "c-en",
     "slug": "c",
     "locale": "en",
@@ -1011,6 +1275,42 @@
     "seo": {
       "title": "Java | Sandra Martínez Fernández",
       "description": "Modular apps with plugin system, gRPC, and release discipline."
+    }
+  },
+  {
+    "id": "javafx-en",
+    "slug": "javafx",
+    "locale": "en",
+    "name": "JavaFX",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2020",
+    "lastVersion": null,
+    "url": "https://openjfx.io",
+    "summary": "Desktop Java client with rich UI and custom components.",
+    "details": ["Desktop Java client with rich UI and custom components."],
+    "seo": {
+      "title": "JavaFX | Sandra Martínez Fernández",
+      "description": "Desktop Java client with rich UI and custom components."
+    }
+  },
+  {
+    "id": "spring-boot-en",
+    "slug": "spring-boot",
+    "locale": "en",
+    "name": "Spring Boot",
+    "status": "legacy",
+    "active": false,
+    "lastUsedAt": "2020",
+    "lastVersion": null,
+    "url": "https://spring.io/projects/spring-boot",
+    "summary": "Java backend for APIs, persistence, and supporting services in modular applications.",
+    "details": [
+      "Java backend for APIs, persistence, and supporting services in modular applications."
+    ],
+    "seo": {
+      "title": "Spring Boot | Sandra Martínez Fernández",
+      "description": "Java backend for APIs, persistence, and supporting services in modular applications."
     }
   },
   {

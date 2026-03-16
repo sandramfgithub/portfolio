@@ -159,17 +159,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Picking App",
-    "summary": "Aplicación móvil de picking para almacén con lectura de códigos y sincronización offline.",
+    "summary": "Aplicación móvil de picking para almacén con lectura de códigos.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["capacitor", "nest", "graphql"],
+    "stack": ["nest", "soap", "postgresql", "vue", "graphql"],
     "links": [],
     "featured": true,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Picking App | Sandra Martínez Fernández",
-      "description": "Aplicación móvil de picking para almacén con lectura de códigos y sincronización offline."
+      "description": "Aplicación móvil de picking para almacén con lectura de códigos."
     },
     "privateEntryType": "work",
     "sortDate": "2025-06-01"
@@ -181,17 +181,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Pedidos Comerciales",
-    "summary": "Sistema de gestión de pedidos comerciales con flujos de aprobación y reporting.",
+    "summary": "Sistema de gestión de pedidos comerciales B2B. Pedidos, catálogo, estadísticas, reportes e informes.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["nest", "rest", "vue"],
+    "stack": ["nest", "rest", "vue", "mongodb", "graphql"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Pedidos Comerciales | Sandra Martínez Fernández",
-      "description": "Sistema de gestión de pedidos comerciales con flujos de aprobación y reporting."
+      "description": "Sistema de gestión de pedidos comerciales B2B. Pedidos, catálogo, estadísticas, reportes e informes."
     },
     "privateEntryType": "work",
     "sortDate": "2025-03-01"
@@ -203,17 +203,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Gestión de Aparatología",
-    "summary": "Plataforma de gestión de equipamiento con inventario, mantenimiento y reservas.",
+    "summary": "Gestión de fabricación y control de calidad de aparatología, mantenimiento y stock.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["nest", "graphql", "react"],
+    "stack": ["nest", "graphql", "react", "capacitor"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Gestión de Aparatología | Sandra Martínez Fernández",
-      "description": "Plataforma de gestión de equipamiento con inventario, mantenimiento y reservas."
+      "description": "Gestión de fabricación y control de calidad de aparatología, mantenimiento y stock."
     },
     "privateEntryType": "work",
     "sortDate": "2025-08-01"
@@ -225,17 +225,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Mini C",
-    "summary": "Compilador en C con análisis léxico y sintáctico, tabla hash, warnings y optimización de código.",
+    "summary": "Compilador en C++ con análisis léxico y sintáctico, tabla hash, warnings y optimización de código.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["c"],
+    "stack": ["c-plus-plus"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Mini C | Sandra Martínez Fernández",
-      "description": "Compilador en C con análisis léxico y sintáctico, tabla hash, warnings y optimización de código."
+      "description": "Compilador en C++ con análisis léxico y sintáctico, tabla hash, warnings y optimización de código."
     },
     "privateEntryType": "case-study",
     "sortDate": "2021-06-01"
@@ -247,7 +247,7 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Chat App",
-    "summary": "Aplicación desktop con gRPC, persistencia propia y componentes custom, útil como antecedente de producto end-to-end.",
+    "summary": "Chat en tiempo real para escritorio con persistencia propia y mensajería tipo WhatsApp, construido sobre gRPC.",
     "paragraphs": [],
     "bullets": [],
     "stack": ["java", "grpc"],
@@ -257,7 +257,7 @@
     "period": null,
     "seo": {
       "title": "Chat App | Sandra Martínez Fernández",
-      "description": "Aplicación desktop con gRPC, persistencia propia y componentes custom, útil como antecedente de producto end-to-end."
+      "description": "Chat en tiempo real para escritorio con persistencia propia y mensajería tipo WhatsApp, construido sobre gRPC."
     },
     "privateEntryType": "case-study",
     "sortDate": "2019-06-01"
@@ -269,17 +269,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Courses App",
-    "summary": "Aplicación modular en Java con sistema de plugins, CI y una disciplina de release mejor de lo habitual en un proyecto académico.",
+    "summary": "Aplicación interactiva de aprendizaje sobre diseño y desarrollo de videojuegos en Godot, con cliente JavaFX y backend Spring Boot.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["java"],
+    "stack": ["java", "javafx", "spring-boot"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Courses App | Sandra Martínez Fernández",
-      "description": "Aplicación modular en Java con sistema de plugins, CI y una disciplina de release mejor de lo habitual en un proyecto académico."
+      "description": "Aplicación interactiva de aprendizaje sobre diseño y desarrollo de videojuegos en Godot, con cliente JavaFX y backend Spring Boot."
     },
     "privateEntryType": "case-study",
     "sortDate": "2020-06-01"
@@ -444,17 +444,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Picking App",
-    "summary": "Mobile warehouse picking app with barcode scanning and offline sync.",
+    "summary": "Mobile warehouse picking app with barcode scanning.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["capacitor", "nest", "graphql"],
+    "stack": ["nest", "soap", "postgresql", "vue", "graphql"],
     "links": [],
     "featured": true,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Picking App | Sandra Martínez Fernández",
-      "description": "Mobile warehouse picking app with barcode scanning and offline sync."
+      "description": "Mobile warehouse picking app with barcode scanning."
     },
     "privateEntryType": "work",
     "sortDate": "2025-06-01"
@@ -466,17 +466,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Pedidos Comerciales",
-    "summary": "Commercial order management system with approval workflows and reporting.",
+    "summary": "B2B commercial order management system. Orders, catalogue, statistics, reports, and dashboards.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["nest", "rest", "vue"],
+    "stack": ["nest", "rest", "vue", "mongodb", "graphql"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Pedidos Comerciales | Sandra Martínez Fernández",
-      "description": "Commercial order management system with approval workflows and reporting."
+      "description": "B2B commercial order management system. Orders, catalogue, statistics, reports, and dashboards."
     },
     "privateEntryType": "work",
     "sortDate": "2025-03-01"
@@ -510,17 +510,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Mini C",
-    "summary": "C compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization.",
+    "summary": "C++ compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["c"],
+    "stack": ["c-plus-plus"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Mini C | Sandra Martínez Fernández",
-      "description": "C compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization."
+      "description": "C++ compiler with lexical/syntactic analysis, hash tables, warnings, and code optimization."
     },
     "privateEntryType": "case-study",
     "sortDate": "2021-06-01"
@@ -532,7 +532,7 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Chat App",
-    "summary": "Desktop app with gRPC, custom persistence, and UI components -- an end-to-end product antecedent.",
+    "summary": "Real-time desktop chat app with custom persistence and WhatsApp-like messaging, built on gRPC.",
     "paragraphs": [],
     "bullets": [],
     "stack": ["java", "grpc"],
@@ -542,7 +542,7 @@
     "period": null,
     "seo": {
       "title": "Chat App | Sandra Martínez Fernández",
-      "description": "Desktop app with gRPC, custom persistence, and UI components -- an end-to-end product antecedent."
+      "description": "Real-time desktop chat app with custom persistence and WhatsApp-like messaging, built on gRPC."
     },
     "privateEntryType": "case-study",
     "sortDate": "2019-06-01"
@@ -554,17 +554,17 @@
     "kind": "case-study",
     "publicationState": "published",
     "title": "Courses App",
-    "summary": "Modular Java app with plugin system, CI, and unusually disciplined release process for an academic project.",
+    "summary": "Interactive learning app about game development with Godot, with a JavaFX client and Spring Boot backend.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["java"],
+    "stack": ["java", "javafx", "spring-boot"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Courses App | Sandra Martínez Fernández",
-      "description": "Modular Java app with plugin system, CI, and unusually disciplined release process for an academic project."
+      "description": "Interactive learning app about game development with Godot, with a JavaFX client and Spring Boot backend."
     },
     "privateEntryType": "case-study",
     "sortDate": "2020-06-01"
@@ -614,17 +614,17 @@
     "publicationState": "published",
     "sortDate": "2024-11-01",
     "title": "Control Horario",
-    "summary": "Sistema interno para fichajes, incidencias y trazabilidad operativa con reglas de negocio de recursos humanos.",
+    "summary": "Sistema interno para fichajes, incidencias e informes. Aplicación móvil.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["react", "nestjs", "postgresql"],
+    "stack": ["ruby-on-rails", "angular", "android-sdk"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Control Horario | Sandra Martínez Fernández",
-      "description": "Sistema interno para fichajes, incidencias y trazabilidad operativa con reglas de negocio de recursos humanos."
+      "description": "Sistema interno para fichajes, incidencias e informes. Aplicación móvil."
     }
   },
   {
@@ -639,7 +639,7 @@
     "summary": "CRM pequeño para seguimiento comercial, pipeline, actividad y visibilidad operativa sobre clientes.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["react", "trpc", "postgresql"],
+    "stack": ["ruby-on-rails", "postgresql", "angular"],
     "links": [],
     "featured": false,
     "organization": null,
@@ -694,17 +694,17 @@
     "publicationState": "published",
     "sortDate": "2024-11-01",
     "title": "Time Tracking",
-    "summary": "Internal system for time logs, incidents, and operational traceability with HR business rules.",
+    "summary": "Internal system for time logs, incidents, and reports. Mobile application.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["react", "nestjs", "postgresql"],
+    "stack": ["ruby-on-rails", "angular", "android-sdk"],
     "links": [],
     "featured": false,
     "organization": null,
     "period": null,
     "seo": {
       "title": "Time Tracking | Sandra Martínez Fernández",
-      "description": "Internal system for time logs, incidents, and operational traceability with HR business rules."
+      "description": "Internal system for time logs, incidents, and reports. Mobile application."
     }
   },
   {
@@ -719,7 +719,7 @@
     "summary": "Small CRM for commercial follow-up, pipeline visibility, activity tracking, and customer context.",
     "paragraphs": [],
     "bullets": [],
-    "stack": ["react", "trpc", "postgresql"],
+    "stack": ["ruby-on-rails", "postgresql", "angular"],
     "links": [],
     "featured": false,
     "organization": null,
