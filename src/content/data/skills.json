@@ -7,7 +7,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "19",
+    "lastVersion": "19.2.4",
     "url": "https://react.dev",
     "summary": "Componentes de producto, sistemas de tablas server-side, formularios con validación y UI interactiva.",
     "details": [
@@ -26,7 +26,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "5.7",
+    "lastVersion": "5.9.3",
     "url": "https://www.typescriptlang.org",
     "summary": "Lenguaje principal en todos los proyectos. Contratos estrictos, inferencia y tipos utilitarios.",
     "details": [
@@ -45,7 +45,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "5",
+    "lastVersion": "6.0.5",
     "url": "https://astro.build",
     "summary": "Framework del portfolio. Islas de hidratación, transiciones de vista y contenido estático.",
     "details": [
@@ -64,7 +64,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "4",
+    "lastVersion": "4.2.1",
     "url": "https://tailwindcss.com",
     "summary": "Estilos de utilidad en todos los frontends. Temas custom, dark mode y responsive.",
     "details": [
@@ -83,7 +83,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "4.0.8",
     "url": "https://ui.shadcn.com",
     "summary": "Componentes accesibles basados en Base UI, adaptados al sistema de diseño propio.",
     "details": [
@@ -102,7 +102,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2026",
-    "lastVersion": null,
+    "lastVersion": "0.12.0",
     "url": "https://www.diceui.com",
     "summary": "Patrones y componentes opinionated para producto, especialmente útiles en tablas y formularios complejos.",
     "details": [
@@ -121,7 +121,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "8",
+    "lastVersion": "8.21.3",
     "url": "https://tanstack.com/table",
     "summary": "Tablas server-side con filtros, paginación, ordenación y vistas persistentes.",
     "details": [
@@ -140,7 +140,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "5",
+    "lastVersion": "5.0.12",
     "url": "https://zustand.docs.pmnd.rs",
     "summary": "Estado global ligero para filtros, vistas y configuracion de tablas.",
     "details": [
@@ -159,7 +159,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "3",
+    "lastVersion": "4.1.0",
     "url": "https://vitest.dev",
     "summary": "Tests unitarios y de integración. Runner rápido compatible con el ecosistema Vite.",
     "details": [
@@ -178,7 +178,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.3.10",
     "url": "https://bun.sh",
     "summary": "Runtime y package manager. Monorepo, scripts, workers y tooling interno.",
     "details": [
@@ -197,7 +197,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2026",
-    "lastVersion": null,
+    "lastVersion": "4.12.8",
     "url": "https://hono.dev",
     "summary": "Framework web ligero para APIs y SPAs con rutas rápidas y tipadas.",
     "details": [
@@ -216,7 +216,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2026",
-    "lastVersion": null,
+    "lastVersion": "2.8.17",
     "url": "https://turbo.build/repo",
     "summary": "Orquestación de monorepos con cache, pipelines y tareas compartidas.",
     "details": [
@@ -235,7 +235,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "16",
+    "lastVersion": "18.3",
     "url": "https://www.postgresql.org",
     "summary": "Base de datos principal. Leasing, advisory locks, migraciones y búsqueda.",
     "details": [
@@ -254,7 +254,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.0",
     "url": "https://orm.drizzle.team",
     "summary": "ORM type-safe para PostgreSQL. Esquemas declarativos y migraciones.",
     "details": [
@@ -273,7 +273,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.9.0",
     "url": "https://opentelemetry.io",
     "summary": "Trazas y métricas para observabilidad de workers y servicios.",
     "details": [
@@ -292,7 +292,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "11",
+    "lastVersion": "11.13.4",
     "url": "https://trpc.io",
     "summary": "Contratos API end-to-end type-safe entre cliente y servidor.",
     "details": ["Contratos API end-to-end type-safe entre cliente y servidor."],
@@ -309,7 +309,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "9.3.4",
     "url": "https://www.elastic.co/elasticsearch",
     "summary": "Motor de búsqueda para indexación y queries complejas sobre datos de producto.",
     "details": [
@@ -328,7 +328,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
-    "lastVersion": null,
+    "lastVersion": "8.2.0",
     "url": "https://capacitorjs.com",
     "summary": "Apps híbridas móviles con acceso a APIs nativas y sync offline.",
     "details": [
@@ -347,7 +347,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
-    "lastVersion": null,
+    "lastVersion": "11.1.17",
     "url": "https://nestjs.com",
     "summary": "Framework backend con inyeccion de dependencias, modulos y guards.",
     "details": [
@@ -366,7 +366,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
-    "lastVersion": null,
+    "lastVersion": "16.13.1",
     "url": "https://graphql.org",
     "summary": "APIs con schema tipado, resolvers y subscriptions en tiempo real.",
     "details": [
@@ -402,7 +402,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2023",
-    "lastVersion": "3",
+    "lastVersion": "3.5.30",
     "url": "https://vuejs.org",
     "summary": "Frontends de gestion con Composition API y formularios reactivos.",
     "details": [
@@ -421,7 +421,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.2",
     "url": "https://www.w3.org/TR/soap/",
     "summary": "Integracion con servicios SOAP y contratos XML en entornos legacy.",
     "details": [
@@ -440,7 +440,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "8.2.4",
     "url": "https://www.mongodb.com",
     "summary": "Base de datos documental para catálogos, reporting y estructuras flexibles.",
     "details": [
@@ -459,7 +459,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2018",
-    "lastVersion": null,
+    "lastVersion": "5.2.2",
     "url": "https://rubyonrails.org",
     "summary": "Framework fullstack para aplicaciones internas con CRUD, auth y reporting rapido.",
     "details": [
@@ -478,7 +478,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2018",
-    "lastVersion": null,
+    "lastVersion": "6.1.10",
     "url": "https://angular.dev",
     "summary": "Frontends empresariales con componentes, formularios y routing tipado.",
     "details": [
@@ -497,7 +497,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2018",
-    "lastVersion": null,
+    "lastVersion": "API 36",
     "url": "https://developer.android.com",
     "summary": "Desarrollo nativo Android para apps internas y flujos operativos móviles.",
     "details": [
@@ -516,7 +516,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2021",
-    "lastVersion": null,
+    "lastVersion": "C++23",
     "url": "https://isocpp.org",
     "summary": "Lenguaje de sistemas para compiladores, estructuras de datos y bajo nivel.",
     "details": [
@@ -535,7 +535,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2022",
-    "lastVersion": null,
+    "lastVersion": "C23",
     "url": "https://en.cppreference.com/w/c",
     "summary": "Compilador propio con análisis léxico, sintáctico y optimización de código.",
     "details": [
@@ -554,7 +554,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2022",
-    "lastVersion": null,
+    "lastVersion": "24",
     "url": "https://dev.java",
     "summary": "Apps modulares con sistema de plugins, gRPC y disciplina de release.",
     "details": [
@@ -573,7 +573,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2020",
-    "lastVersion": null,
+    "lastVersion": "24",
     "url": "https://openjfx.io",
     "summary": "Cliente desktop en Java con UI rica y componentes propios.",
     "details": ["Cliente desktop en Java con UI rica y componentes propios."],
@@ -590,7 +590,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2020",
-    "lastVersion": null,
+    "lastVersion": "4.0.2",
     "url": "https://spring.io/projects/spring-boot",
     "summary": "Backend Java para APIs, persistencia y servicios de apoyo en aplicaciones modulares.",
     "details": [
@@ -609,7 +609,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2022",
-    "lastVersion": null,
+    "lastVersion": "1.14.3",
     "url": "https://grpc.io",
     "summary": "Comunicacion entre servicios con protobuf y streaming bidireccional.",
     "details": [
@@ -628,7 +628,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "6",
+    "lastVersion": "8.0.0",
     "url": "https://vite.dev",
     "summary": "Bundler para desarrollo rápido con HMR y builds optimizados.",
     "details": ["Bundler para desarrollo rápido con HMR y builds optimizados."],
@@ -638,13 +638,51 @@
     }
   },
   {
+    "id": "react-native-es",
+    "slug": "react-native",
+    "locale": "es",
+    "name": "React Native",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": "0.84.1",
+    "url": "https://reactnative.dev",
+    "summary": "Apps móviles nativas con React y un modelo de componentes compartido con producto.",
+    "details": [
+      "Apps móviles nativas con React y un modelo de componentes compartido con producto."
+    ],
+    "seo": {
+      "title": "React Native | Sandra Martínez Fernández",
+      "description": "Apps móviles nativas con React y un modelo de componentes compartido con producto."
+    }
+  },
+  {
+    "id": "mssql-es",
+    "slug": "mssql",
+    "locale": "es",
+    "name": "MS SQL Server",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": "2019",
+    "url": "https://learn.microsoft.com/sql/sql-server/",
+    "summary": "Base de datos relacional usada activamente para la ingesta de datos desde ERP y SGA.",
+    "details": [
+      "Base de datos relacional usada activamente para la ingesta de datos desde ERP y SGA."
+    ],
+    "seo": {
+      "title": "MS SQL Server | Sandra Martínez Fernández",
+      "description": "Base de datos relacional usada activamente para la ingesta de datos desde ERP y SGA."
+    }
+  },
+  {
     "id": "docker-es",
     "slug": "docker",
     "locale": "es",
     "name": "Docker",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://www.docker.com",
     "summary": "Contenedores para desarrollo local, CI y despliegue de servicios.",
@@ -663,7 +701,7 @@
     "name": "GitHub",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://github.com",
     "summary": "Repositorios, CI/CD con Actions, revisiones de código y gestión de releases.",
@@ -682,7 +720,7 @@
     "name": "Codex",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://openai.com/index/codex",
     "summary": "Asistente de código para generación, refactor y exploración de APIs.",
@@ -701,7 +739,7 @@
     "name": "Claude",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://claude.ai",
     "summary": "Asistente AI para desarrollo, arquitectura y documentación técnica.",
@@ -721,7 +759,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "19",
+    "lastVersion": "19.2.4",
     "url": "https://react.dev",
     "summary": "Product components, server-side table systems, validated forms, and interactive UI.",
     "details": [
@@ -740,7 +778,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "5.7",
+    "lastVersion": "5.9.3",
     "url": "https://www.typescriptlang.org",
     "summary": "Primary language across all projects. Strict contracts, inference, and utility types.",
     "details": [
@@ -759,7 +797,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "5",
+    "lastVersion": "6.0.5",
     "url": "https://astro.build",
     "summary": "Portfolio framework. Hydration islands, view transitions, and static content.",
     "details": [
@@ -778,7 +816,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "4",
+    "lastVersion": "4.2.1",
     "url": "https://tailwindcss.com",
     "summary": "Utility styles across all frontends. Custom themes, dark mode, and responsive.",
     "details": [
@@ -797,7 +835,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "4.0.8",
     "url": "https://ui.shadcn.com",
     "summary": "Accessible components built on Base UI, adapted to the project's design system.",
     "details": [
@@ -816,7 +854,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2026",
-    "lastVersion": null,
+    "lastVersion": "0.12.0",
     "url": "https://www.diceui.com",
     "summary": "Opinionated product patterns and components, especially useful for complex tables and forms.",
     "details": [
@@ -835,7 +873,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "8",
+    "lastVersion": "8.21.3",
     "url": "https://tanstack.com/table",
     "summary": "Server-side tables with filters, pagination, sorting, and persistent views.",
     "details": [
@@ -854,7 +892,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "5",
+    "lastVersion": "5.0.12",
     "url": "https://zustand.docs.pmnd.rs",
     "summary": "Lightweight global state for filters, views, and table configuration.",
     "details": [
@@ -873,7 +911,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "3",
+    "lastVersion": "4.1.0",
     "url": "https://vitest.dev",
     "summary": "Unit and integration tests. Fast runner compatible with the Vite ecosystem.",
     "details": [
@@ -892,7 +930,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.3.10",
     "url": "https://bun.sh",
     "summary": "Runtime and package manager. Monorepo, scripts, workers, and internal tooling.",
     "details": [
@@ -911,7 +949,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2026",
-    "lastVersion": null,
+    "lastVersion": "4.12.8",
     "url": "https://hono.dev",
     "summary": "Lightweight web framework for APIs and SPAs with fast, typed routes.",
     "details": [
@@ -930,7 +968,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2026",
-    "lastVersion": null,
+    "lastVersion": "2.8.17",
     "url": "https://turbo.build/repo",
     "summary": "Monorepo orchestration with cache, pipelines, and shared tasks.",
     "details": [
@@ -949,7 +987,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "16",
+    "lastVersion": "18.3",
     "url": "https://www.postgresql.org",
     "summary": "Primary database. Leasing, advisory locks, migrations, and search.",
     "details": [
@@ -968,7 +1006,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.0",
     "url": "https://orm.drizzle.team",
     "summary": "Type-safe ORM for PostgreSQL. Declarative schemas and migrations.",
     "details": [
@@ -987,7 +1025,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.9.0",
     "url": "https://opentelemetry.io",
     "summary": "Traces and metrics for worker and service observability.",
     "details": ["Traces and metrics for worker and service observability."],
@@ -1004,7 +1042,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "11",
+    "lastVersion": "11.13.4",
     "url": "https://trpc.io",
     "summary": "End-to-end type-safe API contracts between client and server.",
     "details": [
@@ -1023,7 +1061,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "9.3.4",
     "url": "https://www.elastic.co/elasticsearch",
     "summary": "Search engine for indexing and complex queries on product data.",
     "details": [
@@ -1042,7 +1080,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
-    "lastVersion": null,
+    "lastVersion": "8.2.0",
     "url": "https://capacitorjs.com",
     "summary": "Hybrid mobile apps with native API access and offline sync.",
     "details": ["Hybrid mobile apps with native API access and offline sync."],
@@ -1059,7 +1097,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
-    "lastVersion": null,
+    "lastVersion": "11.1.17",
     "url": "https://nestjs.com",
     "summary": "Backend framework with dependency injection, modules, and guards.",
     "details": [
@@ -1078,7 +1116,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2024",
-    "lastVersion": null,
+    "lastVersion": "16.13.1",
     "url": "https://graphql.org",
     "summary": "APIs with typed schema, resolvers, and real-time subscriptions.",
     "details": [
@@ -1114,7 +1152,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2023",
-    "lastVersion": "3",
+    "lastVersion": "3.5.30",
     "url": "https://vuejs.org",
     "summary": "Management frontends with Composition API and reactive forms.",
     "details": [
@@ -1133,7 +1171,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "1.2",
     "url": "https://www.w3.org/TR/soap/",
     "summary": "SOAP service integration and XML contracts in legacy environments.",
     "details": [
@@ -1152,7 +1190,7 @@
     "status": "recent",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": null,
+    "lastVersion": "8.2.4",
     "url": "https://www.mongodb.com",
     "summary": "Document database for catalogues, reporting, and flexible data structures.",
     "details": [
@@ -1171,7 +1209,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2018",
-    "lastVersion": null,
+    "lastVersion": "5.2.2",
     "url": "https://rubyonrails.org",
     "summary": "Fullstack framework for internal apps with CRUD, auth, and fast reporting.",
     "details": [
@@ -1190,7 +1228,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2018",
-    "lastVersion": null,
+    "lastVersion": "6.1.10",
     "url": "https://angular.dev",
     "summary": "Enterprise frontends with components, forms, and typed routing.",
     "details": [
@@ -1209,7 +1247,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2018",
-    "lastVersion": null,
+    "lastVersion": "API 36",
     "url": "https://developer.android.com",
     "summary": "Native Android development for internal apps and mobile operational flows.",
     "details": [
@@ -1228,7 +1266,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2021",
-    "lastVersion": null,
+    "lastVersion": "C++23",
     "url": "https://isocpp.org",
     "summary": "Systems language for compilers, data structures, and lower-level work.",
     "details": [
@@ -1247,7 +1285,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2022",
-    "lastVersion": null,
+    "lastVersion": "C23",
     "url": "https://en.cppreference.com/w/c",
     "summary": "Custom compiler with lexical analysis, parsing, and code optimization.",
     "details": [
@@ -1266,7 +1304,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2022",
-    "lastVersion": null,
+    "lastVersion": "24",
     "url": "https://dev.java",
     "summary": "Modular apps with plugin system, gRPC, and release discipline.",
     "details": [
@@ -1285,7 +1323,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2020",
-    "lastVersion": null,
+    "lastVersion": "24",
     "url": "https://openjfx.io",
     "summary": "Desktop Java client with rich UI and custom components.",
     "details": ["Desktop Java client with rich UI and custom components."],
@@ -1302,7 +1340,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2020",
-    "lastVersion": null,
+    "lastVersion": "4.0.2",
     "url": "https://spring.io/projects/spring-boot",
     "summary": "Java backend for APIs, persistence, and supporting services in modular applications.",
     "details": [
@@ -1321,7 +1359,7 @@
     "status": "legacy",
     "active": false,
     "lastUsedAt": "2022",
-    "lastVersion": null,
+    "lastVersion": "1.14.3",
     "url": "https://grpc.io",
     "summary": "Service communication with protobuf and bidirectional streaming.",
     "details": [
@@ -1340,7 +1378,7 @@
     "status": "active",
     "active": true,
     "lastUsedAt": "2025",
-    "lastVersion": "6",
+    "lastVersion": "8.0.0",
     "url": "https://vite.dev",
     "summary": "Bundler for fast development with HMR and optimized builds.",
     "details": ["Bundler for fast development with HMR and optimized builds."],
@@ -1350,13 +1388,51 @@
     }
   },
   {
+    "id": "react-native-en",
+    "slug": "react-native",
+    "locale": "en",
+    "name": "React Native",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": "0.84.1",
+    "url": "https://reactnative.dev",
+    "summary": "Native mobile apps with React and a component model that stays close to product work.",
+    "details": [
+      "Native mobile apps with React and a component model that stays close to product work."
+    ],
+    "seo": {
+      "title": "React Native | Sandra Martínez Fernández",
+      "description": "Native mobile apps with React and a component model that stays close to product work."
+    }
+  },
+  {
+    "id": "mssql-en",
+    "slug": "mssql",
+    "locale": "en",
+    "name": "MS SQL Server",
+    "status": "active",
+    "active": true,
+    "lastUsedAt": "2026",
+    "lastVersion": "2019",
+    "url": "https://learn.microsoft.com/sql/sql-server/",
+    "summary": "Relational database used actively for ERP and WMS data ingestion.",
+    "details": [
+      "Relational database used actively for ERP and WMS data ingestion."
+    ],
+    "seo": {
+      "title": "MS SQL Server | Sandra Martínez Fernández",
+      "description": "Relational database used actively for ERP and WMS data ingestion."
+    }
+  },
+  {
     "id": "docker-en",
     "slug": "docker",
     "locale": "en",
     "name": "Docker",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://www.docker.com",
     "summary": "Containers for local development, CI, and service deployment.",
@@ -1375,7 +1451,7 @@
     "name": "GitHub",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://github.com",
     "summary": "Repositories, CI/CD with Actions, code reviews, and release management.",
@@ -1394,7 +1470,7 @@
     "name": "Codex",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://openai.com/index/codex",
     "summary": "Code assistant for generation, refactoring, and API exploration.",
@@ -1413,7 +1489,7 @@
     "name": "Claude",
     "status": "active",
     "active": true,
-    "lastUsedAt": "2025",
+    "lastUsedAt": "2026",
     "lastVersion": null,
     "url": "https://claude.ai",
     "summary": "AI assistant for development, architecture, and technical documentation.",

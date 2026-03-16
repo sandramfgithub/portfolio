@@ -147,7 +147,7 @@
       "music": {
         "kind": "list",
         "title": "Música",
-        "intro": "Bandas a las que vuelvo bastante.",
+        "intro": "Bandas de las que me gustan casi todas sus canciones.",
         "items": [
           {
             "label": "Arctic Monkeys"
@@ -183,8 +183,7 @@
         "kind": "media",
         "title": "Dibujar",
         "body": [
-          "He diseñado algunos logos como hobby.",
-          "Este es el logo de Reylobo, diseñado por mí."
+          "Toda mi vida me ha gustado dibujar, y considero que se me da bien, pero una de las cosas que más me ha gustado en mi vida, y alejada completamente de mi estilo de dibujo, ha sido diseñar el logo para la banda Reylobo."
         ],
         "links": [
           {
@@ -355,7 +354,7 @@
       "music": {
         "kind": "list",
         "title": "Music",
-        "intro": "Bands I keep coming back to.",
+        "intro": "Bands whose songs I almost always like.",
         "items": [
           {
             "label": "Arctic Monkeys"
@@ -391,8 +390,7 @@
         "kind": "media",
         "title": "Drawing",
         "body": [
-          "I've designed a few logos as a hobby.",
-          "This is the Reylobo logo, designed by me."
+          "I've loved drawing for as long as I can remember, and I think I'm good at it, but one of the things I've enjoyed most in my life, completely outside my usual drawing style, was designing the logo for the band Reylobo."
         ],
         "links": [
           {
