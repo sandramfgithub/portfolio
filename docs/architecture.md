@@ -57,6 +57,15 @@ src/
   possible, and direct tracking only for stateful islands such as CV download
   and skill popovers.
 
+## Delivery
+
+- GitHub Actions is the single build authority.
+- CI builds one production artifact and reuses it for smoke tests and Pages
+  deployment.
+- Cloudflare Pages is treated as a static delivery runtime, not as a second
+  build system.
+- Release automation stays independent through `release-please`.
+
 ## Near-Term Work
 
 1. Baseline: Ultracite, Vitest, CI, commitlint, docs, hooks.

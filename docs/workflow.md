@@ -15,6 +15,7 @@ bun run typecheck
 bun run test:unit
 bun run test:coverage
 bun run build
+bun run preview:ci
 bun run check
 bun run test:smoke
 ```
@@ -47,6 +48,21 @@ EOF
 - Architecture tasks must not alter the existing design or copy without explicit approval.
 - Public-facing repository material should stay in English.
 - Prefer small, verifiable changes with tests and docs updated in the same branch.
+
+## CI/CD
+
+- GitHub Actions builds the site once and reuses the same `dist/` artifact for
+  smoke tests and deployment.
+- Pull requests deploy preview builds to Cloudflare Pages through Direct Upload.
+- Pushes to `main` deploy the verified artifact to Cloudflare Pages production.
+- Release management is handled separately by `release-please`.
+
+## Release Flow
+
+- Conventional Commits feed `release-please`.
+- `release-please` opens a release PR, updates `package.json`, and maintains
+  `CHANGELOG.md`.
+- Merging the release PR tags the repository and creates a GitHub Release.
 
 ## Editor Notes
 

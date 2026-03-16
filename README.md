@@ -35,6 +35,7 @@ bun run typecheck
 bun run test:unit
 bun run test:coverage
 bun run build
+bun run preview:ci
 bun run check
 bun run update
 ```
@@ -76,6 +77,15 @@ type(scope): summary
 
 `bun run test:smoke` protects the public routes with Playwright.
 
+## Deployment
+
+- Hosting target: Cloudflare Pages
+- Deployment mode: Direct Upload from GitHub Actions
+- Release automation: `release-please`
+
+The repository builds once in CI, smoke-tests the built artifact through
+`astro preview`, and deploys that same artifact to Pages.
+
 ## Repository Structure
 
 ```text
@@ -91,5 +101,6 @@ docs/                 Architecture, workflow, and ADRs
 - [Agent guide](./AGENTS.md)
 - [Docs index](./docs/README.md)
 - [Architecture](./docs/architecture.md)
+- [Deployment](./docs/deployment.md)
 - [Workflow](./docs/workflow.md)
 - [ADR 0001](./docs/adr/0001-repository-baseline.md)
