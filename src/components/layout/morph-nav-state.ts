@@ -91,6 +91,20 @@ export function useMorphNavState({
   }, [scrolled]);
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return;
+    }
+
+    setScrolled((previous) =>
+      getNextScrolledState({
+        expandedPadding,
+        previous,
+        scrollTop: window.scrollY,
+      })
+    );
+  }, [expandedPadding]);
+
+  useEffect(() => {
     const unsubscribe = scrollY.on('change', (scrollTop) => {
       if (Date.now() < scrollLockRef.current) {
         return;

@@ -1,10 +1,4 @@
-import {
-  LayoutGroup,
-  type MotionValue,
-  motion,
-  useScroll,
-  useTransform,
-} from 'framer-motion';
+import { LayoutGroup, motion, useScroll } from 'framer-motion';
 import type {
   NavigationItemViewModel,
   SocialLinkViewModel,
@@ -100,36 +94,8 @@ const getBorderTransition = (
   return 'clip-path 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
 };
 
-function HeaderBackground({
-  prefersReduced,
-  scrolled,
-  opacity,
-}: {
-  prefersReduced: boolean;
-  scrolled: boolean;
-  opacity: MotionValue<number>;
-}) {
-  if (prefersReduced) {
-    return (
-      <div
-        className="absolute inset-0"
-        style={{
-          backgroundColor: 'var(--background)',
-          opacity: scrolled ? 1 : 0,
-        }}
-      />
-    );
-  }
-
-  return (
-    <motion.div
-      className="absolute inset-0"
-      style={{
-        backgroundColor: 'var(--background)',
-        opacity,
-      }}
-    />
-  );
+function HeaderBackground() {
+  return <div className="absolute inset-0 bg-background" />;
 }
 
 const getNavSectionStyle = ({
@@ -230,13 +196,6 @@ export function MorphNav({
   });
   const homeHref = navItems[0]?.href ?? getLocalizedPath('/', lang);
 
-  // Scroll-driven header chrome (continuous) — starts near the morph threshold
-  const bgAlpha = useTransform(
-    scrollY,
-    [expandedPadding * 0.6, expandedPadding + 60],
-    [0, 1]
-  );
-
   const motionEnabled = motionReady && !prefersReduced;
   const activeTransitions = getActiveTransitions(motionEnabled);
   const layoutState = getMorphNavLayoutState({
@@ -274,11 +233,7 @@ export function MorphNav({
     <TooltipProvider>
       {/* Fixed header — does NOT affect document flow */}
       <motion.header className="fixed top-0 right-0 left-0 z-50">
-        <HeaderBackground
-          opacity={bgAlpha}
-          prefersReduced={prefersReduced}
-          scrolled={scrolled}
-        />
+        <HeaderBackground />
 
         <motion.div
           animate={{ maxWidth: getHeaderMaxWidth(scrolled) }}
