@@ -1,7 +1,7 @@
 ---
 import { getProjectsPageViewModel } from '@/application/portfolio/queries';
-import PrivateEntryList from '@/components/portfolio/entries/private-entry-list.astro';
-import ProjectGrid from '@/components/portfolio/entries/project-grid.astro';
+import { PrivateEntryListIsland } from '@/components/portfolio/entries/private-entry-list-island';
+import { ProjectGridIsland } from '@/components/portfolio/entries/project-grid-island';
 import type { Lang } from '@/i18n/translations';
 import { getTranslations } from '@/i18n/utils';
 import Layout from '@/layouts/main.astro';
@@ -30,7 +30,11 @@ const page = await getProjectsPageViewModel(lang);
     >
       {t.projects.publicHeading}
     </h2>
-    <ProjectGrid projects={page.publicProjects} lang={lang} />
+    <ProjectGridIsland
+      client:visible
+      lang={lang}
+      projects={page.publicProjects}
+    />
   </section>
 
   <section aria-labelledby="cases-heading" class="space-y-5">
@@ -40,6 +44,10 @@ const page = await getProjectsPageViewModel(lang);
     >
       {t.projects.caseStudiesHeading}
     </h2>
-    <PrivateEntryList entries={page.privateEntries} lang={lang} />
+    <PrivateEntryListIsland
+      client:visible
+      entries={page.privateEntries}
+      lang={lang}
+    />
   </section>
 </Layout>

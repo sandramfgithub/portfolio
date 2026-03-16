@@ -429,6 +429,67 @@ describe('portfolio queries', () => {
     ]);
   });
 
+  it('throws when a published public project is missing its repository link', async () => {
+    await expect(
+      getProjectsPageViewModel(
+        'en',
+        createRepository({
+          listEntries: async () => [
+            {
+              ...entries[0]!,
+              links: [],
+            },
+          ],
+        })
+      )
+    ).rejects.toThrow('Missing repository link for portfolio');
+  });
+
+  it('throws when a project has an invalid sort date', async () => {
+    await expect(
+      getProjectsPageViewModel(
+        'en',
+        createRepository({
+          listEntries: () => {
+            const [first, second] = entries;
+
+            return Promise.resolve([
+              first!,
+              {
+                ...second!,
+                sortDate: 'not-a-date',
+              },
+            ]);
+          },
+        })
+      )
+    ).rejects.toThrow('Invalid sort date for upcoming-tool:en');
+  });
+
+  it('throws when the requested detail kind does not match the stored entry kind', async () => {
+    await expect(
+      getEntryDetailPageViewModel(
+        'en',
+        'public-project',
+        'private-work',
+        createRepository()
+      )
+    ).rejects.toThrow(
+      'Unexpected entry kind for public-project:private-work:en'
+    );
+  });
+
+  it('throws when the requested entry is not published', async () => {
+    await expect(
+      getEntryDetailPageViewModel(
+        'en',
+        'case-study',
+        'draft-case',
+        createRepository()
+      )
+    ).rejects.toThrow('Entry is not published for case-study:draft-case:en');
+  });
+
   it('lists route params for a given entry kind across locales', async () => {
     const routes = await listEntryRouteParams('public-project', {
       ...createRepository(),
