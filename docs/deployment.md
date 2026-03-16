@@ -13,6 +13,9 @@ integration. The GitHub workflow builds the site once, runs smoke tests against
 that built artifact through `astro preview`, and deploys the exact same `dist/`
 directory to Cloudflare Pages.
 
+Cloudflare-specific redirect behavior is defined through `public/_redirects` so
+production can use real HTTP redirects instead of Astro's static fallback HTML.
+
 ## Cloudflare setup
 
 1. Create a new Pages project with **Direct Upload**.
