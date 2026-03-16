@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.0](https://github.com/sandramfgithub/portfolio/compare/portfolio-v0.2.0...portfolio-v0.3.0) (2026-03-16)
+
+
+### Features
+
+* **maintenance:** add localized maintenance entrypoints ([#2](https://github.com/sandramfgithub/portfolio/issues/2)) ([8ef7c3f](https://github.com/sandramfgithub/portfolio/commit/8ef7c3fc4a7d8a81c05a73bcad0a26b28b47618a))
+
 ## [0.2.0](https://github.com/sandramfgithub/portfolio/compare/portfolio-v0.1.0...portfolio-v0.2.0) (2026-03-16)
 
 
