@@ -27,7 +27,7 @@
 
 ## Tooling
 
-- Runtime and package manager: `bun@1.3.10`
+- Runtime and package manager: `bun@1.4.3`
 - Linting and formatting: Ultracite
 - Unit testing: Vitest
 - Route smoke tests: Playwright

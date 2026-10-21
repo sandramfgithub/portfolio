@@ -1,5 +1,9 @@
 # Deployment
 
+The existing Cloudflare deployment is described below. The replacement
+origin and domain cutover procedure are documented in
+[Viveria hosting](./viveria-hosting.md).
+
 ## Strategy
 
 - Hosting: Cloudflare Workers static assets via the Workers & Pages dashboard

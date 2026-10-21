@@ -1,0 +1,5 @@
+sandramf.dev {
+	encode zstd gzip
+	header -Server
+	reverse_proxy portfolio-web:8080
+}

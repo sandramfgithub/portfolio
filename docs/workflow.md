@@ -2,7 +2,7 @@
 
 ## Runtime
 
-- Use `bun@1.3.10`.
+- Use `bun@1.4.3`.
 - Keep dependency updates explicit with `bun run update`.
 - Use `bun add` and `bun remove` for package changes.
 

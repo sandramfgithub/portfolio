@@ -24,7 +24,7 @@ Architecture portfolio built with Astro, React, and Tailwind CSS.
 ## Requirements
 
 - Node.js `>=24.14.0`
-- Bun `>=1.3.10`
+- Bun `>=1.4.3`
 
 ## Editor
 
