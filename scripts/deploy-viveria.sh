@@ -20,6 +20,8 @@ ssh -o BatchMode=yes "$ssh_target" sudo -n bash -s -- "$release_id" <<'REMOTE'
 set -euo pipefail
 root=/opt/viveria/portfolio
 release_dir="$root/releases/$1"
+exec 9>"$root/.deploy.lock"
+flock 9
 previous=''
 if [[ -L "$root/current" ]]; then
   previous="$(readlink -f "$root/current")"

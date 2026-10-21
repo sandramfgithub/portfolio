@@ -49,9 +49,12 @@ sudo docker exec viveria-host-caddy-1 caddy reload \
   --config /etc/caddy/Caddyfile --adapter caddyfile
 ```
 
-The domain currently belongs to the Cloudflare Worker named `portfolio`.
-Moving DNS alone is insufficient while that custom domain is attached.
-Once the server has passed its checks:
+The domain was migrated from the Cloudflare Worker named `portfolio` on
+October 21, 2026. Its DNS-only `A` record points to `148.113.183.160`, and
+the shared Caddy proxy manages its Let's Encrypt certificate.
+
+The cutover from a Worker custom domain uses the following steps after
+the server has passed its checks:
 
 1. In Cloudflare Workers & Pages, open `portfolio` and remove only the
    `sandramf.dev` custom domain under Settings, Domains & Routes.
@@ -69,13 +72,31 @@ Keep the original Worker available until the new domain has been verified.
 Its `portfolio.sandramf-developer.workers.dev` address is independent of
 the migrated custom domain and provides a fallback.
 
+## GitHub Actions deployment
+
+After these workflow changes reach `main`, CI deploys its verified `dist/`
+artifact to Viveria over SSH. Pull request previews still use Cloudflare.
+The repository secret `VIVERIA_DEPLOY_KEY` contains a dedicated Ed25519 key.
+The pinned server public key lives in `deploy/known-hosts`.
+
+On the server, this key is restricted in `ubuntu`'s `authorized_keys` with
+`restrict` and a forced command that runs the root-owned
+`/opt/viveria/portfolio/receive-dist.py`. The receiver accepts only a bounded
+archive of regular static files and directories. It rejects absolute paths,
+parent paths, links and special files. It copies the existing trusted
+hosting configuration into each release; the CI key cannot supply Compose
+configuration or execute an arbitrary remote command. Deployments are
+serialized with a file lock and roll back if the new container is unhealthy.
+
+The receiver is installed once by an administrator from
+`deploy/receive-dist.py`. Hosting configuration changes continue to use
+the administrator's `deploy:viveria` command; CI changes only static assets.
+
 ## Updates and rollback
 
-Before changing the production pipeline, note that `.github/workflows/ci.yml`
-still deploys `main` to Cloudflare. It does not deploy to Viveria. During
-the migration, use the build, verification, and `deploy:viveria` commands
-above to update the server. Changing that automation is a separate cutover
-step; avoid assuming that a push to `main` updates the new origin.
+Pushes to `main` deploy automatically after verification and browser tests.
+The manual build and `deploy:viveria` commands above remain available for
+administrator deployments.
 
 To restore a previous release, run its Compose file on the server and
 update the `current` symlink after it becomes healthy:

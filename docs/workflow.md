@@ -54,7 +54,7 @@ EOF
 - GitHub Actions builds the site once and reuses the same `dist/` artifact for
   smoke tests and deployment.
 - Pull requests deploy preview builds to Cloudflare Pages through Direct Upload.
-- Pushes to `main` deploy the verified artifact to Cloudflare Pages production.
+- Pushes to `main` deploy the verified artifact to Viveria over restricted SSH.
 - Release management is handled separately by `release-please`.
 
 ## Release Flow

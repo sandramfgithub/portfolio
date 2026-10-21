@@ -1,34 +1,33 @@
 # Deployment
 
-The existing Cloudflare deployment is described below. The replacement
-origin and domain cutover procedure are documented in
+Production runs on Viveria with Docker and Caddy. Origin setup, restricted
+SSH deployment, rollback and the domain cutover procedure are documented in
 [Viveria hosting](./viveria-hosting.md).
 
 ## Strategy
 
-- Hosting: Cloudflare Workers static assets via the Workers & Pages dashboard
-- Deployment mode: Direct Upload from GitHub Actions
+- Production hosting: Docker and Caddy on Viveria
+- Preview hosting: Cloudflare Workers static assets via Workers & Pages
+- Deployment mode: verified artifacts from GitHub Actions
 - Production branch: `main`
 - Preview deployments: per pull request branch
 - Release automation: `release-please`
 
-Cloudflare currently exposes static asset projects in the Workers & Pages
-dashboard as Workers. This repository still uses Direct Upload, but deployment
-is performed with Wrangler Worker commands instead of the older Pages API.
+Production deployment uses a restricted SSH key to upload static files to
+Viveria. Preview deployment uses Wrangler Worker commands rather than the
+older Pages API.
 
 The GitHub workflow builds the site once, runs smoke tests against that built
 artifact through `astro preview`, and deploys the exact same `dist/` directory.
-Cloudflare-specific redirect behavior is defined through `public/_redirects` so
-production can use real HTTP redirects instead of Astro's static fallback HTML.
+Redirects are defined in `public/_redirects` for Cloudflare previews and in
+`deploy/Caddyfile` for the production server.
 
-## Cloudflare setup
+## Cloudflare preview setup
 
 1. Create a new static asset Worker with **Direct Upload** in Workers & Pages.
 2. Make sure the Worker name matches `CLOUDFLARE_PAGES_PROJECT_NAME`.
-3. Add `sandramf.dev` as the custom domain.
-4. Optionally add `www.sandramf.dev` and redirect it to `sandramf.dev`.
-5. Keep the `workers.dev` route enabled for preview aliases.
-6. Create an API token that can deploy Workers for the target account.
+3. Keep the `workers.dev` route enabled for preview aliases.
+4. Create an API token that can deploy Workers for the target account.
 
 Important:
 
@@ -42,6 +41,7 @@ Add these repository secrets:
 - `CLOUDFLARE_ACCOUNT_ID`
 - `CLOUDFLARE_API_TOKEN`
 - `RELEASE_PLEASE_TOKEN`
+- `VIVERIA_DEPLOY_KEY` (the restricted Viveria deployment key)
 
 Add these repository variables:
 
@@ -81,7 +81,8 @@ Notes:
    - uploads the verified `dist/` artifact as a Worker preview version
 4. `deploy-production`
    - runs only for pushes to `main`
-   - uploads the verified `dist/` artifact to the production Worker
+   - uploads the verified `dist/` artifact to Viveria over restricted SSH
+   - waits for a healthy container and restores the previous release on failure
 
 This keeps build, verification, and deployment aligned around the same output.
 
