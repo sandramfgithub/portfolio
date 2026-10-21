@@ -53,6 +53,8 @@ EOF
 
 - GitHub Actions builds the site once and reuses the same `dist/` artifact for
   smoke tests and deployment.
+- Browser smoke tests use Ubuntu 24.04, supported by the pinned Playwright
+  version.
 - Pull requests deploy preview builds to Cloudflare Pages through Direct Upload.
 - Pushes to `main` deploy the verified artifact to Viveria over restricted SSH.
 - Release management is handled separately by `release-please`.
