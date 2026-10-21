@@ -2,7 +2,7 @@
 
 ## Runtime
 
-- Use `bun@1.3.10`.
+- Use `bun@1.4.3`.
 - Keep dependency updates explicit with `bun run update`.
 - Use `bun add` and `bun remove` for package changes.
 
@@ -53,8 +53,10 @@ EOF
 
 - GitHub Actions builds the site once and reuses the same `dist/` artifact for
   smoke tests and deployment.
+- Browser smoke tests use Ubuntu 24.04, supported by the pinned Playwright
+  version.
 - Pull requests deploy preview builds to Cloudflare Pages through Direct Upload.
-- Pushes to `main` deploy the verified artifact to Cloudflare Pages production.
+- Pushes to `main` deploy the verified artifact to Viveria over restricted SSH.
 - Release management is handled separately by `release-please`.
 
 ## Release Flow
