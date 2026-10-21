@@ -24,7 +24,7 @@ Architecture portfolio built with Astro, React, and Tailwind CSS.
 ## Requirements
 
 - Node.js `>=24.14.0`
-- Bun `>=1.3.10`
+- Bun `>=1.4.3`
 
 ## Editor
 
@@ -87,13 +87,15 @@ type(scope): summary
 
 ## Deployment
 
-- Hosting target: Cloudflare Workers static assets via Workers & Pages
-- Deployment mode: Direct Upload from GitHub Actions
+- Production hosting: Docker and Caddy on Viveria
+- Preview hosting: Cloudflare Workers static assets via Workers & Pages
+- Deployment mode: verified artifacts from GitHub Actions
 - Release automation: `release-please`
 
 The repository builds once in CI, smoke-tests the built artifact through
-`astro preview`, and deploys that same artifact to the Cloudflare Worker that
-serves the static site.
+`astro preview`, and deploys that same artifact to Viveria for production or
+Cloudflare Workers for pull request previews. See
+[Viveria hosting](./docs/viveria-hosting.md) for setup and domain cutover.
 
 ## Repository Structure
 
