@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.5.0](https://github.com/sandramfgithub/portfolio/compare/portfolio-v0.4.0...portfolio-v0.5.0) (2026-10-21)
+
+
+### Features
+
+* **deploy:** publish production artifacts to Viveria from CI ([22de0dc](https://github.com/sandramfgithub/portfolio/commit/22de0dc4b95a23b9ef538fd7223be6c6c587afb8))
+* **hosting:** move production to Viveria with Bun 1.4.3 ([e109406](https://github.com/sandramfgithub/portfolio/commit/e1094068e4b2ebea35c2c9b710c407b44e55aba2))
+* **hosting:** prepare Viveria deployment with Bun 1.4.3 ([1eb2ad0](https://github.com/sandramfgithub/portfolio/commit/1eb2ad0737220518558d44ad23846c2e5e4bca63))
+
+
+### Bug Fixes
+
+* **ci:** use a supported Ubuntu image for browser smoke tests ([b200f7f](https://github.com/sandramfgithub/portfolio/commit/b200f7f6a002b28243cf6693dc194840d9f05943))
+* **deps-dev:** patch Vite vulnerabilities and synchronize the lockfile ([520029a](https://github.com/sandramfgithub/portfolio/commit/520029ae37410bee486ea4b5e4146030a5aa23f6))
+* **deps-dev:** update Vite security fixes and synchronize the lockfile ([4a21179](https://github.com/sandramfgithub/portfolio/commit/4a2117930c128916d6167143dbbc03901ee7b09d))
+
 ## [0.4.0](https://github.com/sandramfgithub/portfolio/compare/portfolio-v0.3.0...portfolio-v0.4.0) (2026-03-16)
 
 
